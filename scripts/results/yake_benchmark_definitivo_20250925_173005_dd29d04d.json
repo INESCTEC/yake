@@ -1,145 +1,145 @@
 {
   "benchmark_type": "definitivo_robusto",
   "version": "2.0",
-  "timestamp": "20250923_182520",
-  "results_hash": "428e1633",
+  "timestamp": "20250925_173005",
+  "results_hash": "dd29d04d",
   "data": {
     "summary": {
-      "total_tests": 25,
-      "successful_tests": 25,
+      "total_tests": 30,
+      "successful_tests": 30,
       "failed_tests": 0,
       "configurations_tested": 5,
-      "datasets_tested": 5
+      "datasets_tested": 6
     },
     "performance": {
-      "overall_avg_time_ms": 10.28481628865787,
-      "overall_median_time_ms": 8.445950375289613,
-      "fastest_time_ms": 2.1385412001109216,
-      "slowest_time_ms": 27.88708619955287,
+      "overall_avg_time_ms": 26.042912277965417,
+      "overall_median_time_ms": 10.86984999710694,
+      "fastest_time_ms": 2.3499733360949904,
+      "slowest_time_ms": 116.4404200098943,
       "by_config": {
         "standard": {
-          "count": 5,
-          "avg_time_ms": 9.655740859925572,
-          "median_time_ms": 8.348834599746624,
-          "min_time_ms": 2.1385412001109216,
-          "max_time_ms": 21.485700299854216,
-          "std_dev_ms": 7.139231099120782
+          "count": 6,
+          "avg_time_ms": 23.88917000013559,
+          "median_time_ms": 9.825845000159461,
+          "min_time_ms": 2.7979400008916855,
+          "max_time_ms": 89.18764999543782,
+          "std_dev_ms": 32.7879222364186
         },
         "high_precision": {
-          "count": 5,
-          "avg_time_ms": 9.40591805006079,
-          "median_time_ms": 8.445950375289613,
-          "min_time_ms": 2.6195076247859106,
-          "max_time_ms": 18.2353345003321,
-          "std_dev_ms": 5.628050352500071
+          "count": 6,
+          "avg_time_ms": 25.664806249551475,
+          "median_time_ms": 10.470681248989422,
+          "min_time_ms": 2.971712499856949,
+          "max_time_ms": 100.44871250283904,
+          "std_dev_ms": 37.12657630877946
         },
         "high_recall": {
-          "count": 5,
-          "avg_time_ms": 11.36684540006172,
-          "median_time_ms": 9.11652762488302,
-          "min_time_ms": 3.125036875189835,
-          "max_time_ms": 27.591495874958127,
-          "std_dev_ms": 9.429361839277746
+          "count": 6,
+          "avg_time_ms": 27.37413958311663,
+          "median_time_ms": 12.155543747212505,
+          "min_time_ms": 3.9516500000900123,
+          "max_time_ms": 99.75971249878057,
+          "std_dev_ms": 36.26936507151351
         },
         "fast_extraction": {
-          "count": 5,
-          "avg_time_ms": 8.463417333429486,
-          "median_time_ms": 7.559376200151746,
-          "min_time_ms": 2.4678230667632306,
-          "max_time_ms": 16.594915333431953,
-          "std_dev_ms": 5.096748827220565
+          "count": 6,
+          "avg_time_ms": 22.435178889039282,
+          "median_time_ms": 8.17044333574207,
+          "min_time_ms": 2.3499733360949904,
+          "max_time_ms": 89.41462666455966,
+          "std_dev_ms": 33.30050462129763
         },
         "comprehensive": {
-          "count": 5,
-          "avg_time_ms": 12.53215979981178,
-          "median_time_ms": 10.650349800198455,
-          "min_time_ms": 3.401905799546512,
-          "max_time_ms": 27.88708619955287,
-          "std_dev_ms": 9.123005697832705
+          "count": 6,
+          "avg_time_ms": 30.851266667984117,
+          "median_time_ms": 12.464590001036413,
+          "min_time_ms": 3.180999995674938,
+          "max_time_ms": 116.4404200098943,
+          "std_dev_ms": 42.76899825434243
         }
       },
       "by_dataset_size": {
         "small": {
           "count": 5,
-          "avg_time_ms": 2.750562913279282,
-          "median_time_ms": 2.6195076247859106,
-          "min_time_ms": 2.1385412001109216,
-          "max_time_ms": 3.401905799546512,
-          "std_dev_ms": 0.5089612437306616
+          "avg_time_ms": 3.050455166521715,
+          "median_time_ms": 2.971712499856949,
+          "min_time_ms": 2.3499733360949904,
+          "max_time_ms": 3.9516500000900123,
+          "std_dev_ms": 0.589455933818095
         },
         "medium": {
           "count": 15,
-          "avg_time_ms": 8.771537362794739,
-          "median_time_ms": 8.445950375289613,
-          "min_time_ms": 7.277897499761821,
-          "max_time_ms": 10.997200599740609,
-          "std_dev_ms": 1.1809512454889832
+          "avg_time_ms": 9.992864333067295,
+          "median_time_ms": 9.71914999827277,
+          "min_time_ms": 6.95671333038869,
+          "max_time_ms": 14.052787497348618,
+          "std_dev_ms": 2.0676116527930746
         },
         "large": {
-          "count": 5,
-          "avg_time_ms": 22.35890644162585,
-          "median_time_ms": 21.485700299854216,
-          "min_time_ms": 16.594915333431953,
-          "max_time_ms": 27.88708619955287,
-          "std_dev_ms": 5.218493356088655
+          "count": 10,
+          "avg_time_ms": 61.61421275103445,
+          "median_time_ms": 59.131624999281485,
+          "min_time_ms": 19.54887333170821,
+          "max_time_ms": 116.4404200098943,
+          "std_dev_ms": 40.234643865679786
         }
       },
       "by_language": {
         "pt": {
-          "count": 20,
-          "avg_time_ms": 7.2662937504158736,
-          "median_time_ms": 8.15353820425268,
-          "min_time_ms": 2.1385412001109216,
-          "max_time_ms": 10.997200599740609,
-          "std_dev_ms": 2.8700514204638936
+          "count": 25,
+          "avg_time_ms": 26.415854500005178,
+          "median_time_ms": 9.71914999827277,
+          "min_time_ms": 2.3499733360949904,
+          "max_time_ms": 116.4404200098943,
+          "std_dev_ms": 37.47800475739107
         },
         "en": {
           "count": 5,
-          "avg_time_ms": 22.35890644162585,
-          "median_time_ms": 21.485700299854216,
-          "min_time_ms": 16.594915333431953,
-          "max_time_ms": 27.88708619955287,
-          "std_dev_ms": 5.218493356088655
+          "avg_time_ms": 24.178201167766627,
+          "median_time_ms": 24.264270006096922,
+          "min_time_ms": 19.54887333170821,
+          "max_time_ms": 29.075600003125146,
+          "std_dev_ms": 3.8696352239552207
         }
       }
     },
     "quality": {
-      "overall_avg_coverage": 0.49,
+      "overall_avg_coverage": 0.41944444444444445,
       "by_config": {
         "standard": {
-          "count": 5,
-          "avg_coverage": 0.54,
+          "count": 6,
+          "avg_coverage": 0.46111111111111114,
           "avg_keywords": 20,
-          "coverage_samples": 5,
-          "keyword_samples": 5
+          "coverage_samples": 6,
+          "keyword_samples": 6
         },
         "high_precision": {
-          "count": 5,
-          "avg_coverage": 0.45666666666666667,
+          "count": 6,
+          "avg_coverage": 0.39166666666666666,
           "avg_keywords": 15,
-          "coverage_samples": 5,
-          "keyword_samples": 5
+          "coverage_samples": 6,
+          "keyword_samples": 6
         },
         "high_recall": {
-          "count": 5,
-          "avg_coverage": 0.5066666666666667,
+          "count": 6,
+          "avg_coverage": 0.43333333333333335,
           "avg_keywords": 25,
-          "coverage_samples": 5,
-          "keyword_samples": 5
+          "coverage_samples": 6,
+          "keyword_samples": 6
         },
         "fast_extraction": {
-          "count": 5,
-          "avg_coverage": 0.44,
+          "count": 6,
+          "avg_coverage": 0.37777777777777777,
           "avg_keywords": 10,
-          "coverage_samples": 5,
-          "keyword_samples": 5
+          "coverage_samples": 6,
+          "keyword_samples": 6
         },
         "comprehensive": {
-          "count": 5,
-          "avg_coverage": 0.5066666666666667,
+          "count": 6,
+          "avg_coverage": 0.43333333333333335,
           "avg_keywords": 30,
-          "coverage_samples": 5,
-          "keyword_samples": 5
+          "coverage_samples": 6,
+          "keyword_samples": 6
         }
       },
       "by_dataset_size": {
@@ -158,11 +158,11 @@
           "keyword_samples": 15
         },
         "large": {
-          "count": 5,
-          "avg_coverage": 0.9,
+          "count": 10,
+          "avg_coverage": 0.48333333333333334,
           "avg_keywords": 20,
-          "coverage_samples": 5,
-          "keyword_samples": 5
+          "coverage_samples": 10,
+          "keyword_samples": 10
         }
       }
     },
@@ -190,22 +190,22 @@
         },
         "performance": {
           "iterations": 10,
-          "avg_time_ms": 2.1385412001109216,
-          "median_time_ms": 2.1161715003472636,
-          "min_time_ms": 1.8541240006015869,
-          "max_time_ms": 2.488133999577258,
-          "std_dev_ms": 0.18797620917181787,
+          "avg_time_ms": 2.7979400008916855,
+          "median_time_ms": 2.6360500196460634,
+          "min_time_ms": 2.459299983456731,
+          "max_time_ms": 4.209600010653958,
+          "std_dev_ms": 0.5330369786144405,
           "times_ms": [
-            2.2131160003482364,
-            2.1469130006153136,
-            2.488133999577258,
-            2.3124950002966216,
-            2.0854300000792136,
-            2.0812900002056267,
-            1.9848249994538492,
-            2.263825999762048,
-            1.8541240006015869,
-            1.9552590001694625
+            2.4615000002086163,
+            2.601300016976893,
+            2.670800022315234,
+            2.461899974150583,
+            2.4890000058803707,
+            2.459299983456731,
+            2.8273000207263976,
+            4.209600010653958,
+            2.7382999833207577,
+            3.060399991227314
           ]
         },
         "quality": {
@@ -292,7 +292,7 @@
           "hit_rate": 0
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:17.612129"
+        "timestamp": "2025-09-25T17:29:57.513768"
       },
       "standard_ciencia_dados_medio": {
         "status": "success",
@@ -317,22 +317,22 @@
         },
         "performance": {
           "iterations": 10,
-          "avg_time_ms": 7.3805867998089525,
-          "median_time_ms": 7.198096499450912,
-          "min_time_ms": 6.715006999002071,
-          "max_time_ms": 8.672998999827541,
-          "std_dev_ms": 0.6122585768504487,
+          "avg_time_ms": 7.433469998068176,
+          "median_time_ms": 6.926650006789714,
+          "min_time_ms": 5.722199974115938,
+          "max_time_ms": 12.053899990860373,
+          "std_dev_ms": 1.9629187663797352,
           "times_ms": [
-            7.428981998600648,
-            8.672998999827541,
-            8.081460000539664,
-            7.6913989996683085,
-            7.001788999332348,
-            7.1257609997701366,
-            6.715006999002071,
-            7.270431999131688,
-            6.859319000795949,
-            6.95872000142117
+            7.1820000011939555,
+            8.147499989718199,
+            12.053899990860373,
+            8.697400015080348,
+            8.173200010787696,
+            5.8939000009559095,
+            5.722199974115938,
+            6.671300012385473,
+            5.833299976075068,
+            5.9600000095088035
           ]
         },
         "quality": {
@@ -414,7 +414,7 @@
           "hit_rate": 90.9090909090909
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:17.705916"
+        "timestamp": "2025-09-25T17:29:57.596496"
       },
       "standard_tech_english_large": {
         "status": "success",
@@ -439,22 +439,22 @@
         },
         "performance": {
           "iterations": 10,
-          "avg_time_ms": 21.485700299854216,
-          "median_time_ms": 21.450917999572994,
-          "min_time_ms": 19.14470799965784,
-          "max_time_ms": 24.898510000639362,
-          "std_dev_ms": 1.869614787585937,
+          "avg_time_ms": 24.264270006096922,
+          "median_time_ms": 23.592700003064238,
+          "min_time_ms": 19.744200020795688,
+          "max_time_ms": 37.62560000177473,
+          "std_dev_ms": 5.252009830362887,
           "times_ms": [
-            21.183470998948906,
-            21.718365000197082,
-            20.98592699985602,
-            19.14470799965784,
-            19.743652001125156,
-            21.726163999119308,
-            23.930023999128025,
-            24.898510000639362,
-            22.145980999994208,
-            19.38020099987625
+            37.62560000177473,
+            25.798300019232556,
+            19.744200020795688,
+            20.78270001220517,
+            25.057699996978045,
+            23.632199998246506,
+            25.78900000662543,
+            23.55320000788197,
+            20.286799990572035,
+            20.373000006657094
           ]
         },
         "quality": {
@@ -551,7 +551,7 @@
           "hit_rate": 0
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:17.970730"
+        "timestamp": "2025-09-25T17:29:57.871785"
       },
       "standard_medicina_especializada": {
         "status": "success",
@@ -576,22 +576,22 @@
         },
         "performance": {
           "iterations": 10,
-          "avg_time_ms": 8.348834599746624,
-          "median_time_ms": 8.53804249982204,
-          "min_time_ms": 6.381045999660273,
-          "max_time_ms": 9.812872000111383,
-          "std_dev_ms": 1.1316036302404866,
+          "avg_time_ms": 9.932540002046153,
+          "median_time_ms": 9.406599987414666,
+          "min_time_ms": 8.468700019875541,
+          "max_time_ms": 12.164499989012256,
+          "std_dev_ms": 1.3877176970967284,
           "times_ms": [
-            6.632799999351846,
-            6.381045999660273,
-            9.810724999624654,
-            9.812872000111383,
-            8.729215000130353,
-            8.680724000441842,
-            8.049234998907195,
-            8.60855700011598,
-            8.467527999528102,
-            8.315643999594613
+            11.996699991868809,
+            10.62030001776293,
+            9.384199976921082,
+            9.42899999790825,
+            12.164499989012256,
+            10.828700003912672,
+            8.624100009910762,
+            9.286000014981255,
+            8.523199998307973,
+            8.468700019875541
           ]
         },
         "quality": {
@@ -672,7 +672,7 @@
           "hit_rate": 90.9090909090909
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:18.075151"
+        "timestamp": "2025-09-25T17:29:57.981433"
       },
       "standard_economia_sustentavel": {
         "status": "success",
@@ -697,22 +697,22 @@
         },
         "performance": {
           "iterations": 10,
-          "avg_time_ms": 8.925041400107148,
-          "median_time_ms": 8.235343500018644,
-          "min_time_ms": 6.0373810010787565,
-          "max_time_ms": 20.83083599973179,
-          "std_dev_ms": 4.304170030338648,
+          "avg_time_ms": 9.71914999827277,
+          "median_time_ms": 8.826200006296858,
+          "min_time_ms": 8.020400011446327,
+          "max_time_ms": 13.582099985796958,
+          "std_dev_ms": 1.833303432714176,
           "times_ms": [
-            6.779784000173095,
-            9.072056998775224,
-            20.83083599973179,
-            8.244262000516756,
-            8.226424999520532,
-            8.387978999962797,
-            8.405116999711026,
-            6.0373810010787565,
-            6.5697160007403,
-            6.6968570008612005
+            11.118900001747534,
+            13.582099985796958,
+            10.359799984144047,
+            11.37880000169389,
+            9.066099999472499,
+            8.586300013121217,
+            8.486300008371472,
+            8.15759997931309,
+            8.020400011446327,
+            8.435199997620657
           ]
         },
         "quality": {
@@ -796,7 +796,139 @@
           "hit_rate": 90.9090909090909
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:18.183383"
+        "timestamp": "2025-09-25T17:29:58.091491"
+      },
+      "standard_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "standard",
+          "description": "Configuração padrão balanceada",
+          "config": {
+            "n": 3,
+            "top": 20,
+            "dedup_lim": 0.7,
+            "window_size": 1
+          },
+          "iterations": 10
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 10,
+          "avg_time_ms": 89.18764999543782,
+          "median_time_ms": 88.47910001350101,
+          "min_time_ms": 77.93180001317523,
+          "max_time_ms": 98.46539999125525,
+          "std_dev_ms": 7.6751066729123645,
+          "times_ms": [
+            88.27320000273176,
+            94.97469998314045,
+            84.37289998983033,
+            77.96319999033585,
+            98.46539999125525,
+            88.68500002427027,
+            77.93180001317523,
+            86.86340000713244,
+            96.58289997605607,
+            97.76399997645058
+          ]
+        },
+        "quality": {
+          "keywords_count": 20,
+          "keywords_sample": [
+            [
+              "para",
+              0.009554178995802144
+            ],
+            [
+              "Google Colab",
+              0.01100029534164437
+            ],
+            [
+              "Documentação",
+              0.012053323365871157
+            ],
+            [
+              "documentação técnica",
+              0.014611960868169665
+            ],
+            [
+              "projeto",
+              0.016731160625814482
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 10,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.009554178995802144,
+            "max_score": 0.040971914152641335,
+            "avg_score": 0.025505881480929575,
+            "score_range": 0.03141773515683919,
+            "score_distribution": {
+              "0.0-0.1": 20,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "para",
+            "Google Colab",
+            "Documentação",
+            "documentação técnica",
+            "projeto",
+            "qualquer biblio tecadesoftware",
+            "YAKE",
+            "representa umaspeto fundamental",
+            "para Google Colab",
+            "Google Colab para"
+          ]
+        },
+        "cache_stats": {
+          "hits": 10,
+          "misses": 1,
+          "hit_rate": 90.9090909090909
+        },
+        "profiling": {},
+        "timestamp": "2025-09-25T17:29:59.111756"
       },
       "high_precision_tecnologia_curta": {
         "status": "success",
@@ -821,20 +953,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 2.6195076247859106,
-          "median_time_ms": 2.5869659993986716,
-          "min_time_ms": 2.318529001058778,
-          "max_time_ms": 3.0852950003463775,
-          "std_dev_ms": 0.22775777734032562,
+          "avg_time_ms": 2.971712499856949,
+          "median_time_ms": 2.660500002093613,
+          "min_time_ms": 2.4698000052012503,
+          "max_time_ms": 3.940800001146272,
+          "std_dev_ms": 0.5851335499981296,
           "times_ms": [
-            2.542389000154799,
-            2.437324999846169,
-            2.318529001058778,
-            3.0852950003463775,
-            2.6744169990706723,
-            2.6000699999713106,
-            2.5738619988260325,
-            2.7241739990131464
+            2.592400007415563,
+            2.4698000052012503,
+            2.7285999967716634,
+            2.530300000216812,
+            2.4966000055428594,
+            3.5696999984793365,
+            3.940800001146272,
+            3.4454999840818346
           ]
         },
         "quality": {
@@ -921,7 +1053,7 @@
           "hit_rate": 0
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:18.218768"
+        "timestamp": "2025-09-25T17:29:59.148071"
       },
       "high_precision_ciencia_dados_medio": {
         "status": "success",
@@ -946,20 +1078,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 8.096994875131713,
-          "median_time_ms": 8.170247499947436,
-          "min_time_ms": 6.282455000473419,
-          "max_time_ms": 9.987385999920662,
-          "std_dev_ms": 1.0766921134606802,
+          "avg_time_ms": 8.310225002787774,
+          "median_time_ms": 7.429949997458607,
+          "min_time_ms": 6.744100013747811,
+          "max_time_ms": 11.893899994902313,
+          "std_dev_ms": 1.8299257173468806,
           "times_ms": [
-            6.282455000473419,
-            8.178148998922552,
-            8.16234600097232,
-            9.987385999920662,
-            7.875674000388244,
-            7.281666001290432,
-            8.814455999527127,
-            8.19382699955895
+            8.979000005638227,
+            11.893899994902313,
+            9.964700002456084,
+            7.292299997061491,
+            7.168200012529269,
+            6.871999998111278,
+            6.744100013747811,
+            7.567599997855723
           ]
         },
         "quality": {
@@ -1041,7 +1173,7 @@
           "hit_rate": 88.88888888888889
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:18.302564"
+        "timestamp": "2025-09-25T17:29:59.224385"
       },
       "high_precision_tech_english_large": {
         "status": "success",
@@ -1066,20 +1198,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 18.2353345003321,
-          "median_time_ms": 16.312945500430942,
-          "min_time_ms": 15.716984000391676,
-          "max_time_ms": 23.959375999766053,
-          "std_dev_ms": 3.0927246383719655,
+          "avg_time_ms": 21.31682499384624,
+          "median_time_ms": 20.497000004979782,
+          "min_time_ms": 18.353399995248765,
+          "max_time_ms": 24.740900000324473,
+          "std_dev_ms": 2.309977229473332,
           "times_ms": [
-            23.959375999766053,
-            20.475122999414452,
-            16.30060599927674,
-            16.325285001585144,
-            15.716984000391676,
-            16.056914000728284,
-            16.229922001002706,
-            20.818466000491753
+            23.1797999877017,
+            23.89509999193251,
+            24.740900000324473,
+            19.69779998762533,
+            18.353399995248765,
+            20.321000018157065,
+            19.673599977977574,
+            20.6729999918025
           ]
         },
         "quality": {
@@ -1174,7 +1306,7 @@
           "hit_rate": 0
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:18.477408"
+        "timestamp": "2025-09-25T17:29:59.422044"
       },
       "high_precision_medicina_especializada": {
         "status": "success",
@@ -1199,20 +1331,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 9.631802874764617,
-          "median_time_ms": 8.665282499350724,
-          "min_time_ms": 8.18783900103881,
-          "max_time_ms": 16.265301999737858,
-          "std_dev_ms": 2.728022868290452,
+          "avg_time_ms": 11.587575001613004,
+          "median_time_ms": 10.176550000323914,
+          "min_time_ms": 8.121399994706735,
+          "max_time_ms": 21.823800023412332,
+          "std_dev_ms": 4.50001623116495,
           "times_ms": [
-            9.728533999805222,
-            16.265301999737858,
-            8.961874998931307,
-            8.36868499936827,
-            8.211623000534019,
-            8.8490729995101,
-            8.18783900103881,
-            8.481491999191348
+            8.802199998172,
+            8.975000004284084,
+            11.804300011135638,
+            13.057799980742857,
+            8.121399994706735,
+            8.738000004086643,
+            11.378099996363744,
+            21.823800023412332
           ]
         },
         "quality": {
@@ -1293,7 +1425,7 @@
           "hit_rate": 88.88888888888889
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:18.579258"
+        "timestamp": "2025-09-25T17:29:59.531542"
       },
       "high_precision_economia_sustentavel": {
         "status": "success",
@@ -1318,20 +1450,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 8.445950375289613,
-          "median_time_ms": 8.075752999502583,
-          "min_time_ms": 7.7297560001170496,
-          "max_time_ms": 10.584945999653428,
-          "std_dev_ms": 0.980059920368311,
+          "avg_time_ms": 9.35378749636584,
+          "median_time_ms": 9.331850000307895,
+          "min_time_ms": 7.716699998127297,
+          "max_time_ms": 12.37740000942722,
+          "std_dev_ms": 1.496034184514416,
           "times_ms": [
-            10.584945999653428,
-            9.180901000945596,
-            8.208773999285768,
-            7.942731999719399,
-            7.882797001002473,
-            7.7297560001170496,
-            8.24663999992481,
-            7.791057001668378
+            7.716699998127297,
+            12.37740000942722,
+            9.626599989132956,
+            10.155500000109896,
+            9.037100011482835,
+            8.201099990401417,
+            8.081199979642406,
+            9.634699992602691
           ]
         },
         "quality": {
@@ -1412,7 +1544,137 @@
           "hit_rate": 0
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:18.669681"
+        "timestamp": "2025-09-25T17:29:59.621544"
+      },
+      "high_precision_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "high_precision",
+          "description": "Alta precisão com deduplicação rigorosa",
+          "config": {
+            "n": 3,
+            "top": 15,
+            "dedup_lim": 0.8,
+            "window_size": 2
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 100.44871250283904,
+          "median_time_ms": 100.95049999654293,
+          "min_time_ms": 87.7098000200931,
+          "max_time_ms": 122.17919999966398,
+          "std_dev_ms": 10.97062513425166,
+          "times_ms": [
+            101.30070001468994,
+            94.36339998501353,
+            122.17919999966398,
+            87.7098000200931,
+            101.14230000181124,
+            89.1706999973394,
+            106.96490001282655,
+            100.75869999127463
+          ]
+        },
+        "quality": {
+          "keywords_count": 15,
+          "keywords_sample": [
+            [
+              "para",
+              0.009482122514547107
+            ],
+            [
+              "Google Colab",
+              0.0115026861227545
+            ],
+            [
+              "Documentação",
+              0.012797577809913417
+            ],
+            [
+              "documentação técnica",
+              0.01605441906555025
+            ],
+            [
+              "projeto",
+              0.017893534440234525
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.009482122514547107,
+            "max_score": 0.03569330287981716,
+            "avg_score": 0.02173476474363956,
+            "score_range": 0.02621118036527005,
+            "score_distribution": {
+              "0.0-0.1": 15,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "para",
+            "Google Colab",
+            "Documentação",
+            "documentação técnica",
+            "projeto",
+            "YAKE",
+            "qualquer biblio tecadesoftware",
+            "representa umaspeto fundamental",
+            "para Google Colab",
+            "Google Colab para"
+          ]
+        },
+        "cache_stats": {
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": 0
+        },
+        "profiling": {},
+        "timestamp": "2025-09-25T17:30:00.521896"
       },
       "high_recall_tecnologia_curta": {
         "status": "success",
@@ -1437,20 +1699,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 3.125036875189835,
-          "median_time_ms": 2.7303160004521487,
-          "min_time_ms": 2.372931001445977,
-          "max_time_ms": 4.09457800014934,
-          "std_dev_ms": 0.7725972538393745,
+          "avg_time_ms": 3.9516500000900123,
+          "median_time_ms": 4.227450001053512,
+          "min_time_ms": 2.4803999986033887,
+          "max_time_ms": 4.877200000919402,
+          "std_dev_ms": 0.7558812268348621,
           "times_ms": [
-            2.372931001445977,
-            2.5217120000888826,
-            2.5636629998189164,
-            2.5232570005755406,
-            4.001048999271006,
-            4.026135999083635,
-            4.09457800014934,
-            2.896969001085381
+            3.1952999997884035,
+            4.216400004224852,
+            4.877200000919402,
+            4.2384999978821725,
+            3.999000007752329,
+            4.350200004409999,
+            4.256199987139553,
+            2.4803999986033887
           ]
         },
         "quality": {
@@ -1537,7 +1799,7 @@
           "hit_rate": 88.88888888888889
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:18.709652"
+        "timestamp": "2025-09-25T17:30:00.562893"
       },
       "high_recall_ciencia_dados_medio": {
         "status": "success",
@@ -1562,20 +1824,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 7.277897499761821,
-          "median_time_ms": 7.441881500199088,
-          "min_time_ms": 6.01333499980683,
-          "max_time_ms": 7.958451999002136,
-          "std_dev_ms": 0.6439787010572146,
+          "avg_time_ms": 10.258299997076392,
+          "median_time_ms": 10.929650001344271,
+          "min_time_ms": 7.530399976531044,
+          "max_time_ms": 11.937600007513538,
+          "std_dev_ms": 1.6000787612108953,
           "times_ms": [
-            7.958451999002136,
-            7.381585999610252,
-            6.637517999479314,
-            6.01333499980683,
-            7.784437999362126,
-            7.336890999795287,
-            7.502177000787924,
-            7.608783000250696
+            11.214500002097338,
+            10.644800000591204,
+            9.550900023896247,
+            11.937600007513538,
+            11.57129998318851,
+            11.216899991268292,
+            8.399999991524965,
+            7.530399976531044
           ]
         },
         "quality": {
@@ -1657,7 +1919,7 @@
           "hit_rate": 88.88888888888889
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:18.788936"
+        "timestamp": "2025-09-25T17:30:00.661846"
       },
       "high_recall_tech_english_large": {
         "status": "success",
@@ -1682,20 +1944,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 27.591495874958127,
-          "median_time_ms": 25.945354999748815,
-          "min_time_ms": 23.59743800116121,
-          "max_time_ms": 39.47901600076875,
-          "std_dev_ms": 4.979175909211949,
+          "avg_time_ms": 26.68543750405661,
+          "median_time_ms": 27.311849989928305,
+          "min_time_ms": 21.833700011484325,
+          "max_time_ms": 28.939400013769045,
+          "std_dev_ms": 2.2631125576803903,
           "times_ms": [
-            23.59743800116121,
-            26.877663998675416,
-            26.30994799983455,
-            25.24290600013046,
-            39.47901600076875,
-            28.12307400017744,
-            25.580761999663082,
-            25.521158999254112
+            27.10619999561459,
+            28.545100009068847,
+            21.833700011484325,
+            27.517499984242022,
+            26.32360000279732,
+            27.784100006101653,
+            28.939400013769045,
+            25.433900009375066
           ]
         },
         "quality": {
@@ -1790,7 +2052,7 @@
           "hit_rate": 0
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:19.053010"
+        "timestamp": "2025-09-25T17:30:00.903462"
       },
       "high_recall_medicina_especializada": {
         "status": "success",
@@ -1815,20 +2077,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 9.11652762488302,
-          "median_time_ms": 9.141501999692991,
-          "min_time_ms": 8.341912000105367,
-          "max_time_ms": 10.182070000155363,
-          "std_dev_ms": 0.5236749981765796,
+          "avg_time_ms": 14.052787497348618,
+          "median_time_ms": 13.259400002425537,
+          "min_time_ms": 7.392399973468855,
+          "max_time_ms": 26.906699989922345,
+          "std_dev_ms": 5.644711761511084,
           "times_ms": [
-            8.341912000105367,
-            10.182070000155363,
-            9.26926200008893,
-            8.808739999949466,
-            9.110844999668188,
-            9.172158999717794,
-            8.872312999301357,
-            9.174920000077691
+            13.867200003005564,
+            12.928100011777133,
+            13.59069999307394,
+            14.256700000260025,
+            26.906699989922345,
+            12.51659999252297,
+            10.96390001475811,
+            7.392399973468855
           ]
         },
         "quality": {
@@ -1909,7 +2171,7 @@
           "hit_rate": 88.88888888888889
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:19.143748"
+        "timestamp": "2025-09-25T17:30:01.026506"
       },
       "high_recall_economia_sustentavel": {
         "status": "success",
@@ -1934,20 +2196,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 9.723269125515799,
-          "median_time_ms": 9.530917001029593,
-          "min_time_ms": 9.30545300070662,
-          "max_time_ms": 11.157488999742782,
-          "std_dev_ms": 0.6000082229892955,
+          "avg_time_ms": 9.536950001347577,
+          "median_time_ms": 8.972950003226288,
+          "min_time_ms": 7.04199998290278,
+          "max_time_ms": 12.152900017099455,
+          "std_dev_ms": 1.846149372153682,
           "times_ms": [
-            11.157488999742782,
-            9.462916999837034,
-            9.343845000330475,
-            9.30545300070662,
-            9.690652001154376,
-            9.535799001241685,
-            9.763963000295917,
-            9.526035000817501
+            8.26139998389408,
+            11.832599993795156,
+            12.152900017099455,
+            10.7387000171002,
+            9.383199998410419,
+            8.562700008042157,
+            8.32210000953637,
+            7.04199998290278
           ]
         },
         "quality": {
@@ -2031,7 +2293,137 @@
           "hit_rate": 0
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:19.245616"
+        "timestamp": "2025-09-25T17:30:01.111739"
+      },
+      "high_recall_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "high_recall",
+          "description": "Alto recall com deduplicação relaxada",
+          "config": {
+            "n": 4,
+            "top": 25,
+            "dedup_lim": 0.6,
+            "window_size": 1
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 99.75971249878057,
+          "median_time_ms": 97.10934999748133,
+          "min_time_ms": 89.693999994779,
+          "max_time_ms": 114.32229998172261,
+          "std_dev_ms": 8.588887393464107,
+          "times_ms": [
+            102.98470000270754,
+            114.32229998172261,
+            96.67379999882542,
+            91.64480000617914,
+            89.693999994779,
+            109.5385999942664,
+            97.54489999613725,
+            95.67460001562722
+          ]
+        },
+        "quality": {
+          "keywords_count": 25,
+          "keywords_sample": [
+            [
+              "representa umaspeto fundamental para",
+              0.007309956926618215
+            ],
+            [
+              "para",
+              0.009554178995802144
+            ],
+            [
+              "Google Colab",
+              0.01100029534164437
+            ],
+            [
+              "Documentação",
+              0.012053323365871157
+            ],
+            [
+              "documentação técnica",
+              0.014611960868169665
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.007309956926618215,
+            "max_score": 0.040971914152641335,
+            "avg_score": 0.02440533531193032,
+            "score_range": 0.03366195722602312,
+            "score_distribution": {
+              "0.0-0.1": 25,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "representa umaspeto fundamental para",
+            "para",
+            "Google Colab",
+            "Documentação",
+            "documentação técnica",
+            "projeto",
+            "qualquer biblio tecadesoftware",
+            "YAKE",
+            "representa umaspeto fundamental",
+            "eficaz de qualquer biblio"
+          ]
+        },
+        "cache_stats": {
+          "hits": 8,
+          "misses": 1,
+          "hit_rate": 88.88888888888889
+        },
+        "profiling": {},
+        "timestamp": "2025-09-25T17:30:02.021729"
       },
       "fast_extraction_tecnologia_curta": {
         "status": "success",
@@ -2056,27 +2448,27 @@
         },
         "performance": {
           "iterations": 15,
-          "avg_time_ms": 2.4678230667632306,
-          "median_time_ms": 2.4047749993769685,
-          "min_time_ms": 1.8421849999867845,
-          "max_time_ms": 3.553354999894509,
-          "std_dev_ms": 0.5456072139597303,
+          "avg_time_ms": 2.3499733360949904,
+          "median_time_ms": 2.1533000108320266,
+          "min_time_ms": 1.917100016726181,
+          "max_time_ms": 3.40030001825653,
+          "std_dev_ms": 0.4518569881512012,
           "times_ms": [
-            1.875912999821594,
-            1.8421849999867845,
-            2.025611000135541,
-            1.9403570004214998,
-            1.9344690008438192,
-            2.9184169998188736,
-            2.5673190011730185,
-            2.394030998402741,
-            3.1862900013948092,
-            3.553354999894509,
-            3.123918000710546,
-            2.4047749993769685,
-            2.817949000018416,
-            2.4050259999057744,
-            2.0277309995435644
+            1.9391999812796712,
+            2.0779000187758356,
+            1.917100016726181,
+            1.952299993718043,
+            1.9904999935533851,
+            2.529399993363768,
+            2.1533000108320266,
+            1.9754000240936875,
+            2.1399000252131373,
+            3.40030001825653,
+            2.987599989864975,
+            2.35569998039864,
+            2.9020000074524432,
+            2.314699988346547,
+            2.614299999549985
           ]
         },
         "quality": {
@@ -2163,7 +2555,7 @@
           "hit_rate": 0
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:19.293893"
+        "timestamp": "2025-09-25T17:30:02.062822"
       },
       "fast_extraction_ciencia_dados_medio": {
         "status": "success",
@@ -2188,27 +2580,27 @@
         },
         "performance": {
           "iterations": 15,
-          "avg_time_ms": 7.559376200151746,
-          "median_time_ms": 6.881315999635262,
-          "min_time_ms": 5.864763999852585,
-          "max_time_ms": 16.077240999948117,
-          "std_dev_ms": 2.486856031255529,
+          "avg_time_ms": 6.95671333038869,
+          "median_time_ms": 6.629799987422302,
+          "min_time_ms": 5.9563000104390085,
+          "max_time_ms": 8.862200018484145,
+          "std_dev_ms": 0.8753435085840598,
           "times_ms": [
-            8.608250000179396,
-            8.347877999767661,
-            7.266756001627073,
-            6.881315999635262,
-            5.864763999852585,
-            7.361811000009766,
-            6.37260900111869,
-            5.8913089997076895,
-            6.277361000684323,
-            6.259723999392008,
-            7.204300000012154,
-            7.389250000414904,
-            16.077240999948117,
-            6.805879000239656,
-            6.782194999686908
+            6.1344999994616956,
+            8.787099999608472,
+            8.862200018484145,
+            7.212299999082461,
+            7.643799996003509,
+            6.629799987422302,
+            6.439899996621534,
+            6.9411000004038215,
+            6.583499984117225,
+            6.677299999864772,
+            7.219299994176254,
+            6.466299993917346,
+            6.461099983425811,
+            6.336199992801994,
+            5.9563000104390085
           ]
         },
         "quality": {
@@ -2290,7 +2682,7 @@
           "hit_rate": 0
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:19.423555"
+        "timestamp": "2025-09-25T17:30:02.171782"
       },
       "fast_extraction_tech_english_large": {
         "status": "success",
@@ -2315,27 +2707,27 @@
         },
         "performance": {
           "iterations": 15,
-          "avg_time_ms": 16.594915333431953,
-          "median_time_ms": 17.56639800078119,
-          "min_time_ms": 13.77054099975794,
-          "max_time_ms": 18.43840800029284,
-          "std_dev_ms": 1.653181739207626,
+          "avg_time_ms": 19.54887333170821,
+          "median_time_ms": 18.329799990169704,
+          "min_time_ms": 16.563899989705533,
+          "max_time_ms": 29.92219998850487,
+          "std_dev_ms": 3.426566853715374,
           "times_ms": [
-            15.65552700049011,
-            13.868337000531028,
-            14.758854000319843,
-            14.3454440003552,
-            13.77054099975794,
-            17.13604599899554,
-            17.61954900030105,
-            18.023022999841487,
-            17.83886700104631,
-            18.010507001235965,
-            17.675547998805996,
-            18.43840800029284,
-            17.56639800078119,
-            16.576174999499926,
-            17.640505999224843
+            22.370199993019924,
+            18.511900008888915,
+            17.774400010239333,
+            29.92219998850487,
+            16.744099993957207,
+            17.408100015018135,
+            18.329799990169704,
+            20.987199997762218,
+            20.254000002751127,
+            22.211700008483604,
+            16.563899989705533,
+            17.385699989972636,
+            17.701899982057512,
+            17.550099990330637,
+            19.517900014761835
           ]
         },
         "quality": {
@@ -2432,7 +2824,7 @@
           "hit_rate": 0
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:19.704398"
+        "timestamp": "2025-09-25T17:30:02.498686"
       },
       "fast_extraction_medicina_especializada": {
         "status": "success",
@@ -2457,27 +2849,27 @@
         },
         "performance": {
           "iterations": 15,
-          "avg_time_ms": 8.210081533373645,
-          "median_time_ms": 7.607061999806319,
-          "min_time_ms": 7.298901000467595,
-          "max_time_ms": 15.287264999642503,
-          "std_dev_ms": 2.0128957249993573,
+          "avg_time_ms": 8.36680666737569,
+          "median_time_ms": 7.2791000129655,
+          "min_time_ms": 6.863499991595745,
+          "max_time_ms": 13.743599993176758,
+          "std_dev_ms": 1.9847101923962942,
           "times_ms": [
-            8.033606000026339,
-            9.163207001620322,
-            7.895470000221394,
-            7.517706999351503,
-            7.457289999365457,
-            7.627044000400929,
-            7.4043959994014585,
-            7.365434001258109,
-            7.298901000467595,
-            7.454440999936196,
-            7.751575998554472,
-            7.986420001543593,
-            7.301403999008471,
-            7.607061999806319,
-            15.287264999642503
+            13.743599993176758,
+            11.851900024339557,
+            8.733700000448152,
+            7.561300008092076,
+            8.960399980423972,
+            9.282899991376325,
+            8.217599999625236,
+            7.262099999934435,
+            7.186100003309548,
+            6.863499991595745,
+            7.194200006779283,
+            7.196399994427338,
+            7.041200005915016,
+            7.128099998226389,
+            7.2791000129655
           ]
         },
         "quality": {
@@ -2554,7 +2946,7 @@
           "hit_rate": 0
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:19.847652"
+        "timestamp": "2025-09-25T17:30:02.631951"
       },
       "fast_extraction_economia_sustentavel": {
         "status": "success",
@@ -2579,27 +2971,27 @@
         },
         "performance": {
           "iterations": 15,
-          "avg_time_ms": 7.484890533426854,
-          "median_time_ms": 7.508857999710017,
-          "min_time_ms": 7.079880999299348,
-          "max_time_ms": 8.402727000429877,
-          "std_dev_ms": 0.35230462832955906,
+          "avg_time_ms": 7.9740800041084485,
+          "median_time_ms": 7.747499999823049,
+          "min_time_ms": 5.950600025244057,
+          "max_time_ms": 11.181899986695498,
+          "std_dev_ms": 1.1956474119306268,
           "times_ms": [
-            7.160637000197312,
-            8.402727000429877,
-            7.508857999710017,
-            7.079880999299348,
-            7.173849000537302,
-            7.330018999709864,
-            7.5323190012568375,
-            7.352855000135605,
-            7.763925001199823,
-            7.707938999374164,
-            7.758424999337876,
-            7.149496999772964,
-            7.566469999801484,
-            7.663719999982277,
-            7.12223700065806
+            7.961700001033023,
+            9.519699990050867,
+            11.181899986695498,
+            8.05259999469854,
+            7.747499999823049,
+            7.398999994620681,
+            5.950600025244057,
+            7.288900000276044,
+            8.230900013586506,
+            7.023600017419085,
+            7.278499979292974,
+            7.6080000144429505,
+            7.578600023407489,
+            8.017400017706677,
+            8.772300003329292
           ]
         },
         "quality": {
@@ -2680,7 +3072,144 @@
           "hit_rate": 93.75
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:19.978694"
+        "timestamp": "2025-09-25T17:30:02.765173"
+      },
+      "fast_extraction_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "fast_extraction",
+          "description": "Extração rápida com configuração mínima",
+          "config": {
+            "n": 2,
+            "top": 10,
+            "dedup_lim": 0.9,
+            "window_size": 1
+          },
+          "iterations": 15
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 15,
+          "avg_time_ms": 89.41462666455966,
+          "median_time_ms": 89.04209997854196,
+          "min_time_ms": 78.78559999517165,
+          "max_time_ms": 110.38280001957901,
+          "std_dev_ms": 8.373649635955628,
+          "times_ms": [
+            89.98779999092221,
+            89.04209997854196,
+            83.20290001574904,
+            83.46500000334345,
+            78.78559999517165,
+            110.38280001957901,
+            86.9525000161957,
+            83.01530001335777,
+            98.80249999696389,
+            95.14150000177324,
+            80.81249997485429,
+            97.20190000371076,
+            90.84629997960292,
+            82.53849999164231,
+            91.04219998698682
+          ]
+        },
+        "quality": {
+          "keywords_count": 10,
+          "keywords_sample": [
+            [
+              "para",
+              0.009554178995802144
+            ],
+            [
+              "Google Colab",
+              0.01100029534164437
+            ],
+            [
+              "Documentação",
+              0.012053323365871157
+            ],
+            [
+              "documentação técnica",
+              0.014611960868169665
+            ],
+            [
+              "projeto",
+              0.016731160625814482
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 15,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.009554178995802144,
+            "max_score": 0.034630623005341664,
+            "avg_score": 0.02071200072901801,
+            "score_range": 0.02507644400953952,
+            "score_distribution": {
+              "0.0-0.1": 10,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "para",
+            "Google Colab",
+            "Documentação",
+            "documentação técnica",
+            "projeto",
+            "YAKE",
+            "projeto YAKE",
+            "MDX",
+            "exemplos",
+            "Google"
+          ]
+        },
+        "cache_stats": {
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": 0
+        },
+        "profiling": {},
+        "timestamp": "2025-09-25T17:30:04.221391"
       },
       "comprehensive_tecnologia_curta": {
         "status": "success",
@@ -2705,17 +3234,17 @@
         },
         "performance": {
           "iterations": 5,
-          "avg_time_ms": 3.401905799546512,
-          "median_time_ms": 3.2835900001373375,
-          "min_time_ms": 2.718432999245124,
-          "max_time_ms": 4.542836999462452,
-          "std_dev_ms": 0.6923680399725939,
+          "avg_time_ms": 3.180999995674938,
+          "median_time_ms": 3.1279999820981175,
+          "min_time_ms": 3.0875999946147203,
+          "max_time_ms": 3.3839000097941607,
+          "std_dev_ms": 0.11794480351116406,
           "times_ms": [
-            3.428710999287432,
-            3.035957999600214,
-            2.718432999245124,
-            3.2835900001373375,
-            4.542836999462452
+            3.1786999898031354,
+            3.0875999946147203,
+            3.126800002064556,
+            3.1279999820981175,
+            3.3839000097941607
           ]
         },
         "quality": {
@@ -2802,7 +3331,7 @@
           "hit_rate": 83.33333333333334
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:20.009814"
+        "timestamp": "2025-09-25T17:30:04.246355"
       },
       "comprehensive_ciencia_dados_medio": {
         "status": "success",
@@ -2827,17 +3356,17 @@
         },
         "performance": {
           "iterations": 5,
-          "avg_time_ms": 10.650349800198455,
-          "median_time_ms": 10.375582000051509,
-          "min_time_ms": 9.27900100032275,
-          "max_time_ms": 13.374107000345248,
-          "std_dev_ms": 1.6389961789657852,
+          "avg_time_ms": 12.854939996032044,
+          "median_time_ms": 12.915700004668906,
+          "min_time_ms": 11.633999994955957,
+          "max_time_ms": 13.690299994777888,
+          "std_dev_ms": 0.7730092489335314,
           "times_ms": [
-            13.374107000345248,
-            10.375582000051509,
-            10.739872999693034,
-            9.483186000579735,
-            9.27900100032275
+            13.286799978232011,
+            12.747900007525459,
+            11.633999994955957,
+            13.690299994777888,
+            12.915700004668906
           ]
         },
         "quality": {
@@ -2919,7 +3448,7 @@
           "hit_rate": 83.33333333333334
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:20.082486"
+        "timestamp": "2025-09-25T17:30:04.321693"
       },
       "comprehensive_tech_english_large": {
         "status": "success",
@@ -2944,17 +3473,17 @@
         },
         "performance": {
           "iterations": 5,
-          "avg_time_ms": 27.88708619955287,
-          "median_time_ms": 26.30293000038364,
-          "min_time_ms": 24.58346399907896,
-          "max_time_ms": 33.54842399858171,
-          "std_dev_ms": 3.6051992472176058,
+          "avg_time_ms": 29.075600003125146,
+          "median_time_ms": 31.01150001748465,
+          "min_time_ms": 24.21080000931397,
+          "max_time_ms": 33.20129998610355,
+          "std_dev_ms": 3.862529142887709,
           "times_ms": [
-            24.58346399907896,
-            26.30293000038364,
-            25.73729300092964,
-            29.263319998790394,
-            33.54842399858171
+            31.01150001748465,
+            31.172100018011406,
+            24.21080000931397,
+            33.20129998610355,
+            25.782299984712154
           ]
         },
         "quality": {
@@ -3049,7 +3578,7 @@
           "hit_rate": 83.33333333333334
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:20.257864"
+        "timestamp": "2025-09-25T17:30:04.501444"
       },
       "comprehensive_medicina_especializada": {
         "status": "success",
@@ -3074,17 +3603,17 @@
         },
         "performance": {
           "iterations": 5,
-          "avg_time_ms": 10.997200599740609,
-          "median_time_ms": 10.631608000039705,
-          "min_time_ms": 10.072110000692192,
-          "max_time_ms": 12.165321999418666,
-          "std_dev_ms": 0.8996358115724933,
+          "avg_time_ms": 12.074240006040782,
+          "median_time_ms": 12.154299998655915,
+          "min_time_ms": 9.402800002135336,
+          "max_time_ms": 15.273299999535084,
+          "std_dev_ms": 2.396405745739375,
           "times_ms": [
-            12.165321999418666,
-            11.720262999006081,
-            10.631608000039705,
-            10.3966999995464,
-            10.072110000692192
+            15.273299999535084,
+            13.415000023087487,
+            12.154299998655915,
+            10.125800006790087,
+            9.402800002135336
           ]
         },
         "quality": {
@@ -3165,7 +3694,7 @@
           "hit_rate": 83.33333333333334
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:20.335409"
+        "timestamp": "2025-09-25T17:30:04.581878"
       },
       "comprehensive_economia_sustentavel": {
         "status": "success",
@@ -3190,17 +3719,17 @@
         },
         "performance": {
           "iterations": 5,
-          "avg_time_ms": 9.724256600020453,
-          "median_time_ms": 9.454185001231963,
-          "min_time_ms": 8.956844998465385,
-          "max_time_ms": 10.74431800043385,
-          "std_dev_ms": 0.7561385717343636,
+          "avg_time_ms": 11.481399997137487,
+          "median_time_ms": 10.60380000853911,
+          "min_time_ms": 10.102800006279722,
+          "max_time_ms": 14.61459998972714,
+          "std_dev_ms": 1.849699231314792,
           "times_ms": [
-            10.74431800043385,
-            10.27354399957403,
-            9.454185001231963,
-            9.192391000397038,
-            8.956844998465385
+            10.60380000853911,
+            14.61459998972714,
+            10.40519998059608,
+            11.680600000545382,
+            10.102800006279722
           ]
         },
         "quality": {
@@ -3284,18 +3813,145 @@
           "hit_rate": 0
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:25:20.407947"
+        "timestamp": "2025-09-25T17:30:04.651804"
+      },
+      "comprehensive_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "comprehensive",
+          "description": "Análise comprehensiva com máxima cobertura",
+          "config": {
+            "n": 5,
+            "top": 30,
+            "dedup_lim": 0.5,
+            "window_size": 3
+          },
+          "iterations": 5
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 5,
+          "avg_time_ms": 116.4404200098943,
+          "median_time_ms": 118.94220000249334,
+          "min_time_ms": 108.3175000094343,
+          "max_time_ms": 124.88139999913983,
+          "std_dev_ms": 7.041955503227766,
+          "times_ms": [
+            124.88139999913983,
+            108.3175000094343,
+            118.94220000249334,
+            120.07480001193471,
+            109.9862000264693
+          ]
+        },
+        "quality": {
+          "keywords_count": 30,
+          "keywords_sample": [
+            [
+              "Teamcominformaçõessobrecontribuidores e mantenedores",
+              0.0
+            ],
+            [
+              "troubleshooting e Frequently",
+              0.0
+            ],
+            [
+              "troubleshooting e Frequently Asked",
+              0.0
+            ],
+            [
+              "troubleshooting e Frequently Asked Questions",
+              0.0
+            ],
+            [
+              "eficaz de qualquer biblio tecadesoftware",
+              0.006135835176825598
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 5,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.0,
+            "max_score": 0.03769213099955777,
+            "avg_score": 0.018921919199743124,
+            "score_range": 0.03769213099955777,
+            "score_distribution": {
+              "0.0-0.1": 30,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "Teamcominformaçõessobrecontribuidores e mantenedores",
+            "troubleshooting e Frequently",
+            "troubleshooting e Frequently Asked",
+            "troubleshooting e Frequently Asked Questions",
+            "eficaz de qualquer biblio tecadesoftware",
+            "representa umaspeto fundamental para",
+            "acessível representa umaspeto fundamental para",
+            "para",
+            "utilização eficaz de qualquer biblio",
+            "Google Colab"
+          ]
+        },
+        "cache_stats": {
+          "hits": 0,
+          "misses": 0,
+          "hit_rate": 0
+        },
+        "profiling": {},
+        "timestamp": "2025-09-25T17:30:05.351963"
       }
     },
     "execution_metadata": {
-      "start_time": "2025-09-23T18:25:17.581488",
+      "start_time": "2025-09-25T17:29:57.481638",
       "end_time": null,
       "duration": null,
-      "python_version": "3.10.12 (main, Nov  6 2024, 20:22:13) [GCC 11.4.0]",
+      "python_version": "3.12.1 (tags/v3.12.1:2305ca5, Dec  7 2023, 22:03:25) [MSC v.1937 64 bit (AMD64)]",
       "yake_version": "0.6.0",
-      "hostname": "unknown",
-      "user": "unknown"
+      "hostname": "LAPTOP-DN869CPC",
+      "user": "Tiago"
     },
-    "timestamp": "2025-09-23T18:25:20.408808"
+    "timestamp": "2025-09-25T17:30:05.351963"
   }
 }

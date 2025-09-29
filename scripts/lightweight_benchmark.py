@@ -243,13 +243,25 @@ class LightweightBenchmark:
         
         return stats_dict
     
+    def _classify_text_size(self, text: str) -> str:
+        """Classify text size based on character count."""
+        char_count = len(text)
+        if char_count < 500:
+            return "small"
+        elif char_count < 2000:
+            return "medium"
+        else:
+            return "large"
+    
     def benchmark_extraction(self, text: str, test_name: str, language: str = "en", 
                            ngram_size: int = 3) -> SimpleBenchmarkResult:
         """Benchmark keyword extraction with lightweight metrics."""
         
+        text_size = self._classify_text_size(text)
+        
         if self.config.verbose:
             print(f"\n🧪 {test_name} (n={ngram_size}, lang={language})")
-            print(f"📏 Text length: {len(text):,} chars, {len(text.split()):,} words")
+            print(f"📏 Text length: {len(text):,} chars, {len(text.split()):,} words ({text_size})")
         
         # Create extractor
         extractor = self.KeywordExtractor(lan=language, n=ngram_size)
@@ -431,10 +443,11 @@ class LightweightBenchmark:
             } if any(r.memory_peak for r in self.results) else {"message": "Memory profiling not available"}
         }
 
-    def save_results(self, output_dir: Optional[Path] = None, prefix: str = "lightweight_benchmark") -> Path:
+    def save_results(self, output_dir: Optional[Path] = None, prefix: str = "yake_benchmark_lightweight") -> Path:
         """Save benchmark results with configurable filename prefix and descriptive info."""
         if output_dir is None:
-            output_dir = project_root / ".benchmarks"
+            # Use same directory as benchmark_definitivo for consistency
+            output_dir = project_root / "scripts" / "results"
         
         output_dir.mkdir(exist_ok=True)
         
@@ -445,35 +458,57 @@ class LightweightBenchmark:
         languages = "_".join(sorted(set(r.language for r in self.results))) if self.results else "unknown"
         iterations = self.config.num_iterations
         
-        filename = f"{prefix}_{languages}_{num_tests}tests_{iterations}iter_{timestamp}.json"
+        # Generate hash for consistency with benchmark_definitivo
+        import hashlib
+        results_str = json.dumps([asdict(result) for result in self.results], sort_keys=True, default=str)
+        results_hash = hashlib.md5(results_str.encode()).hexdigest()[:8]
         
-        # Prepare data with summary
+        filename = f"{prefix}_{timestamp}_{results_hash}.json"
+        
+        # Prepare data with summary - match benchmark_definitivo structure
         summary = self._generate_summary()
         
         data = {
-            'summary': summary,
-            'metadata': {
-                'timestamp': timestamp,
-                'human_readable_date': time.strftime("%Y-%m-%d %H:%M:%S"),
-                'benchmark_type': prefix.replace('yake_benchmark_', '').replace('_', ' ').title(),
-                'total_tests': num_tests,
-                'languages_tested': languages.split('_') if languages != 'unknown' else [],
-                'iterations_per_test': iterations,
-                'config': asdict(self.config),
-                'system_info': self.system_info,
-                'yake_path': self.yake_path,
-                'is_local_code': self.is_local
-            },
-            'detailed_results': [asdict(result) for result in self.results]
+            "benchmark_type": "lightweight_robusto",
+            "version": "2.0", 
+            "timestamp": timestamp,
+            "results_hash": results_hash,
+            "data": {
+                "summary": summary,
+                "execution_metadata": {
+                    "timestamp": timestamp,
+                    "human_readable_date": time.strftime("%Y-%m-%d %H:%M:%S"),
+                    "benchmark_type": "lightweight",
+                    "total_tests": num_tests,
+                    "languages_tested": languages.split('_') if languages != 'unknown' else [],
+                    "iterations_per_test": iterations,
+                    "config": asdict(self.config),
+                    "system_info": self.system_info,
+                    "yake_path": self.yake_path,
+                    "is_local_code": self.is_local
+                },
+                "detailed_results": [asdict(result) for result in self.results]
+            }
         }
         
-        # Save JSON
+        # Save JSON with same encoding as benchmark_definitivo
         json_file = output_dir / filename
         with open(json_file, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=2, default=str)
+            json.dump(data, f, indent=2, ensure_ascii=False, default=str)
+        
+        # Create latest link for consistency with benchmark_definitivo
+        latest_path = output_dir / "latest_benchmark_lightweight.json"
+        try:
+            if latest_path.exists():
+                latest_path.unlink()
+            with open(latest_path, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2, ensure_ascii=False, default=str)
+        except Exception:
+            pass  # Silent failure if can't create link
         
         if self.config.verbose:
             print(f"\n💾 Results saved to: {json_file}")
+            print(f"🔗 Latest link: {latest_path}")
         
         return json_file
 

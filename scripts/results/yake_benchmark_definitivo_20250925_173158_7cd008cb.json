@@ -1,168 +1,168 @@
 {
   "benchmark_type": "definitivo_robusto",
   "version": "2.0",
-  "timestamp": "20250923_182041",
-  "results_hash": "19eb80bf",
+  "timestamp": "20250925_173158",
+  "results_hash": "7cd008cb",
   "data": {
     "summary": {
-      "total_tests": 25,
-      "successful_tests": 25,
+      "total_tests": 30,
+      "successful_tests": 30,
       "failed_tests": 0,
       "configurations_tested": 5,
-      "datasets_tested": 5
+      "datasets_tested": 6
     },
     "performance": {
-      "overall_avg_time_ms": 10.690217425341567,
-      "overall_median_time_ms": 9.081501624677912,
-      "fastest_time_ms": 2.409969066745058,
-      "slowest_time_ms": 28.100515600090148,
+      "overall_avg_time_ms": 145.34221019454384,
+      "overall_median_time_ms": 82.91716166810752,
+      "fastest_time_ms": 11.542366668193912,
+      "slowest_time_ms": 473.16731999162585,
       "by_config": {
         "standard": {
-          "count": 5,
-          "avg_time_ms": 9.636707439822203,
-          "median_time_ms": 8.814398899812659,
-          "min_time_ms": 2.745482200225524,
-          "max_time_ms": 20.036458899630816,
-          "std_dev_ms": 6.3554499230537065
+          "count": 6,
+          "avg_time_ms": 77.54993333267824,
+          "median_time_ms": 73.20080500066979,
+          "min_time_ms": 59.73950999323279,
+          "max_time_ms": 115.06259000161663,
+          "std_dev_ms": 19.80917672924186
         },
         "high_precision": {
-          "count": 5,
-          "avg_time_ms": 10.39955334986189,
-          "median_time_ms": 9.245840874655187,
-          "min_time_ms": 3.7304173749816982,
-          "max_time_ms": 21.70396799988339,
-          "std_dev_ms": 6.731824103155486
+          "count": 6,
+          "avg_time_ms": 56.046760416696394,
+          "median_time_ms": 42.97713125015434,
+          "min_time_ms": 39.67001249839086,
+          "max_time_ms": 110.14483750477666,
+          "std_dev_ms": 27.442750660294223
         },
         "high_recall": {
-          "count": 5,
-          "avg_time_ms": 11.523699749977823,
-          "median_time_ms": 10.404980999737745,
-          "min_time_ms": 2.967666499898769,
-          "max_time_ms": 24.183671750279245,
-          "std_dev_ms": 7.761947759850858
+          "count": 6,
+          "avg_time_ms": 177.60417500358017,
+          "median_time_ms": 166.99481875548372,
+          "min_time_ms": 150.7490375006455,
+          "max_time_ms": 240.20301250493503,
+          "std_dev_ms": 33.11254261727445
         },
         "fast_extraction": {
-          "count": 5,
-          "avg_time_ms": 8.838552146747436,
-          "median_time_ms": 8.08551680020173,
-          "min_time_ms": 2.409969066745058,
-          "max_time_ms": 18.07648346669642,
-          "std_dev_ms": 5.702614672039252
+          "count": 6,
+          "avg_time_ms": 27.863045554194183,
+          "median_time_ms": 15.593706665094942,
+          "min_time_ms": 11.542366668193912,
+          "max_time_ms": 85.63815333376017,
+          "std_dev_ms": 28.767163876638474
         },
         "comprehensive": {
-          "count": 5,
-          "avg_time_ms": 13.052574440298486,
-          "median_time_ms": 11.029143600171665,
-          "min_time_ms": 3.691550800431287,
-          "max_time_ms": 28.100515600090148,
-          "std_dev_ms": 9.240096762139606
+          "count": 6,
+          "avg_time_ms": 387.64713666557026,
+          "median_time_ms": 385.0399299961282,
+          "min_time_ms": 291.08569999807514,
+          "max_time_ms": 473.16731999162585,
+          "std_dev_ms": 75.74591844969878
         }
       },
       "by_dataset_size": {
         "small": {
           "count": 5,
-          "avg_time_ms": 3.1090171884564675,
-          "median_time_ms": 2.967666499898769,
-          "min_time_ms": 2.409969066745058,
-          "max_time_ms": 3.7304173749816982,
-          "std_dev_ms": 0.5844419522472009
+          "avg_time_ms": 147.9064993300805,
+          "median_time_ms": 59.73950999323279,
+          "min_time_ms": 11.542366668193912,
+          "max_time_ms": 473.16731999162585,
+          "std_dev_ms": 189.009579392616
         },
         "medium": {
           "count": 15,
-          "avg_time_ms": 9.307283464978456,
-          "median_time_ms": 9.081501624677912,
-          "min_time_ms": 7.2054463998938445,
-          "max_time_ms": 14.105568200102425,
-          "std_dev_ms": 1.7745563417540928
+          "avg_time_ms": 143.97531494465915,
+          "median_time_ms": 71.40552000200842,
+          "min_time_ms": 12.733633331178376,
+          "max_time_ms": 472.3173000093084,
+          "std_dev_ms": 149.19114740461697
         },
         "large": {
-          "count": 5,
-          "avg_time_ms": 22.420219543316005,
-          "median_time_ms": 21.70396799988339,
-          "min_time_ms": 18.07648346669642,
-          "max_time_ms": 28.100515600090148,
-          "std_dev_ms": 3.887123009438534
+          "count": 10,
+          "avg_time_ms": 146.11040850160256,
+          "median_time_ms": 112.60371375319664,
+          "min_time_ms": 26.076706661842763,
+          "max_time_ms": 375.3902400028892,
+          "std_dev_ms": 108.62650595202004
         }
       },
       "by_language": {
         "pt": {
-          "count": 20,
-          "avg_time_ms": 7.757716895847959,
-          "median_time_ms": 8.375719500448515,
-          "min_time_ms": 2.409969066745058,
-          "max_time_ms": 14.105568200102425,
-          "std_dev_ms": 3.158300556120524
+          "count": 25,
+          "avg_time_ms": 146.59012956648561,
+          "median_time_ms": 85.63815333376017,
+          "min_time_ms": 11.542366668193912,
+          "max_time_ms": 473.16731999162585,
+          "std_dev_ms": 141.69059833303766
         },
         "en": {
           "count": 5,
-          "avg_time_ms": 22.420219543316005,
-          "median_time_ms": 21.70396799988339,
-          "min_time_ms": 18.07648346669642,
-          "max_time_ms": 28.100515600090148,
-          "std_dev_ms": 3.887123009438534
+          "avg_time_ms": 139.10261333483504,
+          "median_time_ms": 80.19617000245489,
+          "min_time_ms": 26.076706661842763,
+          "max_time_ms": 375.3902400028892,
+          "std_dev_ms": 140.2780427613964
         }
       }
     },
     "quality": {
-      "overall_avg_coverage": 0.49,
+      "overall_avg_coverage": 0.4638888888888889,
       "by_config": {
         "standard": {
-          "count": 5,
-          "avg_coverage": 0.54,
+          "count": 6,
+          "avg_coverage": 0.46111111111111114,
           "avg_keywords": 20,
-          "coverage_samples": 5,
-          "keyword_samples": 5
+          "coverage_samples": 6,
+          "keyword_samples": 6
         },
         "high_precision": {
-          "count": 5,
-          "avg_coverage": 0.45666666666666667,
+          "count": 6,
+          "avg_coverage": 0.39166666666666666,
           "avg_keywords": 15,
-          "coverage_samples": 5,
-          "keyword_samples": 5
+          "coverage_samples": 6,
+          "keyword_samples": 6
         },
         "high_recall": {
-          "count": 5,
-          "avg_coverage": 0.5066666666666667,
+          "count": 6,
+          "avg_coverage": 0.5027777777777778,
           "avg_keywords": 25,
-          "coverage_samples": 5,
-          "keyword_samples": 5
+          "coverage_samples": 6,
+          "keyword_samples": 6
         },
         "fast_extraction": {
-          "count": 5,
-          "avg_coverage": 0.44,
+          "count": 6,
+          "avg_coverage": 0.37777777777777777,
           "avg_keywords": 10,
-          "coverage_samples": 5,
-          "keyword_samples": 5
+          "coverage_samples": 6,
+          "keyword_samples": 6
         },
         "comprehensive": {
-          "count": 5,
-          "avg_coverage": 0.5066666666666667,
+          "count": 6,
+          "avg_coverage": 0.5861111111111111,
           "avg_keywords": 30,
-          "coverage_samples": 5,
-          "keyword_samples": 5
+          "coverage_samples": 6,
+          "keyword_samples": 6
         }
       },
       "by_dataset_size": {
         "small": {
           "count": 5,
-          "avg_coverage": 0.75,
+          "avg_coverage": 0.85,
           "avg_keywords": 20,
           "coverage_samples": 5,
           "keyword_samples": 5
         },
         "medium": {
           "count": 15,
-          "avg_coverage": 0.26666666666666666,
+          "avg_coverage": 0.3,
           "avg_keywords": 20,
           "coverage_samples": 15,
           "keyword_samples": 15
         },
         "large": {
-          "count": 5,
-          "avg_coverage": 0.9,
+          "count": 10,
+          "avg_coverage": 0.5166666666666667,
           "avg_keywords": 20,
-          "coverage_samples": 5,
-          "keyword_samples": 5
+          "coverage_samples": 10,
+          "keyword_samples": 10
         }
       }
     },
@@ -190,22 +190,22 @@
         },
         "performance": {
           "iterations": 10,
-          "avg_time_ms": 2.745482200225524,
-          "median_time_ms": 2.7715654996427475,
-          "min_time_ms": 2.2408130007534055,
-          "max_time_ms": 3.202505000444944,
-          "std_dev_ms": 0.2893135988386335,
+          "avg_time_ms": 59.73950999323279,
+          "median_time_ms": 59.556149994023144,
+          "min_time_ms": 52.36599998897873,
+          "max_time_ms": 68.58469999860972,
+          "std_dev_ms": 4.835083943087431,
           "times_ms": [
-            2.2408130007534055,
-            2.8419039990694728,
-            3.202505000444944,
-            2.818230999764637,
-            2.5981570015574107,
-            2.5133750004897593,
-            2.506876000552438,
-            3.069381000386784,
-            2.724899999520858,
-            2.938679999715532
+            59.300499997334555,
+            61.79290000000037,
+            52.36599998897873,
+            57.81479997676797,
+            62.06299999030307,
+            53.40109998360276,
+            57.949300011387095,
+            68.58469999860972,
+            64.31099999463186,
+            59.811799990711734
           ]
         },
         "quality": {
@@ -263,11 +263,11 @@
           "scores": {
             "min_score": 0.014191703101852263,
             "max_score": 0.18659495577726268,
-            "avg_score": 0.10151580499277718,
+            "avg_score": 0.10749222771464924,
             "score_range": 0.1724032526754104,
             "score_distribution": {
-              "0.0-0.1": 9,
-              "0.1-0.2": 11,
+              "0.0-0.1": 8,
+              "0.1-0.2": 12,
               "0.2-0.5": 0,
               "0.5-1.0": 0,
               ">1.0": 0
@@ -281,18 +281,16 @@
             "artificial e machine",
             "estão revolucionando",
             "revolucionando a tecnologia",
-            "machine learning",
             "learning estão",
-            "deep learning permitem"
+            "deep learning permitem",
+            "learning permitem análise"
           ]
         },
         "cache_stats": {
-          "hits": 0,
-          "misses": 0,
-          "hit_rate": 0
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:38.775524"
+        "timestamp": "2025-09-25T17:31:24.860044"
       },
       "standard_ciencia_dados_medio": {
         "status": "success",
@@ -317,22 +315,22 @@
         },
         "performance": {
           "iterations": 10,
-          "avg_time_ms": 7.388312699731614,
-          "median_time_ms": 7.128450500204053,
-          "min_time_ms": 6.852917000287562,
-          "max_time_ms": 8.78267599910032,
-          "std_dev_ms": 0.6329161747968344,
+          "avg_time_ms": 71.40552000200842,
+          "median_time_ms": 70.95159999153111,
+          "min_time_ms": 63.51390000781976,
+          "max_time_ms": 81.73210002132691,
+          "std_dev_ms": 5.929018047055065,
           "times_ms": [
-            6.852917000287562,
-            8.15582299946982,
-            8.78267599910032,
-            7.654609999008244,
-            7.213113000034355,
-            6.932027999937418,
-            7.033129999399534,
-            7.298480999452295,
-            7.043788000373752,
-            6.916561000252841
+            80.49820002634078,
+            72.07840000046417,
+            72.89129999116994,
+            70.26839998434298,
+            71.63479999871925,
+            81.73210002132691,
+            68.52910001180135,
+            65.13509998330846,
+            63.51390000781976,
+            67.77389999479055
           ]
         },
         "quality": {
@@ -355,7 +353,7 @@
               0.009964869025671352
             ],
             [
-              "combina estatística",
+              "programação e conhecimento",
               0.020197833145654123
             ]
           ],
@@ -384,9 +382,9 @@
           },
           "scores": {
             "min_score": 0.003716400072569068,
-            "max_score": 0.08356139342567147,
-            "avg_score": 0.03680108823460671,
-            "score_range": 0.0798449933531024,
+            "max_score": 0.08888951556287708,
+            "avg_score": 0.043237161884918836,
+            "score_range": 0.08517311549030801,
             "score_distribution": {
               "0.0-0.1": 20,
               "0.1-0.2": 0,
@@ -400,21 +398,19 @@
             "dados combina estatística",
             "domínio para extrair",
             "para extrair insights",
-            "combina estatística",
             "programação e conhecimento",
             "conhecimento de domínio",
-            "extrair insights",
             "insights valiosos",
-            "valiosos de grandes"
+            "valiosos de grandes",
+            "grandes volumes",
+            "ciência de dados"
           ]
         },
         "cache_stats": {
-          "hits": 20,
-          "misses": 2,
-          "hit_rate": 90.9090909090909
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:38.869646"
+        "timestamp": "2025-09-25T17:31:25.651897"
       },
       "standard_tech_english_large": {
         "status": "success",
@@ -439,22 +435,22 @@
         },
         "performance": {
           "iterations": 10,
-          "avg_time_ms": 20.036458899630816,
-          "median_time_ms": 20.194648999677156,
-          "min_time_ms": 18.602485999508644,
-          "max_time_ms": 20.86786600011692,
-          "std_dev_ms": 0.6939693034789446,
+          "avg_time_ms": 80.19617000245489,
+          "median_time_ms": 81.92135000717826,
+          "min_time_ms": 70.5393000098411,
+          "max_time_ms": 89.19990001595579,
+          "std_dev_ms": 6.80375970094794,
           "times_ms": [
-            20.352420999188325,
-            20.632023999496596,
-            19.815951000055065,
-            19.840762000967516,
-            18.602485999508644,
-            20.86786600011692,
-            19.24483799848531,
-            20.39877099923615,
-            20.036877000165987,
-            20.572592999087647
+            83.18849999341182,
+            70.5393000098411,
+            72.76120001915842,
+            80.6542000209447,
+            89.19990001595579,
+            79.69569999841042,
+            83.58420000877231,
+            70.55659999605268,
+            87.93329997570254,
+            83.84879998629913
           ]
         },
         "quality": {
@@ -546,12 +542,10 @@
           ]
         },
         "cache_stats": {
-          "hits": 0,
-          "misses": 0,
-          "hit_rate": 0
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:39.115746"
+        "timestamp": "2025-09-25T17:31:26.531605"
       },
       "standard_medicina_especializada": {
         "status": "success",
@@ -576,22 +570,22 @@
         },
         "performance": {
           "iterations": 10,
-          "avg_time_ms": 8.814398899812659,
-          "median_time_ms": 8.556166999369452,
-          "min_time_ms": 7.966731000124128,
-          "max_time_ms": 10.95684599931701,
-          "std_dev_ms": 0.826724192571352,
+          "avg_time_ms": 63.899719997425564,
+          "median_time_ms": 63.80629999330267,
+          "min_time_ms": 54.35240000952035,
+          "max_time_ms": 72.68369998200797,
+          "std_dev_ms": 6.921933632737579,
           "times_ms": [
-            8.882788000846631,
-            10.95684599931701,
-            9.166802999970969,
-            8.863839999321499,
-            8.524545999534894,
-            8.498412998960703,
-            7.966731000124128,
-            8.491772001434583,
-            8.20446199941216,
-            8.58778799920401
+            62.45989998569712,
+            58.94570000236854,
+            68.38470001821406,
+            54.35240000952035,
+            72.68369998200797,
+            56.5366999944672,
+            71.79339998401701,
+            57.355099997948855,
+            71.3328999991063,
+            65.15270000090823
           ]
         },
         "quality": {
@@ -642,12 +636,12 @@
           },
           "scores": {
             "min_score": 0.0049651321155615635,
-            "max_score": 0.08956824503587525,
-            "avg_score": 0.030276540379462157,
-            "score_range": 0.0846031129203137,
+            "max_score": 0.108005561794023,
+            "avg_score": 0.03810805484688435,
+            "score_range": 0.10304042967846144,
             "score_distribution": {
-              "0.0-0.1": 20,
-              "0.1-0.2": 0,
+              "0.0-0.1": 18,
+              "0.1-0.2": 2,
               "0.2-0.5": 0,
               "0.5-1.0": 0,
               ">1.0": 0
@@ -663,16 +657,14 @@
             "ambiente e estilo",
             "cada pessoa",
             "medicina de precisão",
-            "precisão representa"
+            "representa uma"
           ]
         },
         "cache_stats": {
-          "hits": 40,
-          "misses": 4,
-          "hit_rate": 90.9090909090909
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:39.228785"
+        "timestamp": "2025-09-25T17:31:27.241608"
       },
       "standard_economia_sustentavel": {
         "status": "success",
@@ -697,22 +689,22 @@
         },
         "performance": {
           "iterations": 10,
-          "avg_time_ms": 9.198884499710402,
-          "median_time_ms": 7.987683999999717,
-          "min_time_ms": 6.7681069995160215,
-          "max_time_ms": 16.635606998534058,
-          "std_dev_ms": 2.971903457135457,
+          "avg_time_ms": 74.99608999933116,
+          "median_time_ms": 72.97609999659471,
+          "min_time_ms": 61.51820000377484,
+          "max_time_ms": 86.73899999121204,
+          "std_dev_ms": 8.135180064337726,
           "times_ms": [
-            6.7681069995160215,
-            7.316245999390958,
-            16.635606998534058,
-            7.926578999104095,
-            7.740328999716439,
-            7.482865999918431,
-            8.665325000038138,
-            8.04878900089534,
-            11.680266999974265,
-            9.72473000001628
+            73.30409999121912,
+            86.73899999121204,
+            72.63589999638498,
+            72.47650000499561,
+            72.6481000019703,
+            64.89730000612326,
+            82.11399998981506,
+            79.55880000372417,
+            61.51820000377484,
+            84.06900000409223
           ]
         },
         "quality": {
@@ -766,12 +758,12 @@
           },
           "scores": {
             "min_score": 0.003019467815276607,
-            "max_score": 0.11381132093170108,
-            "avg_score": 0.038791486231216345,
-            "score_range": 0.11079185311642448,
+            "max_score": 0.1329676225702904,
+            "avg_score": 0.06063917090712607,
+            "score_range": 0.1299481547550138,
             "score_distribution": {
-              "0.0-0.1": 18,
-              "0.1-0.2": 2,
+              "0.0-0.1": 14,
+              "0.1-0.2": 6,
               "0.2-0.5": 0,
               "0.5-1.0": 0,
               ">1.0": 0
@@ -784,19 +776,147 @@
             "como alternativa sustentável",
             "circular emerge como",
             "produção e consumo",
-            "economia circular",
-            "circular emerge",
-            "alternativa sustentável",
-            "sustentável ao modelo"
+            "sustentável ao modelo",
+            "modelo linear",
+            "tradicional de produção",
+            "emerge como"
           ]
         },
         "cache_stats": {
-          "hits": 10,
-          "misses": 1,
-          "hit_rate": 90.9090909090909
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:39.341306"
+        "timestamp": "2025-09-25T17:31:28.081893"
+      },
+      "standard_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "standard",
+          "description": "Configuração padrão balanceada",
+          "config": {
+            "n": 3,
+            "top": 20,
+            "dedup_lim": 0.7,
+            "window_size": 1
+          },
+          "iterations": 10
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 10,
+          "avg_time_ms": 115.06259000161663,
+          "median_time_ms": 113.99225001514424,
+          "min_time_ms": 108.3859000063967,
+          "max_time_ms": 128.85569999343716,
+          "std_dev_ms": 6.346625238164043,
+          "times_ms": [
+            114.05550001654774,
+            108.6488000000827,
+            112.3714999994263,
+            108.3859000063967,
+            113.92900001374073,
+            114.50269998749718,
+            128.85569999343716,
+            117.48420001822524,
+            110.35409997566603,
+            122.03850000514649
+          ]
+        },
+        "quality": {
+          "keywords_count": 20,
+          "keywords_sample": [
+            [
+              "para",
+              0.009554178995802144
+            ],
+            [
+              "Google Colab",
+              0.01100029534164437
+            ],
+            [
+              "Documentação",
+              0.012053323365871157
+            ],
+            [
+              "documentação técnica",
+              0.014611960868169665
+            ],
+            [
+              "projeto",
+              0.016731160625814482
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 10,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.009554178995802144,
+            "max_score": 0.04466866053582548,
+            "avg_score": 0.02786444358116864,
+            "score_range": 0.035114481540023335,
+            "score_distribution": {
+              "0.0-0.1": 20,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "para",
+            "Google Colab",
+            "Documentação",
+            "documentação técnica",
+            "projeto",
+            "qualquer biblio tecadesoftware",
+            "YAKE",
+            "representa umaspeto fundamental",
+            "umaspeto fundamental para",
+            "projeto YAKE"
+          ]
+        },
+        "cache_stats": {
+          "message": "Cache stats não disponíveis"
+        },
+        "profiling": {},
+        "timestamp": "2025-09-25T17:31:29.381504"
       },
       "high_precision_tecnologia_curta": {
         "status": "success",
@@ -821,20 +941,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 3.7304173749816982,
-          "median_time_ms": 3.5376724999878206,
-          "min_time_ms": 2.8654699999606237,
-          "max_time_ms": 4.5197950003057485,
-          "std_dev_ms": 0.5718951290196087,
+          "avg_time_ms": 44.33426249670447,
+          "median_time_ms": 33.46914998837747,
+          "min_time_ms": 30.590200010919943,
+          "max_time_ms": 93.27569999732077,
+          "std_dev_ms": 21.61756851498096,
           "times_ms": [
-            4.5197950003057485,
-            4.093435998584027,
-            3.419901000597747,
-            4.447532999620307,
-            3.593485000237706,
-            3.481859999737935,
-            2.8654699999606237,
-            3.4218590008094907
+            32.13749997667037,
+            30.934699985664338,
+            30.590200010919943,
+            30.951700027799234,
+            93.27569999732077,
+            50.729199982015416,
+            51.25429999316111,
+            34.800800000084564
           ]
         },
         "quality": {
@@ -916,12 +1036,10 @@
           ]
         },
         "cache_stats": {
-          "hits": 0,
-          "misses": 0,
-          "hit_rate": 0
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:39.389152"
+        "timestamp": "2025-09-25T17:31:29.771563"
       },
       "high_precision_ciencia_dados_medio": {
         "status": "success",
@@ -946,20 +1064,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 9.245840874655187,
-          "median_time_ms": 9.016732999953092,
-          "min_time_ms": 8.698699000888155,
-          "max_time_ms": 11.303609999231412,
-          "std_dev_ms": 0.8552798983415523,
+          "avg_time_ms": 39.67001249839086,
+          "median_time_ms": 39.33609998784959,
+          "min_time_ms": 34.89670000271872,
+          "max_time_ms": 47.86940000485629,
+          "std_dev_ms": 4.727121847969158,
           "times_ms": [
-            8.738025000639027,
-            8.78429299882555,
-            9.264913998777047,
-            9.010764999402454,
-            8.698699000888155,
-            9.14371999897412,
-            9.02270100050373,
-            11.303609999231412
+            41.804200009210035,
+            35.408299998380244,
+            36.92439998849295,
+            35.37759999744594,
+            34.89670000271872,
+            41.747799987206236,
+            43.331699998816475,
+            47.86940000485629
           ]
         },
         "quality": {
@@ -1036,12 +1154,10 @@
           ]
         },
         "cache_stats": {
-          "hits": 16,
-          "misses": 2,
-          "hit_rate": 88.88888888888889
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:39.482553"
+        "timestamp": "2025-09-25T17:31:30.141509"
       },
       "high_precision_tech_english_large": {
         "status": "success",
@@ -1066,20 +1182,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 21.70396799988339,
-          "median_time_ms": 21.386164499745064,
-          "min_time_ms": 20.126399000218953,
-          "max_time_ms": 24.525304999770015,
-          "std_dev_ms": 1.350419389814998,
+          "avg_time_ms": 59.15338750128285,
+          "median_time_ms": 51.65044999739621,
+          "min_time_ms": 49.16379999485798,
+          "max_time_ms": 116.4017999835778,
+          "std_dev_ms": 23.16873794926338,
           "times_ms": [
-            22.30307200079551,
-            21.386050999353756,
-            21.38627800013637,
-            20.538413999020122,
-            20.126399000218953,
-            21.237887000097544,
-            24.525304999770015,
-            22.12833799967484
+            116.4017999835778,
+            52.20299999928102,
+            52.55270001362078,
+            51.0978999955114,
+            49.9969000229612,
+            49.54609999549575,
+            52.26490000495687,
+            49.16379999485798
           ]
         },
         "quality": {
@@ -1169,12 +1285,10 @@
           ]
         },
         "cache_stats": {
-          "hits": 0,
-          "misses": 0,
-          "hit_rate": 0
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:39.694905"
+        "timestamp": "2025-09-25T17:31:30.682765"
       },
       "high_precision_medicina_especializada": {
         "status": "success",
@@ -1199,20 +1313,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 9.55625387496184,
-          "median_time_ms": 8.50939549945906,
-          "min_time_ms": 6.4713510000729,
-          "max_time_ms": 21.038148001025547,
-          "std_dev_ms": 4.742511614874834,
+          "avg_time_ms": 41.35806249541929,
+          "median_time_ms": 39.70495000248775,
+          "min_time_ms": 38.21219998644665,
+          "max_time_ms": 51.70689997612499,
+          "std_dev_ms": 4.422805253865781,
           "times_ms": [
-            7.531380999353132,
-            21.038148001025547,
-            9.080022000489407,
-            8.736001000215765,
-            8.45452499925159,
-            8.564265999666532,
-            6.574336999619845,
-            6.4713510000729
+            40.95180000877008,
+            39.169900002889335,
+            38.21219998644665,
+            38.626299996394664,
+            39.63760001352057,
+            39.77229999145493,
+            42.78749998775311,
+            51.70689997612499
           ]
         },
         "quality": {
@@ -1284,16 +1398,14 @@
             "ambiente e estilo",
             "cada pessoa",
             "medicina de precisão",
-            "precisão representa"
+            "representa uma"
           ]
         },
         "cache_stats": {
-          "hits": 16,
-          "misses": 2,
-          "hit_rate": 88.88888888888889
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:39.792970"
+        "timestamp": "2025-09-25T17:31:31.054320"
       },
       "high_precision_economia_sustentavel": {
         "status": "success",
@@ -1318,20 +1430,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 7.761286624827335,
-          "median_time_ms": 7.808184998793877,
-          "min_time_ms": 6.271824000577908,
-          "max_time_ms": 8.975577000455814,
-          "std_dev_ms": 0.8386891722021723,
+          "avg_time_ms": 41.62000000360422,
+          "median_time_ms": 41.96889999730047,
+          "min_time_ms": 39.70809999736957,
+          "max_time_ms": 43.447200005175546,
+          "std_dev_ms": 1.3055625029409599,
           "times_ms": [
-            7.924840998384752,
-            7.269633000760223,
-            7.26565699915227,
-            6.271824000577908,
-            8.465879998766468,
-            7.691528999203001,
-            8.225352001318242,
-            8.975577000455814
+            41.265600011684,
+            42.51769999973476,
+            42.075299978023395,
+            39.70809999736957,
+            39.802600018447265,
+            43.447200005175546,
+            42.28100000182167,
+            41.86250001657754
           ]
         },
         "quality": {
@@ -1382,9 +1494,9 @@
           },
           "scores": {
             "min_score": 0.003019467815276607,
-            "max_score": 0.05089877675769338,
-            "avg_score": 0.019461056735492657,
-            "score_range": 0.04787930894241677,
+            "max_score": 0.059627081994709674,
+            "avg_score": 0.022067154754672753,
+            "score_range": 0.056607614179433066,
             "score_distribution": {
               "0.0-0.1": 15,
               "0.1-0.2": 0,
@@ -1402,17 +1514,143 @@
             "produção e consumo",
             "economia circular",
             "circular emerge",
-            "alternativa sustentável",
-            "sustentável ao modelo"
+            "sustentável ao modelo",
+            "modelo linear"
           ]
         },
         "cache_stats": {
-          "hits": 0,
-          "misses": 0,
-          "hit_rate": 0
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:39.877492"
+        "timestamp": "2025-09-25T17:31:31.441612"
+      },
+      "high_precision_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "high_precision",
+          "description": "Alta precisão com deduplicação rigorosa",
+          "config": {
+            "n": 3,
+            "top": 15,
+            "dedup_lim": 0.8,
+            "window_size": 2
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 110.14483750477666,
+          "median_time_ms": 108.33974998968188,
+          "min_time_ms": 99.9496000004001,
+          "max_time_ms": 122.87459999788553,
+          "std_dev_ms": 7.858336525549329,
+          "times_ms": [
+            99.9496000004001,
+            103.56280000996776,
+            117.33080001431517,
+            105.3072000213433,
+            105.76929998933338,
+            110.91019999003038,
+            115.45420001493767,
+            122.87459999788553
+          ]
+        },
+        "quality": {
+          "keywords_count": 15,
+          "keywords_sample": [
+            [
+              "para",
+              0.009482122514547107
+            ],
+            [
+              "Google Colab",
+              0.0115026861227545
+            ],
+            [
+              "Documentação",
+              0.012797577809913417
+            ],
+            [
+              "documentação técnica",
+              0.01605441906555025
+            ],
+            [
+              "projeto",
+              0.017893534440234525
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.009482122514547107,
+            "max_score": 0.03569330287981716,
+            "avg_score": 0.02173476474363956,
+            "score_range": 0.02621118036527005,
+            "score_distribution": {
+              "0.0-0.1": 15,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "para",
+            "Google Colab",
+            "Documentação",
+            "documentação técnica",
+            "projeto",
+            "YAKE",
+            "qualquer biblio tecadesoftware",
+            "representa umaspeto fundamental",
+            "para Google Colab",
+            "Google Colab para"
+          ]
+        },
+        "cache_stats": {
+          "message": "Cache stats não disponíveis"
+        },
+        "profiling": {},
+        "timestamp": "2025-09-25T17:31:32.435035"
       },
       "high_recall_tecnologia_curta": {
         "status": "success",
@@ -1437,20 +1675,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 2.967666499898769,
-          "median_time_ms": 2.9816064998158254,
-          "min_time_ms": 2.51688699972874,
-          "max_time_ms": 3.364452999448986,
-          "std_dev_ms": 0.28998686089283826,
+          "avg_time_ms": 150.7490375006455,
+          "median_time_ms": 151.64714999264106,
+          "min_time_ms": 140.64349999534898,
+          "max_time_ms": 159.35390000231564,
+          "std_dev_ms": 7.230870230181816,
           "times_ms": [
-            3.0460020007012645,
-            2.765125000223634,
-            3.033340999536449,
-            2.51688699972874,
-            2.7566389999265084,
-            3.364452999448986,
-            2.9298720000952017,
-            3.3290129995293682
+            143.220800004201,
+            144.60260001942515,
+            159.35390000231564,
+            150.27799998642877,
+            153.01629999885336,
+            157.94699999969453,
+            156.93019999889657,
+            140.64349999534898
           ]
         },
         "quality": {
@@ -1473,7 +1711,7 @@
               0.007150812178773481
             ],
             [
-              "learning estão revolucionando",
+              "machine learning estão",
               0.014191703101852263
             ]
           ],
@@ -1484,8 +1722,8 @@
           },
           "coverage": {
             "expected_count": 4,
-            "found_count": 3,
-            "coverage_ratio": 0.75,
+            "found_count": 4,
+            "coverage_ratio": 1.0,
             "found_keywords": [
               [
                 "inteligência artificial",
@@ -1498,22 +1736,24 @@
               [
                 "deep learning",
                 "deep learning permitem análise"
+              ],
+              [
+                "cloud computing",
+                "Cloud computing oferece infraestrutura"
               ]
             ],
-            "missing_keywords": [
-              "cloud computing"
-            ],
-            "interpretation": "Boa"
+            "missing_keywords": [],
+            "interpretation": "Excelente"
           },
           "scores": {
             "min_score": 0.0029202041061023912,
-            "max_score": 0.1837703416113177,
-            "avg_score": 0.0803335881536564,
-            "score_range": 0.1808501375052153,
+            "max_score": 0.2447572861337526,
+            "avg_score": 0.12382053553309057,
+            "score_range": 0.24183708202765022,
             "score_distribution": {
-              "0.0-0.1": 15,
-              "0.1-0.2": 10,
-              "0.2-0.5": 0,
+              "0.0-0.1": 10,
+              "0.1-0.2": 11,
+              "0.2-0.5": 4,
               "0.5-1.0": 0,
               ">1.0": 0
             }
@@ -1523,21 +1763,19 @@
             "Inteligência artificial e machine",
             "revolucionando a tecnologia moderna",
             "estão revolucionando a tecnologia",
-            "learning estão revolucionando",
+            "machine learning estão",
             "artificial e machine learning",
-            "Inteligência artificial",
             "tecnologia moderna",
-            "artificial e machine",
-            "estão revolucionando"
+            "deep learning permitem análise",
+            "learning permitem análise avançada",
+            "Algoritmos de deep learning"
           ]
         },
         "cache_stats": {
-          "hits": 16,
-          "misses": 2,
-          "hit_rate": 88.88888888888889
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:39.918277"
+        "timestamp": "2025-09-25T17:31:33.802503"
       },
       "high_recall_ciencia_dados_medio": {
         "status": "success",
@@ -1562,20 +1800,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 9.081501624677912,
-          "median_time_ms": 8.601214500231436,
-          "min_time_ms": 8.145823998347623,
-          "max_time_ms": 12.231234000864788,
-          "std_dev_ms": 1.3140614035174902,
+          "avg_time_ms": 185.98679999922751,
+          "median_time_ms": 186.19500000204425,
+          "min_time_ms": 172.1996999986004,
+          "max_time_ms": 205.55839998996817,
+          "std_dev_ms": 11.554256812715261,
           "times_ms": [
-            8.571434000259615,
-            12.231234000864788,
-            8.96773999920697,
-            8.51133700052742,
-            9.201473998473375,
-            8.630995000203256,
-            8.391974999540253,
-            8.145823998347623
+            187.66980001237243,
+            197.5263000058476,
+            205.55839998996817,
+            188.9138999977149,
+            172.1996999986004,
+            176.5577000041958,
+            174.74839999340475,
+            184.72019999171607
           ]
         },
         "quality": {
@@ -1590,16 +1828,16 @@
               0.0016330453624578203
             ],
             [
-              "extrair insights valiosos",
-              0.003716400072569068
-            ],
-            [
               "insights valiosos de grandes",
               0.003716400072569068
             ],
             [
               "valiosos de grandes volumes",
               0.003716400072569068
+            ],
+            [
+              "dados combina estatística",
+              0.0063226993622676145
             ]
           ],
           "consistency": {
@@ -1627,12 +1865,12 @@
           },
           "scores": {
             "min_score": 0.0016330453624578203,
-            "max_score": 0.07273424475797818,
-            "avg_score": 0.027310485829450223,
-            "score_range": 0.07110119939552037,
+            "max_score": 0.1459423679060572,
+            "avg_score": 0.055694516665842506,
+            "score_range": 0.14430932254359938,
             "score_distribution": {
-              "0.0-0.1": 25,
-              "0.1-0.2": 0,
+              "0.0-0.1": 19,
+              "0.1-0.2": 6,
               "0.2-0.5": 0,
               "0.5-1.0": 0,
               ">1.0": 0
@@ -1641,23 +1879,21 @@
           "all_keywords": [
             "domínio para extrair insights",
             "para extrair insights valiosos",
-            "extrair insights valiosos",
             "insights valiosos de grandes",
             "valiosos de grandes volumes",
             "dados combina estatística",
             "ciência de dados combina",
             "grandes volumes de dados",
             "conhecimento de domínio para",
-            "domínio para extrair"
+            "programação e conhecimento",
+            "extrair insights"
           ]
         },
         "cache_stats": {
-          "hits": 32,
-          "misses": 4,
-          "hit_rate": 88.88888888888889
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:40.010724"
+        "timestamp": "2025-09-25T17:31:35.471600"
       },
       "high_recall_tech_english_large": {
         "status": "success",
@@ -1682,20 +1918,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 24.183671750279245,
-          "median_time_ms": 22.986533000221243,
-          "min_time_ms": 21.38261700019939,
-          "max_time_ms": 33.61788900110696,
-          "std_dev_ms": 3.9338369194376908,
+          "avg_time_ms": 154.69656250570551,
+          "median_time_ms": 151.4255000074627,
+          "min_time_ms": 143.1833000096958,
+          "max_time_ms": 183.00879999878816,
+          "std_dev_ms": 12.14358518745789,
           "times_ms": [
-            23.870434999480494,
-            22.959335999985342,
-            22.617602999162045,
-            24.283118000312243,
-            33.61788900110696,
-            21.38261700019939,
-            23.013730000457144,
-            21.724646001530346
+            155.15569999115542,
+            150.5712000071071,
+            156.07620001537725,
+            152.27980000781827,
+            143.1833000096958,
+            148.6874000111129,
+            148.61010000458919,
+            183.00879999878816
           ]
         },
         "quality": {
@@ -1718,8 +1954,8 @@
               0.02644378036205716
             ],
             [
-              "fundamentally transformed",
-              0.028765959400917893
+              "technology and business operations",
+              0.03145009892507872
             ]
           ],
           "consistency": {
@@ -1729,8 +1965,8 @@
           },
           "coverage": {
             "expected_count": 6,
-            "found_count": 5,
-            "coverage_ratio": 0.8333333333333334,
+            "found_count": 6,
+            "coverage_ratio": 1.0,
             "found_keywords": [
               [
                 "artificial intelligence",
@@ -1745,6 +1981,10 @@
                 "learning"
               ],
               [
+                "neural networks",
+                "neural networks"
+              ],
+              [
                 "cloud computing",
                 "computing"
               ],
@@ -1753,19 +1993,17 @@
                 "computing"
               ]
             ],
-            "missing_keywords": [
-              "neural networks"
-            ],
+            "missing_keywords": [],
             "interpretation": "Excelente"
           },
           "scores": {
             "min_score": 0.005052225455896268,
-            "max_score": 0.10161487236992772,
-            "avg_score": 0.058929047951466876,
-            "score_range": 0.09656264691403145,
+            "max_score": 0.11874446614211635,
+            "avg_score": 0.07395195543704508,
+            "score_range": 0.11369224068622008,
             "score_distribution": {
-              "0.0-0.1": 23,
-              "0.1-0.2": 2,
+              "0.0-0.1": 17,
+              "0.1-0.2": 8,
               "0.2-0.5": 0,
               "0.5-1.0": 0,
               ">1.0": 0
@@ -1776,21 +2014,19 @@
             "landscape of modern technology",
             "Artificial intelligence",
             "business operations",
-            "fundamentally transformed",
-            "transformed the landscape",
-            "landscape of modern",
-            "Artificial intelligence and machine",
             "technology and business operations",
-            "learning have fundamentally transformed"
+            "learning have fundamentally transformed",
+            "modern technology and business",
+            "machine learning",
+            "intelligence and machine learning",
+            "machine learning have fundamentally"
           ]
         },
         "cache_stats": {
-          "hits": 0,
-          "misses": 0,
-          "hit_rate": 0
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:40.240960"
+        "timestamp": "2025-09-25T17:31:36.881767"
       },
       "high_recall_medicina_especializada": {
         "status": "success",
@@ -1815,20 +2051,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 10.404980999737745,
-          "median_time_ms": 10.369850499955646,
-          "min_time_ms": 9.750273000463494,
-          "max_time_ms": 11.027601998648606,
-          "std_dev_ms": 0.39265296028136415,
+          "avg_time_ms": 240.20301250493503,
+          "median_time_ms": 245.621950016357,
+          "min_time_ms": 217.87500000209548,
+          "max_time_ms": 260.8100000070408,
+          "std_dev_ms": 18.31940959151472,
           "times_ms": [
-            11.027601998648606,
-            10.096064999743248,
-            10.601773999951547,
-            9.750273000463494,
-            10.320618999685394,
-            10.734098999819253,
-            10.29033399936452,
-            10.419082000225899
+            256.9575999805238,
+            255.15750001068227,
+            260.8100000070408,
+            217.87500000209548,
+            249.43680001888424,
+            241.80710001382977,
+            219.3154999986291,
+            220.2646000077948
           ]
         },
         "quality": {
@@ -1879,12 +2115,12 @@
           },
           "scores": {
             "min_score": 0.0008805033330157045,
-            "max_score": 0.07160864134308835,
-            "avg_score": 0.02131134619853094,
-            "score_range": 0.07072813801007265,
+            "max_score": 0.12761905892311964,
+            "avg_score": 0.05212210866954081,
+            "score_range": 0.12673855559010394,
             "score_distribution": {
-              "0.0-0.1": 25,
-              "0.1-0.2": 0,
+              "0.0-0.1": 18,
+              "0.1-0.2": 7,
               "0.2-0.5": 0,
               "0.5-1.0": 0,
               ">1.0": 0
@@ -1896,20 +2132,18 @@
             "vida para cada pessoa",
             "variabilidade individual em genes",
             "medicina de precisão representa",
-            "precisão representa uma",
-            "representa uma abordagem",
-            "uma abordagem revolucionária",
             "abordagem revolucionária que considera",
-            "considera a variabilidade individual"
+            "considera a variabilidade individual",
+            "estilo de vida para",
+            "individual em genes",
+            "ambiente e estilo"
           ]
         },
         "cache_stats": {
-          "hits": 40,
-          "misses": 5,
-          "hit_rate": 88.88888888888889
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:40.349731"
+        "timestamp": "2025-09-25T17:31:39.061565"
       },
       "high_recall_economia_sustentavel": {
         "status": "success",
@@ -1934,20 +2168,20 @@
         },
         "performance": {
           "iterations": 8,
-          "avg_time_ms": 10.980677875295441,
-          "median_time_ms": 11.093854501268652,
-          "min_time_ms": 9.704924999823561,
-          "max_time_ms": 12.075287000698154,
-          "std_dev_ms": 0.6972622125993305,
+          "avg_time_ms": 170.3299000073457,
+          "median_time_ms": 169.1382500139298,
+          "min_time_ms": 157.69979998003691,
+          "max_time_ms": 183.28310002107173,
+          "std_dev_ms": 8.854851524011725,
           "times_ms": [
-            10.847800998817547,
-            9.704924999823561,
-            11.337367001033272,
-            12.075287000698154,
-            11.241687001529499,
-            10.946022001007805,
-            11.250587000176893,
-            10.441746999276802
+            161.49210001458414,
+            167.35860001062974,
+            170.91790001722984,
+            183.28310002107173,
+            177.06320001161657,
+            178.74719999963418,
+            166.0773000039626,
+            157.69979998003691
           ]
         },
         "quality": {
@@ -1966,11 +2200,11 @@
               0.0011625342377229945
             ],
             [
-              "economia circular emerge",
+              "alternativa sustentável ao modelo",
               0.003019467815276607
             ],
             [
-              "alternativa sustentável ao modelo",
+              "sustentável ao modelo linear",
               0.003019467815276607
             ]
           ],
@@ -2001,12 +2235,12 @@
           },
           "scores": {
             "min_score": 0.0011625342377229943,
-            "max_score": 0.06457962066505962,
-            "avg_score": 0.02211501050043709,
-            "score_range": 0.06341708642733662,
+            "max_score": 0.14185339684843343,
+            "avg_score": 0.05606520136490439,
+            "score_range": 0.14069086261071043,
             "score_distribution": {
-              "0.0-0.1": 25,
-              "0.1-0.2": 0,
+              "0.0-0.1": 18,
+              "0.1-0.2": 7,
               "0.2-0.5": 0,
               "0.5-1.0": 0,
               ">1.0": 0
@@ -2016,22 +2250,148 @@
             "emerge como alternativa sustentável",
             "economia circular emerge como",
             "circular emerge como alternativa",
-            "economia circular emerge",
             "alternativa sustentável ao modelo",
             "sustentável ao modelo linear",
             "modelo linear tradicional",
             "linear tradicional de produção",
-            "emerge como alternativa",
-            "como alternativa sustentável"
+            "produção e consumo",
+            "economia circular",
+            "circular emerge"
           ]
         },
         "cache_stats": {
-          "hits": 0,
-          "misses": 0,
-          "hit_rate": 0
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:40.459534"
+        "timestamp": "2025-09-25T17:31:40.606551"
+      },
+      "high_recall_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "high_recall",
+          "description": "Alto recall com deduplicação relaxada",
+          "config": {
+            "n": 4,
+            "top": 25,
+            "dedup_lim": 0.6,
+            "window_size": 1
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 163.65973750362173,
+          "median_time_ms": 166.41730000264943,
+          "min_time_ms": 144.7714999958407,
+          "max_time_ms": 179.4584000017494,
+          "std_dev_ms": 13.723113332824669,
+          "times_ms": [
+            179.4584000017494,
+            179.2589999968186,
+            150.4142000048887,
+            164.00370001792908,
+            144.7714999958407,
+            172.55820002174005,
+            149.9820000026375,
+            168.83089998736978
+          ]
+        },
+        "quality": {
+          "keywords_count": 25,
+          "keywords_sample": [
+            [
+              "representa umaspeto fundamental para",
+              0.007309956926618215
+            ],
+            [
+              "para",
+              0.009554178995802144
+            ],
+            [
+              "Google Colab",
+              0.01100029534164437
+            ],
+            [
+              "Documentação",
+              0.012053323365871157
+            ],
+            [
+              "documentação técnica",
+              0.014611960868169665
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.007309956926618215,
+            "max_score": 0.04531922512579975,
+            "avg_score": 0.028787181576831286,
+            "score_range": 0.03800926819918154,
+            "score_distribution": {
+              "0.0-0.1": 25,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "representa umaspeto fundamental para",
+            "para",
+            "Google Colab",
+            "Documentação",
+            "documentação técnica",
+            "projeto",
+            "qualquer biblio tecadesoftware",
+            "YAKE",
+            "eficaz de qualquer biblio",
+            "Google Colab para execução"
+          ]
+        },
+        "cache_stats": {
+          "message": "Cache stats não disponíveis"
+        },
+        "profiling": {},
+        "timestamp": "2025-09-25T17:31:42.093568"
       },
       "fast_extraction_tecnologia_curta": {
         "status": "success",
@@ -2056,27 +2416,27 @@
         },
         "performance": {
           "iterations": 15,
-          "avg_time_ms": 2.409969066745058,
-          "median_time_ms": 2.4134060004143976,
-          "min_time_ms": 1.9355910008016508,
-          "max_time_ms": 2.9859009991923813,
-          "std_dev_ms": 0.3102805047810187,
+          "avg_time_ms": 11.542366668193912,
+          "median_time_ms": 11.104200006229803,
+          "min_time_ms": 9.942300006514415,
+          "max_time_ms": 16.16559998365119,
+          "std_dev_ms": 1.7125120846396862,
           "times_ms": [
-            1.9355910008016508,
-            2.0866359991487116,
-            2.70224700034305,
-            2.4335790003533475,
-            2.6137159984500613,
-            2.505682999981218,
-            2.289125000970671,
-            2.899848001106875,
-            2.4134060004143976,
-            2.9859009991923813,
-            2.3936489997140598,
-            2.0531949994619936,
-            2.4710719990252983,
-            2.3574960014229873,
-            2.008392000789172
+            11.436700006015599,
+            16.16559998365119,
+            11.193799989996478,
+            10.616799991112202,
+            13.244600006146356,
+            11.213400022825226,
+            11.104200006229803,
+            12.867499986896291,
+            13.514099991880357,
+            10.468300024513155,
+            10.823599994182587,
+            10.378300008596852,
+            10.018000000854954,
+            10.148300003493205,
+            9.942300006514415
           ]
         },
         "quality": {
@@ -2158,12 +2518,10 @@
           ]
         },
         "cache_stats": {
-          "hits": 0,
-          "misses": 0,
-          "hit_rate": 0
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:40.510592"
+        "timestamp": "2025-09-25T17:31:42.277621"
       },
       "fast_extraction_ciencia_dados_medio": {
         "status": "success",
@@ -2188,27 +2546,27 @@
         },
         "performance": {
           "iterations": 15,
-          "avg_time_ms": 8.415345000200128,
-          "median_time_ms": 7.787378001012257,
-          "min_time_ms": 6.79492600102094,
-          "max_time_ms": 15.326658000049065,
-          "std_dev_ms": 2.1950078872369394,
+          "avg_time_ms": 12.733633331178376,
+          "median_time_ms": 12.404599983710796,
+          "min_time_ms": 10.814599983859807,
+          "max_time_ms": 16.06059999903664,
+          "std_dev_ms": 1.5218235137755243,
           "times_ms": [
-            11.204731999896467,
-            8.669418999488698,
-            7.392694000373012,
-            7.787378001012257,
-            7.970190999913029,
-            8.810966999590164,
-            8.20099800148455,
-            7.793238999511232,
-            7.642049000423867,
-            7.169239999711863,
-            7.004783999946085,
-            7.38000599994848,
-            15.326658000049065,
-            7.082894000632223,
-            6.79492600102094
+            14.29890000144951,
+            16.06059999903664,
+            11.893099988810718,
+            11.616000003414229,
+            11.373500019544736,
+            10.814599983859807,
+            12.136500008637086,
+            12.847600009990856,
+            11.954499990679324,
+            12.404599983710796,
+            12.652300007175654,
+            12.42019998608157,
+            12.81879999442026,
+            15.818399988347664,
+            11.894900002516806
           ]
         },
         "quality": {
@@ -2285,12 +2643,10 @@
           ]
         },
         "cache_stats": {
-          "hits": 0,
-          "misses": 0,
-          "hit_rate": 0
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:40.662767"
+        "timestamp": "2025-09-25T17:31:42.486839"
       },
       "fast_extraction_tech_english_large": {
         "status": "success",
@@ -2315,27 +2671,27 @@
         },
         "performance": {
           "iterations": 15,
-          "avg_time_ms": 18.07648346669642,
-          "median_time_ms": 17.941867999979877,
-          "min_time_ms": 17.48320500155387,
-          "max_time_ms": 19.574144998841803,
-          "std_dev_ms": 0.602602488170348,
+          "avg_time_ms": 26.076706661842763,
+          "median_time_ms": 25.386099994648248,
+          "min_time_ms": 22.665900003630668,
+          "max_time_ms": 35.5773999763187,
+          "std_dev_ms": 3.390898407724393,
           "times_ms": [
-            18.84188900112349,
-            17.987275999985286,
-            17.668567999862717,
-            18.015714000284788,
-            17.625397000301746,
-            19.025537998459185,
-            19.574144998841803,
-            17.60724899941124,
-            17.617555999095202,
-            18.004806001044926,
-            18.15930300108448,
-            17.842363000454498,
-            17.48320500155387,
-            17.941867999979877,
-            17.752374998963205
+            29.434099997160956,
+            23.33070000167936,
+            22.90829998673871,
+            35.5773999763187,
+            22.665900003630668,
+            24.593499983893707,
+            25.029699987499043,
+            24.747599993133917,
+            25.789599982090294,
+            23.798599984729663,
+            26.272300019627437,
+            25.512200023513287,
+            25.6803999945987,
+            25.386099994648248,
+            30.424199998378754
           ]
         },
         "quality": {
@@ -2427,12 +2783,10 @@
           ]
         },
         "cache_stats": {
-          "hits": 0,
-          "misses": 0,
-          "hit_rate": 0
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:40.967246"
+        "timestamp": "2025-09-25T17:31:42.905397"
       },
       "fast_extraction_medicina_especializada": {
         "status": "success",
@@ -2457,27 +2811,27 @@
         },
         "performance": {
           "iterations": 15,
-          "avg_time_ms": 8.08551680020173,
-          "median_time_ms": 7.434635999743477,
-          "min_time_ms": 6.08278599975165,
-          "max_time_ms": 14.67433399920992,
-          "std_dev_ms": 2.249883101493312,
+          "avg_time_ms": 15.952506667235866,
+          "median_time_ms": 15.09169998462312,
+          "min_time_ms": 14.160599996102974,
+          "max_time_ms": 19.877600017935038,
+          "std_dev_ms": 2.149327611149964,
           "times_ms": [
-            6.408440000086557,
-            6.08278599975165,
-            6.838724000772345,
-            11.934076999750687,
-            8.410575999732828,
-            7.47970700103906,
-            7.257304001541343,
-            7.881904000896611,
-            7.160019000366447,
-            7.434635999743477,
-            7.3368680004932685,
-            7.2928109984786715,
-            7.625533000464202,
-            7.465033000698895,
-            14.67433399920992
+            17.016600002534688,
+            19.834600010653958,
+            19.83440000913106,
+            14.29439999628812,
+            19.877600017935038,
+            15.10350001626648,
+            14.296700013801455,
+            14.502299978630617,
+            14.160599996102974,
+            14.83239998924546,
+            15.09169998462312,
+            15.959599986672401,
+            14.903700008289889,
+            14.210699999239296,
+            15.36879999912344
           ]
         },
         "quality": {
@@ -2549,12 +2903,10 @@
           ]
         },
         "cache_stats": {
-          "hits": 0,
-          "misses": 0,
-          "hit_rate": 0
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:41.110003"
+        "timestamp": "2025-09-25T17:31:43.165374"
       },
       "fast_extraction_economia_sustentavel": {
         "status": "success",
@@ -2579,27 +2931,27 @@
         },
         "performance": {
           "iterations": 15,
-          "avg_time_ms": 7.2054463998938445,
-          "median_time_ms": 6.954390999453608,
-          "min_time_ms": 6.760053000107291,
-          "max_time_ms": 8.438567001576303,
-          "std_dev_ms": 0.582019910769676,
+          "avg_time_ms": 15.234906662954018,
+          "median_time_ms": 14.777900010813028,
+          "min_time_ms": 13.145399978384376,
+          "max_time_ms": 20.537300006253645,
+          "std_dev_ms": 2.026554984931772,
           "times_ms": [
-            6.789143999412772,
-            8.37807499920018,
-            8.438567001576303,
-            7.445077999364003,
-            7.13410299977113,
-            6.760053000107291,
-            6.954390999453608,
-            7.063596000079997,
-            6.796604999181,
-            6.937406000361079,
-            6.84197999908065,
-            6.771363001462305,
-            7.963714000652544,
-            6.823192999945604,
-            6.984427998759202
+            19.04169999761507,
+            15.875699988100678,
+            14.952900004573166,
+            14.495600014925003,
+            20.537300006253645,
+            15.320699982112274,
+            15.576999983750284,
+            15.116599999601021,
+            14.777900010813028,
+            13.96399998338893,
+            13.145399978384376,
+            14.31520000915043,
+            13.70919999317266,
+            14.346999989356846,
+            13.347400003112853
           ]
         },
         "quality": {
@@ -2675,12 +3027,145 @@
           ]
         },
         "cache_stats": {
-          "hits": 15,
-          "misses": 1,
-          "hit_rate": 93.75
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:41.237972"
+        "timestamp": "2025-09-25T17:31:43.413386"
+      },
+      "fast_extraction_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "fast_extraction",
+          "description": "Extração rápida com configuração mínima",
+          "config": {
+            "n": 2,
+            "top": 10,
+            "dedup_lim": 0.9,
+            "window_size": 1
+          },
+          "iterations": 15
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 15,
+          "avg_time_ms": 85.63815333376017,
+          "median_time_ms": 84.18499998515472,
+          "min_time_ms": 76.51029998669401,
+          "max_time_ms": 99.23789999447763,
+          "std_dev_ms": 6.324139052902952,
+          "times_ms": [
+            80.67530000698753,
+            88.19999999832362,
+            80.74559998931363,
+            85.40349997929297,
+            84.18499998515472,
+            99.23789999447763,
+            83.93190000788309,
+            93.94680001423694,
+            84.52750000287779,
+            86.13700000569224,
+            83.8577999966219,
+            95.99220001837239,
+            80.66500001586974,
+            80.55650000460446,
+            76.51029998669401
+          ]
+        },
+        "quality": {
+          "keywords_count": 10,
+          "keywords_sample": [
+            [
+              "para",
+              0.009554178995802144
+            ],
+            [
+              "Google Colab",
+              0.01100029534164437
+            ],
+            [
+              "Documentação",
+              0.012053323365871157
+            ],
+            [
+              "documentação técnica",
+              0.014611960868169665
+            ],
+            [
+              "projeto",
+              0.016731160625814482
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 15,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.009554178995802144,
+            "max_score": 0.034630623005341664,
+            "avg_score": 0.02071200072901801,
+            "score_range": 0.02507644400953952,
+            "score_distribution": {
+              "0.0-0.1": 10,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "para",
+            "Google Colab",
+            "Documentação",
+            "documentação técnica",
+            "projeto",
+            "YAKE",
+            "projeto YAKE",
+            "MDX",
+            "exemplos",
+            "Google"
+          ]
+        },
+        "cache_stats": {
+          "message": "Cache stats não disponíveis"
+        },
+        "profiling": {},
+        "timestamp": "2025-09-25T17:31:44.801561"
       },
       "comprehensive_tecnologia_curta": {
         "status": "success",
@@ -2705,17 +3190,17 @@
         },
         "performance": {
           "iterations": 5,
-          "avg_time_ms": 3.691550800431287,
-          "median_time_ms": 3.655526999864378,
-          "min_time_ms": 3.2493070011696545,
-          "max_time_ms": 4.422091000378714,
-          "std_dev_ms": 0.4499799425845327,
+          "avg_time_ms": 473.16731999162585,
+          "median_time_ms": 470.99859997979365,
+          "min_time_ms": 442.9035999928601,
+          "max_time_ms": 500.4125999985263,
+          "std_dev_ms": 21.44022453352438,
           "times_ms": [
-            3.2493070011696545,
-            4.422091000378714,
-            3.7195910008449573,
-            3.4112379998987308,
-            3.655526999864378
+            442.9035999928601,
+            500.4125999985263,
+            470.99859997979365,
+            484.7713999915868,
+            466.7503999953624
           ]
         },
         "quality": {
@@ -2734,12 +3219,12 @@
               0.0029202041061023912
             ],
             [
-              "learning estão revolucionando a tecnologia",
-              0.0029202041061023912
+              "tecnologia moderna",
+              0.024472568339564654
             ],
             [
-              "artificial e machine learning estão",
-              0.0029202041061023917
+              "artificial e machine",
+              0.03607367925275576
             ]
           ],
           "consistency": {
@@ -2749,8 +3234,8 @@
           },
           "coverage": {
             "expected_count": 4,
-            "found_count": 3,
-            "coverage_ratio": 0.75,
+            "found_count": 4,
+            "coverage_ratio": 1.0,
             "found_keywords": [
               [
                 "inteligência artificial",
@@ -2763,22 +3248,24 @@
               [
                 "deep learning",
                 "deep learning permitem análise avançada"
+              ],
+              [
+                "cloud computing",
+                "Cloud computing oferece infraestrutura escalável"
               ]
             ],
-            "missing_keywords": [
-              "cloud computing"
-            ],
-            "interpretation": "Boa"
+            "missing_keywords": [],
+            "interpretation": "Excelente"
           },
           "scores": {
             "min_score": 0.0009658561322436235,
-            "max_score": 0.17504612293108807,
-            "avg_score": 0.06391432907476523,
-            "score_range": 0.17408026679884445,
+            "max_score": 0.40565142101606133,
+            "avg_score": 0.16753537836971844,
+            "score_range": 0.4046855648838177,
             "score_distribution": {
-              "0.0-0.1": 21,
+              "0.0-0.1": 10,
               "0.1-0.2": 9,
-              "0.2-0.5": 0,
+              "0.2-0.5": 11,
               "0.5-1.0": 0,
               ">1.0": 0
             }
@@ -2787,22 +3274,20 @@
             "estão revolucionando a tecnologia moderna",
             "Inteligência artificial e machine learning",
             "machine learning estão revolucionando",
-            "learning estão revolucionando a tecnologia",
-            "artificial e machine learning estão",
-            "Inteligência artificial e machine",
-            "revolucionando a tecnologia moderna",
-            "learning estão revolucionando",
-            "artificial e machine learning",
-            "Inteligência artificial"
+            "tecnologia moderna",
+            "artificial e machine",
+            "deep learning permitem análise avançada",
+            "Algoritmos de deep learning permitem",
+            "machine learning",
+            "learning estão",
+            "permitem análise avançada de dados"
           ]
         },
         "cache_stats": {
-          "hits": 20,
-          "misses": 4,
-          "hit_rate": 83.33333333333334
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:41.270704"
+        "timestamp": "2025-09-25T17:31:47.633551"
       },
       "comprehensive_ciencia_dados_medio": {
         "status": "success",
@@ -2827,17 +3312,17 @@
         },
         "performance": {
           "iterations": 5,
-          "avg_time_ms": 8.336094000696903,
-          "median_time_ms": 7.6639649996650405,
-          "min_time_ms": 6.787549000364379,
-          "max_time_ms": 10.908874000961077,
-          "std_dev_ms": 1.79265346954926,
+          "avg_time_ms": 319.2326400021557,
+          "median_time_ms": 324.18379999580793,
+          "min_time_ms": 290.11800000444055,
+          "max_time_ms": 335.4907000029925,
+          "std_dev_ms": 17.87460062698282,
           "times_ms": [
-            10.908874000961077,
-            9.449128001506324,
-            7.6639649996650405,
-            6.787549000364379,
-            6.870954000987695
+            335.4907000029925,
+            330.6102000060491,
+            315.76050000148825,
+            324.18379999580793,
+            290.11800000444055
           ]
         },
         "quality": {
@@ -2845,10 +3330,6 @@
           "keywords_sample": [
             [
               "processo de análise",
-              0.0
-            ],
-            [
-              "processo de análise de dados",
               0.0
             ],
             [
@@ -2860,8 +3341,12 @@
               0.000594993474374908
             ],
             [
-              "insights valiosos de grandes volumes",
-              0.000594993474374908
+              "ciência de dados combina estatística",
+              0.0008935730543446139
+            ],
+            [
+              "conhecimento de domínio para extrair",
+              0.0016330453624578203
             ]
           ],
           "consistency": {
@@ -2889,12 +3374,12 @@
           },
           "scores": {
             "min_score": 0.0,
-            "max_score": 0.06130892181000079,
-            "avg_score": 0.019668701520210018,
-            "score_range": 0.06130892181000079,
+            "max_score": 0.1516265057091737,
+            "avg_score": 0.07304510478516114,
+            "score_range": 0.1516265057091737,
             "score_distribution": {
-              "0.0-0.1": 30,
-              "0.1-0.2": 0,
+              "0.0-0.1": 18,
+              "0.1-0.2": 12,
               "0.2-0.5": 0,
               "0.5-1.0": 0,
               ">1.0": 0
@@ -2902,24 +3387,22 @@
           },
           "all_keywords": [
             "processo de análise",
-            "processo de análise de dados",
             "domínio para extrair insights valiosos",
             "extrair insights valiosos de grandes",
-            "insights valiosos de grandes volumes",
             "ciência de dados combina estatística",
             "conhecimento de domínio para extrair",
-            "para extrair insights valiosos",
             "programação e conhecimento de domínio",
-            "extrair insights valiosos"
+            "valiosos de grandes volumes",
+            "grandes volumes de dados",
+            "são linguagens predominantes nesta área",
+            "oferecendo bibliotecas especializadas como pandas"
           ]
         },
         "cache_stats": {
-          "hits": 40,
-          "misses": 8,
-          "hit_rate": 83.33333333333334
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:41.335483"
+        "timestamp": "2025-09-25T17:31:49.554146"
       },
       "comprehensive_tech_english_large": {
         "status": "success",
@@ -2944,17 +3427,17 @@
         },
         "performance": {
           "iterations": 5,
-          "avg_time_ms": 28.100515600090148,
-          "median_time_ms": 26.535544000580558,
-          "min_time_ms": 25.588268001229153,
-          "max_time_ms": 36.022590998982196,
-          "std_dev_ms": 4.449874445806632,
+          "avg_time_ms": 375.3902400028892,
+          "median_time_ms": 375.46540002222173,
+          "min_time_ms": 341.0186000110116,
+          "max_time_ms": 414.8381999984849,
+          "std_dev_ms": 31.802234126262714,
           "times_ms": [
-            26.56166800079518,
-            26.535544000580558,
-            25.588268001229153,
-            25.794506998863653,
-            36.022590998982196
+            375.46540002222173,
+            414.8381999984849,
+            347.371399984695,
+            341.0186000110116,
+            398.2575999980327
           ]
         },
         "quality": {
@@ -2988,8 +3471,8 @@
           },
           "coverage": {
             "expected_count": 6,
-            "found_count": 5,
-            "coverage_ratio": 0.8333333333333334,
+            "found_count": 6,
+            "coverage_ratio": 1.0,
             "found_keywords": [
               [
                 "artificial intelligence",
@@ -3004,6 +3487,10 @@
                 "learning"
               ],
               [
+                "neural networks",
+                "neural networks"
+              ],
+              [
                 "cloud computing",
                 "computing"
               ],
@@ -3012,19 +3499,17 @@
                 "computing"
               ]
             ],
-            "missing_keywords": [
-              "neural networks"
-            ],
+            "missing_keywords": [],
             "interpretation": "Excelente"
           },
           "scores": {
             "min_score": 0.005052225455896268,
-            "max_score": 0.10161487236992772,
-            "avg_score": 0.054318960808762626,
-            "score_range": 0.09656264691403145,
+            "max_score": 0.15380466451058888,
+            "avg_score": 0.08531812859043345,
+            "score_range": 0.14875243905469263,
             "score_distribution": {
-              "0.0-0.1": 28,
-              "0.1-0.2": 2,
+              "0.0-0.1": 15,
+              "0.1-0.2": 15,
               "0.2-0.5": 0,
               "0.5-1.0": 0,
               ">1.0": 0
@@ -3037,19 +3522,17 @@
             "Artificial intelligence and machine learning",
             "machine learning have fundamentally transformed",
             "landscape of modern technology",
-            "Artificial intelligence and machine",
-            "Artificial intelligence",
             "business operations",
-            "fundamentally transformed"
+            "machine learning",
+            "GPT and BERT have demonstrated",
+            "platforms like Amazon Web Services"
           ]
         },
         "cache_stats": {
-          "hits": 5,
-          "misses": 1,
-          "hit_rate": 83.33333333333334
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:41.518160"
+        "timestamp": "2025-09-25T17:31:51.841714"
       },
       "comprehensive_medicina_especializada": {
         "status": "success",
@@ -3074,17 +3557,17 @@
         },
         "performance": {
           "iterations": 5,
-          "avg_time_ms": 11.029143600171665,
-          "median_time_ms": 10.879704001126811,
-          "min_time_ms": 10.206761000517872,
-          "max_time_ms": 12.66619600028207,
-          "std_dev_ms": 0.9718640966675088,
+          "avg_time_ms": 472.3173000093084,
+          "median_time_ms": 473.3112000103574,
+          "min_time_ms": 421.0621000092942,
+          "max_time_ms": 519.4649000186473,
+          "std_dev_ms": 40.84908125169376,
           "times_ms": [
-            12.66619600028207,
-            10.995048000040697,
-            10.206761000517872,
-            10.398008998890873,
-            10.879704001126811
+            504.03010001173243,
+            443.7181999965105,
+            473.3112000103574,
+            519.4649000186473,
+            421.0621000092942
           ]
         },
         "quality": {
@@ -3099,16 +3582,16 @@
               0.0008805033330157045
             ],
             [
-              "precisão representa uma abordagem",
-              0.0008805033330157045
-            ],
-            [
-              "representa uma abordagem revolucionária",
-              0.0008805033330157045
-            ],
-            [
               "uma abordagem revolucionária que considera",
               0.0008805033330157045
+            ],
+            [
+              "vida para cada pessoa",
+              0.0020023143790296833
+            ],
+            [
+              "estilo de vida para cada",
+              0.0024886194826077897
             ]
           ],
           "consistency": {
@@ -3118,29 +3601,35 @@
           },
           "coverage": {
             "expected_count": 4,
-            "found_count": 1,
-            "coverage_ratio": 0.25,
+            "found_count": 3,
+            "coverage_ratio": 0.75,
             "found_keywords": [
               [
                 "medicina de precisão",
                 "medicina de precisão representa uma"
+              ],
+              [
+                "biomarcadores",
+                "Biomarcadores moleculares são fundamentais para"
+              ],
+              [
+                "telemedicina",
+                "medicina"
               ]
             ],
             "missing_keywords": [
-              "biomarcadores",
-              "imunoterapia",
-              "telemedicina"
+              "imunoterapia"
             ],
-            "interpretation": "Regular"
+            "interpretation": "Boa"
           },
           "scores": {
             "min_score": 0.00015809209968472402,
-            "max_score": 0.06107707966375591,
-            "avg_score": 0.01638929316371639,
-            "score_range": 0.060918987564071186,
+            "max_score": 0.16629677472894347,
+            "avg_score": 0.07554209371501135,
+            "score_range": 0.16613868262925874,
             "score_distribution": {
-              "0.0-0.1": 30,
-              "0.1-0.2": 0,
+              "0.0-0.1": 18,
+              "0.1-0.2": 12,
               "0.2-0.5": 0,
               "0.5-1.0": 0,
               ">1.0": 0
@@ -3149,23 +3638,21 @@
           "all_keywords": [
             "precisão representa uma abordagem revolucionária",
             "medicina de precisão representa uma",
-            "precisão representa uma abordagem",
-            "representa uma abordagem revolucionária",
             "uma abordagem revolucionária que considera",
             "vida para cada pessoa",
             "estilo de vida para cada",
             "ambiente e estilo de vida",
             "variabilidade individual em genes",
-            "precisão representa uma"
+            "representa uma abordagem",
+            "revolucionária que considera a variabilidade",
+            "considera a variabilidade individual"
           ]
         },
         "cache_stats": {
-          "hits": 35,
-          "misses": 7,
-          "hit_rate": 83.33333333333334
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:41.602258"
+        "timestamp": "2025-09-25T17:31:54.671896"
       },
       "comprehensive_economia_sustentavel": {
         "status": "success",
@@ -3190,17 +3677,17 @@
         },
         "performance": {
           "iterations": 5,
-          "avg_time_ms": 14.105568200102425,
-          "median_time_ms": 13.070159000562853,
-          "min_time_ms": 11.482985000839108,
-          "max_time_ms": 20.090148000235786,
-          "std_dev_ms": 3.413980835509129,
+          "avg_time_ms": 394.6896199893672,
+          "median_time_ms": 367.9839999822434,
+          "min_time_ms": 339.6682000020519,
+          "max_time_ms": 494.4987999915611,
+          "std_dev_ms": 61.463588285476774,
           "times_ms": [
-            11.482985000839108,
-            12.6690109991614,
-            13.215537999712978,
-            20.090148000235786,
-            13.070159000562853
+            339.6682000020519,
+            494.4987999915611,
+            410.60039997682907,
+            360.69669999415055,
+            367.9839999822434
           ]
         },
         "quality": {
@@ -3208,10 +3695,6 @@
           "keywords_sample": [
             [
               "economia circular emerge como alternativa",
-              0.00017759546708379692
-            ],
-            [
-              "circular emerge como alternativa sustentável",
               0.00017759546708379692
             ],
             [
@@ -3225,6 +3708,10 @@
             [
               "modelo linear tradicional de produção",
               0.0004494578165155107
+            ],
+            [
+              "emerge como alternativa sustentável",
+              0.0011625342377229943
             ]
           ],
           "consistency": {
@@ -3254,9 +3741,134 @@
           },
           "scores": {
             "min_score": 0.00017759546708379692,
-            "max_score": 0.05089877675769338,
-            "avg_score": 0.012528384690002213,
-            "score_range": 0.05072118129060958,
+            "max_score": 0.1437592273683117,
+            "avg_score": 0.07152907376368435,
+            "score_range": 0.1435816319012279,
+            "score_distribution": {
+              "0.0-0.1": 18,
+              "0.1-0.2": 12,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "economia circular emerge como alternativa",
+            "alternativa sustentável ao modelo linear",
+            "sustentável ao modelo linear tradicional",
+            "modelo linear tradicional de produção",
+            "emerge como alternativa sustentável",
+            "tradicional de produção e consumo",
+            "circular emerge como",
+            "economia circular",
+            "modelo linear",
+            "linear tradicional"
+          ]
+        },
+        "cache_stats": {
+          "message": "Cache stats não disponíveis"
+        },
+        "profiling": {},
+        "timestamp": "2025-09-25T17:31:57.065691"
+      },
+      "comprehensive_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "comprehensive",
+          "description": "Análise comprehensiva com máxima cobertura",
+          "config": {
+            "n": 5,
+            "top": 30,
+            "dedup_lim": 0.5,
+            "window_size": 3
+          },
+          "iterations": 5
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 5,
+          "avg_time_ms": 291.08569999807514,
+          "median_time_ms": 282.1375000057742,
+          "min_time_ms": 273.8268000248354,
+          "max_time_ms": 318.1931999861263,
+          "std_dev_ms": 18.78689237068721,
+          "times_ms": [
+            318.1931999861263,
+            273.8268000248354,
+            282.1375000057742,
+            278.4160999872256,
+            302.85489998641424
+          ]
+        },
+        "quality": {
+          "keywords_count": 30,
+          "keywords_sample": [
+            [
+              "Teamcominformaçõessobrecontribuidores e mantenedores",
+              0.0
+            ],
+            [
+              "troubleshooting e Frequently",
+              0.0
+            ],
+            [
+              "eficaz de qualquer biblio tecadesoftware",
+              0.006135835176825598
+            ],
+            [
+              "representa umaspeto fundamental para",
+              0.006927472322720093
+            ],
+            [
+              "para",
+              0.009126727058478194
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 5,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.0,
+            "max_score": 0.0548066257673928,
+            "avg_score": 0.03177462745835564,
+            "score_range": 0.0548066257673928,
             "score_distribution": {
               "0.0-0.1": 30,
               "0.1-0.2": 0,
@@ -3266,36 +3878,34 @@
             }
           },
           "all_keywords": [
-            "economia circular emerge como alternativa",
-            "circular emerge como alternativa sustentável",
-            "alternativa sustentável ao modelo linear",
-            "sustentável ao modelo linear tradicional",
-            "modelo linear tradicional de produção",
-            "emerge como alternativa sustentável",
-            "como alternativa sustentável ao modelo",
-            "economia circular emerge como",
-            "circular emerge como alternativa",
-            "tradicional de produção e consumo"
+            "Teamcominformaçõessobrecontribuidores e mantenedores",
+            "troubleshooting e Frequently",
+            "eficaz de qualquer biblio tecadesoftware",
+            "representa umaspeto fundamental para",
+            "para",
+            "utilização eficaz de qualquer biblio",
+            "Google Colab",
+            "Documentação",
+            "projeto",
+            "YAKE"
           ]
         },
         "cache_stats": {
-          "hits": 0,
-          "misses": 0,
-          "hit_rate": 0
+          "message": "Cache stats não disponíveis"
         },
         "profiling": {},
-        "timestamp": "2025-09-23T18:20:41.695873"
+        "timestamp": "2025-09-25T17:31:58.811632"
       }
     },
     "execution_metadata": {
-      "start_time": "2025-09-23T18:20:38.734218",
+      "start_time": "2025-09-25T17:31:24.204334",
       "end_time": null,
       "duration": null,
-      "python_version": "3.10.12 (main, Nov  6 2024, 20:22:13) [GCC 11.4.0]",
+      "python_version": "3.12.1 (tags/v3.12.1:2305ca5, Dec  7 2023, 22:03:25) [MSC v.1937 64 bit (AMD64)]",
       "yake_version": "0.6.0",
-      "hostname": "unknown",
-      "user": "unknown"
+      "hostname": "LAPTOP-DN869CPC",
+      "user": "Tiago"
     },
-    "timestamp": "2025-09-23T18:20:41.696963"
+    "timestamp": "2025-09-25T17:31:58.811632"
   }
 }

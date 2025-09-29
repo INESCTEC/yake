@@ -1,0 +1,240 @@
+ Página de Documentação
+ A criação de uma página de documentação moderna e acessível representa
+ umaspeto fundamental para a adoção e utilização eficaz de qualquer biblio
+tecadesoftware. NocontextodoprojetoYAKE!,aimplementaçãodeumapla
+taforma de documentação interativa tornou-se essencial para suportar tanto
+ utilizadores iniciantes quanto desenvolvedores experientes, proporcionando
+ acesso fácil e estruturado à informação técnica, exemplos práticos e recursos
+ de aprendizagem.
+ Este capítulo detalha oprocessodedesenvolvimentoeimplementaçãoda
+ página de documentação do YAKE!, construída com tecnologias modernas e
+ integradanopipelinededesenvolvimentocontínuo. Asoluçãoimplementada
+ nãoapenassubstituidocumentaçãoestáticatradicional,masofereceumaex
+periência abrangente que vai além da documentação técnica, funcionando
+ comoosite principal do projeto com secções dedicadas a projetos relaciona
+dos, contribuidores, manual de utilização e recursos da comunidade.
+ 5.1 RequisitoseDesigndaInterface
+ 5.1.1 AnálisedeRequisitos
+ Adefinição dos requisitos da plataforma baseou-se na análise das necessida
+des dos diferentes tipos de utilizadores da biblioteca YAKE! e nas melhores
+ práticas de documentação técnica moderna, considerando que o site deveria
+ servir como portal principal do projeto.
+ Osrequisitosfuncionaisidentificadosenglobamaimplementaçãodeum
+ sistemadenavegaçãohierárquicoquepermitaacessorápidoadiferentessec
+çõesdadocumentaçãoedoprojeto,interfaceadaptáveladiferentesdispositi
+43
+44
+ PáginadeDocumentação
+ vos etamanhosdeecrã,conformidadecompadrõesdeacessibilidadewebdo
+ WebContentAccessibility Guidelines (WCAG), integração de notebooks Jupy
+ter atravésdelinksparaGoogleColab,eflexibilidadeparaadicionarconteúdo
+ não-técnico comoinformaçõessobrecontribuidores e projetos relacionados.
+ Relativamente aos requisitos não-funcionais, foram estabelecidos crité
+rios de performance comtempodecarregamentootimizado,otimizaçãopara
+ motores de busca (Search Engine Optimization (SEO)), estrutura de código
+ modular e bem documentada para garantir manutenibilidade, e arquitetura
+ quepermita fácil adição de novo conteúdo para assegurar escalabilidade.
+ 5.1.2 ArquiteturadaInformação
+ A estrutura da informação foi organizada seguindo princípios de arquitetura
+ da informação centrada no utilizador, expandindo além da documentação
+ técnica tradicional. O design seguiu uma abordagem que permite navega
+ção intuitiva desde informações gerais do projeto até detalhes específicos de
+ implementação.
+ Aorganização do conteúdo foi estruturada contemplando uma secção de
+ Getting Started para introdução rápida e exemplos básicos, API Documenta
+tion para referência das classes e métodos através de documentação manual
+ via Mark Down X (MDX), Examples contendo notebooks Jupyter com links
+ diretos para Google Colab, Contributing Guide com instruções para contri
+buidores, Related Projects apresentando projetos derivados ou relacionados,
+ e Teamcominformaçõessobrecontribuidores e mantenedores.
+ Figura 5.1: Página inicial "Getting Started"(escuro) mostrando a estrutura hi
+erárquica de navegação e integração com Google Colab
+5.1 Requisitos e Design daInterface
+ 45
+ Figura 5.2: Página inicial "Getting Started"(claro) mostrando a estrutura hie
+rárquica de navegação e integração com Google Colab
+ AFigura5.2ilustraaimplementaçãodapáginainicialdeintrodução,onde
+ é possível observar o sistema de navegação lateral estruturado hierarquica
+mente, o índice de conteúdos da página atual, e a integração seamless com
+ Google Colab através do botão "OpeninColab".
+ 5.1.3 DesignSystemeInterface
+ OdesigndainterfaceseguiuprincípiosmodernosdeUserExperience(UX)/User
+ Interface (UI), implementando um sistema de design consistente que reflete
+ a identidade visual do projeto YAKE!. A tipografia baseou-se na fonte Inter,
+ escolhida pela sua excelente legibilidade em interfaces digitais. A paleta de
+ cores foi desenvolvida com foco na acessibilidade, garantindo ratios de con
+traste adequados e suporte para temas "claro"e "escuro". O sistema de com
+ponentesfoiconstruídoutilizando princípios de design atómico, englobando
+ elementos base como botões, inputs, ícones e badges incluindo badges de
+ qualidade do projeto como certificações e métricas, componentes compos
+tos como cards de navegação e blocos de código, e secções completas como
+ sidebar, header, footer e navegação principal.
+46
+ 5.2 Fumadocs
+ 5.2.1 ContextoeAlternativasAvaliadas
+ PáginadeDocumentação
+ Aescolhadatecnologiaparaimplementaraplataformaenvolveuumaanálise
+ de várias soluções disponíveis no ecossistema de documentação técnica.
+ Asalternativas consideradas incluíram Sphinx como ostandard parado
+cumentação Python, MkDocs enquanto framework Python simples para do
+cumentação, Docusaurus como framework desenvolvida pelo Facebook, Git
+Book enquanto plataforma comercial, e outras soluções especializadas em
+ documentaçãotécnica.
+ 5.2.2 Critérios deAvaliação
+ A avaliação das alternativas baseou-se em critérios específicos abrangendo
+ performance relacionada com velocidade de carregamento e otimização, fle
+xibilidade na capacidade de criar um site completo do projeto e não apenas
+ documentação, developerexperience considerando a facilidade de desenvol
+vimentoemanutenção,suporteMDXparaacapacidadedeintegrarconteúdo
+ híbridomarkdown/React,customizaçãoavaliandoaflexibilidadeparaperso
+nalização visual e funcional, e ecossistema analisando a comunidade e ferra
+mentas disponíveis.
+ 5.2.3 JustificaçãodaEscolhadoFumadocs
+ Aescolha do Fumadocs foi fundamentada em várias vantagens técnicas e es
+tratégicas que se alinhavam perfeitamente com os objetivos do projeto.
+ AsvantagenstécnicascontemplamperformancesuperiorbaseadaemNext.js
+ comStaticSiteGeneration(StaticSiteGeneration(SSG)),proporcionandopré
+renderização de todas as páginas em build time, code splitting automático,
+ e otimização de assets. A utilização de tecnologias modernas abrange React
+ 18, TypeScript nativo, Tailwind CSS para styling, e suporte nativo para MDX,
+ permitindo integração seamless de conteúdo markdown com componentes
+ React personalizados.
+ As vantagens estratégicas mais significativas foram a flexibilidade para
+ criar umsite completo do projeto em vez de apenas documentação técnica,
+ permitindo secções para projetos relacionados, informações sobre a equipa,
+ e outros conteúdos não-técnicos. O excelente suporte MDX torna o pro
+cesso de criação e atualização de conteúdo extremamente simples, permi
+tindo que contribuidores adicionem documentação rica sem conhecimento
+ técnico avançado.
+5.3 Funcionalidades Implementadas
+ 5.3 FuncionalidadesImplementadas
+ 5.3.1 SistemadeNavegaçãoHierárquico
+ 47
+ Osistema de navegação foi implementado utilizando a estrutura de ficheiros
+ como fonte de verdade, gerando automaticamente sidebar navigation com
+ hierarquia de páginas, breadcrumbs baseados no path do ficheiro, navegação
+ Previous/Next sequencial, e table of contents extraído dos headings MDX.
+ Figura 5.3: Sistema de navegação "On this page"mostrando a estrutura hie
+rárquica dos conteúdos da página atual
+ AFigura5.3 demonstraosistemadeíndiceautomático"Onthispage"que
+ extrai a estrutura hierárquica dos headings da página atual, proporcionando
+ navegação rápida e contextual dentro do conteúdo.
+ 5.3.2 DocumentaçãoManualviaMDX
+ Notaimportante: Devido à conversão para site estático, funcionalidades que
+ requeremApplicationProgrammingInterface(API)sdinâmicascomopesquisa
+ server-side e extração automática de docstrings não sãoviáveis. Esta limitação
+ foi identificada como área de melhoria futura.
+ A documentação das classes e métodos foi implementada através de do
+cumentaçãomanualutilizandoMDX,aproveitandoaflexibilidadedestatec
+nologia paracriar conteúdoricoeinterativo. Emboramanual,esteprocessoé
+ extremamente simples graças ao suporte MDX, proporcionando documen
+tação detalhada que vai além das docstrings básicas, integração de exemplos
+48
+ PáginadeDocumentação
+ decódigocomsyntaxhighlighting,componentesinterativosparademonstrar
+ funcionalidades, e informações contextuais e casos de uso avançados.
+ Figura 5.4: ExemplodedocumentaçãoviaMDX,mostrandodetalhestécnicos
+ de implementação deumafunção
+ AFigura5.4ilustra umexemplodadocumentaçãocriadaatravésdeMDX,
+ onde é possível observar a riqueza de detalhes técnicos, incluindo parâme
+tros, valores de retorno, e lógica de implementação que vai muito além das
+ docstrings tradicionais.
+ 5.3.3 ExemploseDemonstrações
+ Ositeincluiexemplosdetalhadosdasclassesprincipaiscomexplicaçõespasso
+a-passo, casos de uso práticos, e informações contextuais que não estão dis
+poníveis nas docstrings básicas. Nota: O site não permite execução direta de
+5.3 Funcionalidades Implementadas
+ 49
+ código devido às limitações do ambiente estático, mas todos os exemplos es
+tão disponíveis via Google Colab para execução interativa.
+ Figura 5.5: Exemplos de utilização básica e customizada da biblioteca YAKE,
+ comcódigoPythoneexplicações detalhadas
+ A Figura 5.5 apresenta exemplos práticos de utilização da biblioteca, de
+monstrando tanto a utilização básica com parâmetros default quanto confi
+gurações customizadas avançadas, incluindo syntax highlighting e comentá
+rios explicativos detalhados.
+50
+ PáginadeDocumentação
+ 5.4 MelhoriasnaApresentaçãodoProjeto
+ 5.4.1 READMECompletamenteRenovado
+ FoicriadoumREADMEcompletamentenovo,muitomaislimpoeuser-friendly,
+ contemplando introdução clara e concisa ao YAKE!, instalação simplificada
+ comcomandos copy-paste, exemplos básicos para quick start, links para do
+cumentação completa, badges de qualidade e certificações, secção de contri
+buição bemestruturada, e informações sobre licenciamento e citação acadé
+mica.
+ AFigura 5.6 mostra a transformação significativa do README do projeto,
+ ondeépossívelobservaraestruturamaislimpaeprofissional,incluindobad
+ges de qualidade, descrição concisa das funcionalidades, e exemplos práticos
+ de instalação e utilização básica.
+ 5.4.2 RepositórioDemoSeparado
+ Foi criado um repositório separado dedicado à demo 1 do YAKE!, incluindo
+ tutorial detalhado de como executar a demo, guia de otimização para ti
+rar melhor proveito das funcionalidades, exemplos de casos de uso específi
+cos, configurações recomendadas para diferentes cenários, e troubleshooting
+ e Frequently Asked Questions (FAQ).
+ Esta separação permite manter o repositório principal focado no código
+ da biblioteca, enquanto a demo tem o seu próprio espaço para evolução e
+ experimentação.
+ 5.5 LimitaçõesIdentificadaseMelhoriasFuturas
+ 5.5.1 LimitaçõesAtuais
+ Devidoànaturezaestáticadosite,necessáriaparacompatibilidadecomGitHub
+ Pages, algumas funcionalidades avançadas não estão disponíveis. A pesquisa
+ server-side através de APIs dinâmicas não funciona em ambiente estático. A
+ documentaçãoAPIautomáticarequerextraçãoautomáticadedocstringsque
+ necessita processamento server-side. A execuçãodecódigonosite não épos
+sível executar código Python diretamente no browser, sendo a alternativa dis
+ponibilizada via Google Colab.
+ 1https://github.com/LIAAD/yake_demo
+5.5 Limitações Identificadas eMelhoriasFuturas
+ 51
+ Figura 5.6: Visão geral do README renovado, mostrando estrutura limpa,
+ badges dequalidade e exemplos deutilização
+ 5.5.2 MelhoriasFuturasIdentificadas
+ Asseguintesfuncionalidadesforamidentificadasparaimplementaçãofutura,
+ organizadas por categoria de desenvolvimento.
+ Asfuncionalidadestécnicasavançadascontemplamaimplementaçãode
+ pesquisa client-side usando índices pré-gerados, sistema de documentação
+52
+ PáginadeDocumentação
+ API automática através de build-time processing e editor online para testar
+ YAKE!.
+ As funcionalidades de comunidade abrangem sistema de comentários
+ e feedback integrado, tradução automática para múltiplas linguagens, docu
+mentação para múltiplas versões da biblioteca, e métricas detalhadas de uti
+lização. .
+ 5.6 ResultadoseImpacto
+ A nova documentação e apresentação do projeto resultaram em melhorias
+ mensuráveis na perceção e utilização da biblioteca. O maior profissiona
+lismo transmitido pelo site completo do projeto aumenta significativamente
+ a credibilidade junto da comunidade académica e de desenvolvimento. A fa
+cilidade de contribuição através do processo simplificado via MDX reduziu
+ substancialmente as barreiras para novos contribuidores. O melhor onboar
+ding proporcionadopeloREADMErenovadoedocumentaçãoestruturadafa
+cilita consideravelmente a adoção por novos utilizadores. O reconhecimento
+ académico destacado através dos badges e certificações enfatiza a qualidade
+ científica do trabalho desenvolvido.
+5.7 Conclusão
+ 5.7 Conclusão
+ 53
+ Aimplementação da nova plataforma de documentação para o YAKE! repre
+senta umaevoluçãosignificativa naapresentação eacessibilidade do projeto.
+ Aescolha do Fumadocs provou ser acertada, principalmente devido ao exce
+lente suporte MDX que torna a criação e manutenção de conteúdo extrema
+mente simples, e à flexibilidade para criar um site completo do projeto que
+ transcende a documentação técnica tradicional.
+ As principais contribuições englobam uma arquitetura moderna e es
+calável baseada em tecnologias web contemporâneas, documentação rica e
+ acessível criada manualmente via MDX, integração seamless com Google Co
+lab para exemplos interativos, README completamente renovado com foco
+ na experiência do utilizador, repositório demo separado com tutoriais deta
+lhados, e integração de badges e certificações que aumentam substancial
+menteacredibilidade do projeto.
+ Embora existam limitações inerentes à natureza estática da solução, que
+ foram identificadas para melhorias futuras, a plataforma atual fornece uma
+ base sólida para a evolução contínua da documentação e apresentação do
+ projeto YAKE!. Esta implementaçãoestabeleceumnovopadrãodequalidade
+ e profissionalismo na sua apresentação à comunidade científica e de desen
+volvimento, contribuindo significativamente para a sua adoção e reconheci
+mentonoecossistemadeferramentasdeprocessamentodelinguagemnatu
+ral.
