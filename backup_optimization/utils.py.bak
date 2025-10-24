@@ -8,12 +8,8 @@ text analysis throughout the keyword extraction pipeline.
 """
 
 import re
-from functools import lru_cache
 from segtok.segmenter import split_multi
 from segtok.tokenizer import web_tokenizer, split_contractions
-
-# Pre-compiled regex patterns for better performance
-_CAPITAL_LETTER_PATTERN = re.compile(r"^(\s*([A-Z]))")
 
 # Stopword weighting method for multi-word term scoring:
 # - "bi": Use bi-directional weighting (default, considers term connections)
@@ -45,6 +41,9 @@ def pre_filter(text):
     Returns:
         Normalized text with consistent spacing and paragraph structure
     """
+    # Regular expression to detect lines starting with capital letters
+    prog = re.compile("^(\\s*([A-Z]))")
+
     # Split the text into lines
     parts = text.split("\n")
     buffer = ""
@@ -53,7 +52,7 @@ def pre_filter(text):
     for part in parts:
         # Determine separator: preserve paragraph breaks for lines starting with capital letters
         sep = " "
-        if _CAPITAL_LETTER_PATTERN.match(part):
+        if prog.match(part):
             sep = "\n\n"
 
         # Append the processed line to the buffer, replacing tabs with spaces
@@ -93,7 +92,6 @@ def tokenize_sentences(text):
     ]
 
 
-@lru_cache(maxsize=10000)
 def get_tag(word, i, exclude):
     """
     Determine the linguistic tag of a word based on its characteristics.
@@ -102,14 +100,11 @@ def get_tag(word, i, exclude):
     orthographic features (capitalization, digits, special characters).
     These tags are used to identify proper nouns, acronyms, numbers, and
     unusual token patterns, which affect keyword scoring and filtering.
-    
-    Note: This function is cached with LRU cache for performance. The 'exclude'
-    parameter must be a frozenset (immutable) to be hashable for caching.
 
     Args:
         word (str): The word to classify
         i (int): Position of the word within its sentence (0 = first word)
-        exclude (frozenset): Frozenset of characters to consider as punctuation/special chars
+        exclude (set): Set of characters to consider as punctuation/special chars
 
     Returns:
         str: A single character tag representing the word type:

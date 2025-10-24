@@ -11,7 +11,7 @@ relevant keywords of a text.
 from .core.yake import KeywordExtractor
 
 # Version information
-__version__ = "0.6.0"
+__version__ = "0.7.1"
 __author__ = "LIAAD"
 
 # Default maximum n-gram size

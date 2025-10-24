@@ -1,0 +1,1505 @@
+{
+  "collection_timestamp": "2025-10-07T14:33:10.340982",
+  "yake_version": "buggy_version_pre_pr96",
+  "total_negative_examples": 148,
+  "statistics": {
+    "by_text": {
+      "heavy_stopwords_english": 22,
+      "academic_paper_style": 27,
+      "legal_document_style": 24,
+      "technical_specification": 7,
+      "bureaucratic_text": 18,
+      "portuguese_verbose": 8,
+      "spanish_academic": 21,
+      "extreme_stopwords": 21
+    },
+    "by_language": {
+      "en": 119,
+      "pt": 8,
+      "es": 21
+    },
+    "by_ngram": {
+      "6": 10,
+      "7": 50,
+      "8": 76,
+      "4": 5,
+      "5": 7
+    }
+  },
+  "validation_cases": [
+    {
+      "text_name": "academic_paper_style",
+      "n_gram_size": 5,
+      "language": "en",
+      "worst_keyword": "research that has been conducted",
+      "worst_score": -0.17383185508074003,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel...",
+      "total_negatives_in_config": 2
+    },
+    {
+      "text_name": "academic_paper_style",
+      "n_gram_size": 6,
+      "language": "en",
+      "worst_keyword": "research that has been conducted",
+      "worst_score": -0.17383185508074003,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel...",
+      "total_negatives_in_config": 3
+    },
+    {
+      "text_name": "academic_paper_style",
+      "n_gram_size": 7,
+      "language": "en",
+      "worst_keyword": "research that has been conducted",
+      "worst_score": -0.17383185508074003,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel...",
+      "total_negatives_in_config": 9
+    },
+    {
+      "text_name": "academic_paper_style",
+      "n_gram_size": 8,
+      "language": "en",
+      "worst_keyword": "research that has been conducted",
+      "worst_score": -0.17383185508074003,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel...",
+      "total_negatives_in_config": 12
+    },
+    {
+      "text_name": "spanish_academic",
+      "n_gram_size": 4,
+      "language": "es",
+      "worst_keyword": "marco de las investigaciones",
+      "worst_score": -0.11684849320955795,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte...",
+      "total_negatives_in_config": 1
+    },
+    {
+      "text_name": "spanish_academic",
+      "n_gram_size": 5,
+      "language": "es",
+      "worst_keyword": "marco de las investigaciones",
+      "worst_score": -0.11684849320955795,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte...",
+      "total_negatives_in_config": 2
+    },
+    {
+      "text_name": "spanish_academic",
+      "n_gram_size": 6,
+      "language": "es",
+      "worst_keyword": "marco de las investigaciones",
+      "worst_score": -0.11684849320955795,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte...",
+      "total_negatives_in_config": 2
+    },
+    {
+      "text_name": "spanish_academic",
+      "n_gram_size": 7,
+      "language": "es",
+      "worst_keyword": "marco de las investigaciones",
+      "worst_score": -0.11684849320955795,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte...",
+      "total_negatives_in_config": 6
+    },
+    {
+      "text_name": "spanish_academic",
+      "n_gram_size": 8,
+      "language": "es",
+      "worst_keyword": "marco de las investigaciones",
+      "worst_score": -0.11684849320955795,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte...",
+      "total_negatives_in_config": 10
+    },
+    {
+      "text_name": "extreme_stopwords",
+      "n_gram_size": 4,
+      "language": "en",
+      "worst_keyword": "activities that are related",
+      "worst_score": -0.06906105838624688,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g...",
+      "total_negatives_in_config": 1
+    },
+    {
+      "text_name": "extreme_stopwords",
+      "n_gram_size": 5,
+      "language": "en",
+      "worst_keyword": "activities that are related",
+      "worst_score": -0.06906105838624688,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g...",
+      "total_negatives_in_config": 1
+    },
+    {
+      "text_name": "extreme_stopwords",
+      "n_gram_size": 6,
+      "language": "en",
+      "worst_keyword": "activities that are related",
+      "worst_score": -0.06906105838624688,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g...",
+      "total_negatives_in_config": 1
+    },
+    {
+      "text_name": "extreme_stopwords",
+      "n_gram_size": 7,
+      "language": "en",
+      "worst_keyword": "activities that are related",
+      "worst_score": -0.06906105838624688,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g...",
+      "total_negatives_in_config": 9
+    },
+    {
+      "text_name": "extreme_stopwords",
+      "n_gram_size": 8,
+      "language": "en",
+      "worst_keyword": "activities that are related",
+      "worst_score": -0.06906105838624688,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g...",
+      "total_negatives_in_config": 9
+    },
+    {
+      "text_name": "portuguese_verbose",
+      "n_gram_size": 4,
+      "language": "pt",
+      "worst_keyword": "verifica-se que os algoritmos",
+      "worst_score": -0.04930530899318827,
+      "text_sample": "De acordo com os estudos que foram realizados no âmbito da investigação \n                que tem sid...",
+      "total_negatives_in_config": 1
+    },
+    {
+      "text_name": "portuguese_verbose",
+      "n_gram_size": 5,
+      "language": "pt",
+      "worst_keyword": "verifica-se que os algoritmos",
+      "worst_score": -0.04930530899318827,
+      "text_sample": "De acordo com os estudos que foram realizados no âmbito da investigação \n                que tem sid...",
+      "total_negatives_in_config": 1
+    },
+    {
+      "text_name": "portuguese_verbose",
+      "n_gram_size": 6,
+      "language": "pt",
+      "worst_keyword": "verifica-se que os algoritmos",
+      "worst_score": -0.04930530899318827,
+      "text_sample": "De acordo com os estudos que foram realizados no âmbito da investigação \n                que tem sid...",
+      "total_negatives_in_config": 1
+    },
+    {
+      "text_name": "portuguese_verbose",
+      "n_gram_size": 7,
+      "language": "pt",
+      "worst_keyword": "verifica-se que os algoritmos",
+      "worst_score": -0.04930530899318827,
+      "text_sample": "De acordo com os estudos que foram realizados no âmbito da investigação \n                que tem sid...",
+      "total_negatives_in_config": 2
+    },
+    {
+      "text_name": "portuguese_verbose",
+      "n_gram_size": 8,
+      "language": "pt",
+      "worst_keyword": "verifica-se que os algoritmos",
+      "worst_score": -0.04930530899318827,
+      "text_sample": "De acordo com os estudos que foram realizados no âmbito da investigação \n                que tem sid...",
+      "total_negatives_in_config": 3
+    },
+    {
+      "text_name": "academic_paper_style",
+      "n_gram_size": 4,
+      "language": "en",
+      "worst_keyword": "observed that the algorithms",
+      "worst_score": -0.04154539669000149,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel...",
+      "total_negatives_in_config": 1
+    },
+    {
+      "text_name": "legal_document_style",
+      "n_gram_size": 6,
+      "language": "en",
+      "worst_keyword": "governs the use of the artificial",
+      "worst_score": -0.025946612881254574,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel...",
+      "total_negatives_in_config": 2
+    },
+    {
+      "text_name": "legal_document_style",
+      "n_gram_size": 7,
+      "language": "en",
+      "worst_keyword": "governs the use of the artificial",
+      "worst_score": -0.025946612881254574,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel...",
+      "total_negatives_in_config": 7
+    },
+    {
+      "text_name": "legal_document_style",
+      "n_gram_size": 8,
+      "language": "en",
+      "worst_keyword": "governs the use of the artificial",
+      "worst_score": -0.025946612881254574,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel...",
+      "total_negatives_in_config": 13
+    },
+    {
+      "text_name": "legal_document_style",
+      "n_gram_size": 4,
+      "language": "en",
+      "worst_keyword": "required that the systems",
+      "worst_score": -0.025657288711170963,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel...",
+      "total_negatives_in_config": 1
+    },
+    {
+      "text_name": "legal_document_style",
+      "n_gram_size": 5,
+      "language": "en",
+      "worst_keyword": "required that the systems",
+      "worst_score": -0.025657288711170963,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel...",
+      "total_negatives_in_config": 1
+    },
+    {
+      "text_name": "technical_specification",
+      "n_gram_size": 7,
+      "language": "en",
+      "worst_keyword": "mechanism that is used for the processing",
+      "worst_score": -0.025637799953478528,
+      "text_sample": "The implementation of the neural network architecture that is based on \n                the transfor...",
+      "total_negatives_in_config": 2
+    },
+    {
+      "text_name": "technical_specification",
+      "n_gram_size": 8,
+      "language": "en",
+      "worst_keyword": "mechanism that is used for the processing",
+      "worst_score": -0.025637799953478528,
+      "text_sample": "The implementation of the neural network architecture that is based on \n                the transfor...",
+      "total_negatives_in_config": 5
+    },
+    {
+      "text_name": "bureaucratic_text",
+      "n_gram_size": 8,
+      "language": "en",
+      "worst_keyword": "technologies that can be used for the improvement",
+      "worst_score": -0.022676388252881693,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ...",
+      "total_negatives_in_config": 11
+    },
+    {
+      "text_name": "heavy_stopwords_english",
+      "n_gram_size": 6,
+      "language": "en",
+      "worst_keyword": "algorithms are used in the development",
+      "worst_score": -0.02255932766595673,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige...",
+      "total_negatives_in_config": 1
+    },
+    {
+      "text_name": "heavy_stopwords_english",
+      "n_gram_size": 7,
+      "language": "en",
+      "worst_keyword": "algorithms are used in the development",
+      "worst_score": -0.02255932766595673,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige...",
+      "total_negatives_in_config": 8
+    },
+    {
+      "text_name": "heavy_stopwords_english",
+      "n_gram_size": 8,
+      "language": "en",
+      "worst_keyword": "algorithms are used in the development",
+      "worst_score": -0.02255932766595673,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige...",
+      "total_negatives_in_config": 13
+    },
+    {
+      "text_name": "bureaucratic_text",
+      "n_gram_size": 7,
+      "language": "en",
+      "worst_keyword": "responsible for the evaluation of the proposals",
+      "worst_score": -0.00871932899397742,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ...",
+      "total_negatives_in_config": 7
+    }
+  ],
+  "all_examples": [
+    {
+      "keyword": "algorithms are used in the development",
+      "score": -0.02255932766595673,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 6,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "algorithms are used in the development",
+      "score": -0.02255932766595673,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "diagnosis of the diseases in the patients",
+      "score": -0.010022202332393518,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "quality of the life of the individuals",
+      "score": -0.010022202332393518,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "life of the individuals in the society",
+      "score": -0.007568202796468039,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "diseases in the patients who are suffering",
+      "score": -0.004285088384383452,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "field for the diagnosis of the diseases",
+      "score": -0.002540171858254508,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "patients who are suffering from the chronic",
+      "score": -0.0020484699179726383,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "learning algorithms are used in the development",
+      "score": -0.0016011516854174902,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "algorithms are used in the development",
+      "score": -0.02255932766595673,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "systems that are being used in the medical",
+      "score": -0.0215785546727458,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "diagnosis of the diseases in the patients",
+      "score": -0.010022202332393518,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "quality of the life of the individuals",
+      "score": -0.010022202332393518,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "life of the individuals in the society",
+      "score": -0.007568202796468039,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "diseases in the patients who are suffering",
+      "score": -0.004285088384383452,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "field for the diagnosis of the diseases",
+      "score": -0.002540171858254508,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "patients who are suffering from the chronic",
+      "score": -0.0020484699179726383,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "learning algorithms are used in the development",
+      "score": -0.0016011516854174902,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "suffering from the chronic conditions that are affecting",
+      "score": -0.0003640157100619882,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "medical field for the diagnosis of the diseases",
+      "score": -0.00020558710373188167,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "patients who are suffering from the chronic conditions",
+      "score": -0.00015683199700290118,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "Machine learning algorithms are used in the development",
+      "score": -9.621638174680672e-05,
+      "text_name": "heavy_stopwords_english",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "Machine learning algorithms are used in the development of the \n                artificial intellige..."
+    },
+    {
+      "keyword": "observed that the algorithms",
+      "score": -0.04154539669000149,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 4,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "research that has been conducted",
+      "score": -0.17383185508074003,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 5,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "observed that the algorithms",
+      "score": -0.04154539669000149,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 5,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "research that has been conducted",
+      "score": -0.17383185508074003,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 6,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "learning research that has been conducted",
+      "score": -0.06826079321553462,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 6,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "observed that the algorithms",
+      "score": -0.04154539669000149,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 6,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "research that has been conducted",
+      "score": -0.17383185508074003,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "learning research that has been conducted",
+      "score": -0.06826079321553462,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "observed that the algorithms",
+      "score": -0.04154539669000149,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "conducted in the field of the natural",
+      "score": -0.02037773869811105,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "improvements in the performance of the tasks",
+      "score": -0.02037773869811105,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "algorithms that are based on the deep",
+      "score": -0.00837490605807749,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "tasks that are related to the understanding",
+      "score": -0.00837490605807749,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "related to the understanding of the human",
+      "score": -0.005556310427391645,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "observed that the algorithms that are based",
+      "score": -0.00263682780080757,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "research that has been conducted",
+      "score": -0.17383185508074003,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "learning research that has been conducted",
+      "score": -0.06826079321553462,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "observed that the algorithms",
+      "score": -0.04154539669000149,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "conducted in the field of the natural",
+      "score": -0.02037773869811105,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "improvements in the performance of the tasks",
+      "score": -0.02037773869811105,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "algorithms that are based on the deep",
+      "score": -0.00837490605807749,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "tasks that are related to the understanding",
+      "score": -0.00837490605807749,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "related to the understanding of the human",
+      "score": -0.005556310427391645,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "research that has been conducted in the field",
+      "score": -0.003019628785665695,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "observed that the algorithms that are based",
+      "score": -0.00263682780080757,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "algorithms that are based on the deep learning",
+      "score": -0.0011601628267120146,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "related to the understanding of the human language",
+      "score": -0.0005838798124447637,
+      "text_name": "academic_paper_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In the context of the machine learning research that has been conducted \n                in the fiel..."
+    },
+    {
+      "keyword": "required that the systems",
+      "score": -0.025657288711170963,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 4,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "required that the systems",
+      "score": -0.025657288711170963,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 5,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "governs the use of the artificial",
+      "score": -0.025946612881254574,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 6,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "required that the systems",
+      "score": -0.025657288711170963,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 6,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "governs the use of the artificial",
+      "score": -0.025946612881254574,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "required that the systems",
+      "score": -0.025657288711170963,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "authorities that are responsible for the oversight",
+      "score": -0.019909366337047495,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "validated through the processes that are approved",
+      "score": -0.006757353784101873,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "processes that are approved by the regulatory",
+      "score": -0.006757353784101873,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "developed for the diagnosis of the medical",
+      "score": -0.0025536119209965957,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "governs the use of the artificial intelligence",
+      "score": -0.0019279980026625637,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "governs the use of the artificial",
+      "score": -0.025946612881254574,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "required that the systems",
+      "score": -0.025657288711170963,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "authorities that are responsible for the oversight",
+      "score": -0.019909366337047495,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "validated through the processes that are approved",
+      "score": -0.006757353784101873,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "processes that are approved by the regulatory",
+      "score": -0.006757353784101873,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "developed for the diagnosis of the medical",
+      "score": -0.0025536119209965957,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "law that governs the use of the artificial",
+      "score": -0.001927998002662564,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "governs the use of the artificial intelligence",
+      "score": -0.0019279980026625637,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "systems that are being developed for the diagnosis",
+      "score": -0.001747443541921024,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "required that the systems that are being developed",
+      "score": -0.0014388984668626027,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "processes that are approved by the regulatory authorities",
+      "score": -0.0010722982742320056,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "approved by the regulatory authorities that are responsible",
+      "score": -0.0010722982742320056,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "developed for the diagnosis of the medical conditions",
+      "score": -0.00020667486618548955,
+      "text_name": "legal_document_style",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "According to the provisions of the law that governs the use of the \n                artificial intel..."
+    },
+    {
+      "keyword": "mechanism that is used for the processing",
+      "score": -0.025637799953478528,
+      "text_name": "technical_specification",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "The implementation of the neural network architecture that is based on \n                the transfor..."
+    },
+    {
+      "keyword": "architecture that is based on the transformer",
+      "score": -0.004495090819556397,
+      "text_name": "technical_specification",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "The implementation of the neural network architecture that is based on \n                the transfor..."
+    },
+    {
+      "keyword": "mechanism that is used for the processing",
+      "score": -0.025637799953478528,
+      "text_name": "technical_specification",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "The implementation of the neural network architecture that is based on \n                the transfor..."
+    },
+    {
+      "keyword": "architecture that is based on the transformer",
+      "score": -0.004495090819556397,
+      "text_name": "technical_specification",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "The implementation of the neural network architecture that is based on \n                the transfor..."
+    },
+    {
+      "keyword": "attention mechanism that is used for the processing",
+      "score": -0.0019047432282524586,
+      "text_name": "technical_specification",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "The implementation of the neural network architecture that is based on \n                the transfor..."
+    },
+    {
+      "keyword": "architecture that is based on the transformer model",
+      "score": -0.0004639824445935686,
+      "text_name": "technical_specification",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "The implementation of the neural network architecture that is based on \n                the transfor..."
+    },
+    {
+      "keyword": "network architecture that is based on the transformer",
+      "score": -0.0004639824445935678,
+      "text_name": "technical_specification",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "The implementation of the neural network architecture that is based on \n                the transfor..."
+    },
+    {
+      "keyword": "responsible for the evaluation of the proposals",
+      "score": -0.00871932899397742,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "submitted for the funding of the research",
+      "score": -0.00871932899397742,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "evaluation of the proposals that are submitted",
+      "score": -0.004542407565025412,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "committee that is responsible for the evaluation",
+      "score": -0.003200504017836863,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "proposals that are submitted for the funding",
+      "score": -0.003200504017836863,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "focus on the development of the technologies",
+      "score": -0.0031795856909228966,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "established by the committee that is responsible",
+      "score": -0.002137168461255455,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "technologies that can be used for the improvement",
+      "score": -0.022676388252881693,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "responsible for the evaluation of the proposals",
+      "score": -0.00871932899397742,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "submitted for the funding of the research",
+      "score": -0.00871932899397742,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "evaluation of the proposals that are submitted",
+      "score": -0.004542407565025412,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "committee that is responsible for the evaluation",
+      "score": -0.003200504017836863,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "proposals that are submitted for the funding",
+      "score": -0.003200504017836863,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "focus on the development of the technologies",
+      "score": -0.0031795856909228966,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "accordance with the guidelines that have been established",
+      "score": -0.002137168461255455,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "guidelines that have been established by the committee",
+      "score": -0.002137168461255455,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "established by the committee that is responsible",
+      "score": -0.002137168461255455,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "submitted for the funding of the research projects",
+      "score": -0.0019623243247863234,
+      "text_name": "bureaucratic_text",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "In accordance with the guidelines that have been established by the \n                committee that ..."
+    },
+    {
+      "keyword": "verifica-se que os algoritmos",
+      "score": -0.04930530899318827,
+      "text_name": "portuguese_verbose",
+      "language": "pt",
+      "n_gram_size": 4,
+      "text_sample": "De acordo com os estudos que foram realizados no âmbito da investigação \n                que tem sid..."
+    },
+    {
+      "keyword": "verifica-se que os algoritmos",
+      "score": -0.04930530899318827,
+      "text_name": "portuguese_verbose",
+      "language": "pt",
+      "n_gram_size": 5,
+      "text_sample": "De acordo com os estudos que foram realizados no âmbito da investigação \n                que tem sid..."
+    },
+    {
+      "keyword": "verifica-se que os algoritmos",
+      "score": -0.04930530899318827,
+      "text_name": "portuguese_verbose",
+      "language": "pt",
+      "n_gram_size": 6,
+      "text_sample": "De acordo com os estudos que foram realizados no âmbito da investigação \n                que tem sid..."
+    },
+    {
+      "keyword": "verifica-se que os algoritmos",
+      "score": -0.04930530899318827,
+      "text_name": "portuguese_verbose",
+      "language": "pt",
+      "n_gram_size": 7,
+      "text_sample": "De acordo com os estudos que foram realizados no âmbito da investigação \n                que tem sid..."
+    },
+    {
+      "keyword": "verifica-se que os algoritmos que são baseados",
+      "score": -0.0027010057041147294,
+      "text_name": "portuguese_verbose",
+      "language": "pt",
+      "n_gram_size": 7,
+      "text_sample": "De acordo com os estudos que foram realizados no âmbito da investigação \n                que tem sid..."
+    },
+    {
+      "keyword": "verifica-se que os algoritmos",
+      "score": -0.04930530899318827,
+      "text_name": "portuguese_verbose",
+      "language": "pt",
+      "n_gram_size": 8,
+      "text_sample": "De acordo com os estudos que foram realizados no âmbito da investigação \n                que tem sid..."
+    },
+    {
+      "keyword": "verifica-se que os algoritmos que são baseados",
+      "score": -0.0027010057041147294,
+      "text_name": "portuguese_verbose",
+      "language": "pt",
+      "n_gram_size": 8,
+      "text_sample": "De acordo com os estudos que foram realizados no âmbito da investigação \n                que tem sid..."
+    },
+    {
+      "keyword": "resultados que são significativamente superiores aos que eram",
+      "score": -0.0006314788534031643,
+      "text_name": "portuguese_verbose",
+      "language": "pt",
+      "n_gram_size": 8,
+      "text_sample": "De acordo com os estudos que foram realizados no âmbito da investigação \n                que tem sid..."
+    },
+    {
+      "keyword": "marco de las investigaciones",
+      "score": -0.11684849320955795,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 4,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "marco de las investigaciones",
+      "score": -0.11684849320955795,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 5,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "investigaciones que se han llevado",
+      "score": -0.04590459722826373,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 5,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "marco de las investigaciones",
+      "score": -0.11684849320955795,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 6,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "investigaciones que se han llevado",
+      "score": -0.04590459722826373,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 6,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "marco de las investigaciones",
+      "score": -0.11684849320955795,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 7,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "investigaciones que se han llevado",
+      "score": -0.04590459722826373,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 7,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "observado que los algoritmos que se basan",
+      "score": -0.006039329057230733,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 7,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "algoritmos que se basan en las técnicas",
+      "score": -0.005402855225217712,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 7,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "investigaciones que se han llevado a cabo",
+      "score": -0.004480177613680742,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 7,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "importantes en las tareas que están relacionadas",
+      "score": -0.0032671817520702044,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 7,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "marco de las investigaciones",
+      "score": -0.11684849320955795,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 8,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "investigaciones que se han llevado",
+      "score": -0.04590459722826373,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 8,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "observado que los algoritmos que se basan",
+      "score": -0.006039329057230733,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 8,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "algoritmos que se basan en las técnicas",
+      "score": -0.005402855225217712,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 8,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "investigaciones que se han llevado a cabo",
+      "score": -0.004480177613680742,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 8,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "marco de las investigaciones que se han llevado",
+      "score": -0.0033901513818114484,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 8,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "importantes en las tareas que están relacionadas",
+      "score": -0.0032671817520702044,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 8,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "campo de la inteligencia artificial que se aplica",
+      "score": -0.001855112836884013,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 8,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "mejoras que son considerablemente importantes en las tareas",
+      "score": -0.000441901657342604,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 8,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "considerablemente importantes en las tareas que están relacionadas",
+      "score": -0.0003236606906822753,
+      "text_name": "spanish_academic",
+      "language": "es",
+      "n_gram_size": 8,
+      "text_sample": "En el marco de las investigaciones que se han llevado a cabo en el \n                campo de la inte..."
+    },
+    {
+      "keyword": "activities that are related",
+      "score": -0.06906105838624688,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 4,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "activities that are related",
+      "score": -0.06906105838624688,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 5,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "activities that are related",
+      "score": -0.06906105838624688,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 6,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "activities that are related",
+      "score": -0.06906105838624688,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "platform that is designed for the management",
+      "score": -0.03507488888936658,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "users who are engaged in the activities",
+      "score": -0.024274495375238157,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "system that is used for the analysis",
+      "score": -0.0217446859233365,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "related to the use of the platform",
+      "score": -0.019150062909737794,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "data that is generated by the users",
+      "score": -0.006950421035076239,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "generated by the users who are engaged",
+      "score": -0.003825832367276006,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "designed for the management of the information",
+      "score": -0.0032732640676957046,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "engaged in the activities that are related",
+      "score": -0.0015914099089376621,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 7,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "activities that are related",
+      "score": -0.06906105838624688,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "platform that is designed for the management",
+      "score": -0.03507488888936658,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "users who are engaged in the activities",
+      "score": -0.024274495375238157,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "system that is used for the analysis",
+      "score": -0.0217446859233365,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "related to the use of the platform",
+      "score": -0.019150062909737794,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "data that is generated by the users",
+      "score": -0.006950421035076239,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "generated by the users who are engaged",
+      "score": -0.003825832367276006,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "designed for the management of the information",
+      "score": -0.0032732640676957046,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    },
+    {
+      "keyword": "engaged in the activities that are related",
+      "score": -0.0015914099089376621,
+      "text_name": "extreme_stopwords",
+      "language": "en",
+      "n_gram_size": 8,
+      "text_sample": "It is in the case of the system that is used for the analysis of the \n                data that is g..."
+    }
+  ]
+}

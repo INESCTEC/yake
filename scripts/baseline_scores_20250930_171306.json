@@ -1,0 +1,6274 @@
+{
+  "timestamp": "20250930_171306",
+  "total_tests": 70,
+  "passed_tests": 70,
+  "failed_tests": 0,
+  "success_rate": 100.0,
+  "test_type": "baseline",
+  "results": [
+    {
+      "test_id": 0,
+      "description": "short_english_n1_dedup0.7_top20",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 1,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 1.135,
+      "num_keywords": 5,
+      "keywords": [
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ],
+        [
+          "algorithms",
+          0.29736558256021506
+        ],
+        [
+          "artificial",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "1199b60ed691fdeeb0d74d5f977a12c6"
+    },
+    {
+      "test_id": 1,
+      "description": "short_english_n2_dedup0.7_top20",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 2,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 1.283,
+      "num_keywords": 8,
+      "keywords": [
+        [
+          "Machine learning",
+          0.04940384002065631
+        ],
+        [
+          "artificial intelligence",
+          0.04940384002065631
+        ],
+        [
+          "learning algorithms",
+          0.09700399286574239
+        ],
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ],
+        [
+          "algorithms",
+          0.29736558256021506
+        ],
+        [
+          "artificial",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "3dff41a6ad297e70914ec7647cafb62f"
+    },
+    {
+      "test_id": 2,
+      "description": "short_english_n3_dedup0.7_top20",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 0.804,
+      "num_keywords": 10,
+      "keywords": [
+        [
+          "Machine learning algorithms",
+          0.01655915082773619
+        ],
+        [
+          "Machine learning",
+          0.04940384002065631
+        ],
+        [
+          "artificial intelligence",
+          0.04940384002065631
+        ],
+        [
+          "learning algorithms",
+          0.09700399286574239
+        ],
+        [
+          "algorithms and artificial",
+          0.09700399286574239
+        ],
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ],
+        [
+          "algorithms",
+          0.29736558256021506
+        ],
+        [
+          "artificial",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "fa932a697ad423eeec6025cf57f668e3"
+    },
+    {
+      "test_id": 3,
+      "description": "short_english_n4_dedup0.7_top20",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 4,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 0.743,
+      "num_keywords": 12,
+      "keywords": [
+        [
+          "Machine learning algorithms",
+          0.01655915082773619
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.016559150827736194
+        ],
+        [
+          "learning algorithms and artificial",
+          0.03339840940482845
+        ],
+        [
+          "Machine learning",
+          0.04940384002065631
+        ],
+        [
+          "artificial intelligence",
+          0.04940384002065631
+        ],
+        [
+          "learning algorithms",
+          0.09700399286574239
+        ],
+        [
+          "algorithms and artificial",
+          0.09700399286574239
+        ],
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ],
+        [
+          "algorithms",
+          0.29736558256021506
+        ],
+        [
+          "artificial",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "62156481beb51d2a914e5b3da3f10495"
+    },
+    {
+      "test_id": 4,
+      "description": "short_english_n5_dedup0.7_top20",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 5,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 0.665,
+      "num_keywords": 14,
+      "keywords": [
+        [
+          "Machine learning algorithms and artificial",
+          0.005801314874236188
+        ],
+        [
+          "learning algorithms and artificial intelligence",
+          0.005801314874236189
+        ],
+        [
+          "Machine learning algorithms",
+          0.01655915082773619
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.016559150827736194
+        ],
+        [
+          "learning algorithms and artificial",
+          0.03339840940482845
+        ],
+        [
+          "Machine learning",
+          0.04940384002065631
+        ],
+        [
+          "artificial intelligence",
+          0.04940384002065631
+        ],
+        [
+          "learning algorithms",
+          0.09700399286574239
+        ],
+        [
+          "algorithms and artificial",
+          0.09700399286574239
+        ],
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ],
+        [
+          "algorithms",
+          0.29736558256021506
+        ],
+        [
+          "artificial",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "ad183706ef7faa70a9489c325bcf114a"
+    },
+    {
+      "test_id": 5,
+      "description": "short_english_n6_dedup0.7_top20",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 6,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 0.745,
+      "num_keywords": 15,
+      "keywords": [
+        [
+          "Machine learning algorithms and artificial intelligence",
+          0.001013627283400924
+        ],
+        [
+          "Machine learning algorithms and artificial",
+          0.005801314874236188
+        ],
+        [
+          "learning algorithms and artificial intelligence",
+          0.005801314874236189
+        ],
+        [
+          "Machine learning algorithms",
+          0.01655915082773619
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.016559150827736194
+        ],
+        [
+          "learning algorithms and artificial",
+          0.03339840940482845
+        ],
+        [
+          "Machine learning",
+          0.04940384002065631
+        ],
+        [
+          "artificial intelligence",
+          0.04940384002065631
+        ],
+        [
+          "learning algorithms",
+          0.09700399286574239
+        ],
+        [
+          "algorithms and artificial",
+          0.09700399286574239
+        ],
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ],
+        [
+          "algorithms",
+          0.29736558256021506
+        ],
+        [
+          "artificial",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "34bf09a1036348b08c2b4565b986491e"
+    },
+    {
+      "test_id": 6,
+      "description": "short_english_n7_dedup0.7_top20",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 7,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 1.454,
+      "num_keywords": 15,
+      "keywords": [
+        [
+          "Machine learning algorithms and artificial intelligence",
+          0.001013627283400924
+        ],
+        [
+          "Machine learning algorithms and artificial",
+          0.005801314874236188
+        ],
+        [
+          "learning algorithms and artificial intelligence",
+          0.005801314874236189
+        ],
+        [
+          "Machine learning algorithms",
+          0.01655915082773619
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.016559150827736194
+        ],
+        [
+          "learning algorithms and artificial",
+          0.03339840940482845
+        ],
+        [
+          "Machine learning",
+          0.04940384002065631
+        ],
+        [
+          "artificial intelligence",
+          0.04940384002065631
+        ],
+        [
+          "learning algorithms",
+          0.09700399286574239
+        ],
+        [
+          "algorithms and artificial",
+          0.09700399286574239
+        ],
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ],
+        [
+          "algorithms",
+          0.29736558256021506
+        ],
+        [
+          "artificial",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "34bf09a1036348b08c2b4565b986491e"
+    },
+    {
+      "test_id": 7,
+      "description": "short_english_n8_dedup0.7_top20",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 8,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 1.687,
+      "num_keywords": 15,
+      "keywords": [
+        [
+          "Machine learning algorithms and artificial intelligence",
+          0.001013627283400924
+        ],
+        [
+          "Machine learning algorithms and artificial",
+          0.005801314874236188
+        ],
+        [
+          "learning algorithms and artificial intelligence",
+          0.005801314874236189
+        ],
+        [
+          "Machine learning algorithms",
+          0.01655915082773619
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.016559150827736194
+        ],
+        [
+          "learning algorithms and artificial",
+          0.03339840940482845
+        ],
+        [
+          "Machine learning",
+          0.04940384002065631
+        ],
+        [
+          "artificial intelligence",
+          0.04940384002065631
+        ],
+        [
+          "learning algorithms",
+          0.09700399286574239
+        ],
+        [
+          "algorithms and artificial",
+          0.09700399286574239
+        ],
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ],
+        [
+          "algorithms",
+          0.29736558256021506
+        ],
+        [
+          "artificial",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "34bf09a1036348b08c2b4565b986491e"
+    },
+    {
+      "test_id": 8,
+      "description": "short_english_n9_dedup0.7_top20",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 9,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 1.463,
+      "num_keywords": 15,
+      "keywords": [
+        [
+          "Machine learning algorithms and artificial intelligence",
+          0.001013627283400924
+        ],
+        [
+          "Machine learning algorithms and artificial",
+          0.005801314874236188
+        ],
+        [
+          "learning algorithms and artificial intelligence",
+          0.005801314874236189
+        ],
+        [
+          "Machine learning algorithms",
+          0.01655915082773619
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.016559150827736194
+        ],
+        [
+          "learning algorithms and artificial",
+          0.03339840940482845
+        ],
+        [
+          "Machine learning",
+          0.04940384002065631
+        ],
+        [
+          "artificial intelligence",
+          0.04940384002065631
+        ],
+        [
+          "learning algorithms",
+          0.09700399286574239
+        ],
+        [
+          "algorithms and artificial",
+          0.09700399286574239
+        ],
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ],
+        [
+          "algorithms",
+          0.29736558256021506
+        ],
+        [
+          "artificial",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "34bf09a1036348b08c2b4565b986491e"
+    },
+    {
+      "test_id": 9,
+      "description": "short_english_n3_dedup0.5_top10",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.5,
+        "top": 10
+      },
+      "execution_time_ms": 1.058,
+      "num_keywords": 10,
+      "keywords": [
+        [
+          "Machine learning algorithms",
+          0.01655915082773619
+        ],
+        [
+          "Machine learning",
+          0.04940384002065631
+        ],
+        [
+          "artificial intelligence",
+          0.04940384002065631
+        ],
+        [
+          "learning algorithms",
+          0.09700399286574239
+        ],
+        [
+          "algorithms and artificial",
+          0.09700399286574239
+        ],
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ],
+        [
+          "algorithms",
+          0.29736558256021506
+        ],
+        [
+          "artificial",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "fa932a697ad423eeec6025cf57f668e3"
+    },
+    {
+      "test_id": 10,
+      "description": "short_english_n3_dedup0.9_top15",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.9,
+        "top": 15
+      },
+      "execution_time_ms": 0.783,
+      "num_keywords": 10,
+      "keywords": [
+        [
+          "Machine learning algorithms",
+          0.01655915082773619
+        ],
+        [
+          "Machine learning",
+          0.04940384002065631
+        ],
+        [
+          "artificial intelligence",
+          0.04940384002065631
+        ],
+        [
+          "learning algorithms",
+          0.09700399286574239
+        ],
+        [
+          "algorithms and artificial",
+          0.09700399286574239
+        ],
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ],
+        [
+          "algorithms",
+          0.29736558256021506
+        ],
+        [
+          "artificial",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "fa932a697ad423eeec6025cf57f668e3"
+    },
+    {
+      "test_id": 11,
+      "description": "short_english_n3_dedup1.0_top25",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 1.0,
+        "top": 25
+      },
+      "execution_time_ms": 0.744,
+      "num_keywords": 10,
+      "keywords": [
+        [
+          "Machine learning algorithms",
+          0.01655915082773619
+        ],
+        [
+          "Machine learning",
+          0.04940384002065631
+        ],
+        [
+          "artificial intelligence",
+          0.04940384002065631
+        ],
+        [
+          "learning algorithms",
+          0.09700399286574239
+        ],
+        [
+          "algorithms and artificial",
+          0.09700399286574239
+        ],
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ],
+        [
+          "algorithms",
+          0.29736558256021506
+        ],
+        [
+          "artificial",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "fa932a697ad423eeec6025cf57f668e3"
+    },
+    {
+      "test_id": 12,
+      "description": "short_english_n4_dedup0.3_top30",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 4,
+        "dedupLim": 0.3,
+        "top": 30
+      },
+      "execution_time_ms": 0.879,
+      "num_keywords": 12,
+      "keywords": [
+        [
+          "Machine learning algorithms",
+          0.01655915082773619
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.016559150827736194
+        ],
+        [
+          "learning algorithms and artificial",
+          0.03339840940482845
+        ],
+        [
+          "Machine learning",
+          0.04940384002065631
+        ],
+        [
+          "artificial intelligence",
+          0.04940384002065631
+        ],
+        [
+          "learning algorithms",
+          0.09700399286574239
+        ],
+        [
+          "algorithms and artificial",
+          0.09700399286574239
+        ],
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ],
+        [
+          "algorithms",
+          0.29736558256021506
+        ],
+        [
+          "artificial",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "62156481beb51d2a914e5b3da3f10495"
+    },
+    {
+      "test_id": 13,
+      "description": "short_english_n5_dedup0.8_top12",
+      "text_name": "short_english",
+      "config": {
+        "lan": "en",
+        "n": 5,
+        "dedupLim": 0.8,
+        "top": 12
+      },
+      "execution_time_ms": 1.327,
+      "num_keywords": 12,
+      "keywords": [
+        [
+          "Machine learning algorithms and artificial",
+          0.005801314874236188
+        ],
+        [
+          "learning algorithms and artificial intelligence",
+          0.005801314874236189
+        ],
+        [
+          "Machine learning algorithms",
+          0.01655915082773619
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.016559150827736194
+        ],
+        [
+          "learning algorithms and artificial",
+          0.03339840940482845
+        ],
+        [
+          "Machine learning",
+          0.04940384002065631
+        ],
+        [
+          "artificial intelligence",
+          0.04940384002065631
+        ],
+        [
+          "learning algorithms",
+          0.09700399286574239
+        ],
+        [
+          "algorithms and artificial",
+          0.09700399286574239
+        ],
+        [
+          "Machine",
+          0.15831692877998726
+        ],
+        [
+          "intelligence",
+          0.15831692877998726
+        ],
+        [
+          "learning",
+          0.29736558256021506
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "d6624539e1103951811b088743f2e372"
+    },
+    {
+      "test_id": 14,
+      "description": "medium_english_n1_dedup0.7_top20",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 1,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 2.649,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Machine",
+          0.14840353637699516
+        ],
+        [
+          "science",
+          0.15250988756595438
+        ],
+        [
+          "intelligence",
+          0.22753915903640465
+        ],
+        [
+          "learning",
+          0.2365273465835411
+        ],
+        [
+          "algorithms",
+          0.2365273465835411
+        ],
+        [
+          "artificial",
+          0.2365273465835411
+        ],
+        [
+          "systems",
+          0.2365273465835411
+        ],
+        [
+          "revolutionizing",
+          0.2365273465835411
+        ],
+        [
+          "data",
+          0.2365273465835411
+        ],
+        [
+          "research",
+          0.2365273465835411
+        ],
+        [
+          "computer",
+          0.2365273465835411
+        ],
+        [
+          "industries",
+          0.3770378920346049
+        ],
+        [
+          "technologies",
+          0.5182978603858105
+        ],
+        [
+          "enable",
+          0.5182978603858105
+        ],
+        [
+          "advanced",
+          0.5182978603858105
+        ],
+        [
+          "analytics",
+          0.5182978603858105
+        ],
+        [
+          "predictive",
+          0.5182978603858105
+        ],
+        [
+          "modeling",
+          0.5182978603858105
+        ],
+        [
+          "business",
+          0.5182978603858105
+        ],
+        [
+          "applications",
+          0.5182978603858105
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "f4114d60f0f0f3ea082617a35019332e"
+    },
+    {
+      "test_id": 15,
+      "description": "medium_english_n2_dedup0.7_top20",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 2,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 4.687,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Machine learning",
+          0.036378432021021534
+        ],
+        [
+          "learning algorithms",
+          0.059260526860675365
+        ],
+        [
+          "revolutionizing data",
+          0.059260526860675365
+        ],
+        [
+          "data science",
+          0.07775520781792596
+        ],
+        [
+          "science research",
+          0.07775520781792596
+        ],
+        [
+          "computer science",
+          0.07775520781792596
+        ],
+        [
+          "artificial intelligence",
+          0.12062203836488773
+        ],
+        [
+          "intelligence systems",
+          0.12062203836488773
+        ],
+        [
+          "Machine",
+          0.14840353637699516
+        ],
+        [
+          "science",
+          0.15250988756595438
+        ],
+        [
+          "intelligence",
+          0.22753915903640465
+        ],
+        [
+          "learning",
+          0.2365273465835411
+        ],
+        [
+          "algorithms",
+          0.2365273465835411
+        ],
+        [
+          "artificial",
+          0.2365273465835411
+        ],
+        [
+          "systems",
+          0.2365273465835411
+        ],
+        [
+          "revolutionizing",
+          0.2365273465835411
+        ],
+        [
+          "data",
+          0.2365273465835411
+        ],
+        [
+          "research",
+          0.2365273465835411
+        ],
+        [
+          "computer",
+          0.2365273465835411
+        ],
+        [
+          "business intelligence",
+          0.30867119531750287
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "493713207efef7e7963d5848b562c3a3"
+    },
+    {
+      "test_id": 16,
+      "description": "medium_english_n3_dedup0.7_top20",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 3.994,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Machine learning algorithms",
+          0.009323825533518421
+        ],
+        [
+          "revolutionizing data science",
+          0.020463533188504964
+        ],
+        [
+          "data science research",
+          0.020463533188504968
+        ],
+        [
+          "artificial intelligence systems",
+          0.03265300337069717
+        ],
+        [
+          "Machine learning",
+          0.036378432021021534
+        ],
+        [
+          "learning algorithms",
+          0.059260526860675365
+        ],
+        [
+          "algorithms and artificial",
+          0.059260526860675365
+        ],
+        [
+          "systems are revolutionizing",
+          0.059260526860675365
+        ],
+        [
+          "revolutionizing data",
+          0.059260526860675365
+        ],
+        [
+          "research in computer",
+          0.059260526860675365
+        ],
+        [
+          "data science",
+          0.07775520781792596
+        ],
+        [
+          "science research",
+          0.07775520781792596
+        ],
+        [
+          "computer science",
+          0.07775520781792596
+        ],
+        [
+          "artificial intelligence",
+          0.12062203836488773
+        ],
+        [
+          "intelligence systems",
+          0.12062203836488773
+        ],
+        [
+          "Machine",
+          0.14840353637699516
+        ],
+        [
+          "science",
+          0.15250988756595438
+        ],
+        [
+          "intelligence",
+          0.22753915903640465
+        ],
+        [
+          "learning",
+          0.2365273465835411
+        ],
+        [
+          "algorithms",
+          0.2365273465835411
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "3bbf604ff6ff8f766085c8cbb66a6237"
+    },
+    {
+      "test_id": 17,
+      "description": "medium_english_n4_dedup0.7_top20",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 4,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 3.95,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "revolutionizing data science research",
+          0.0055103829288053316
+        ],
+        [
+          "Machine learning algorithms",
+          0.009323825533518421
+        ],
+        [
+          "learning algorithms and artificial",
+          0.015411263133096773
+        ],
+        [
+          "systems are revolutionizing data",
+          0.015411263133096773
+        ],
+        [
+          "revolutionizing data science",
+          0.020463533188504964
+        ],
+        [
+          "research in computer science",
+          0.020463533188504964
+        ],
+        [
+          "data science research",
+          0.020463533188504968
+        ],
+        [
+          "science research in computer",
+          0.020463533188504968
+        ],
+        [
+          "artificial intelligence systems",
+          0.03265300337069717
+        ],
+        [
+          "intelligence systems are revolutionizing",
+          0.03265300337069717
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.032653003370697174
+        ],
+        [
+          "Machine learning",
+          0.036378432021021534
+        ],
+        [
+          "learning algorithms",
+          0.059260526860675365
+        ],
+        [
+          "algorithms and artificial",
+          0.059260526860675365
+        ],
+        [
+          "systems are revolutionizing",
+          0.059260526860675365
+        ],
+        [
+          "revolutionizing data",
+          0.059260526860675365
+        ],
+        [
+          "research in computer",
+          0.059260526860675365
+        ],
+        [
+          "data science",
+          0.07775520781792596
+        ],
+        [
+          "science research",
+          0.07775520781792596
+        ],
+        [
+          "computer science",
+          0.07775520781792596
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "a3a9ed8055d3c8d63cd81e4d882e9802"
+    },
+    {
+      "test_id": 18,
+      "description": "medium_english_n5_dedup0.7_top20",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 5,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 4.104,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Machine learning algorithms and artificial",
+          0.0024631710296023537
+        ],
+        [
+          "systems are revolutionizing data science",
+          0.0055103829288053316
+        ],
+        [
+          "revolutionizing data science research",
+          0.0055103829288053316
+        ],
+        [
+          "data science research in computer",
+          0.005510382928805333
+        ],
+        [
+          "science research in computer science",
+          0.0074028791937940635
+        ],
+        [
+          "algorithms and artificial intelligence systems",
+          0.008982408701499557
+        ],
+        [
+          "artificial intelligence systems are revolutionizing",
+          0.008982408701499557
+        ],
+        [
+          "intelligence systems are revolutionizing data",
+          0.008982408701499557
+        ],
+        [
+          "learning algorithms and artificial intelligence",
+          0.008982408701499559
+        ],
+        [
+          "Machine learning algorithms",
+          0.009323825533518421
+        ],
+        [
+          "learning algorithms and artificial",
+          0.015411263133096773
+        ],
+        [
+          "systems are revolutionizing data",
+          0.015411263133096773
+        ],
+        [
+          "revolutionizing data science",
+          0.020463533188504964
+        ],
+        [
+          "research in computer science",
+          0.020463533188504964
+        ],
+        [
+          "data science research",
+          0.020463533188504968
+        ],
+        [
+          "science research in computer",
+          0.020463533188504968
+        ],
+        [
+          "artificial intelligence systems",
+          0.03265300337069717
+        ],
+        [
+          "intelligence systems are revolutionizing",
+          0.03265300337069717
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.032653003370697174
+        ],
+        [
+          "Machine learning",
+          0.036378432021021534
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "8ce83cdf08d30630a0d14f97118777dc"
+    },
+    {
+      "test_id": 19,
+      "description": "medium_english_n6_dedup0.7_top20",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 6,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 3.643,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Machine learning algorithms and artificial intelligence",
+          0.0014725000090304507
+        ],
+        [
+          "systems are revolutionizing data science research",
+          0.001509659173477546
+        ],
+        [
+          "revolutionizing data science research in computer",
+          0.001509659173477546
+        ],
+        [
+          "data science research in computer science",
+          0.0020403391515760537
+        ],
+        [
+          "Machine learning algorithms and artificial",
+          0.0024631710296023537
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data",
+          0.002502367067380968
+        ],
+        [
+          "learning algorithms and artificial intelligence systems",
+          0.002502367067380969
+        ],
+        [
+          "intelligence systems are revolutionizing data science",
+          0.003402170055115101
+        ],
+        [
+          "systems are revolutionizing data science",
+          0.0055103829288053316
+        ],
+        [
+          "revolutionizing data science research",
+          0.0055103829288053316
+        ],
+        [
+          "data science research in computer",
+          0.005510382928805333
+        ],
+        [
+          "science research in computer science",
+          0.0074028791937940635
+        ],
+        [
+          "algorithms and artificial intelligence systems",
+          0.008982408701499557
+        ],
+        [
+          "artificial intelligence systems are revolutionizing",
+          0.008982408701499557
+        ],
+        [
+          "intelligence systems are revolutionizing data",
+          0.008982408701499557
+        ],
+        [
+          "learning algorithms and artificial intelligence",
+          0.008982408701499559
+        ],
+        [
+          "Machine learning algorithms",
+          0.009323825533518421
+        ],
+        [
+          "learning algorithms and artificial",
+          0.015411263133096773
+        ],
+        [
+          "systems are revolutionizing data",
+          0.015411263133096773
+        ],
+        [
+          "revolutionizing data science",
+          0.020463533188504964
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "7e452b4e21ebcfecddfe7d16a61254b2"
+    },
+    {
+      "test_id": 20,
+      "description": "medium_english_n7_dedup0.7_top20",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 7,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 4.634,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Machine learning algorithms and artificial intelligence systems",
+          0.0004126828545292383
+        ],
+        [
+          "revolutionizing data science research in computer science",
+          0.0005692801604902835
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data science",
+          0.0009610632602758134
+        ],
+        [
+          "intelligence systems are revolutionizing data science research",
+          0.0009610632602758134
+        ],
+        [
+          "Machine learning algorithms and artificial intelligence",
+          0.0014725000090304507
+        ],
+        [
+          "systems are revolutionizing data science research",
+          0.001509659173477546
+        ],
+        [
+          "revolutionizing data science research in computer",
+          0.001509659173477546
+        ],
+        [
+          "data science research in computer science",
+          0.0020403391515760537
+        ],
+        [
+          "Machine learning algorithms and artificial",
+          0.0024631710296023537
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data",
+          0.002502367067380968
+        ],
+        [
+          "algorithms and artificial intelligence systems are revolutionizing",
+          0.0025023670673809686
+        ],
+        [
+          "learning algorithms and artificial intelligence systems",
+          0.002502367067380969
+        ],
+        [
+          "intelligence systems are revolutionizing data science",
+          0.003402170055115101
+        ],
+        [
+          "systems are revolutionizing data science",
+          0.0055103829288053316
+        ],
+        [
+          "revolutionizing data science research",
+          0.0055103829288053316
+        ],
+        [
+          "data science research in computer",
+          0.005510382928805333
+        ],
+        [
+          "science research in computer science",
+          0.0074028791937940635
+        ],
+        [
+          "algorithms and artificial intelligence systems",
+          0.008982408701499557
+        ],
+        [
+          "artificial intelligence systems are revolutionizing",
+          0.008982408701499557
+        ],
+        [
+          "intelligence systems are revolutionizing data",
+          0.008982408701499557
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "c80a3d1fe003ef29d5ef1dbd38d80a3e"
+    },
+    {
+      "test_id": 21,
+      "description": "medium_english_n8_dedup0.7_top20",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 8,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 5.176,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "artificial intelligence systems are revolutionizing data science research",
+          0.00027361395664209017
+        ],
+        [
+          "Machine learning algorithms and artificial intelligence systems",
+          0.0004126828545292383
+        ],
+        [
+          "systems are revolutionizing data science research in computer",
+          0.00041920551274765306
+        ],
+        [
+          "revolutionizing data science research in computer science",
+          0.0005692801604902835
+        ],
+        [
+          "algorithms and artificial intelligence systems are revolutionizing data",
+          0.0007042744472445212
+        ],
+        [
+          "learning algorithms and artificial intelligence systems are revolutionizing",
+          0.0007042744472445213
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data science",
+          0.0009610632602758134
+        ],
+        [
+          "intelligence systems are revolutionizing data science research",
+          0.0009610632602758134
+        ],
+        [
+          "Machine learning algorithms and artificial intelligence",
+          0.0014725000090304507
+        ],
+        [
+          "systems are revolutionizing data science research",
+          0.001509659173477546
+        ],
+        [
+          "revolutionizing data science research in computer",
+          0.001509659173477546
+        ],
+        [
+          "data science research in computer science",
+          0.0020403391515760537
+        ],
+        [
+          "Machine learning algorithms and artificial",
+          0.0024631710296023537
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data",
+          0.002502367067380968
+        ],
+        [
+          "algorithms and artificial intelligence systems are revolutionizing",
+          0.0025023670673809686
+        ],
+        [
+          "learning algorithms and artificial intelligence systems",
+          0.002502367067380969
+        ],
+        [
+          "intelligence systems are revolutionizing data science",
+          0.003402170055115101
+        ],
+        [
+          "systems are revolutionizing data science",
+          0.0055103829288053316
+        ],
+        [
+          "revolutionizing data science research",
+          0.0055103829288053316
+        ],
+        [
+          "data science research in computer",
+          0.005510382928805333
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "66415eb6cb3e0abaf1730d05fec3a004"
+    },
+    {
+      "test_id": 22,
+      "description": "medium_english_n9_dedup0.7_top20",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 9,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 4.286,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Machine learning algorithms and artificial intelligence systems are revolutionizing",
+          0.00011672001208432365
+        ],
+        [
+          "systems are revolutionizing data science research in computer science",
+          0.0001604210518553095
+        ],
+        [
+          "learning algorithms and artificial intelligence systems are revolutionizing data",
+          0.00019988851715641124
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data science research",
+          0.00027361395664209017
+        ],
+        [
+          "intelligence systems are revolutionizing data science research in computer",
+          0.00027361395664209017
+        ],
+        [
+          "algorithms and artificial intelligence systems are revolutionizing data science",
+          0.0002736139566420902
+        ],
+        [
+          "Machine learning algorithms and artificial intelligence systems",
+          0.0004126828545292383
+        ],
+        [
+          "systems are revolutionizing data science research in computer",
+          0.00041920551274765306
+        ],
+        [
+          "revolutionizing data science research in computer science",
+          0.0005692801604902835
+        ],
+        [
+          "algorithms and artificial intelligence systems are revolutionizing data",
+          0.0007042744472445212
+        ],
+        [
+          "learning algorithms and artificial intelligence systems are revolutionizing",
+          0.0007042744472445213
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data science",
+          0.0009610632602758134
+        ],
+        [
+          "intelligence systems are revolutionizing data science research",
+          0.0009610632602758134
+        ],
+        [
+          "Machine learning algorithms and artificial intelligence",
+          0.0014725000090304507
+        ],
+        [
+          "systems are revolutionizing data science research",
+          0.001509659173477546
+        ],
+        [
+          "revolutionizing data science research in computer",
+          0.001509659173477546
+        ],
+        [
+          "data science research in computer science",
+          0.0020403391515760537
+        ],
+        [
+          "Machine learning algorithms and artificial",
+          0.0024631710296023537
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data",
+          0.002502367067380968
+        ],
+        [
+          "algorithms and artificial intelligence systems are revolutionizing",
+          0.0025023670673809686
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "76d9531e5a7bb97e35e5222725b4930f"
+    },
+    {
+      "test_id": 23,
+      "description": "medium_english_n3_dedup0.5_top10",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.5,
+        "top": 10
+      },
+      "execution_time_ms": 2.494,
+      "num_keywords": 10,
+      "keywords": [
+        [
+          "Machine learning algorithms",
+          0.009323825533518421
+        ],
+        [
+          "revolutionizing data science",
+          0.020463533188504964
+        ],
+        [
+          "data science research",
+          0.020463533188504968
+        ],
+        [
+          "artificial intelligence systems",
+          0.03265300337069717
+        ],
+        [
+          "Machine learning",
+          0.036378432021021534
+        ],
+        [
+          "learning algorithms",
+          0.059260526860675365
+        ],
+        [
+          "algorithms and artificial",
+          0.059260526860675365
+        ],
+        [
+          "systems are revolutionizing",
+          0.059260526860675365
+        ],
+        [
+          "revolutionizing data",
+          0.059260526860675365
+        ],
+        [
+          "research in computer",
+          0.059260526860675365
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "4a1fad04c6764862cc6936edf3e007c9"
+    },
+    {
+      "test_id": 24,
+      "description": "medium_english_n3_dedup0.9_top15",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.9,
+        "top": 15
+      },
+      "execution_time_ms": 2.434,
+      "num_keywords": 15,
+      "keywords": [
+        [
+          "Machine learning algorithms",
+          0.009323825533518421
+        ],
+        [
+          "revolutionizing data science",
+          0.020463533188504964
+        ],
+        [
+          "data science research",
+          0.020463533188504968
+        ],
+        [
+          "artificial intelligence systems",
+          0.03265300337069717
+        ],
+        [
+          "Machine learning",
+          0.036378432021021534
+        ],
+        [
+          "learning algorithms",
+          0.059260526860675365
+        ],
+        [
+          "algorithms and artificial",
+          0.059260526860675365
+        ],
+        [
+          "systems are revolutionizing",
+          0.059260526860675365
+        ],
+        [
+          "revolutionizing data",
+          0.059260526860675365
+        ],
+        [
+          "research in computer",
+          0.059260526860675365
+        ],
+        [
+          "data science",
+          0.07775520781792596
+        ],
+        [
+          "science research",
+          0.07775520781792596
+        ],
+        [
+          "computer science",
+          0.07775520781792596
+        ],
+        [
+          "artificial intelligence",
+          0.12062203836488773
+        ],
+        [
+          "intelligence systems",
+          0.12062203836488773
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "98f32f9cd02ddb95035d2eff9cbdf1c9"
+    },
+    {
+      "test_id": 25,
+      "description": "medium_english_n3_dedup1.0_top25",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 1.0,
+        "top": 25
+      },
+      "execution_time_ms": 2.55,
+      "num_keywords": 25,
+      "keywords": [
+        [
+          "Machine learning algorithms",
+          0.009323825533518421
+        ],
+        [
+          "revolutionizing data science",
+          0.020463533188504964
+        ],
+        [
+          "data science research",
+          0.020463533188504968
+        ],
+        [
+          "artificial intelligence systems",
+          0.03265300337069717
+        ],
+        [
+          "Machine learning",
+          0.036378432021021534
+        ],
+        [
+          "learning algorithms",
+          0.059260526860675365
+        ],
+        [
+          "algorithms and artificial",
+          0.059260526860675365
+        ],
+        [
+          "systems are revolutionizing",
+          0.059260526860675365
+        ],
+        [
+          "revolutionizing data",
+          0.059260526860675365
+        ],
+        [
+          "research in computer",
+          0.059260526860675365
+        ],
+        [
+          "data science",
+          0.07775520781792596
+        ],
+        [
+          "science research",
+          0.07775520781792596
+        ],
+        [
+          "computer science",
+          0.07775520781792596
+        ],
+        [
+          "artificial intelligence",
+          0.12062203836488773
+        ],
+        [
+          "intelligence systems",
+          0.12062203836488773
+        ],
+        [
+          "Machine",
+          0.14840353637699516
+        ],
+        [
+          "science",
+          0.15250988756595438
+        ],
+        [
+          "intelligence",
+          0.22753915903640465
+        ],
+        [
+          "learning",
+          0.2365273465835411
+        ],
+        [
+          "algorithms",
+          0.2365273465835411
+        ],
+        [
+          "artificial",
+          0.2365273465835411
+        ],
+        [
+          "systems",
+          0.2365273465835411
+        ],
+        [
+          "revolutionizing",
+          0.2365273465835411
+        ],
+        [
+          "data",
+          0.2365273465835411
+        ],
+        [
+          "research",
+          0.2365273465835411
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "1869832105f51b0c7aa768c76c2ebb51"
+    },
+    {
+      "test_id": 26,
+      "description": "medium_english_n4_dedup0.3_top30",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 4,
+        "dedupLim": 0.3,
+        "top": 30
+      },
+      "execution_time_ms": 4.168,
+      "num_keywords": 30,
+      "keywords": [
+        [
+          "revolutionizing data science research",
+          0.0055103829288053316
+        ],
+        [
+          "Machine learning algorithms",
+          0.009323825533518421
+        ],
+        [
+          "learning algorithms and artificial",
+          0.015411263133096773
+        ],
+        [
+          "systems are revolutionizing data",
+          0.015411263133096773
+        ],
+        [
+          "revolutionizing data science",
+          0.020463533188504964
+        ],
+        [
+          "research in computer science",
+          0.020463533188504964
+        ],
+        [
+          "data science research",
+          0.020463533188504968
+        ],
+        [
+          "science research in computer",
+          0.020463533188504968
+        ],
+        [
+          "artificial intelligence systems",
+          0.03265300337069717
+        ],
+        [
+          "intelligence systems are revolutionizing",
+          0.03265300337069717
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.032653003370697174
+        ],
+        [
+          "Machine learning",
+          0.036378432021021534
+        ],
+        [
+          "learning algorithms",
+          0.059260526860675365
+        ],
+        [
+          "algorithms and artificial",
+          0.059260526860675365
+        ],
+        [
+          "systems are revolutionizing",
+          0.059260526860675365
+        ],
+        [
+          "revolutionizing data",
+          0.059260526860675365
+        ],
+        [
+          "research in computer",
+          0.059260526860675365
+        ],
+        [
+          "data science",
+          0.07775520781792596
+        ],
+        [
+          "science research",
+          0.07775520781792596
+        ],
+        [
+          "computer science",
+          0.07775520781792596
+        ],
+        [
+          "artificial intelligence",
+          0.12062203836488773
+        ],
+        [
+          "intelligence systems",
+          0.12062203836488773
+        ],
+        [
+          "Machine",
+          0.14840353637699516
+        ],
+        [
+          "science",
+          0.15250988756595438
+        ],
+        [
+          "intelligence",
+          0.22753915903640465
+        ],
+        [
+          "learning",
+          0.2365273465835411
+        ],
+        [
+          "algorithms",
+          0.2365273465835411
+        ],
+        [
+          "artificial",
+          0.2365273465835411
+        ],
+        [
+          "systems",
+          0.2365273465835411
+        ],
+        [
+          "revolutionizing",
+          0.2365273465835411
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "66f765b8e56fe3b0964f007d08c3b7f2"
+    },
+    {
+      "test_id": 27,
+      "description": "medium_english_n5_dedup0.8_top12",
+      "text_name": "medium_english",
+      "config": {
+        "lan": "en",
+        "n": 5,
+        "dedupLim": 0.8,
+        "top": 12
+      },
+      "execution_time_ms": 2.537,
+      "num_keywords": 12,
+      "keywords": [
+        [
+          "Machine learning algorithms and artificial",
+          0.0024631710296023537
+        ],
+        [
+          "systems are revolutionizing data science",
+          0.0055103829288053316
+        ],
+        [
+          "revolutionizing data science research",
+          0.0055103829288053316
+        ],
+        [
+          "data science research in computer",
+          0.005510382928805333
+        ],
+        [
+          "science research in computer science",
+          0.0074028791937940635
+        ],
+        [
+          "algorithms and artificial intelligence systems",
+          0.008982408701499557
+        ],
+        [
+          "artificial intelligence systems are revolutionizing",
+          0.008982408701499557
+        ],
+        [
+          "intelligence systems are revolutionizing data",
+          0.008982408701499557
+        ],
+        [
+          "learning algorithms and artificial intelligence",
+          0.008982408701499559
+        ],
+        [
+          "Machine learning algorithms",
+          0.009323825533518421
+        ],
+        [
+          "learning algorithms and artificial",
+          0.015411263133096773
+        ],
+        [
+          "systems are revolutionizing data",
+          0.015411263133096773
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "f0e4a5eaf07c49aee0187396f4ad629f"
+    },
+    {
+      "test_id": 28,
+      "description": "long_english_n1_dedup0.7_top20",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 1,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 8.926,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "science",
+          0.06573100928084202
+        ],
+        [
+          "learning",
+          0.0797162810742201
+        ],
+        [
+          "intelligence",
+          0.08712724521725822
+        ],
+        [
+          "Machine",
+          0.10330976295090383
+        ],
+        [
+          "innovation",
+          0.14117868986392443
+        ],
+        [
+          "artificial",
+          0.14252623547527063
+        ],
+        [
+          "data",
+          0.15024681561869468
+        ],
+        [
+          "computer",
+          0.15809682319764054
+        ],
+        [
+          "algorithms",
+          0.16362337411460315
+        ],
+        [
+          "revolutionizing",
+          0.16362337411460315
+        ],
+        [
+          "research",
+          0.16362337411460315
+        ],
+        [
+          "technology",
+          0.16362337411460315
+        ],
+        [
+          "systems",
+          0.18311163807343772
+        ],
+        [
+          "decision",
+          0.22415602384724462
+        ],
+        [
+          "making",
+          0.22415602384724462
+        ],
+        [
+          "advanced",
+          0.22611877385858456
+        ],
+        [
+          "technologies",
+          0.22611877385858456
+        ],
+        [
+          "analytics",
+          0.22611877385858456
+        ],
+        [
+          "business",
+          0.22611877385858456
+        ],
+        [
+          "processing",
+          0.22611877385858456
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "b4042a308119ac8271198e8660a1ae11"
+    },
+    {
+      "test_id": 29,
+      "description": "long_english_n2_dedup0.7_top20",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 2,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 8.066,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "science research",
+          0.021983121687085844
+        ],
+        [
+          "technology innovation",
+          0.023646367844712822
+        ],
+        [
+          "Machine learning",
+          0.036554391592733854
+        ],
+        [
+          "artificial intelligence",
+          0.040252897988071246
+        ],
+        [
+          "computer science",
+          0.04337024575057798
+        ],
+        [
+          "learning algorithms",
+          0.055045731842217935
+        ],
+        [
+          "data science",
+          0.06298759459199518
+        ],
+        [
+          "science",
+          0.06573100928084202
+        ],
+        [
+          "revolutionizing data",
+          0.07962408200470225
+        ],
+        [
+          "learning",
+          0.0797162810742201
+        ],
+        [
+          "intelligence",
+          0.08712724521725822
+        ],
+        [
+          "Machine",
+          0.10330976295090383
+        ],
+        [
+          "intelligence systems",
+          0.10585715373782309
+        ],
+        [
+          "intelligence applications",
+          0.11825084538682998
+        ],
+        [
+          "decision making",
+          0.12576945559363895
+        ],
+        [
+          "business intelligence",
+          0.1340525341435504
+        ],
+        [
+          "innovation",
+          0.14117868986392443
+        ],
+        [
+          "artificial",
+          0.14252623547527063
+        ],
+        [
+          "data",
+          0.15024681561869468
+        ],
+        [
+          "predictive modeling",
+          0.15218414980582365
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "8dd0bfb31c27b85e63676e4ad21b10ab"
+    },
+    {
+      "test_id": 30,
+      "description": "long_english_n3_dedup0.7_top20",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 11.198,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "revolutionizing data science",
+          0.011210355287961596
+        ],
+        [
+          "data science research",
+          0.011210355287961596
+        ],
+        [
+          "Machine learning algorithms",
+          0.019467391224326284
+        ],
+        [
+          "science research",
+          0.021983121687085844
+        ],
+        [
+          "technology innovation",
+          0.023646367844712822
+        ],
+        [
+          "artificial intelligence systems",
+          0.03498486129349075
+        ],
+        [
+          "Machine learning",
+          0.036554391592733854
+        ],
+        [
+          "artificial intelligence",
+          0.040252897988071246
+        ],
+        [
+          "computer science",
+          0.04337024575057798
+        ],
+        [
+          "science and technology",
+          0.05244040071033289
+        ],
+        [
+          "learning algorithms",
+          0.055045731842217935
+        ],
+        [
+          "data science",
+          0.06298759459199518
+        ],
+        [
+          "machine learning methods",
+          0.063617605555457
+        ],
+        [
+          "science",
+          0.06573100928084202
+        ],
+        [
+          "business intelligence applications",
+          0.06943548344588393
+        ],
+        [
+          "statistical machine learning",
+          0.07159260031854231
+        ],
+        [
+          "revolutionizing data",
+          0.07962408200470225
+        ],
+        [
+          "learning",
+          0.0797162810742201
+        ],
+        [
+          "intelligence",
+          0.08712724521725822
+        ],
+        [
+          "machine learning engineers",
+          0.08817544430039627
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "f46f7587051c9beea11fdbfa9ab8339c"
+    },
+    {
+      "test_id": 31,
+      "description": "long_english_n4_dedup0.7_top20",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 4,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 9.996,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "revolutionizing data science research",
+          0.0020115728430981435
+        ],
+        [
+          "science and technology innovation",
+          0.007219349080824512
+        ],
+        [
+          "revolutionizing data science",
+          0.011210355287961596
+        ],
+        [
+          "data science research",
+          0.011210355287961596
+        ],
+        [
+          "science research in computer",
+          0.015685384780506836
+        ],
+        [
+          "research in computer science",
+          0.01568538478050684
+        ],
+        [
+          "computer science and technology",
+          0.01568538478050684
+        ],
+        [
+          "Machine learning algorithms",
+          0.019467391224326284
+        ],
+        [
+          "science research",
+          0.021983121687085844
+        ],
+        [
+          "technology innovation",
+          0.023646367844712822
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.028589523500648247
+        ],
+        [
+          "artificial intelligence systems",
+          0.03498486129349075
+        ],
+        [
+          "learning algorithms and artificial",
+          0.035054679437160306
+        ],
+        [
+          "Machine learning",
+          0.036554391592733854
+        ],
+        [
+          "intelligence systems are revolutionizing",
+          0.03687373140394878
+        ],
+        [
+          "artificial intelligence",
+          0.040252897988071246
+        ],
+        [
+          "computer science",
+          0.04337024575057798
+        ],
+        [
+          "statistical machine learning methods",
+          0.0463026931695949
+        ],
+        [
+          "science and technology",
+          0.05244040071033289
+        ],
+        [
+          "learning algorithms",
+          0.055045731842217935
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "191331a45d6b0c490afac00a2de98f00"
+    },
+    {
+      "test_id": 32,
+      "description": "long_english_n5_dedup0.7_top20",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 5,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 12.335,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "revolutionizing data science research",
+          0.0020115728430981435
+        ],
+        [
+          "science research in computer science",
+          0.0021281388190718905
+        ],
+        [
+          "computer science and technology innovation",
+          0.0022908629468817955
+        ],
+        [
+          "science and technology innovation",
+          0.007219349080824512
+        ],
+        [
+          "data science research in computer",
+          0.007912789531114673
+        ],
+        [
+          "systems are revolutionizing data science",
+          0.00937988766457592
+        ],
+        [
+          "learning algorithms and artificial intelligence",
+          0.010114362012688847
+        ],
+        [
+          "revolutionizing data science",
+          0.011210355287961596
+        ],
+        [
+          "data science research",
+          0.011210355287961596
+        ],
+        [
+          "algorithms and artificial intelligence systems",
+          0.011808587951510668
+        ],
+        [
+          "artificial intelligence systems are revolutionizing",
+          0.011808587951510668
+        ],
+        [
+          "Machine learning algorithms and artificial",
+          0.012228864002363901
+        ],
+        [
+          "science research in computer",
+          0.015685384780506836
+        ],
+        [
+          "research in computer science",
+          0.01568538478050684
+        ],
+        [
+          "computer science and technology",
+          0.01568538478050684
+        ],
+        [
+          "Machine learning algorithms",
+          0.019467391224326284
+        ],
+        [
+          "intelligence systems are revolutionizing data",
+          0.02011588292899754
+        ],
+        [
+          "science research",
+          0.021983121687085844
+        ],
+        [
+          "technology innovation",
+          0.023646367844712822
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.028589523500648247
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "77d37b8552bad4c08b3e63383b5b66b0"
+    },
+    {
+      "test_id": 33,
+      "description": "long_english_n6_dedup0.7_top20",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 6,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 14.27,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "data science research in computer science",
+          0.0011182199697011839
+        ],
+        [
+          "revolutionizing data science research in computer",
+          0.0014177898948943717
+        ],
+        [
+          "systems are revolutionizing data science research",
+          0.0016879599157365085
+        ],
+        [
+          "revolutionizing data science research",
+          0.0020115728430981435
+        ],
+        [
+          "science research in computer science",
+          0.0021281388190718905
+        ],
+        [
+          "computer science and technology innovation",
+          0.0022908629468817955
+        ],
+        [
+          "intelligence systems are revolutionizing data science",
+          0.0028674471579461435
+        ],
+        [
+          "Machine learning algorithms and artificial intelligence",
+          0.0036801359374495886
+        ],
+        [
+          "learning algorithms and artificial intelligence systems",
+          0.004490484842335113
+        ],
+        [
+          "research in computer science and technology",
+          0.005996834214111497
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data",
+          0.006896973391591734
+        ],
+        [
+          "science and technology innovation",
+          0.007219349080824512
+        ],
+        [
+          "data science research in computer",
+          0.007912789531114673
+        ],
+        [
+          "systems are revolutionizing data science",
+          0.00937988766457592
+        ],
+        [
+          "learning algorithms and artificial intelligence",
+          0.010114362012688847
+        ],
+        [
+          "revolutionizing data science",
+          0.011210355287961596
+        ],
+        [
+          "data science research",
+          0.011210355287961596
+        ],
+        [
+          "algorithms and artificial intelligence systems",
+          0.011808587951510668
+        ],
+        [
+          "artificial intelligence systems are revolutionizing",
+          0.011808587951510668
+        ],
+        [
+          "Machine learning algorithms and artificial",
+          0.012228864002363901
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "0980d4f1ee91bcac5eb9c0c6a6aac609"
+    },
+    {
+      "test_id": 34,
+      "description": "long_english_n7_dedup0.7_top20",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 7,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 12.974,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "revolutionizing data science research in computer science",
+          0.00020148377304973357
+        ],
+        [
+          "intelligence systems are revolutionizing data science research",
+          0.000521704233478834
+        ],
+        [
+          "science research in computer science and technology",
+          0.0007888749316188284
+        ],
+        [
+          "research in computer science and technology innovation",
+          0.0008472237841620838
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data science",
+          0.0009912229248860598
+        ],
+        [
+          "data science research in computer science",
+          0.0011182199697011839
+        ],
+        [
+          "revolutionizing data science research in computer",
+          0.0014177898948943717
+        ],
+        [
+          "systems are revolutionizing data science research",
+          0.0016879599157365085
+        ],
+        [
+          "Machine learning algorithms and artificial intelligence systems",
+          0.0017090508351514622
+        ],
+        [
+          "revolutionizing data science research",
+          0.0020115728430981435
+        ],
+        [
+          "science research in computer science",
+          0.0021281388190718905
+        ],
+        [
+          "computer science and technology innovation",
+          0.0022908629468817955
+        ],
+        [
+          "intelligence systems are revolutionizing data science",
+          0.0028674471579461435
+        ],
+        [
+          "Machine learning algorithms and artificial intelligence",
+          0.0036801359374495886
+        ],
+        [
+          "algorithms and artificial intelligence systems are revolutionizing",
+          0.0040778301421201014
+        ],
+        [
+          "learning algorithms and artificial intelligence systems",
+          0.004490484842335113
+        ],
+        [
+          "research in computer science and technology",
+          0.005996834214111497
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data",
+          0.006896973391591734
+        ],
+        [
+          "science and technology innovation",
+          0.007219349080824512
+        ],
+        [
+          "data science research in computer",
+          0.007912789531114673
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "a14dbbeb12bffd9fb055eae3a12eb5a0"
+    },
+    {
+      "test_id": 35,
+      "description": "long_english_n8_dedup0.7_top20",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 8,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 11.281,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "science research in computer science and technology innovation",
+          0.00011354014689537703
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data science research",
+          0.0001820378936277927
+        ],
+        [
+          "revolutionizing data science research in computer science",
+          0.00020148377304973357
+        ],
+        [
+          "data science research in computer science and technology",
+          0.0003786602057096877
+        ],
+        [
+          "intelligence systems are revolutionizing data science research",
+          0.000521704233478834
+        ],
+        [
+          "science research in computer science and technology",
+          0.0007888749316188284
+        ],
+        [
+          "research in computer science and technology innovation",
+          0.0008472237841620838
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data science",
+          0.0009912229248860598
+        ],
+        [
+          "data science research in computer science",
+          0.0011182199697011839
+        ],
+        [
+          "systems are revolutionizing data science research in computer",
+          0.0011890891373195847
+        ],
+        [
+          "revolutionizing data science research in computer",
+          0.0014177898948943717
+        ],
+        [
+          "learning algorithms and artificial intelligence systems are revolutionizing",
+          0.0015008875833527953
+        ],
+        [
+          "systems are revolutionizing data science research",
+          0.0016879599157365085
+        ],
+        [
+          "Machine learning algorithms and artificial intelligence systems",
+          0.0017090508351514622
+        ],
+        [
+          "revolutionizing data science research",
+          0.0020115728430981435
+        ],
+        [
+          "science research in computer science",
+          0.0021281388190718905
+        ],
+        [
+          "algorithms and artificial intelligence systems are revolutionizing data",
+          0.002266222594547362
+        ],
+        [
+          "computer science and technology innovation",
+          0.0022908629468817955
+        ],
+        [
+          "intelligence systems are revolutionizing data science",
+          0.0028674471579461435
+        ],
+        [
+          "Machine learning algorithms and artificial intelligence",
+          0.0036801359374495886
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "601d260cb837b4ac0c9658d6b6709430"
+    },
+    {
+      "test_id": 36,
+      "description": "long_english_n9_dedup0.7_top20",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 9,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 26.654,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "data science research in computer science and technology innovation",
+          5.7468250798883254e-05
+        ],
+        [
+          "revolutionizing data science research in computer science and technology",
+          6.74083580211791e-05
+        ],
+        [
+          "science research in computer science and technology innovation",
+          0.00011354014689537703
+        ],
+        [
+          "systems are revolutionizing data science research in computer science",
+          0.000169317928967556
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data science research",
+          0.0001820378936277927
+        ],
+        [
+          "revolutionizing data science research in computer science",
+          0.00020148377304973357
+        ],
+        [
+          "algorithms and artificial intelligence systems are revolutionizing data science",
+          0.0003237414428732972
+        ],
+        [
+          "intelligence systems are revolutionizing data science research in computer",
+          0.00036678987591741115
+        ],
+        [
+          "data science research in computer science and technology",
+          0.0003786602057096877
+        ],
+        [
+          "intelligence systems are revolutionizing data science research",
+          0.000521704233478834
+        ],
+        [
+          "Machine learning algorithms and artificial intelligence systems are revolutionizing",
+          0.0005593650732056029
+        ],
+        [
+          "science research in computer science and technology",
+          0.0007888749316188284
+        ],
+        [
+          "research in computer science and technology innovation",
+          0.0008472237841620838
+        ],
+        [
+          "learning algorithms and artificial intelligence systems are revolutionizing data",
+          0.00089593040062753
+        ],
+        [
+          "artificial intelligence systems are revolutionizing data science",
+          0.0009912229248860598
+        ],
+        [
+          "data science research in computer science",
+          0.0011182199697011839
+        ],
+        [
+          "systems are revolutionizing data science research in computer",
+          0.0011890891373195847
+        ],
+        [
+          "revolutionizing data science research in computer",
+          0.0014177898948943717
+        ],
+        [
+          "learning algorithms and artificial intelligence systems are revolutionizing",
+          0.0015008875833527953
+        ],
+        [
+          "systems are revolutionizing data science research",
+          0.0016879599157365085
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "6303921d4c6fb7864a4e166a1f23eb8b"
+    },
+    {
+      "test_id": 37,
+      "description": "long_english_n3_dedup0.5_top10",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.5,
+        "top": 10
+      },
+      "execution_time_ms": 9.427,
+      "num_keywords": 10,
+      "keywords": [
+        [
+          "revolutionizing data science",
+          0.011210355287961596
+        ],
+        [
+          "data science research",
+          0.011210355287961596
+        ],
+        [
+          "Machine learning algorithms",
+          0.019467391224326284
+        ],
+        [
+          "science research",
+          0.021983121687085844
+        ],
+        [
+          "technology innovation",
+          0.023646367844712822
+        ],
+        [
+          "artificial intelligence systems",
+          0.03498486129349075
+        ],
+        [
+          "Machine learning",
+          0.036554391592733854
+        ],
+        [
+          "artificial intelligence",
+          0.040252897988071246
+        ],
+        [
+          "computer science",
+          0.04337024575057798
+        ],
+        [
+          "science and technology",
+          0.05244040071033289
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "120a3c05b73e789a1875a6ceaddc213d"
+    },
+    {
+      "test_id": 38,
+      "description": "long_english_n3_dedup0.9_top15",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.9,
+        "top": 15
+      },
+      "execution_time_ms": 7.995,
+      "num_keywords": 15,
+      "keywords": [
+        [
+          "revolutionizing data science",
+          0.011210355287961596
+        ],
+        [
+          "data science research",
+          0.011210355287961596
+        ],
+        [
+          "Machine learning algorithms",
+          0.019467391224326284
+        ],
+        [
+          "science research",
+          0.021983121687085844
+        ],
+        [
+          "technology innovation",
+          0.023646367844712822
+        ],
+        [
+          "artificial intelligence systems",
+          0.03498486129349075
+        ],
+        [
+          "Machine learning",
+          0.036554391592733854
+        ],
+        [
+          "artificial intelligence",
+          0.040252897988071246
+        ],
+        [
+          "computer science",
+          0.04337024575057798
+        ],
+        [
+          "science and technology",
+          0.05244040071033289
+        ],
+        [
+          "learning algorithms",
+          0.055045731842217935
+        ],
+        [
+          "data science",
+          0.06298759459199518
+        ],
+        [
+          "machine learning methods",
+          0.063617605555457
+        ],
+        [
+          "science",
+          0.06573100928084202
+        ],
+        [
+          "business intelligence applications",
+          0.06943548344588393
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "f24cb34861e470863b4757d72e49b5d4"
+    },
+    {
+      "test_id": 39,
+      "description": "long_english_n3_dedup1.0_top25",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 1.0,
+        "top": 25
+      },
+      "execution_time_ms": 7.573,
+      "num_keywords": 25,
+      "keywords": [
+        [
+          "revolutionizing data science",
+          0.011210355287961596
+        ],
+        [
+          "data science research",
+          0.011210355287961596
+        ],
+        [
+          "Machine learning algorithms",
+          0.019467391224326284
+        ],
+        [
+          "science research",
+          0.021983121687085844
+        ],
+        [
+          "technology innovation",
+          0.023646367844712822
+        ],
+        [
+          "artificial intelligence systems",
+          0.03498486129349075
+        ],
+        [
+          "Machine learning",
+          0.036554391592733854
+        ],
+        [
+          "artificial intelligence",
+          0.040252897988071246
+        ],
+        [
+          "computer science",
+          0.04337024575057798
+        ],
+        [
+          "science and technology",
+          0.05244040071033289
+        ],
+        [
+          "learning algorithms",
+          0.055045731842217935
+        ],
+        [
+          "data science",
+          0.06298759459199518
+        ],
+        [
+          "machine learning methods",
+          0.063617605555457
+        ],
+        [
+          "science",
+          0.06573100928084202
+        ],
+        [
+          "business intelligence applications",
+          0.06943548344588393
+        ],
+        [
+          "statistical machine learning",
+          0.07159260031854231
+        ],
+        [
+          "revolutionizing data",
+          0.07962408200470225
+        ],
+        [
+          "learning",
+          0.0797162810742201
+        ],
+        [
+          "intelligence",
+          0.08712724521725822
+        ],
+        [
+          "machine learning engineers",
+          0.08817544430039627
+        ],
+        [
+          "industries including healthcare",
+          0.08996030562394129
+        ],
+        [
+          "Machine",
+          0.10330976295090383
+        ],
+        [
+          "intelligence systems",
+          0.10585715373782309
+        ],
+        [
+          "algorithms and artificial",
+          0.10691386159859544
+        ],
+        [
+          "research in computer",
+          0.1171743869047584
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "c61f6b98b9d30a7f507febaab5f62bc0"
+    },
+    {
+      "test_id": 40,
+      "description": "long_english_n4_dedup0.3_top30",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 4,
+        "dedupLim": 0.3,
+        "top": 30
+      },
+      "execution_time_ms": 11.024,
+      "num_keywords": 30,
+      "keywords": [
+        [
+          "revolutionizing data science research",
+          0.0020115728430981435
+        ],
+        [
+          "science and technology innovation",
+          0.007219349080824512
+        ],
+        [
+          "revolutionizing data science",
+          0.011210355287961596
+        ],
+        [
+          "data science research",
+          0.011210355287961596
+        ],
+        [
+          "science research in computer",
+          0.015685384780506836
+        ],
+        [
+          "research in computer science",
+          0.01568538478050684
+        ],
+        [
+          "computer science and technology",
+          0.01568538478050684
+        ],
+        [
+          "Machine learning algorithms",
+          0.019467391224326284
+        ],
+        [
+          "science research",
+          0.021983121687085844
+        ],
+        [
+          "technology innovation",
+          0.023646367844712822
+        ],
+        [
+          "algorithms and artificial intelligence",
+          0.028589523500648247
+        ],
+        [
+          "artificial intelligence systems",
+          0.03498486129349075
+        ],
+        [
+          "learning algorithms and artificial",
+          0.035054679437160306
+        ],
+        [
+          "Machine learning",
+          0.036554391592733854
+        ],
+        [
+          "intelligence systems are revolutionizing",
+          0.03687373140394878
+        ],
+        [
+          "artificial intelligence",
+          0.040252897988071246
+        ],
+        [
+          "computer science",
+          0.04337024575057798
+        ],
+        [
+          "statistical machine learning methods",
+          0.0463026931695949
+        ],
+        [
+          "science and technology",
+          0.05244040071033289
+        ],
+        [
+          "learning algorithms",
+          0.055045731842217935
+        ],
+        [
+          "data science",
+          0.06298759459199518
+        ],
+        [
+          "machine learning methods",
+          0.063617605555457
+        ],
+        [
+          "science",
+          0.06573100928084202
+        ],
+        [
+          "systems are revolutionizing data",
+          0.06644984276359499
+        ],
+        [
+          "business intelligence applications",
+          0.06943548344588393
+        ],
+        [
+          "statistical machine learning",
+          0.07159260031854231
+        ],
+        [
+          "revolutionizing data",
+          0.07962408200470225
+        ],
+        [
+          "learning",
+          0.0797162810742201
+        ],
+        [
+          "machine learning engineers collaborate",
+          0.08602853968868211
+        ],
+        [
+          "intelligence",
+          0.08712724521725822
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "50a562ee47a51673e98a0c2d2ba61e57"
+    },
+    {
+      "test_id": 41,
+      "description": "long_english_n5_dedup0.8_top12",
+      "text_name": "long_english",
+      "config": {
+        "lan": "en",
+        "n": 5,
+        "dedupLim": 0.8,
+        "top": 12
+      },
+      "execution_time_ms": 9.741,
+      "num_keywords": 12,
+      "keywords": [
+        [
+          "revolutionizing data science research",
+          0.0020115728430981435
+        ],
+        [
+          "science research in computer science",
+          0.0021281388190718905
+        ],
+        [
+          "computer science and technology innovation",
+          0.0022908629468817955
+        ],
+        [
+          "science and technology innovation",
+          0.007219349080824512
+        ],
+        [
+          "data science research in computer",
+          0.007912789531114673
+        ],
+        [
+          "systems are revolutionizing data science",
+          0.00937988766457592
+        ],
+        [
+          "learning algorithms and artificial intelligence",
+          0.010114362012688847
+        ],
+        [
+          "revolutionizing data science",
+          0.011210355287961596
+        ],
+        [
+          "data science research",
+          0.011210355287961596
+        ],
+        [
+          "algorithms and artificial intelligence systems",
+          0.011808587951510668
+        ],
+        [
+          "artificial intelligence systems are revolutionizing",
+          0.011808587951510668
+        ],
+        [
+          "Machine learning algorithms and artificial",
+          0.012228864002363901
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "0126cccb56fef59fcfd90b1b2a0c42b6"
+    },
+    {
+      "test_id": 42,
+      "description": "technical_text_n1_dedup0.7_top20",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 1,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 2.915,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "CNNs",
+          0.07188367843871574
+        ],
+        [
+          "patterns",
+          0.12102666257279926
+        ],
+        [
+          "techniques",
+          0.12102666257279926
+        ],
+        [
+          "optimization",
+          0.16781817241196398
+        ],
+        [
+          "algorithms",
+          0.16781817241196398
+        ],
+        [
+          "implementation",
+          0.17705097305926945
+        ],
+        [
+          "convolutional",
+          0.17705097305926945
+        ],
+        [
+          "neural",
+          0.17705097305926945
+        ],
+        [
+          "computer",
+          0.17705097305926945
+        ],
+        [
+          "vision",
+          0.17705097305926945
+        ],
+        [
+          "applications",
+          0.17705097305926945
+        ],
+        [
+          "requires",
+          0.17705097305926945
+        ],
+        [
+          "careful",
+          0.17705097305926945
+        ],
+        [
+          "consideration",
+          0.17705097305926945
+        ],
+        [
+          "architectural",
+          0.17705097305926945
+        ],
+        [
+          "design",
+          0.17705097305926945
+        ],
+        [
+          "regularization",
+          0.17705097305926945
+        ],
+        [
+          "Adam",
+          0.1856224546394843
+        ],
+        [
+          "RMSprop",
+          0.21197353881683212
+        ],
+        [
+          "Backpropagation",
+          0.32350596561652023
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "0cf1a707bb8e6f82dfdf82c9c61b994c"
+    },
+    {
+      "test_id": 43,
+      "description": "technical_text_n2_dedup0.7_top20",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 2,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 2.801,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "design patterns",
+          0.021897096923229387
+        ],
+        [
+          "regularization techniques",
+          0.021897096923229387
+        ],
+        [
+          "convolutional neural",
+          0.032361484023902806
+        ],
+        [
+          "computer vision",
+          0.032361484023902806
+        ],
+        [
+          "vision applications",
+          0.032361484023902806
+        ],
+        [
+          "applications requires",
+          0.032361484023902806
+        ],
+        [
+          "requires careful",
+          0.032361484023902806
+        ],
+        [
+          "careful consideration",
+          0.032361484023902806
+        ],
+        [
+          "architectural design",
+          0.032361484023902806
+        ],
+        [
+          "neural networks",
+          0.06317914585211948
+        ],
+        [
+          "CNNs",
+          0.07188367843871574
+        ],
+        [
+          "patterns",
+          0.12102666257279926
+        ],
+        [
+          "techniques",
+          0.12102666257279926
+        ],
+        [
+          "Backpropagation algorithms",
+          0.12180611121305976
+        ],
+        [
+          "optimization algorithms",
+          0.12695326409249938
+        ],
+        [
+          "AdaGrad optimizers",
+          0.16056327145649474
+        ],
+        [
+          "algorithms enable",
+          0.16759285702107343
+        ],
+        [
+          "gradient-based optimization",
+          0.16759285702107343
+        ],
+        [
+          "network parameters",
+          0.16759285702107343
+        ],
+        [
+          "optimization",
+          0.16781817241196398
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "46ca46b3b0c002b6c9786fb733e4f01e"
+    },
+    {
+      "test_id": 44,
+      "description": "technical_text_n3_dedup0.7_top20",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 3.837,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "architectural design patterns",
+          0.0040645919587878575
+        ],
+        [
+          "computer vision applications",
+          0.006051983279519138
+        ],
+        [
+          "vision applications requires",
+          0.006051983279519138
+        ],
+        [
+          "applications requires careful",
+          0.006051983279519138
+        ],
+        [
+          "requires careful consideration",
+          0.006051983279519138
+        ],
+        [
+          "convolutional neural networks",
+          0.012081596133190165
+        ],
+        [
+          "design patterns",
+          0.021897096923229387
+        ],
+        [
+          "regularization techniques",
+          0.021897096923229387
+        ],
+        [
+          "implementation of convolutional",
+          0.032361484023902806
+        ],
+        [
+          "convolutional neural",
+          0.032361484023902806
+        ],
+        [
+          "computer vision",
+          0.032361484023902806
+        ],
+        [
+          "vision applications",
+          0.032361484023902806
+        ],
+        [
+          "applications requires",
+          0.032361484023902806
+        ],
+        [
+          "requires careful",
+          0.032361484023902806
+        ],
+        [
+          "careful consideration",
+          0.032361484023902806
+        ],
+        [
+          "consideration of architectural",
+          0.032361484023902806
+        ],
+        [
+          "architectural design",
+          0.032361484023902806
+        ],
+        [
+          "neural networks",
+          0.06317914585211948
+        ],
+        [
+          "Backpropagation algorithms enable",
+          0.0661088808181531
+        ],
+        [
+          "CNNs",
+          0.07188367843871574
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "40d3c97799d467ed8f7e75211c66ccb0"
+    },
+    {
+      "test_id": 45,
+      "description": "technical_text_n4_dedup0.7_top20",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 4,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 4.802,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "computer vision applications requires",
+          0.0011514786685283048
+        ],
+        [
+          "vision applications requires careful",
+          0.0011514786685283048
+        ],
+        [
+          "applications requires careful consideration",
+          0.0011514786685283048
+        ],
+        [
+          "architectural design patterns",
+          0.0040645919587878575
+        ],
+        [
+          "implementation of convolutional neural",
+          0.006051983279519138
+        ],
+        [
+          "computer vision applications",
+          0.006051983279519138
+        ],
+        [
+          "vision applications requires",
+          0.006051983279519138
+        ],
+        [
+          "applications requires careful",
+          0.006051983279519138
+        ],
+        [
+          "requires careful consideration",
+          0.006051983279519138
+        ],
+        [
+          "careful consideration of architectural",
+          0.006051983279519138
+        ],
+        [
+          "consideration of architectural design",
+          0.006051983279519138
+        ],
+        [
+          "convolutional neural networks",
+          0.012081596133190165
+        ],
+        [
+          "design patterns",
+          0.021897096923229387
+        ],
+        [
+          "regularization techniques",
+          0.021897096923229387
+        ],
+        [
+          "implementation of convolutional",
+          0.032361484023902806
+        ],
+        [
+          "convolutional neural",
+          0.032361484023902806
+        ],
+        [
+          "computer vision",
+          0.032361484023902806
+        ],
+        [
+          "vision applications",
+          0.032361484023902806
+        ],
+        [
+          "applications requires",
+          0.032361484023902806
+        ],
+        [
+          "requires careful",
+          0.032361484023902806
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "aeebacda7ac080d014cf9ede5781d56f"
+    },
+    {
+      "test_id": 46,
+      "description": "technical_text_n5_dedup0.7_top20",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 5,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 4.319,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "computer vision applications requires careful",
+          0.00022205478618735283
+        ],
+        [
+          "vision applications requires careful consideration",
+          0.00022205478618735283
+        ],
+        [
+          "consideration of architectural design patterns",
+          0.0007689562143739122
+        ],
+        [
+          "computer vision applications requires",
+          0.0011514786685283048
+        ],
+        [
+          "vision applications requires careful",
+          0.0011514786685283048
+        ],
+        [
+          "applications requires careful consideration",
+          0.0011514786685283048
+        ],
+        [
+          "requires careful consideration of architectural",
+          0.0011514786685283048
+        ],
+        [
+          "careful consideration of architectural design",
+          0.0011514786685283048
+        ],
+        [
+          "implementation of convolutional neural networks",
+          0.002339237780457777
+        ],
+        [
+          "architectural design patterns",
+          0.0040645919587878575
+        ],
+        [
+          "implementation of convolutional neural",
+          0.006051983279519138
+        ],
+        [
+          "computer vision applications",
+          0.006051983279519138
+        ],
+        [
+          "vision applications requires",
+          0.006051983279519138
+        ],
+        [
+          "applications requires careful",
+          0.006051983279519138
+        ],
+        [
+          "requires careful consideration",
+          0.006051983279519138
+        ],
+        [
+          "careful consideration of architectural",
+          0.006051983279519138
+        ],
+        [
+          "consideration of architectural design",
+          0.006051983279519138
+        ],
+        [
+          "convolutional neural networks",
+          0.012081596133190165
+        ],
+        [
+          "Backpropagation algorithms enable gradient-based optimization",
+          0.017108400030613643
+        ],
+        [
+          "design patterns",
+          0.021897096923229387
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "73969419579c7ec67a6c4c4450d6690f"
+    },
+    {
+      "test_id": 47,
+      "description": "technical_text_n6_dedup0.7_top20",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 6,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 3.326,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "computer vision applications requires careful consideration",
+          4.328676766886087e-05
+        ],
+        [
+          "careful consideration of architectural design patterns",
+          0.00014762334499846604
+        ],
+        [
+          "computer vision applications requires careful",
+          0.00022205478618735283
+        ],
+        [
+          "vision applications requires careful consideration",
+          0.00022205478618735283
+        ],
+        [
+          "applications requires careful consideration of architectural",
+          0.00022205478618735283
+        ],
+        [
+          "requires careful consideration of architectural design",
+          0.00022205478618735283
+        ],
+        [
+          "consideration of architectural design patterns",
+          0.0007689562143739122
+        ],
+        [
+          "computer vision applications requires",
+          0.0011514786685283048
+        ],
+        [
+          "vision applications requires careful",
+          0.0011514786685283048
+        ],
+        [
+          "applications requires careful consideration",
+          0.0011514786685283048
+        ],
+        [
+          "requires careful consideration of architectural",
+          0.0011514786685283048
+        ],
+        [
+          "careful consideration of architectural design",
+          0.0011514786685283048
+        ],
+        [
+          "implementation of convolutional neural networks",
+          0.002339237780457777
+        ],
+        [
+          "architectural design patterns",
+          0.0040645919587878575
+        ],
+        [
+          "implementation of convolutional neural",
+          0.006051983279519138
+        ],
+        [
+          "computer vision applications",
+          0.006051983279519138
+        ],
+        [
+          "vision applications requires",
+          0.006051983279519138
+        ],
+        [
+          "applications requires careful",
+          0.006051983279519138
+        ],
+        [
+          "requires careful consideration",
+          0.006051983279519138
+        ],
+        [
+          "careful consideration of architectural",
+          0.006051983279519138
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "f96b8fc646cfbd431ed0097e13baedbd"
+    },
+    {
+      "test_id": 48,
+      "description": "technical_text_n7_dedup0.7_top20",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 7,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 4.709,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "requires careful consideration of architectural design patterns",
+          2.8672930909206463e-05
+        ],
+        [
+          "computer vision applications requires careful consideration",
+          4.328676766886087e-05
+        ],
+        [
+          "vision applications requires careful consideration of architectural",
+          4.328676766886087e-05
+        ],
+        [
+          "applications requires careful consideration of architectural design",
+          4.328676766886087e-05
+        ],
+        [
+          "careful consideration of architectural design patterns",
+          0.00014762334499846604
+        ],
+        [
+          "computer vision applications requires careful",
+          0.00022205478618735283
+        ],
+        [
+          "vision applications requires careful consideration",
+          0.00022205478618735283
+        ],
+        [
+          "applications requires careful consideration of architectural",
+          0.00022205478618735283
+        ],
+        [
+          "requires careful consideration of architectural design",
+          0.00022205478618735283
+        ],
+        [
+          "consideration of architectural design patterns",
+          0.0007689562143739122
+        ],
+        [
+          "computer vision applications requires",
+          0.0011514786685283048
+        ],
+        [
+          "vision applications requires careful",
+          0.0011514786685283048
+        ],
+        [
+          "applications requires careful consideration",
+          0.0011514786685283048
+        ],
+        [
+          "requires careful consideration of architectural",
+          0.0011514786685283048
+        ],
+        [
+          "careful consideration of architectural design",
+          0.0011514786685283048
+        ],
+        [
+          "implementation of convolutional neural networks",
+          0.002339237780457777
+        ],
+        [
+          "architectural design patterns",
+          0.0040645919587878575
+        ],
+        [
+          "implementation of convolutional neural",
+          0.006051983279519138
+        ],
+        [
+          "computer vision applications",
+          0.006051983279519138
+        ],
+        [
+          "vision applications requires",
+          0.006051983279519138
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "9c0c124461742ac8f877de7102399cb3"
+    },
+    {
+      "test_id": 49,
+      "description": "technical_text_n8_dedup0.7_top20",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 8,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 4.846,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "applications requires careful consideration of architectural design patterns",
+          5.6222708683293435e-06
+        ],
+        [
+          "computer vision applications requires careful consideration of architectural",
+          8.51329216481323e-06
+        ],
+        [
+          "vision applications requires careful consideration of architectural design",
+          8.51329216481323e-06
+        ],
+        [
+          "requires careful consideration of architectural design patterns",
+          2.8672930909206463e-05
+        ],
+        [
+          "computer vision applications requires careful consideration",
+          4.328676766886087e-05
+        ],
+        [
+          "vision applications requires careful consideration of architectural",
+          4.328676766886087e-05
+        ],
+        [
+          "applications requires careful consideration of architectural design",
+          4.328676766886087e-05
+        ],
+        [
+          "careful consideration of architectural design patterns",
+          0.00014762334499846604
+        ],
+        [
+          "computer vision applications requires careful",
+          0.00022205478618735283
+        ],
+        [
+          "vision applications requires careful consideration",
+          0.00022205478618735283
+        ],
+        [
+          "applications requires careful consideration of architectural",
+          0.00022205478618735283
+        ],
+        [
+          "requires careful consideration of architectural design",
+          0.00022205478618735283
+        ],
+        [
+          "consideration of architectural design patterns",
+          0.0007689562143739122
+        ],
+        [
+          "computer vision applications requires",
+          0.0011514786685283048
+        ],
+        [
+          "vision applications requires careful",
+          0.0011514786685283048
+        ],
+        [
+          "applications requires careful consideration",
+          0.0011514786685283048
+        ],
+        [
+          "requires careful consideration of architectural",
+          0.0011514786685283048
+        ],
+        [
+          "careful consideration of architectural design",
+          0.0011514786685283048
+        ],
+        [
+          "implementation of convolutional neural networks",
+          0.002339237780457777
+        ],
+        [
+          "architectural design patterns",
+          0.0040645919587878575
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "d4aafb80f845ade54a1bd00868cb1090"
+    },
+    {
+      "test_id": 50,
+      "description": "technical_text_n9_dedup0.7_top20",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 9,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 5.284,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "vision applications requires careful consideration of architectural design patterns",
+          1.111151379664635e-06
+        ],
+        [
+          "computer vision applications requires careful consideration of architectural design",
+          1.686757667960391e-06
+        ],
+        [
+          "applications requires careful consideration of architectural design patterns",
+          5.6222708683293435e-06
+        ],
+        [
+          "computer vision applications requires careful consideration of architectural",
+          8.51329216481323e-06
+        ],
+        [
+          "vision applications requires careful consideration of architectural design",
+          8.51329216481323e-06
+        ],
+        [
+          "requires careful consideration of architectural design patterns",
+          2.8672930909206463e-05
+        ],
+        [
+          "computer vision applications requires careful consideration",
+          4.328676766886087e-05
+        ],
+        [
+          "vision applications requires careful consideration of architectural",
+          4.328676766886087e-05
+        ],
+        [
+          "applications requires careful consideration of architectural design",
+          4.328676766886087e-05
+        ],
+        [
+          "careful consideration of architectural design patterns",
+          0.00014762334499846604
+        ],
+        [
+          "computer vision applications requires careful",
+          0.00022205478618735283
+        ],
+        [
+          "vision applications requires careful consideration",
+          0.00022205478618735283
+        ],
+        [
+          "applications requires careful consideration of architectural",
+          0.00022205478618735283
+        ],
+        [
+          "requires careful consideration of architectural design",
+          0.00022205478618735283
+        ],
+        [
+          "consideration of architectural design patterns",
+          0.0007689562143739122
+        ],
+        [
+          "computer vision applications requires",
+          0.0011514786685283048
+        ],
+        [
+          "vision applications requires careful",
+          0.0011514786685283048
+        ],
+        [
+          "applications requires careful consideration",
+          0.0011514786685283048
+        ],
+        [
+          "requires careful consideration of architectural",
+          0.0011514786685283048
+        ],
+        [
+          "careful consideration of architectural design",
+          0.0011514786685283048
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "199f6b880eb7e8a738aff004bebcb0cf"
+    },
+    {
+      "test_id": 51,
+      "description": "technical_text_n3_dedup0.5_top10",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.5,
+        "top": 10
+      },
+      "execution_time_ms": 2.792,
+      "num_keywords": 10,
+      "keywords": [
+        [
+          "architectural design patterns",
+          0.0040645919587878575
+        ],
+        [
+          "computer vision applications",
+          0.006051983279519138
+        ],
+        [
+          "vision applications requires",
+          0.006051983279519138
+        ],
+        [
+          "applications requires careful",
+          0.006051983279519138
+        ],
+        [
+          "requires careful consideration",
+          0.006051983279519138
+        ],
+        [
+          "convolutional neural networks",
+          0.012081596133190165
+        ],
+        [
+          "design patterns",
+          0.021897096923229387
+        ],
+        [
+          "regularization techniques",
+          0.021897096923229387
+        ],
+        [
+          "implementation of convolutional",
+          0.032361484023902806
+        ],
+        [
+          "convolutional neural",
+          0.032361484023902806
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "3184dd9c2a0d208a56202396e3b3826c"
+    },
+    {
+      "test_id": 52,
+      "description": "technical_text_n3_dedup0.9_top15",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.9,
+        "top": 15
+      },
+      "execution_time_ms": 3.9,
+      "num_keywords": 15,
+      "keywords": [
+        [
+          "architectural design patterns",
+          0.0040645919587878575
+        ],
+        [
+          "computer vision applications",
+          0.006051983279519138
+        ],
+        [
+          "vision applications requires",
+          0.006051983279519138
+        ],
+        [
+          "applications requires careful",
+          0.006051983279519138
+        ],
+        [
+          "requires careful consideration",
+          0.006051983279519138
+        ],
+        [
+          "convolutional neural networks",
+          0.012081596133190165
+        ],
+        [
+          "design patterns",
+          0.021897096923229387
+        ],
+        [
+          "regularization techniques",
+          0.021897096923229387
+        ],
+        [
+          "implementation of convolutional",
+          0.032361484023902806
+        ],
+        [
+          "convolutional neural",
+          0.032361484023902806
+        ],
+        [
+          "computer vision",
+          0.032361484023902806
+        ],
+        [
+          "vision applications",
+          0.032361484023902806
+        ],
+        [
+          "applications requires",
+          0.032361484023902806
+        ],
+        [
+          "requires careful",
+          0.032361484023902806
+        ],
+        [
+          "careful consideration",
+          0.032361484023902806
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "59c53f1b32bff27e3f7ad04e30049e6b"
+    },
+    {
+      "test_id": 53,
+      "description": "technical_text_n3_dedup1.0_top25",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 1.0,
+        "top": 25
+      },
+      "execution_time_ms": 4.367,
+      "num_keywords": 25,
+      "keywords": [
+        [
+          "architectural design patterns",
+          0.0040645919587878575
+        ],
+        [
+          "computer vision applications",
+          0.006051983279519138
+        ],
+        [
+          "vision applications requires",
+          0.006051983279519138
+        ],
+        [
+          "applications requires careful",
+          0.006051983279519138
+        ],
+        [
+          "requires careful consideration",
+          0.006051983279519138
+        ],
+        [
+          "convolutional neural networks",
+          0.012081596133190165
+        ],
+        [
+          "design patterns",
+          0.021897096923229387
+        ],
+        [
+          "regularization techniques",
+          0.021897096923229387
+        ],
+        [
+          "implementation of convolutional",
+          0.032361484023902806
+        ],
+        [
+          "convolutional neural",
+          0.032361484023902806
+        ],
+        [
+          "computer vision",
+          0.032361484023902806
+        ],
+        [
+          "vision applications",
+          0.032361484023902806
+        ],
+        [
+          "applications requires",
+          0.032361484023902806
+        ],
+        [
+          "requires careful",
+          0.032361484023902806
+        ],
+        [
+          "careful consideration",
+          0.032361484023902806
+        ],
+        [
+          "consideration of architectural",
+          0.032361484023902806
+        ],
+        [
+          "architectural design",
+          0.032361484023902806
+        ],
+        [
+          "neural networks",
+          0.06317914585211948
+        ],
+        [
+          "Backpropagation algorithms enable",
+          0.0661088808181531
+        ],
+        [
+          "CNNs",
+          0.07188367843871574
+        ],
+        [
+          "algorithms enable gradient-based",
+          0.09403202029204807
+        ],
+        [
+          "enable gradient-based optimization",
+          0.0940320202920481
+        ],
+        [
+          "patterns",
+          0.12102666257279926
+        ],
+        [
+          "techniques",
+          0.12102666257279926
+        ],
+        [
+          "Backpropagation algorithms",
+          0.12180611121305976
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "3013c78facc8bcbd5b84d83f9445a168"
+    },
+    {
+      "test_id": 54,
+      "description": "technical_text_n4_dedup0.3_top30",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 4,
+        "dedupLim": 0.3,
+        "top": 30
+      },
+      "execution_time_ms": 3.418,
+      "num_keywords": 30,
+      "keywords": [
+        [
+          "computer vision applications requires",
+          0.0011514786685283048
+        ],
+        [
+          "vision applications requires careful",
+          0.0011514786685283048
+        ],
+        [
+          "applications requires careful consideration",
+          0.0011514786685283048
+        ],
+        [
+          "architectural design patterns",
+          0.0040645919587878575
+        ],
+        [
+          "implementation of convolutional neural",
+          0.006051983279519138
+        ],
+        [
+          "computer vision applications",
+          0.006051983279519138
+        ],
+        [
+          "vision applications requires",
+          0.006051983279519138
+        ],
+        [
+          "applications requires careful",
+          0.006051983279519138
+        ],
+        [
+          "requires careful consideration",
+          0.006051983279519138
+        ],
+        [
+          "careful consideration of architectural",
+          0.006051983279519138
+        ],
+        [
+          "consideration of architectural design",
+          0.006051983279519138
+        ],
+        [
+          "convolutional neural networks",
+          0.012081596133190165
+        ],
+        [
+          "design patterns",
+          0.021897096923229387
+        ],
+        [
+          "regularization techniques",
+          0.021897096923229387
+        ],
+        [
+          "implementation of convolutional",
+          0.032361484023902806
+        ],
+        [
+          "convolutional neural",
+          0.032361484023902806
+        ],
+        [
+          "computer vision",
+          0.032361484023902806
+        ],
+        [
+          "vision applications",
+          0.032361484023902806
+        ],
+        [
+          "applications requires",
+          0.032361484023902806
+        ],
+        [
+          "requires careful",
+          0.032361484023902806
+        ],
+        [
+          "careful consideration",
+          0.032361484023902806
+        ],
+        [
+          "consideration of architectural",
+          0.032361484023902806
+        ],
+        [
+          "architectural design",
+          0.032361484023902806
+        ],
+        [
+          "Backpropagation algorithms enable gradient-based",
+          0.038783921999031606
+        ],
+        [
+          "algorithms enable gradient-based optimization",
+          0.04065735506452981
+        ],
+        [
+          "neural networks",
+          0.06317914585211948
+        ],
+        [
+          "Backpropagation algorithms enable",
+          0.0661088808181531
+        ],
+        [
+          "CNNs",
+          0.07188367843871574
+        ],
+        [
+          "variants such as Adam",
+          0.08622762995969425
+        ],
+        [
+          "algorithms enable gradient-based",
+          0.09403202029204807
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "f03a792add237e504db6390f292e5610"
+    },
+    {
+      "test_id": 55,
+      "description": "technical_text_n5_dedup0.8_top12",
+      "text_name": "technical_text",
+      "config": {
+        "lan": "en",
+        "n": 5,
+        "dedupLim": 0.8,
+        "top": 12
+      },
+      "execution_time_ms": 3.779,
+      "num_keywords": 12,
+      "keywords": [
+        [
+          "computer vision applications requires careful",
+          0.00022205478618735283
+        ],
+        [
+          "vision applications requires careful consideration",
+          0.00022205478618735283
+        ],
+        [
+          "consideration of architectural design patterns",
+          0.0007689562143739122
+        ],
+        [
+          "computer vision applications requires",
+          0.0011514786685283048
+        ],
+        [
+          "vision applications requires careful",
+          0.0011514786685283048
+        ],
+        [
+          "applications requires careful consideration",
+          0.0011514786685283048
+        ],
+        [
+          "requires careful consideration of architectural",
+          0.0011514786685283048
+        ],
+        [
+          "careful consideration of architectural design",
+          0.0011514786685283048
+        ],
+        [
+          "implementation of convolutional neural networks",
+          0.002339237780457777
+        ],
+        [
+          "architectural design patterns",
+          0.0040645919587878575
+        ],
+        [
+          "implementation of convolutional neural",
+          0.006051983279519138
+        ],
+        [
+          "computer vision applications",
+          0.006051983279519138
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "61940e31594b716df22526f3079b4ee3"
+    },
+    {
+      "test_id": 56,
+      "description": "mixed_content_n1_dedup0.7_top20",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 1,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 3.893,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Keras",
+          0.05766643487856614
+        ],
+        [
+          "TensorFlow",
+          0.09227619774540956
+        ],
+        [
+          "PyTorch",
+          0.09227619774540956
+        ],
+        [
+          "Python",
+          0.12154794233374165
+        ],
+        [
+          "scikit-learn",
+          0.12154794233374165
+        ],
+        [
+          "learning",
+          0.12639454680744233
+        ],
+        [
+          "data",
+          0.15265170147813412
+        ],
+        [
+          "programming",
+          0.1530613062642737
+        ],
+        [
+          "language",
+          0.1530613062642737
+        ],
+        [
+          "offers",
+          0.1530613062642737
+        ],
+        [
+          "excellent",
+          0.1530613062642737
+        ],
+        [
+          "machine",
+          0.1530613062642737
+        ],
+        [
+          "including",
+          0.1530613062642737
+        ],
+        [
+          "libraries",
+          0.16451094420420376
+        ],
+        [
+          "training",
+          0.2609346597110689
+        ],
+        [
+          "Pandas",
+          0.2725131560300542
+        ],
+        [
+          "Seaborn",
+          0.31463067740080036
+        ],
+        [
+          "building",
+          0.3245773114391238
+        ],
+        [
+          "models",
+          0.3245773114391238
+        ],
+        [
+          "frameworks",
+          0.3856221420534185
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "729a8b50fb426d8f0be2c5aeda07b4dc"
+    },
+    {
+      "test_id": 57,
+      "description": "mixed_content_n2_dedup0.7_top20",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 2,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 3.283,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Python programming",
+          0.01895696769164911
+        ],
+        [
+          "including scikit-learn",
+          0.01895696769164911
+        ],
+        [
+          "programming language",
+          0.023989790615692827
+        ],
+        [
+          "language offers",
+          0.023989790615692827
+        ],
+        [
+          "offers excellent",
+          0.023989790615692827
+        ],
+        [
+          "machine learning",
+          0.04024957463196022
+        ],
+        [
+          "learning including",
+          0.04024957463196022
+        ],
+        [
+          "excellent libraries",
+          0.05303119877754481
+        ],
+        [
+          "Keras",
+          0.05766643487856614
+        ],
+        [
+          "learning models",
+          0.08938348385376685
+        ],
+        [
+          "TensorFlow",
+          0.09227619774540956
+        ],
+        [
+          "PyTorch",
+          0.09227619774540956
+        ],
+        [
+          "Pandas libraries",
+          0.09849404434387442
+        ],
+        [
+          "deep learning",
+          0.10801000258069174
+        ],
+        [
+          "Python",
+          0.12154794233374165
+        ],
+        [
+          "scikit-learn",
+          0.12154794233374165
+        ],
+        [
+          "learning",
+          0.12639454680744233
+        ],
+        [
+          "data",
+          0.15265170147813412
+        ],
+        [
+          "programming",
+          0.1530613062642737
+        ],
+        [
+          "language",
+          0.1530613062642737
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "3604c1d1b00d887115a493c44b591af3"
+    },
+    {
+      "test_id": 58,
+      "description": "mixed_content_n3_dedup0.7_top20",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 4.431,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Python programming language",
+          0.00301314190810268
+        ],
+        [
+          "programming language offers",
+          0.003827439621259681
+        ],
+        [
+          "language offers excellent",
+          0.003827439621259681
+        ],
+        [
+          "learning including scikit-learn",
+          0.0051042386313453
+        ],
+        [
+          "machine learning including",
+          0.006500628794501593
+        ],
+        [
+          "offers excellent libraries",
+          0.008648632798699976
+        ],
+        [
+          "Python programming",
+          0.01895696769164911
+        ],
+        [
+          "including scikit-learn",
+          0.01895696769164911
+        ],
+        [
+          "programming language",
+          0.023989790615692827
+        ],
+        [
+          "language offers",
+          0.023989790615692827
+        ],
+        [
+          "offers excellent",
+          0.023989790615692827
+        ],
+        [
+          "machine learning",
+          0.04024957463196022
+        ],
+        [
+          "learning including",
+          0.04024957463196022
+        ],
+        [
+          "deep learning models",
+          0.04170940226428015
+        ],
+        [
+          "deploying deep learning",
+          0.05138767153037863
+        ],
+        [
+          "excellent libraries",
+          0.05303119877754481
+        ],
+        [
+          "Keras",
+          0.05766643487856614
+        ],
+        [
+          "Pandas libraries handle",
+          0.060435359662824144
+        ],
+        [
+          "frameworks provide high-level",
+          0.08577017882415917
+        ],
+        [
+          "provide high-level APIs",
+          0.08577017882415917
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "6ef1853f7a76c3ea71967ed645e890ac"
+    },
+    {
+      "test_id": 59,
+      "description": "mixed_content_n4_dedup0.7_top20",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 4,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 5.372,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Python programming language offers",
+          0.0004859843558227267
+        ],
+        [
+          "programming language offers excellent",
+          0.0006191497508768071
+        ],
+        [
+          "machine learning including scikit-learn",
+          0.0008317583248382565
+        ],
+        [
+          "language offers excellent libraries",
+          0.0014240317328077432
+        ],
+        [
+          "Python programming language",
+          0.00301314190810268
+        ],
+        [
+          "programming language offers",
+          0.003827439621259681
+        ],
+        [
+          "language offers excellent",
+          0.003827439621259681
+        ],
+        [
+          "learning including scikit-learn",
+          0.0051042386313453
+        ],
+        [
+          "machine learning including",
+          0.006500628794501593
+        ],
+        [
+          "offers excellent libraries",
+          0.008648632798699976
+        ],
+        [
+          "excellent libraries for machine",
+          0.01777132037978468
+        ],
+        [
+          "Python programming",
+          0.01895696769164911
+        ],
+        [
+          "including scikit-learn",
+          0.01895696769164911
+        ],
+        [
+          "deploying deep learning models",
+          0.020834338705070687
+        ],
+        [
+          "programming language",
+          0.023989790615692827
+        ],
+        [
+          "language offers",
+          0.023989790615692827
+        ],
+        [
+          "offers excellent",
+          0.023989790615692827
+        ],
+        [
+          "libraries for machine learning",
+          0.029794315560296856
+        ],
+        [
+          "machine learning",
+          0.04024957463196022
+        ],
+        [
+          "learning including",
+          0.04024957463196022
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "202323fd707445f6d56bfefd98e9236c"
+    },
+    {
+      "test_id": 60,
+      "description": "mixed_content_n5_dedup0.7_top20",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 5,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 5.072,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Python programming language offers excellent",
+          7.930064407961178e-05
+        ],
+        [
+          "programming language offers excellent libraries",
+          0.00023634097347407224
+        ],
+        [
+          "Python programming language offers",
+          0.0004859843558227267
+        ],
+        [
+          "programming language offers excellent",
+          0.0006191497508768071
+        ],
+        [
+          "machine learning including scikit-learn",
+          0.0008317583248382565
+        ],
+        [
+          "language offers excellent libraries",
+          0.0014240317328077432
+        ],
+        [
+          "offers excellent libraries for machine",
+          0.0028329497037321116
+        ],
+        [
+          "Python programming language",
+          0.00301314190810268
+        ],
+        [
+          "programming language offers",
+          0.003827439621259681
+        ],
+        [
+          "language offers excellent",
+          0.003827439621259681
+        ],
+        [
+          "excellent libraries for machine learning",
+          0.004808755839947452
+        ],
+        [
+          "libraries for machine learning including",
+          0.004808755839947452
+        ],
+        [
+          "learning including scikit-learn",
+          0.0051042386313453
+        ],
+        [
+          "machine learning including",
+          0.006500628794501593
+        ],
+        [
+          "offers excellent libraries",
+          0.008648632798699976
+        ],
+        [
+          "excellent libraries for machine",
+          0.01777132037978468
+        ],
+        [
+          "Python programming",
+          0.01895696769164911
+        ],
+        [
+          "including scikit-learn",
+          0.01895696769164911
+        ],
+        [
+          "deploying deep learning models",
+          0.020834338705070687
+        ],
+        [
+          "programming language",
+          0.023989790615692827
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "85fdf087ad670ebc4b76e05be0f18629"
+    },
+    {
+      "test_id": 61,
+      "description": "mixed_content_n6_dedup0.7_top20",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 6,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 5.111,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Python programming language offers excellent libraries",
+          3.077745219252898e-05
+        ],
+        [
+          "Python programming language offers excellent",
+          7.930064407961178e-05
+        ],
+        [
+          "programming language offers excellent libraries",
+          0.00023634097347407224
+        ],
+        [
+          "language offers excellent libraries for machine",
+          0.00045797292653731916
+        ],
+        [
+          "Python programming language offers",
+          0.0004859843558227267
+        ],
+        [
+          "libraries for machine learning including scikit-learn",
+          0.0006150184161116463
+        ],
+        [
+          "programming language offers excellent",
+          0.0006191497508768071
+        ],
+        [
+          "offers excellent libraries for machine learning",
+          0.0007851024086461549
+        ],
+        [
+          "excellent libraries for machine learning including",
+          0.0007851024086461551
+        ],
+        [
+          "machine learning including scikit-learn",
+          0.0008317583248382565
+        ],
+        [
+          "language offers excellent libraries",
+          0.0014240317328077432
+        ],
+        [
+          "offers excellent libraries for machine",
+          0.0028329497037321116
+        ],
+        [
+          "Python programming language",
+          0.00301314190810268
+        ],
+        [
+          "programming language offers",
+          0.003827439621259681
+        ],
+        [
+          "language offers excellent",
+          0.003827439621259681
+        ],
+        [
+          "excellent libraries for machine learning",
+          0.004808755839947452
+        ],
+        [
+          "libraries for machine learning including",
+          0.004808755839947452
+        ],
+        [
+          "learning including scikit-learn",
+          0.0051042386313453
+        ],
+        [
+          "machine learning including",
+          0.006500628794501593
+        ],
+        [
+          "offers excellent libraries",
+          0.008648632798699976
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "05e50f7ec0e5337557c1d816b65fb813"
+    },
+    {
+      "test_id": 62,
+      "description": "mixed_content_n7_dedup0.7_top20",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 7,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 4.471,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Python programming language offers excellent libraries",
+          3.077745219252898e-05
+        ],
+        [
+          "programming language offers excellent libraries for machine",
+          7.486869937377308e-05
+        ],
+        [
+          "Python programming language offers excellent",
+          7.930064407961178e-05
+        ],
+        [
+          "excellent libraries for machine learning including scikit-learn",
+          0.00010115050121763659
+        ],
+        [
+          "offers excellent libraries for machine learning including",
+          0.00012938727164090585
+        ],
+        [
+          "language offers excellent libraries for machine learning",
+          0.00012938727164090588
+        ],
+        [
+          "programming language offers excellent libraries",
+          0.00023634097347407224
+        ],
+        [
+          "language offers excellent libraries for machine",
+          0.00045797292653731916
+        ],
+        [
+          "Python programming language offers",
+          0.0004859843558227267
+        ],
+        [
+          "libraries for machine learning including scikit-learn",
+          0.0006150184161116463
+        ],
+        [
+          "programming language offers excellent",
+          0.0006191497508768071
+        ],
+        [
+          "offers excellent libraries for machine learning",
+          0.0007851024086461549
+        ],
+        [
+          "excellent libraries for machine learning including",
+          0.0007851024086461551
+        ],
+        [
+          "machine learning including scikit-learn",
+          0.0008317583248382565
+        ],
+        [
+          "language offers excellent libraries",
+          0.0014240317328077432
+        ],
+        [
+          "offers excellent libraries for machine",
+          0.0028329497037321116
+        ],
+        [
+          "Python programming language",
+          0.00301314190810268
+        ],
+        [
+          "programming language offers",
+          0.003827439621259681
+        ],
+        [
+          "language offers excellent",
+          0.003827439621259681
+        ],
+        [
+          "excellent libraries for machine learning",
+          0.004808755839947452
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "fd95a98c2280b301790c3b8f899d3b4c"
+    },
+    {
+      "test_id": 63,
+      "description": "mixed_content_n8_dedup0.7_top20",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 8,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 6.427,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Python programming language offers excellent libraries for machine",
+          9.654004857342328e-06
+        ],
+        [
+          "offers excellent libraries for machine learning including scikit-learn",
+          1.6771655224013988e-05
+        ],
+        [
+          "programming language offers excellent libraries for machine learning",
+          2.149017892301629e-05
+        ],
+        [
+          "language offers excellent libraries for machine learning including",
+          2.149017892301629e-05
+        ],
+        [
+          "Python programming language offers excellent libraries",
+          3.077745219252898e-05
+        ],
+        [
+          "programming language offers excellent libraries for machine",
+          7.486869937377308e-05
+        ],
+        [
+          "Python programming language offers excellent",
+          7.930064407961178e-05
+        ],
+        [
+          "excellent libraries for machine learning including scikit-learn",
+          0.00010115050121763659
+        ],
+        [
+          "offers excellent libraries for machine learning including",
+          0.00012938727164090585
+        ],
+        [
+          "language offers excellent libraries for machine learning",
+          0.00012938727164090588
+        ],
+        [
+          "programming language offers excellent libraries",
+          0.00023634097347407224
+        ],
+        [
+          "language offers excellent libraries for machine",
+          0.00045797292653731916
+        ],
+        [
+          "Python programming language offers",
+          0.0004859843558227267
+        ],
+        [
+          "libraries for machine learning including scikit-learn",
+          0.0006150184161116463
+        ],
+        [
+          "programming language offers excellent",
+          0.0006191497508768071
+        ],
+        [
+          "offers excellent libraries for machine learning",
+          0.0007851024086461549
+        ],
+        [
+          "excellent libraries for machine learning including",
+          0.0007851024086461551
+        ],
+        [
+          "machine learning including scikit-learn",
+          0.0008317583248382565
+        ],
+        [
+          "language offers excellent libraries",
+          0.0014240317328077432
+        ],
+        [
+          "offers excellent libraries for machine",
+          0.0028329497037321116
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "b81d8f644d0d6c7fd50d838661850291"
+    },
+    {
+      "test_id": 64,
+      "description": "mixed_content_n9_dedup0.7_top20",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 9,
+        "dedupLim": 0.7,
+        "top": 20
+      },
+      "execution_time_ms": 4.366,
+      "num_keywords": 20,
+      "keywords": [
+        [
+          "Python programming language offers excellent libraries for machine learning",
+          2.799958583510617e-06
+        ],
+        [
+          "language offers excellent libraries for machine learning including scikit-learn",
+          2.799958583510617e-06
+        ],
+        [
+          "programming language offers excellent libraries for machine learning including",
+          3.5928937724945256e-06
+        ],
+        [
+          "Python programming language offers excellent libraries for machine",
+          9.654004857342328e-06
+        ],
+        [
+          "offers excellent libraries for machine learning including scikit-learn",
+          1.6771655224013988e-05
+        ],
+        [
+          "programming language offers excellent libraries for machine learning",
+          2.149017892301629e-05
+        ],
+        [
+          "language offers excellent libraries for machine learning including",
+          2.149017892301629e-05
+        ],
+        [
+          "Python programming language offers excellent libraries",
+          3.077745219252898e-05
+        ],
+        [
+          "programming language offers excellent libraries for machine",
+          7.486869937377308e-05
+        ],
+        [
+          "Python programming language offers excellent",
+          7.930064407961178e-05
+        ],
+        [
+          "excellent libraries for machine learning including scikit-learn",
+          0.00010115050121763659
+        ],
+        [
+          "offers excellent libraries for machine learning including",
+          0.00012938727164090585
+        ],
+        [
+          "language offers excellent libraries for machine learning",
+          0.00012938727164090588
+        ],
+        [
+          "programming language offers excellent libraries",
+          0.00023634097347407224
+        ],
+        [
+          "language offers excellent libraries for machine",
+          0.00045797292653731916
+        ],
+        [
+          "Python programming language offers",
+          0.0004859843558227267
+        ],
+        [
+          "libraries for machine learning including scikit-learn",
+          0.0006150184161116463
+        ],
+        [
+          "programming language offers excellent",
+          0.0006191497508768071
+        ],
+        [
+          "offers excellent libraries for machine learning",
+          0.0007851024086461549
+        ],
+        [
+          "excellent libraries for machine learning including",
+          0.0007851024086461551
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "8f61ea7d44adf8cff90ed998b611a0cf"
+    },
+    {
+      "test_id": 65,
+      "description": "mixed_content_n3_dedup0.5_top10",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.5,
+        "top": 10
+      },
+      "execution_time_ms": 4.304,
+      "num_keywords": 10,
+      "keywords": [
+        [
+          "Python programming language",
+          0.00301314190810268
+        ],
+        [
+          "programming language offers",
+          0.003827439621259681
+        ],
+        [
+          "language offers excellent",
+          0.003827439621259681
+        ],
+        [
+          "learning including scikit-learn",
+          0.0051042386313453
+        ],
+        [
+          "machine learning including",
+          0.006500628794501593
+        ],
+        [
+          "offers excellent libraries",
+          0.008648632798699976
+        ],
+        [
+          "Python programming",
+          0.01895696769164911
+        ],
+        [
+          "including scikit-learn",
+          0.01895696769164911
+        ],
+        [
+          "programming language",
+          0.023989790615692827
+        ],
+        [
+          "language offers",
+          0.023989790615692827
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "dbd0ba6ad51ab161c9b31f9baa05c66b"
+    },
+    {
+      "test_id": 66,
+      "description": "mixed_content_n3_dedup0.9_top15",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 0.9,
+        "top": 15
+      },
+      "execution_time_ms": 4.505,
+      "num_keywords": 15,
+      "keywords": [
+        [
+          "Python programming language",
+          0.00301314190810268
+        ],
+        [
+          "programming language offers",
+          0.003827439621259681
+        ],
+        [
+          "language offers excellent",
+          0.003827439621259681
+        ],
+        [
+          "learning including scikit-learn",
+          0.0051042386313453
+        ],
+        [
+          "machine learning including",
+          0.006500628794501593
+        ],
+        [
+          "offers excellent libraries",
+          0.008648632798699976
+        ],
+        [
+          "Python programming",
+          0.01895696769164911
+        ],
+        [
+          "including scikit-learn",
+          0.01895696769164911
+        ],
+        [
+          "programming language",
+          0.023989790615692827
+        ],
+        [
+          "language offers",
+          0.023989790615692827
+        ],
+        [
+          "offers excellent",
+          0.023989790615692827
+        ],
+        [
+          "machine learning",
+          0.04024957463196022
+        ],
+        [
+          "learning including",
+          0.04024957463196022
+        ],
+        [
+          "deep learning models",
+          0.04170940226428015
+        ],
+        [
+          "deploying deep learning",
+          0.05138767153037863
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "df1e835da17499afb699c479b29bb9ca"
+    },
+    {
+      "test_id": 67,
+      "description": "mixed_content_n3_dedup1.0_top25",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 3,
+        "dedupLim": 1.0,
+        "top": 25
+      },
+      "execution_time_ms": 4.175,
+      "num_keywords": 25,
+      "keywords": [
+        [
+          "Python programming language",
+          0.00301314190810268
+        ],
+        [
+          "programming language offers",
+          0.003827439621259681
+        ],
+        [
+          "language offers excellent",
+          0.003827439621259681
+        ],
+        [
+          "learning including scikit-learn",
+          0.0051042386313453
+        ],
+        [
+          "machine learning including",
+          0.006500628794501593
+        ],
+        [
+          "offers excellent libraries",
+          0.008648632798699976
+        ],
+        [
+          "Python programming",
+          0.01895696769164911
+        ],
+        [
+          "including scikit-learn",
+          0.01895696769164911
+        ],
+        [
+          "programming language",
+          0.023989790615692827
+        ],
+        [
+          "language offers",
+          0.023989790615692827
+        ],
+        [
+          "offers excellent",
+          0.023989790615692827
+        ],
+        [
+          "machine learning",
+          0.04024957463196022
+        ],
+        [
+          "learning including",
+          0.04024957463196022
+        ],
+        [
+          "deep learning models",
+          0.04170940226428015
+        ],
+        [
+          "deploying deep learning",
+          0.05138767153037863
+        ],
+        [
+          "excellent libraries",
+          0.05303119877754481
+        ],
+        [
+          "Keras",
+          0.05766643487856614
+        ],
+        [
+          "Pandas libraries handle",
+          0.060435359662824144
+        ],
+        [
+          "frameworks provide high-level",
+          0.08577017882415917
+        ],
+        [
+          "provide high-level APIs",
+          0.08577017882415917
+        ],
+        [
+          "learning models",
+          0.08938348385376685
+        ],
+        [
+          "TensorFlow",
+          0.09227619774540956
+        ],
+        [
+          "PyTorch",
+          0.09227619774540956
+        ],
+        [
+          "Pandas libraries",
+          0.09849404434387442
+        ],
+        [
+          "deep learning",
+          0.10801000258069174
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "4ddaf60955ead9b577adb13c724276bb"
+    },
+    {
+      "test_id": 68,
+      "description": "mixed_content_n4_dedup0.3_top30",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 4,
+        "dedupLim": 0.3,
+        "top": 30
+      },
+      "execution_time_ms": 4.529,
+      "num_keywords": 30,
+      "keywords": [
+        [
+          "Python programming language offers",
+          0.0004859843558227267
+        ],
+        [
+          "programming language offers excellent",
+          0.0006191497508768071
+        ],
+        [
+          "machine learning including scikit-learn",
+          0.0008317583248382565
+        ],
+        [
+          "language offers excellent libraries",
+          0.0014240317328077432
+        ],
+        [
+          "Python programming language",
+          0.00301314190810268
+        ],
+        [
+          "programming language offers",
+          0.003827439621259681
+        ],
+        [
+          "language offers excellent",
+          0.003827439621259681
+        ],
+        [
+          "learning including scikit-learn",
+          0.0051042386313453
+        ],
+        [
+          "machine learning including",
+          0.006500628794501593
+        ],
+        [
+          "offers excellent libraries",
+          0.008648632798699976
+        ],
+        [
+          "excellent libraries for machine",
+          0.01777132037978468
+        ],
+        [
+          "Python programming",
+          0.01895696769164911
+        ],
+        [
+          "including scikit-learn",
+          0.01895696769164911
+        ],
+        [
+          "deploying deep learning models",
+          0.020834338705070687
+        ],
+        [
+          "programming language",
+          0.023989790615692827
+        ],
+        [
+          "language offers",
+          0.023989790615692827
+        ],
+        [
+          "offers excellent",
+          0.023989790615692827
+        ],
+        [
+          "libraries for machine learning",
+          0.029794315560296856
+        ],
+        [
+          "machine learning",
+          0.04024957463196022
+        ],
+        [
+          "learning including",
+          0.04024957463196022
+        ],
+        [
+          "Pandas libraries handle numerical",
+          0.04158423751871955
+        ],
+        [
+          "deep learning models",
+          0.04170940226428015
+        ],
+        [
+          "frameworks provide high-level APIs",
+          0.044209737307874766
+        ],
+        [
+          "deploying deep learning",
+          0.05138767153037863
+        ],
+        [
+          "excellent libraries",
+          0.05303119877754481
+        ],
+        [
+          "Keras",
+          0.05766643487856614
+        ],
+        [
+          "NumPy and Pandas libraries",
+          0.060435359662824144
+        ],
+        [
+          "Pandas libraries handle",
+          0.060435359662824144
+        ],
+        [
+          "high-level APIs for building",
+          0.06919875536919896
+        ],
+        [
+          "frameworks provide high-level",
+          0.08577017882415917
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "0f7b225740da98e01889b1522409d6b7"
+    },
+    {
+      "test_id": 69,
+      "description": "mixed_content_n5_dedup0.8_top12",
+      "text_name": "mixed_content",
+      "config": {
+        "lan": "en",
+        "n": 5,
+        "dedupLim": 0.8,
+        "top": 12
+      },
+      "execution_time_ms": 6.434,
+      "num_keywords": 12,
+      "keywords": [
+        [
+          "Python programming language offers excellent",
+          7.930064407961178e-05
+        ],
+        [
+          "programming language offers excellent libraries",
+          0.00023634097347407224
+        ],
+        [
+          "Python programming language offers",
+          0.0004859843558227267
+        ],
+        [
+          "programming language offers excellent",
+          0.0006191497508768071
+        ],
+        [
+          "machine learning including scikit-learn",
+          0.0008317583248382565
+        ],
+        [
+          "language offers excellent libraries",
+          0.0014240317328077432
+        ],
+        [
+          "offers excellent libraries for machine",
+          0.0028329497037321116
+        ],
+        [
+          "Python programming language",
+          0.00301314190810268
+        ],
+        [
+          "programming language offers",
+          0.003827439621259681
+        ],
+        [
+          "language offers excellent",
+          0.003827439621259681
+        ],
+        [
+          "excellent libraries for machine learning",
+          0.004808755839947452
+        ],
+        [
+          "libraries for machine learning including",
+          0.004808755839947452
+        ]
+      ],
+      "success": true,
+      "error": null,
+      "scores_hash": "4d0dab50309bcfe5901c0871a6a5e544"
+    }
+  ]
+}

@@ -52,12 +52,15 @@ class DataCore:
         n = config.get("n", 3)
         tags_to_discard = config.get("tags_to_discard", set(["u", "d"]))
         exclude = config.get("exclude", set(string.punctuation))
+        
+        # Convert exclude to frozenset once for efficient caching in get_tag()
+        exclude = frozenset(exclude)
 
         # Initialize the state dictionary containing all component data structures
         self._state = {
             # Configuration settings
             "config": {
-                "exclude": exclude,  # Punctuation and other characters to exclude
+                "exclude": exclude,  # Punctuation and other characters to exclude (as frozenset)
                 "tags_to_discard": tags_to_discard,  # POS tags to ignore during analysis
                 "stopword_set": stopword_set,  # Set of stopwords for filtering
             },
@@ -448,7 +451,8 @@ class DataCore:
         }
 
         # Update all terms with the calculated statistics
-        list(map(lambda x: x.update_h(stats, features=features), self.terms.values()))
+        for term in self.terms.values():
+            term.update_h(stats, features=features)
 
     def build_mult_terms_features(self, features=None):
         """
@@ -460,13 +464,11 @@ class DataCore:
         Args:
             features (list, optional): List of features to build. If None, all available features will be built.
         """
-        # Update only valid candidates (filter then apply update_h)
-        list(
-            map(
-                lambda x: x.update_h(features=features),
-                [cand for cand in self.candidates.values() if cand.is_valid()],
-            )
-        )
+        # Update only valid candidates using single pass generator expression
+        # This is more efficient than separate filter + map operations
+        for cand in self.candidates.values():
+            if cand.is_valid():
+                cand.update_h(features=features)
 
     def get_term(self, str_word, save_non_seen=True):
         """
@@ -512,7 +514,7 @@ class DataCore:
         term_obj = SingleWord(unique_term, term_id, self.g)
         term_obj.stopword = isstopword
 
-        # Save the term to the collection if requestedComposedWord instance to add or update in the candidates dictionary
+        # Save the term to the collection if requested
         if save_non_seen:
             self.g.add_node(term_id)
             self.terms[unique_term] = term_obj
@@ -538,6 +540,10 @@ class DataCore:
 
         # Increment the co-occurrence frequency
         self.g[left_term.id][right_term.id]["tf"] += 1.0
+        
+        # Invalidate graph metrics cache for affected terms
+        left_term.invalidate_graph_cache()
+        right_term.invalidate_graph_cache()
 
     def add_or_update_composedword(self, cand):
         """
@@ -556,7 +562,7 @@ class DataCore:
             self.candidates[cand.unique_kw] = cand
         else:
             # Update existing candidate with new information
-            self.candidates[cand.unique_kw].uptade_cand(cand)
+            self.candidates[cand.unique_kw].update_cand(cand)
 
         # Increment the frequency counter for this candidate
         self.candidates[cand.unique_kw].tf += 1.0

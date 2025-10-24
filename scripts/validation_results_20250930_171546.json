@@ -1,0 +1,2069 @@
+{
+  "timestamp": "20250930_171546",
+  "total_tests": 36,
+  "passed_tests": 36,
+  "success_rate": 100.0,
+  "all_passed": true,
+  "datasets": {
+    "scientific": {
+      "n1_dedup0.7_top10": {
+        "config": {
+          "n": 1,
+          "dedupLim": 0.7,
+          "top": 10
+        },
+        "num_keywords": 10,
+        "execution_time_ms": 2.263,
+        "min_score": 0.16608299810920873,
+        "max_score": 0.4088772730222395,
+        "avg_score": 0.2626699547157559,
+        "negative_count": 0,
+        "scores_hash": "81352510222b13e0a92872e554fa8f8f",
+        "keywords": [
+          [
+            "Machine",
+            0.16608299810920873
+          ],
+          [
+            "datasets",
+            0.16608299810920873
+          ],
+          [
+            "learning",
+            0.26148160326674785
+          ],
+          [
+            "algorithms",
+            0.26148160326674785
+          ],
+          [
+            "enable",
+            0.26148160326674785
+          ],
+          [
+            "pattern",
+            0.26148160326674785
+          ],
+          [
+            "recognition",
+            0.26148160326674785
+          ],
+          [
+            "large",
+            0.26148160326674785
+          ],
+          [
+            "networks",
+            0.31676665831641465
+          ],
+          [
+            "Deep",
+            0.4088772730222395
+          ]
+        ],
+        "passed": true
+      },
+      "n2_dedup0.7_top15": {
+        "config": {
+          "n": 2,
+          "dedupLim": 0.7,
+          "top": 15
+        },
+        "num_keywords": 15,
+        "execution_time_ms": 3.113,
+        "min_score": 0.04539923044852391,
+        "max_score": 0.29115238207276045,
+        "avg_score": 0.17177123924870272,
+        "negative_count": 0,
+        "scores_hash": "d2ceb188874228ab147a5def746b9fc2",
+        "keywords": [
+          [
+            "Machine learning",
+            0.04539923044852391
+          ],
+          [
+            "large datasets",
+            0.04539923044852391
+          ],
+          [
+            "learning algorithms",
+            0.07339053248545702
+          ],
+          [
+            "algorithms enable",
+            0.07339053248545702
+          ],
+          [
+            "enable pattern",
+            0.07339053248545702
+          ],
+          [
+            "pattern recognition",
+            0.07339053248545702
+          ],
+          [
+            "Machine",
+            0.16608299810920873
+          ],
+          [
+            "datasets",
+            0.16608299810920873
+          ],
+          [
+            "learning",
+            0.26148160326674785
+          ],
+          [
+            "algorithms",
+            0.26148160326674785
+          ],
+          [
+            "enable",
+            0.26148160326674785
+          ],
+          [
+            "pattern",
+            0.26148160326674785
+          ],
+          [
+            "recognition",
+            0.26148160326674785
+          ],
+          [
+            "large",
+            0.26148160326674785
+          ],
+          [
+            "Deep neural",
+            0.29115238207276045
+          ]
+        ],
+        "passed": true
+      },
+      "n3_dedup0.7_top20": {
+        "config": {
+          "n": 3,
+          "dedupLim": 0.7,
+          "top": 20
+        },
+        "num_keywords": 20,
+        "execution_time_ms": 4.038,
+        "min_score": 0.01309020396191687,
+        "max_score": 0.29115238207276045,
+        "avg_score": 0.13638097992336828,
+        "negative_count": 0,
+        "scores_hash": "13cabe29d4b42f47f95a587e332b22b7",
+        "keywords": [
+          [
+            "Machine learning algorithms",
+            0.01309020396191687
+          ],
+          [
+            "learning algorithms enable",
+            0.021523424429816966
+          ],
+          [
+            "algorithms enable pattern",
+            0.021523424429816966
+          ],
+          [
+            "enable pattern recognition",
+            0.021523424429816966
+          ],
+          [
+            "Machine learning",
+            0.04539923044852391
+          ],
+          [
+            "large datasets",
+            0.04539923044852391
+          ],
+          [
+            "learning algorithms",
+            0.07339053248545702
+          ],
+          [
+            "algorithms enable",
+            0.07339053248545702
+          ],
+          [
+            "enable pattern",
+            0.07339053248545702
+          ],
+          [
+            "pattern recognition",
+            0.07339053248545702
+          ],
+          [
+            "recognition in large",
+            0.07339053248545702
+          ],
+          [
+            "Machine",
+            0.16608299810920873
+          ],
+          [
+            "datasets",
+            0.16608299810920873
+          ],
+          [
+            "learning",
+            0.26148160326674785
+          ],
+          [
+            "algorithms",
+            0.26148160326674785
+          ],
+          [
+            "enable",
+            0.26148160326674785
+          ],
+          [
+            "pattern",
+            0.26148160326674785
+          ],
+          [
+            "recognition",
+            0.26148160326674785
+          ],
+          [
+            "large",
+            0.26148160326674785
+          ],
+          [
+            "Deep neural",
+            0.29115238207276045
+          ]
+        ],
+        "passed": true
+      },
+      "n4_dedup0.5_top10": {
+        "config": {
+          "n": 4,
+          "dedupLim": 0.5,
+          "top": 10
+        },
+        "num_keywords": 10,
+        "execution_time_ms": 2.55,
+        "min_score": 0.003909079807575061,
+        "max_score": 0.04539923044852391,
+        "avg_score": 0.017459032451757697,
+        "negative_count": 0,
+        "scores_hash": "966901cbff9d5b3f2c95277db1eae620",
+        "keywords": [
+          [
+            "Machine learning algorithms enable",
+            0.003909079807575061
+          ],
+          [
+            "learning algorithms enable pattern",
+            0.006503954309188196
+          ],
+          [
+            "algorithms enable pattern recognition",
+            0.006503954309188196
+          ],
+          [
+            "recognition in large datasets",
+            0.013090203961916869
+          ],
+          [
+            "Machine learning algorithms",
+            0.01309020396191687
+          ],
+          [
+            "learning algorithms enable",
+            0.021523424429816966
+          ],
+          [
+            "algorithms enable pattern",
+            0.021523424429816966
+          ],
+          [
+            "enable pattern recognition",
+            0.021523424429816966
+          ],
+          [
+            "pattern recognition in large",
+            0.021523424429816966
+          ],
+          [
+            "Machine learning",
+            0.04539923044852391
+          ]
+        ],
+        "passed": true
+      },
+      "n5_dedup0.9_top12": {
+        "config": {
+          "n": 5,
+          "dedupLim": 0.9,
+          "top": 12
+        },
+        "num_keywords": 12,
+        "execution_time_ms": 5.205,
+        "min_score": 0.0011966906396254035,
+        "max_score": 0.021523424429816966,
+        "avg_score": 0.010107157318197666,
+        "negative_count": 0,
+        "scores_hash": "58e8068549a7dba4b7afb2b3ad456b32",
+        "keywords": [
+          [
+            "Machine learning algorithms enable pattern",
+            0.0011966906396254035
+          ],
+          [
+            "learning algorithms enable pattern recognition",
+            0.0020084934227472535
+          ],
+          [
+            "pattern recognition in large datasets",
+            0.00390907980757506
+          ],
+          [
+            "Machine learning algorithms enable",
+            0.003909079807575061
+          ],
+          [
+            "learning algorithms enable pattern",
+            0.006503954309188196
+          ],
+          [
+            "algorithms enable pattern recognition",
+            0.006503954309188196
+          ],
+          [
+            "enable pattern recognition in large",
+            0.006503954309188196
+          ],
+          [
+            "recognition in large datasets",
+            0.013090203961916869
+          ],
+          [
+            "Machine learning algorithms",
+            0.01309020396191687
+          ],
+          [
+            "learning algorithms enable",
+            0.021523424429816966
+          ],
+          [
+            "algorithms enable pattern",
+            0.021523424429816966
+          ],
+          [
+            "enable pattern recognition",
+            0.021523424429816966
+          ]
+        ],
+        "passed": true
+      },
+      "n6_dedup1.0_top8": {
+        "config": {
+          "n": 6,
+          "dedupLim": 1.0,
+          "top": 8
+        },
+        "num_keywords": 8,
+        "execution_time_ms": 3.767,
+        "min_score": 0.00037318329537791735,
+        "max_score": 0.006503954309188196,
+        "avg_score": 0.0026382081680576936,
+        "negative_count": 0,
+        "scores_hash": "d2369986cf9d095c8f16c89c3f7e29a4",
+        "keywords": [
+          [
+            "Machine learning algorithms enable pattern recognition",
+            0.00037318329537791735
+          ],
+          [
+            "enable pattern recognition in large datasets",
+            0.0011966906396254032
+          ],
+          [
+            "Machine learning algorithms enable pattern",
+            0.0011966906396254035
+          ],
+          [
+            "learning algorithms enable pattern recognition",
+            0.0020084934227472535
+          ],
+          [
+            "algorithms enable pattern recognition in large",
+            0.0020084934227472535
+          ],
+          [
+            "pattern recognition in large datasets",
+            0.00390907980757506
+          ],
+          [
+            "Machine learning algorithms enable",
+            0.003909079807575061
+          ],
+          [
+            "learning algorithms enable pattern",
+            0.006503954309188196
+          ]
+        ],
+        "passed": true
+      },
+      "n7_dedup0.3_top5": {
+        "config": {
+          "n": 7,
+          "dedupLim": 0.3,
+          "top": 5
+        },
+        "num_keywords": 5,
+        "execution_time_ms": 2.647,
+        "min_score": 0.00037318329537791735,
+        "max_score": 0.0011966906396254035,
+        "avg_score": 0.0007540585044997991,
+        "negative_count": 0,
+        "scores_hash": "fc1087edf3881996a9407a72d619522f",
+        "keywords": [
+          [
+            "Machine learning algorithms enable pattern recognition",
+            0.00037318329537791735
+          ],
+          [
+            "algorithms enable pattern recognition in large datasets",
+            0.00037318329537791735
+          ],
+          [
+            "learning algorithms enable pattern recognition in large",
+            0.000630544652492354
+          ],
+          [
+            "enable pattern recognition in large datasets",
+            0.0011966906396254032
+          ],
+          [
+            "Machine learning algorithms enable pattern",
+            0.0011966906396254035
+          ]
+        ],
+        "passed": true
+      },
+      "n8_dedup0.8_top6": {
+        "config": {
+          "n": 8,
+          "dedupLim": 0.8,
+          "top": 6
+        },
+        "num_keywords": 6,
+        "execution_time_ms": 2.875,
+        "min_score": 0.0001180540997587658,
+        "max_score": 0.0011966906396254032,
+        "avg_score": 0.0004682850137318539,
+        "negative_count": 0,
+        "scores_hash": "dd8cd332cd7185fb0a60e553a8ee9794",
+        "keywords": [
+          [
+            "Machine learning algorithms enable pattern recognition in large",
+            0.0001180540997587658
+          ],
+          [
+            "learning algorithms enable pattern recognition in large datasets",
+            0.0001180540997587658
+          ],
+          [
+            "Machine learning algorithms enable pattern recognition",
+            0.00037318329537791735
+          ],
+          [
+            "algorithms enable pattern recognition in large datasets",
+            0.00037318329537791735
+          ],
+          [
+            "learning algorithms enable pattern recognition in large",
+            0.000630544652492354
+          ],
+          [
+            "enable pattern recognition in large datasets",
+            0.0011966906396254032
+          ]
+        ],
+        "passed": true
+      },
+      "n9_dedup0.6_top4": {
+        "config": {
+          "n": 9,
+          "dedupLim": 0.6,
+          "top": 4
+        },
+        "num_keywords": 4,
+        "execution_time_ms": 2.764,
+        "min_score": 2.2182404424760644e-05,
+        "max_score": 0.00037318329537791735,
+        "avg_score": 0.0001578684748300524,
+        "negative_count": 0,
+        "scores_hash": "0d63c0c3586e60c79a4d1d2b22a08218",
+        "keywords": [
+          [
+            "Machine learning algorithms enable pattern recognition in large datasets",
+            2.2182404424760644e-05
+          ],
+          [
+            "Machine learning algorithms enable pattern recognition in large",
+            0.0001180540997587658
+          ],
+          [
+            "learning algorithms enable pattern recognition in large datasets",
+            0.0001180540997587658
+          ],
+          [
+            "Machine learning algorithms enable pattern recognition",
+            0.00037318329537791735
+          ]
+        ],
+        "passed": true
+      }
+    },
+    "business": {
+      "n1_dedup0.7_top10": {
+        "config": {
+          "n": 1,
+          "dedupLim": 0.7,
+          "top": 10
+        },
+        "num_keywords": 10,
+        "execution_time_ms": 2.154,
+        "min_score": 0.23133275159292982,
+        "max_score": 0.5110573480904945,
+        "avg_score": 0.39072706258027246,
+        "negative_count": 0,
+        "scores_hash": "680d8ba2f0eb43ea34cf6fbbfd226187",
+        "keywords": [
+          [
+            "Business",
+            0.23133275159292982
+          ],
+          [
+            "making",
+            0.23133275159292982
+          ],
+          [
+            "intelligence",
+            0.4037484044059793
+          ],
+          [
+            "systems",
+            0.4037484044059793
+          ],
+          [
+            "provide",
+            0.4037484044059793
+          ],
+          [
+            "data-driven",
+            0.4037484044059793
+          ],
+          [
+            "insights",
+            0.4037484044059793
+          ],
+          [
+            "decision",
+            0.4037484044059793
+          ],
+          [
+            "Customer",
+            0.5110573480904945
+          ],
+          [
+            "rates",
+            0.5110573480904945
+          ]
+        ],
+        "passed": true
+      },
+      "n2_dedup0.7_top15": {
+        "config": {
+          "n": 2,
+          "dedupLim": 0.7,
+          "top": 15
+        },
+        "num_keywords": 15,
+        "execution_time_ms": 2.391,
+        "min_score": 0.10302256008155819,
+        "max_score": 0.5110573480904945,
+        "avg_score": 0.2920869236827454,
+        "negative_count": 0,
+        "scores_hash": "02abf38d01d5daa2691e4a6ef661be97",
+        "keywords": [
+          [
+            "Business intelligence",
+            0.10302256008155819
+          ],
+          [
+            "decision making",
+            0.10302256008155819
+          ],
+          [
+            "intelligence systems",
+            0.19476136434145866
+          ],
+          [
+            "systems provide",
+            0.19476136434145866
+          ],
+          [
+            "provide data-driven",
+            0.19476136434145866
+          ],
+          [
+            "data-driven insights",
+            0.19476136434145866
+          ],
+          [
+            "Business",
+            0.23133275159292982
+          ],
+          [
+            "making",
+            0.23133275159292982
+          ],
+          [
+            "intelligence",
+            0.4037484044059793
+          ],
+          [
+            "systems",
+            0.4037484044059793
+          ],
+          [
+            "provide",
+            0.4037484044059793
+          ],
+          [
+            "data-driven",
+            0.4037484044059793
+          ],
+          [
+            "insights",
+            0.4037484044059793
+          ],
+          [
+            "decision",
+            0.4037484044059793
+          ],
+          [
+            "Customer",
+            0.5110573480904945
+          ]
+        ],
+        "passed": true
+      },
+      "n3_dedup0.7_top20": {
+        "config": {
+          "n": 3,
+          "dedupLim": 0.7,
+          "top": 20
+        },
+        "num_keywords": 20,
+        "execution_time_ms": 2.726,
+        "min_score": 0.051970537142556714,
+        "max_score": 0.5110573480904945,
+        "avg_score": 0.2467651783030385,
+        "negative_count": 0,
+        "scores_hash": "e14b84101ac928181d25ddd89c70c83d",
+        "keywords": [
+          [
+            "Business intelligence systems",
+            0.051970537142556714
+          ],
+          [
+            "intelligence systems provide",
+            0.10242260311185779
+          ],
+          [
+            "systems provide data-driven",
+            0.10242260311185779
+          ],
+          [
+            "provide data-driven insights",
+            0.10242260311185779
+          ],
+          [
+            "Business intelligence",
+            0.10302256008155819
+          ],
+          [
+            "decision making",
+            0.10302256008155819
+          ],
+          [
+            "intelligence systems",
+            0.19476136434145866
+          ],
+          [
+            "systems provide",
+            0.19476136434145866
+          ],
+          [
+            "provide data-driven",
+            0.19476136434145866
+          ],
+          [
+            "data-driven insights",
+            0.19476136434145866
+          ],
+          [
+            "insights for decision",
+            0.19476136434145866
+          ],
+          [
+            "Business",
+            0.23133275159292982
+          ],
+          [
+            "making",
+            0.23133275159292982
+          ],
+          [
+            "intelligence",
+            0.4037484044059793
+          ],
+          [
+            "systems",
+            0.4037484044059793
+          ],
+          [
+            "provide",
+            0.4037484044059793
+          ],
+          [
+            "data-driven",
+            0.4037484044059793
+          ],
+          [
+            "insights",
+            0.4037484044059793
+          ],
+          [
+            "decision",
+            0.4037484044059793
+          ],
+          [
+            "Customer",
+            0.5110573480904945
+          ]
+        ],
+        "passed": true
+      },
+      "n4_dedup0.5_top10": {
+        "config": {
+          "n": 4,
+          "dedupLim": 0.5,
+          "top": 10
+        },
+        "num_keywords": 10,
+        "execution_time_ms": 2.373,
+        "min_score": 0.028040594918936776,
+        "max_score": 0.10302256008155819,
+        "avg_score": 0.07580775789418093,
+        "negative_count": 0,
+        "scores_hash": "41d47eca24813a86166e33afdbbe215d",
+        "keywords": [
+          [
+            "Business intelligence systems provide",
+            0.028040594918936776
+          ],
+          [
+            "Business intelligence systems",
+            0.051970537142556714
+          ],
+          [
+            "insights for decision making",
+            0.051970537142556714
+          ],
+          [
+            "intelligence systems provide data-driven",
+            0.056691468604384836
+          ],
+          [
+            "systems provide data-driven insights",
+            0.056691468604384836
+          ],
+          [
+            "intelligence systems provide",
+            0.10242260311185779
+          ],
+          [
+            "systems provide data-driven",
+            0.10242260311185779
+          ],
+          [
+            "provide data-driven insights",
+            0.10242260311185779
+          ],
+          [
+            "data-driven insights for decision",
+            0.10242260311185779
+          ],
+          [
+            "Business intelligence",
+            0.10302256008155819
+          ]
+        ],
+        "passed": true
+      },
+      "n5_dedup0.9_top12": {
+        "config": {
+          "n": 5,
+          "dedupLim": 0.9,
+          "top": 12
+        },
+        "num_keywords": 12,
+        "execution_time_ms": 3.905,
+        "min_score": 0.01578084616149891,
+        "max_score": 0.10242260311185779,
+        "avg_score": 0.057133881320895974,
+        "negative_count": 0,
+        "scores_hash": "3cce0083b4e6720b1fe8b64853feb007",
+        "keywords": [
+          [
+            "Business intelligence systems provide data-driven",
+            0.01578084616149891
+          ],
+          [
+            "Business intelligence systems provide",
+            0.028040594918936776
+          ],
+          [
+            "data-driven insights for decision making",
+            0.02804059491893678
+          ],
+          [
+            "intelligence systems provide data-driven insights",
+            0.032461250417537946
+          ],
+          [
+            "Business intelligence systems",
+            0.051970537142556714
+          ],
+          [
+            "insights for decision making",
+            0.051970537142556714
+          ],
+          [
+            "intelligence systems provide data-driven",
+            0.056691468604384836
+          ],
+          [
+            "systems provide data-driven insights",
+            0.056691468604384836
+          ],
+          [
+            "provide data-driven insights for decision",
+            0.056691468604384836
+          ],
+          [
+            "intelligence systems provide",
+            0.10242260311185779
+          ],
+          [
+            "systems provide data-driven",
+            0.10242260311185779
+          ],
+          [
+            "provide data-driven insights",
+            0.10242260311185779
+          ]
+        ],
+        "passed": true
+      },
+      "n6_dedup1.0_top8": {
+        "config": {
+          "n": 6,
+          "dedupLim": 1.0,
+          "top": 8
+        },
+        "num_keywords": 8,
+        "execution_time_ms": 3.407,
+        "min_score": 0.009141979583323114,
+        "max_score": 0.051970537142556714,
+        "avg_score": 0.026709737465228388,
+        "negative_count": 0,
+        "scores_hash": "62fba8a2dc1ed06b349dbdfb90c93e4b",
+        "keywords": [
+          [
+            "Business intelligence systems provide data-driven insights",
+            0.009141979583323114
+          ],
+          [
+            "provide data-driven insights for decision making",
+            0.015780846161498906
+          ],
+          [
+            "Business intelligence systems provide data-driven",
+            0.01578084616149891
+          ],
+          [
+            "Business intelligence systems provide",
+            0.028040594918936776
+          ],
+          [
+            "data-driven insights for decision making",
+            0.02804059491893678
+          ],
+          [
+            "intelligence systems provide data-driven insights",
+            0.032461250417537946
+          ],
+          [
+            "systems provide data-driven insights for decision",
+            0.032461250417537946
+          ],
+          [
+            "Business intelligence systems",
+            0.051970537142556714
+          ]
+        ],
+        "passed": true
+      },
+      "n7_dedup0.3_top5": {
+        "config": {
+          "n": 7,
+          "dedupLim": 0.3,
+          "top": 5
+        },
+        "num_keywords": 5,
+        "execution_time_ms": 2.414,
+        "min_score": 0.009141979583323114,
+        "max_score": 0.019041060925972433,
+        "avg_score": 0.013777342483123295,
+        "negative_count": 0,
+        "scores_hash": "8c674ec1242ce749dfd869a5e8337428",
+        "keywords": [
+          [
+            "Business intelligence systems provide data-driven insights",
+            0.009141979583323114
+          ],
+          [
+            "systems provide data-driven insights for decision making",
+            0.009141979583323115
+          ],
+          [
+            "provide data-driven insights for decision making",
+            0.015780846161498906
+          ],
+          [
+            "Business intelligence systems provide data-driven",
+            0.01578084616149891
+          ],
+          [
+            "intelligence systems provide data-driven insights for decision",
+            0.019041060925972433
+          ]
+        ],
+        "passed": true
+      },
+      "n8_dedup0.8_top6": {
+        "config": {
+          "n": 8,
+          "dedupLim": 0.8,
+          "top": 6
+        },
+        "num_keywords": 6,
+        "execution_time_ms": 3.46,
+        "min_score": 0.005408940508743495,
+        "max_score": 0.01578084616149891,
+        "avg_score": 0.010110588751188506,
+        "negative_count": 0,
+        "scores_hash": "5a214bb19027e09803a13702bdd38adc",
+        "keywords": [
+          [
+            "Business intelligence systems provide data-driven insights for decision",
+            0.005408940508743495
+          ],
+          [
+            "intelligence systems provide data-driven insights for decision making",
+            0.005408940508743495
+          ],
+          [
+            "Business intelligence systems provide data-driven insights",
+            0.009141979583323114
+          ],
+          [
+            "systems provide data-driven insights for decision making",
+            0.009141979583323115
+          ],
+          [
+            "provide data-driven insights for decision making",
+            0.015780846161498906
+          ],
+          [
+            "Business intelligence systems provide data-driven",
+            0.01578084616149891
+          ]
+        ],
+        "passed": true
+      },
+      "n9_dedup0.6_top4": {
+        "config": {
+          "n": 9,
+          "dedupLim": 0.6,
+          "top": 4
+        },
+        "num_keywords": 4,
+        "execution_time_ms": 3.489,
+        "min_score": 0.0015413548319698398,
+        "max_score": 0.009141979583323114,
+        "avg_score": 0.005375303858194986,
+        "negative_count": 0,
+        "scores_hash": "5b9a2b309adb8c9ab648a80125849272",
+        "keywords": [
+          [
+            "Business intelligence systems provide data-driven insights for decision making",
+            0.0015413548319698398
+          ],
+          [
+            "Business intelligence systems provide data-driven insights for decision",
+            0.005408940508743495
+          ],
+          [
+            "intelligence systems provide data-driven insights for decision making",
+            0.005408940508743495
+          ],
+          [
+            "Business intelligence systems provide data-driven insights",
+            0.009141979583323114
+          ]
+        ],
+        "passed": true
+      }
+    },
+    "technical": {
+      "n1_dedup0.7_top10": {
+        "config": {
+          "n": 1,
+          "dedupLim": 0.7,
+          "top": 10
+        },
+        "num_keywords": 10,
+        "execution_time_ms": 1.991,
+        "min_score": 0.23133275159292982,
+        "max_score": 0.6036200563782421,
+        "avg_score": 0.43070139297472504,
+        "negative_count": 0,
+        "scores_hash": "571c27d7e23a489ccc1f7a67f742f587",
+        "keywords": [
+          [
+            "Software",
+            0.23133275159292982
+          ],
+          [
+            "efficiency",
+            0.23133275159292982
+          ],
+          [
+            "engineering",
+            0.4037484044059793
+          ],
+          [
+            "methodologies",
+            0.4037484044059793
+          ],
+          [
+            "improve",
+            0.4037484044059793
+          ],
+          [
+            "development",
+            0.4037484044059793
+          ],
+          [
+            "Database",
+            0.5110573480904945
+          ],
+          [
+            "transactions",
+            0.5110573480904945
+          ],
+          [
+            "Network",
+            0.6036200563782421
+          ],
+          [
+            "transfer",
+            0.6036200563782421
+          ]
+        ],
+        "passed": true
+      },
+      "n2_dedup0.7_top15": {
+        "config": {
+          "n": 2,
+          "dedupLim": 0.7,
+          "top": 15
+        },
+        "num_keywords": 15,
+        "execution_time_ms": 1.943,
+        "min_score": 0.10302256008155819,
+        "max_score": 0.5590489604659448,
+        "avg_score": 0.33388006340734316,
+        "negative_count": 0,
+        "scores_hash": "089c5cabde5115063e02c262fd3aaa08",
+        "keywords": [
+          [
+            "Software engineering",
+            0.10302256008155819
+          ],
+          [
+            "development efficiency",
+            0.10302256008155819
+          ],
+          [
+            "engineering methodologies",
+            0.19476136434145866
+          ],
+          [
+            "methodologies improve",
+            0.19476136434145866
+          ],
+          [
+            "improve development",
+            0.19476136434145866
+          ],
+          [
+            "Software",
+            0.23133275159292982
+          ],
+          [
+            "efficiency",
+            0.23133275159292982
+          ],
+          [
+            "engineering",
+            0.4037484044059793
+          ],
+          [
+            "methodologies",
+            0.4037484044059793
+          ],
+          [
+            "improve",
+            0.4037484044059793
+          ],
+          [
+            "development",
+            0.4037484044059793
+          ],
+          [
+            "Database",
+            0.5110573480904945
+          ],
+          [
+            "transactions",
+            0.5110573480904945
+          ],
+          [
+            "Database management",
+            0.5590489604659448
+          ],
+          [
+            "user transactions",
+            0.5590489604659448
+          ]
+        ],
+        "passed": true
+      },
+      "n3_dedup0.7_top20": {
+        "config": {
+          "n": 3,
+          "dedupLim": 0.7,
+          "top": 20
+        },
+        "num_keywords": 20,
+        "execution_time_ms": 3.435,
+        "min_score": 0.051970537142556714,
+        "max_score": 0.6036200563782421,
+        "avg_score": 0.29603036439986097,
+        "negative_count": 0,
+        "scores_hash": "1cbe8562d94ef9b051e3a27010a997ea",
+        "keywords": [
+          [
+            "Software engineering methodologies",
+            0.051970537142556714
+          ],
+          [
+            "improve development efficiency",
+            0.051970537142556714
+          ],
+          [
+            "engineering methodologies improve",
+            0.10242260311185779
+          ],
+          [
+            "methodologies improve development",
+            0.10242260311185779
+          ],
+          [
+            "Software engineering",
+            0.10302256008155819
+          ],
+          [
+            "development efficiency",
+            0.10302256008155819
+          ],
+          [
+            "engineering methodologies",
+            0.19476136434145866
+          ],
+          [
+            "methodologies improve",
+            0.19476136434145866
+          ],
+          [
+            "improve development",
+            0.19476136434145866
+          ],
+          [
+            "Software",
+            0.23133275159292982
+          ],
+          [
+            "efficiency",
+            0.23133275159292982
+          ],
+          [
+            "engineering",
+            0.4037484044059793
+          ],
+          [
+            "methodologies",
+            0.4037484044059793
+          ],
+          [
+            "improve",
+            0.4037484044059793
+          ],
+          [
+            "development",
+            0.4037484044059793
+          ],
+          [
+            "Database",
+            0.5110573480904945
+          ],
+          [
+            "transactions",
+            0.5110573480904945
+          ],
+          [
+            "Database management",
+            0.5590489604659448
+          ],
+          [
+            "user transactions",
+            0.5590489604659448
+          ],
+          [
+            "Network",
+            0.6036200563782421
+          ]
+        ],
+        "passed": true
+      },
+      "n4_dedup0.5_top10": {
+        "config": {
+          "n": 4,
+          "dedupLim": 0.5,
+          "top": 10
+        },
+        "num_keywords": 10,
+        "execution_time_ms": 2.341,
+        "min_score": 0.028040594918936776,
+        "max_score": 0.19476136434145866,
+        "avg_score": 0.08223654234556624,
+        "negative_count": 0,
+        "scores_hash": "896858e53e39c0c71c3720e0a35833fb",
+        "keywords": [
+          [
+            "Software engineering methodologies improve",
+            0.028040594918936776
+          ],
+          [
+            "methodologies improve development efficiency",
+            0.02804059491893678
+          ],
+          [
+            "Software engineering methodologies",
+            0.051970537142556714
+          ],
+          [
+            "improve development efficiency",
+            0.051970537142556714
+          ],
+          [
+            "engineering methodologies improve development",
+            0.056691468604384836
+          ],
+          [
+            "engineering methodologies improve",
+            0.10242260311185779
+          ],
+          [
+            "methodologies improve development",
+            0.10242260311185779
+          ],
+          [
+            "Software engineering",
+            0.10302256008155819
+          ],
+          [
+            "development efficiency",
+            0.10302256008155819
+          ],
+          [
+            "engineering methodologies",
+            0.19476136434145866
+          ]
+        ],
+        "passed": true
+      },
+      "n5_dedup0.9_top12": {
+        "config": {
+          "n": 5,
+          "dedupLim": 0.9,
+          "top": 12
+        },
+        "num_keywords": 12,
+        "execution_time_ms": 2.453,
+        "min_score": 0.015780846161498906,
+        "max_score": 0.19476136434145866,
+        "avg_score": 0.07116059298155501,
+        "negative_count": 0,
+        "scores_hash": "766890637edeabbf048e1b524c3bf237",
+        "keywords": [
+          [
+            "engineering methodologies improve development efficiency",
+            0.015780846161498906
+          ],
+          [
+            "Software engineering methodologies improve development",
+            0.01578084616149891
+          ],
+          [
+            "Software engineering methodologies improve",
+            0.028040594918936776
+          ],
+          [
+            "methodologies improve development efficiency",
+            0.02804059491893678
+          ],
+          [
+            "Software engineering methodologies",
+            0.051970537142556714
+          ],
+          [
+            "improve development efficiency",
+            0.051970537142556714
+          ],
+          [
+            "engineering methodologies improve development",
+            0.056691468604384836
+          ],
+          [
+            "engineering methodologies improve",
+            0.10242260311185779
+          ],
+          [
+            "methodologies improve development",
+            0.10242260311185779
+          ],
+          [
+            "Software engineering",
+            0.10302256008155819
+          ],
+          [
+            "development efficiency",
+            0.10302256008155819
+          ],
+          [
+            "engineering methodologies",
+            0.19476136434145866
+          ]
+        ],
+        "passed": true
+      },
+      "n6_dedup1.0_top8": {
+        "config": {
+          "n": 6,
+          "dedupLim": 1.0,
+          "top": 8
+        },
+        "num_keywords": 8,
+        "execution_time_ms": 2.763,
+        "min_score": 0.004417703479883647,
+        "max_score": 0.056691468604384836,
+        "avg_score": 0.03158664106628166,
+        "negative_count": 0,
+        "scores_hash": "fe23d6731de8b89a3fa5847dcfba6ac5",
+        "keywords": [
+          [
+            "Software engineering methodologies improve development efficiency",
+            0.004417703479883647
+          ],
+          [
+            "engineering methodologies improve development efficiency",
+            0.015780846161498906
+          ],
+          [
+            "Software engineering methodologies improve development",
+            0.01578084616149891
+          ],
+          [
+            "Software engineering methodologies improve",
+            0.028040594918936776
+          ],
+          [
+            "methodologies improve development efficiency",
+            0.02804059491893678
+          ],
+          [
+            "Software engineering methodologies",
+            0.051970537142556714
+          ],
+          [
+            "improve development efficiency",
+            0.051970537142556714
+          ],
+          [
+            "engineering methodologies improve development",
+            0.056691468604384836
+          ]
+        ],
+        "passed": true
+      },
+      "n7_dedup0.3_top5": {
+        "config": {
+          "n": 7,
+          "dedupLim": 0.3,
+          "top": 5
+        },
+        "num_keywords": 5,
+        "execution_time_ms": 2.463,
+        "min_score": 0.004417703479883647,
+        "max_score": 0.02804059491893678,
+        "avg_score": 0.018412117128151002,
+        "negative_count": 0,
+        "scores_hash": "29a3969bd4da919319734194d941f41f",
+        "keywords": [
+          [
+            "Software engineering methodologies improve development efficiency",
+            0.004417703479883647
+          ],
+          [
+            "engineering methodologies improve development efficiency",
+            0.015780846161498906
+          ],
+          [
+            "Software engineering methodologies improve development",
+            0.01578084616149891
+          ],
+          [
+            "Software engineering methodologies improve",
+            0.028040594918936776
+          ],
+          [
+            "methodologies improve development efficiency",
+            0.02804059491893678
+          ]
+        ],
+        "passed": true
+      },
+      "n8_dedup0.8_top6": {
+        "config": {
+          "n": 8,
+          "dedupLim": 0.8,
+          "top": 6
+        },
+        "num_keywords": 6,
+        "execution_time_ms": 2.948,
+        "min_score": 0.004417703479883647,
+        "max_score": 0.051970537142556714,
+        "avg_score": 0.024005187130551955,
+        "negative_count": 0,
+        "scores_hash": "f2aeb6ef6918b177f126850188e097fd",
+        "keywords": [
+          [
+            "Software engineering methodologies improve development efficiency",
+            0.004417703479883647
+          ],
+          [
+            "engineering methodologies improve development efficiency",
+            0.015780846161498906
+          ],
+          [
+            "Software engineering methodologies improve development",
+            0.01578084616149891
+          ],
+          [
+            "Software engineering methodologies improve",
+            0.028040594918936776
+          ],
+          [
+            "methodologies improve development efficiency",
+            0.02804059491893678
+          ],
+          [
+            "Software engineering methodologies",
+            0.051970537142556714
+          ]
+        ],
+        "passed": true
+      },
+      "n9_dedup0.6_top4": {
+        "config": {
+          "n": 9,
+          "dedupLim": 0.6,
+          "top": 4
+        },
+        "num_keywords": 4,
+        "execution_time_ms": 2.587,
+        "min_score": 0.004417703479883647,
+        "max_score": 0.028040594918936776,
+        "avg_score": 0.01600499768045456,
+        "negative_count": 0,
+        "scores_hash": "82be6c1ddc40f6aa399e2acd1ea5930a",
+        "keywords": [
+          [
+            "Software engineering methodologies improve development efficiency",
+            0.004417703479883647
+          ],
+          [
+            "engineering methodologies improve development efficiency",
+            0.015780846161498906
+          ],
+          [
+            "Software engineering methodologies improve development",
+            0.01578084616149891
+          ],
+          [
+            "Software engineering methodologies improve",
+            0.028040594918936776
+          ]
+        ],
+        "passed": true
+      }
+    },
+    "mixed": {
+      "n1_dedup0.7_top10": {
+        "config": {
+          "n": 1,
+          "dedupLim": 0.7,
+          "top": 10
+        },
+        "num_keywords": 10,
+        "execution_time_ms": 2.752,
+        "min_score": 0.1545198278586356,
+        "max_score": 0.2452296988622282,
+        "avg_score": 0.22708772466150967,
+        "negative_count": 0,
+        "scores_hash": "1f20a9fa5b62c43ced8a01633b845674",
+        "keywords": [
+          [
+            "Artificial",
+            0.1545198278586356
+          ],
+          [
+            "modeling",
+            0.1545198278586356
+          ],
+          [
+            "intelligence",
+            0.2452296988622282
+          ],
+          [
+            "revolutionizes",
+            0.2452296988622282
+          ],
+          [
+            "healthcare",
+            0.2452296988622282
+          ],
+          [
+            "diagnostics",
+            0.2452296988622282
+          ],
+          [
+            "automated",
+            0.2452296988622282
+          ],
+          [
+            "image",
+            0.2452296988622282
+          ],
+          [
+            "analysis",
+            0.2452296988622282
+          ],
+          [
+            "predictive",
+            0.2452296988622282
+          ]
+        ],
+        "passed": true
+      },
+      "n2_dedup0.7_top15": {
+        "config": {
+          "n": 2,
+          "dedupLim": 0.7,
+          "top": 15
+        },
+        "num_keywords": 15,
+        "execution_time_ms": 2.869,
+        "min_score": 0.03938527105598604,
+        "max_score": 0.2452296988622282,
+        "avg_score": 0.1452744068993555,
+        "negative_count": 0,
+        "scores_hash": "f94df184e16bbe657f31bbd9610e3599",
+        "keywords": [
+          [
+            "Artificial intelligence",
+            0.03938527105598604
+          ],
+          [
+            "predictive modeling",
+            0.03938527105598604
+          ],
+          [
+            "intelligence revolutionizes",
+            0.06398554249754397
+          ],
+          [
+            "revolutionizes healthcare",
+            0.06398554249754397
+          ],
+          [
+            "healthcare diagnostics",
+            0.06398554249754397
+          ],
+          [
+            "automated image",
+            0.06398554249754397
+          ],
+          [
+            "image analysis",
+            0.06398554249754397
+          ],
+          [
+            "Artificial",
+            0.1545198278586356
+          ],
+          [
+            "modeling",
+            0.1545198278586356
+          ],
+          [
+            "intelligence",
+            0.2452296988622282
+          ],
+          [
+            "revolutionizes",
+            0.2452296988622282
+          ],
+          [
+            "healthcare",
+            0.2452296988622282
+          ],
+          [
+            "diagnostics",
+            0.2452296988622282
+          ],
+          [
+            "automated",
+            0.2452296988622282
+          ],
+          [
+            "image",
+            0.2452296988622282
+          ]
+        ],
+        "passed": true
+      },
+      "n3_dedup0.7_top20": {
+        "config": {
+          "n": 3,
+          "dedupLim": 0.7,
+          "top": 20
+        },
+        "num_keywords": 20,
+        "execution_time_ms": 3.192,
+        "min_score": 0.01052776333094585,
+        "max_score": 0.2452296988622282,
+        "avg_score": 0.10622458039329999,
+        "negative_count": 0,
+        "scores_hash": "809503ac3d62c846704714b01345ca2b",
+        "keywords": [
+          [
+            "Artificial intelligence revolutionizes",
+            0.01052776333094585
+          ],
+          [
+            "intelligence revolutionizes healthcare",
+            0.017368784970620534
+          ],
+          [
+            "revolutionizes healthcare diagnostics",
+            0.017368784970620534
+          ],
+          [
+            "automated image analysis",
+            0.017368784970620534
+          ],
+          [
+            "Artificial intelligence",
+            0.03938527105598604
+          ],
+          [
+            "predictive modeling",
+            0.03938527105598604
+          ],
+          [
+            "intelligence revolutionizes",
+            0.06398554249754397
+          ],
+          [
+            "revolutionizes healthcare",
+            0.06398554249754397
+          ],
+          [
+            "healthcare diagnostics",
+            0.06398554249754397
+          ],
+          [
+            "diagnostics through automated",
+            0.06398554249754397
+          ],
+          [
+            "automated image",
+            0.06398554249754397
+          ],
+          [
+            "image analysis",
+            0.06398554249754397
+          ],
+          [
+            "analysis and predictive",
+            0.06398554249754397
+          ],
+          [
+            "Artificial",
+            0.1545198278586356
+          ],
+          [
+            "modeling",
+            0.1545198278586356
+          ],
+          [
+            "intelligence",
+            0.2452296988622282
+          ],
+          [
+            "revolutionizes",
+            0.2452296988622282
+          ],
+          [
+            "healthcare",
+            0.2452296988622282
+          ],
+          [
+            "diagnostics",
+            0.2452296988622282
+          ],
+          [
+            "automated",
+            0.2452296988622282
+          ]
+        ],
+        "passed": true
+      },
+      "n4_dedup0.5_top10": {
+        "config": {
+          "n": 4,
+          "dedupLim": 0.5,
+          "top": 10
+        },
+        "num_keywords": 10,
+        "execution_time_ms": 3.062,
+        "min_score": 0.002905420448463966,
+        "max_score": 0.017368784970620534,
+        "avg_score": 0.0133019573301867,
+        "negative_count": 0,
+        "scores_hash": "2378f96c3e971ac668584602ae9d49e7",
+        "keywords": [
+          [
+            "Artificial intelligence revolutionizes healthcare",
+            0.002905420448463966
+          ],
+          [
+            "intelligence revolutionizes healthcare diagnostics",
+            0.004845916367788149
+          ],
+          [
+            "Artificial intelligence revolutionizes",
+            0.01052776333094585
+          ],
+          [
+            "analysis and predictive modeling",
+            0.010527763330945851
+          ],
+          [
+            "intelligence revolutionizes healthcare",
+            0.017368784970620534
+          ],
+          [
+            "revolutionizes healthcare diagnostics",
+            0.017368784970620534
+          ],
+          [
+            "healthcare diagnostics through automated",
+            0.017368784970620534
+          ],
+          [
+            "diagnostics through automated image",
+            0.017368784970620534
+          ],
+          [
+            "automated image analysis",
+            0.017368784970620534
+          ],
+          [
+            "image analysis and predictive",
+            0.017368784970620534
+          ]
+        ],
+        "passed": true
+      },
+      "n5_dedup0.9_top12": {
+        "config": {
+          "n": 5,
+          "dedupLim": 0.9,
+          "top": 12
+        },
+        "num_keywords": 12,
+        "execution_time_ms": 3.285,
+        "min_score": 0.0008204358344698381,
+        "max_score": 0.017368784970620534,
+        "avg_score": 0.007221162931122607,
+        "negative_count": 0,
+        "scores_hash": "037c40058a11c6dcc2d25cf5e6163a06",
+        "keywords": [
+          [
+            "Artificial intelligence revolutionizes healthcare diagnostics",
+            0.0008204358344698381
+          ],
+          [
+            "Artificial intelligence revolutionizes healthcare",
+            0.002905420448463966
+          ],
+          [
+            "image analysis and predictive modeling",
+            0.0029054204484639666
+          ],
+          [
+            "intelligence revolutionizes healthcare diagnostics",
+            0.004845916367788149
+          ],
+          [
+            "revolutionizes healthcare diagnostics through automated",
+            0.004845916367788149
+          ],
+          [
+            "healthcare diagnostics through automated image",
+            0.004845916367788149
+          ],
+          [
+            "diagnostics through automated image analysis",
+            0.004845916367788149
+          ],
+          [
+            "automated image analysis and predictive",
+            0.004845916367788149
+          ],
+          [
+            "Artificial intelligence revolutionizes",
+            0.01052776333094585
+          ],
+          [
+            "analysis and predictive modeling",
+            0.010527763330945851
+          ],
+          [
+            "intelligence revolutionizes healthcare",
+            0.017368784970620534
+          ],
+          [
+            "revolutionizes healthcare diagnostics",
+            0.017368784970620534
+          ]
+        ],
+        "passed": true
+      },
+      "n6_dedup1.0_top8": {
+        "config": {
+          "n": 6,
+          "dedupLim": 1.0,
+          "top": 8
+        },
+        "num_keywords": 8,
+        "execution_time_ms": 3.063,
+        "min_score": 0.0008204358344698381,
+        "max_score": 0.004845916367788149,
+        "avg_score": 0.002054537241292449,
+        "negative_count": 0,
+        "scores_hash": "1669c5c147b29e68dfd57a7270162d15",
+        "keywords": [
+          [
+            "Artificial intelligence revolutionizes healthcare diagnostics",
+            0.0008204358344698381
+          ],
+          [
+            "automated image analysis and predictive modeling",
+            0.0008204358344698382
+          ],
+          [
+            "intelligence revolutionizes healthcare diagnostics through automated",
+            0.0013795563322279451
+          ],
+          [
+            "revolutionizes healthcare diagnostics through automated image",
+            0.0013795563322279451
+          ],
+          [
+            "healthcare diagnostics through automated image analysis",
+            0.0013795563322279451
+          ],
+          [
+            "Artificial intelligence revolutionizes healthcare",
+            0.002905420448463966
+          ],
+          [
+            "image analysis and predictive modeling",
+            0.0029054204484639666
+          ],
+          [
+            "intelligence revolutionizes healthcare diagnostics",
+            0.004845916367788149
+          ]
+        ],
+        "passed": true
+      },
+      "n7_dedup0.3_top5": {
+        "config": {
+          "n": 7,
+          "dedupLim": 0.3,
+          "top": 5
+        },
+        "num_keywords": 5,
+        "execution_time_ms": 2.832,
+        "min_score": 0.00023571354262028722,
+        "max_score": 0.0008204358344698382,
+        "avg_score": 0.000534857279847524,
+        "negative_count": 0,
+        "scores_hash": "84e54f7951a6eda2da4c831c9d1908ef",
+        "keywords": [
+          [
+            "Artificial intelligence revolutionizes healthcare diagnostics through automated",
+            0.00023571354262028722
+          ],
+          [
+            "intelligence revolutionizes healthcare diagnostics through automated image",
+            0.0003988505938388281
+          ],
+          [
+            "revolutionizes healthcare diagnostics through automated image analysis",
+            0.0003988505938388281
+          ],
+          [
+            "Artificial intelligence revolutionizes healthcare diagnostics",
+            0.0008204358344698381
+          ],
+          [
+            "automated image analysis and predictive modeling",
+            0.0008204358344698382
+          ]
+        ],
+        "passed": true
+      },
+      "n8_dedup0.8_top6": {
+        "config": {
+          "n": 8,
+          "dedupLim": 0.8,
+          "top": 6
+        },
+        "num_keywords": 6,
+        "execution_time_ms": 4.527,
+        "min_score": 6.864060760435108e-05,
+        "max_score": 0.0003988505938388281,
+        "avg_score": 0.00024241652216635534,
+        "negative_count": 0,
+        "scores_hash": "f75386d10299f83db60a69642ebc3d7f",
+        "keywords": [
+          [
+            "Artificial intelligence revolutionizes healthcare diagnostics through automated image",
+            6.864060760435108e-05
+          ],
+          [
+            "intelligence revolutionizes healthcare diagnostics through automated image analysis",
+            0.00011673025247555014
+          ],
+          [
+            "Artificial intelligence revolutionizes healthcare diagnostics through automated",
+            0.00023571354262028722
+          ],
+          [
+            "diagnostics through automated image analysis and predictive modeling",
+            0.00023571354262028727
+          ],
+          [
+            "intelligence revolutionizes healthcare diagnostics through automated image",
+            0.0003988505938388281
+          ],
+          [
+            "revolutionizes healthcare diagnostics through automated image analysis",
+            0.0003988505938388281
+          ]
+        ],
+        "passed": true
+      },
+      "n9_dedup0.6_top4": {
+        "config": {
+          "n": 9,
+          "dedupLim": 0.6,
+          "top": 4
+        },
+        "num_keywords": 4,
+        "execution_time_ms": 4.434,
+        "min_score": 2.0205802205920507e-05,
+        "max_score": 0.00011673025247555014,
+        "avg_score": 6.85543174725432e-05,
+        "negative_count": 0,
+        "scores_hash": "be0543bd79806ef6498e54cd063372d5",
+        "keywords": [
+          [
+            "Artificial intelligence revolutionizes healthcare diagnostics through automated image analysis",
+            2.0205802205920507e-05
+          ],
+          [
+            "Artificial intelligence revolutionizes healthcare diagnostics through automated image",
+            6.864060760435108e-05
+          ],
+          [
+            "healthcare diagnostics through automated image analysis and predictive modeling",
+            6.864060760435109e-05
+          ],
+          [
+            "intelligence revolutionizes healthcare diagnostics through automated image analysis",
+            0.00011673025247555014
+          ]
+        ],
+        "passed": true
+      }
+    }
+  }
+}

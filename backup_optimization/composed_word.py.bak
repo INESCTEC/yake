@@ -25,8 +25,8 @@ class ComposedWord:
         See property accessors below for available attributes.
     """
     
-    # Use __slots__ to reduce memory overhead per instance (optimized to use direct attributes)
-    __slots__ = ('_tags', '_kw', '_unique_kw', '_size', '_terms', '_tf', '_integrity', '_h', '_start_or_end_stopwords')
+    # Use __slots__ to reduce memory overhead per instance
+    __slots__ = ('data',)
 
     def __init__(self, terms):
         """
@@ -39,65 +39,70 @@ class ComposedWord:
         """
         # If terms is None, initialize an invalid candidate
         if terms is None:
-            self._start_or_end_stopwords = True
-            self._tags = set()
-            self._h = 0.0
-            self._tf = 0.0
-            self._kw = ""
-            self._unique_kw = ""
-            self._size = 0
-            self._terms = []
-            self._integrity = 0.0
+            self.data = {
+                "start_or_end_stopwords": True,
+                "tags": set(),
+                "h": 0.0,
+                "tf": 0.0,
+                "kw": "",
+                "unique_kw": "",
+                "size": 0,
+                "terms": [],
+                "integrity": 0.0,
+            }
             return
 
+        # Basic initialization from terms
+        self.data = {}
+
         # Calculate derived properties
-        self._tags = set(["".join([w[0] for w in terms])])
-        self._kw = " ".join([w[1] for w in terms])
-        self._unique_kw = self._kw.lower()
-        self._size = len(terms)
-        self._terms = [w[2] for w in terms if w[2] is not None]
-        self._tf = 0.0
-        self._integrity = 1.0
-        self._h = 1.0
+        self.data["tags"] = set(["".join([w[0] for w in terms])])
+        self.data["kw"] = " ".join([w[1] for w in terms])
+        self.data["unique_kw"] = self.data["kw"].lower()
+        self.data["size"] = len(terms)
+        self.data["terms"] = [w[2] for w in terms if w[2] is not None]
+        self.data["tf"] = 0.0
+        self.data["integrity"] = 1.0
+        self.data["h"] = 1.0
 
         # Check if the candidate starts or ends with stopwords
-        if len(self._terms) > 0:
-            self._start_or_end_stopwords = (
-                self._terms[0].stopword or self._terms[-1].stopword
+        if len(self.data["terms"]) > 0:
+            self.data["start_or_end_stopwords"] = (
+                self.data["terms"][0].stopword or self.data["terms"][-1].stopword
             )
         else:
-            self._start_or_end_stopwords = True
+            self.data["start_or_end_stopwords"] = True
 
     # Property accessors for backward compatibility
     @property
     def tags(self):
         """Get the set of part-of-speech tag sequences for this phrase."""
-        return self._tags
+        return self.data["tags"]
 
     @property
     def kw(self):
         """Get the original form of the keyword phrase."""
-        return self._kw
+        return self.data["kw"]
 
     @property
     def unique_kw(self):
         """Get the normalized (lowercase) form of the keyword phrase."""
-        return self._unique_kw
+        return self.data["unique_kw"]
 
     @property
     def size(self):
         """Get the number of words in this phrase."""
-        return self._size
+        return self.data["size"]
 
     @property
     def terms(self):
         """Get the list of SingleWord objects for each constituent term."""
-        return self._terms
+        return self.data["terms"]
 
     @property
     def tf(self):
         """Get the term frequency (number of occurrences) in the document."""
-        return self._tf
+        return self.data["tf"]
 
     @tf.setter
     def tf(self, value):
@@ -107,17 +112,17 @@ class ComposedWord:
         Args:
             value (float): The new term frequency value
         """
-        self._tf = value
+        self.data["tf"] = value
 
     @property
     def integrity(self):
         """Get the integrity score indicating phrase coherence."""
-        return self._integrity
+        return self.data["integrity"]
 
     @property
     def h(self):
         """Get the final relevance score of this phrase (lower is better)."""
-        return self._h
+        return self.data["h"]
 
     @h.setter
     def h(self, value):
@@ -127,12 +132,12 @@ class ComposedWord:
         Args:
             value (float): The new score value
         """
-        self._h = value
+        self.data["h"] = value
 
     @property
     def start_or_end_stopwords(self):
         """Get whether this phrase starts or ends with stopwords."""
-        return self._start_or_end_stopwords
+        return self.data["start_or_end_stopwords"]
 
     def update_cand(self, cand):
         """

@@ -1,0 +1,104 @@
+{
+  "example1": {
+    "text": "Machine learning is a subset of artificial intelligence.",
+    "config": {
+      "lan": "en",
+      "n": 1,
+      "dedupLim": 0.7,
+      "top": 10
+    },
+    "keywords": [
+      [
+        "Machine",
+        0.15831692877998726
+      ],
+      [
+        "intelligence",
+        0.15831692877998726
+      ],
+      [
+        "learning",
+        0.29736558256021506
+      ],
+      [
+        "subset",
+        0.29736558256021506
+      ],
+      [
+        "artificial",
+        0.29736558256021506
+      ]
+    ]
+  },
+  "example2": {
+    "text": "\n    Natural language processing enables computers to understand human language.\n    Machine learning algorithms can process large datasets efficiently.\n    Deep learning networks perform complex pattern recognition tasks.\n    ",
+    "config": {
+      "lan": "en",
+      "n": 3,
+      "dedupLim": 0.7,
+      "top": 15
+    },
+    "keywords": [
+      [
+        "Natural language processing",
+        0.016823266745771143
+      ],
+      [
+        "processing enables computers",
+        0.02198879386562387
+      ],
+      [
+        "language processing enables",
+        0.02777577824675221
+      ],
+      [
+        "understand human language",
+        0.027775778246752213
+      ],
+      [
+        "Natural language",
+        0.057132339356730635
+      ],
+      [
+        "processing enables",
+        0.07439880365324542
+      ],
+      [
+        "enables computers",
+        0.07439880365324542
+      ],
+      [
+        "computers to understand",
+        0.07439880365324542
+      ],
+      [
+        "understand human",
+        0.07439880365324542
+      ],
+      [
+        "language processing",
+        0.09291768414999513
+      ],
+      [
+        "human language",
+        0.09291768414999513
+      ],
+      [
+        "language",
+        0.16154023494688213
+      ],
+      [
+        "Natural",
+        0.16727919988083476
+      ],
+      [
+        "large datasets efficiently",
+        0.2568741067113119
+      ],
+      [
+        "processing",
+        0.263148087490478
+      ]
+    ]
+  }
+}

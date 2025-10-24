@@ -23,6 +23,9 @@ class SingleWord:
     Attributes:
         See property accessors below for available attributes.
     """
+    
+    # Use __slots__ to reduce memory overhead per instance
+    __slots__ = ('id', 'g', 'data', '_graph_metrics_cache', '_graph_version')
 
     def __init__(self, unique, idx, graph):
         """
@@ -35,6 +38,10 @@ class SingleWord:
         """
         self.id = idx  # Fast access needed as it's used in graph operations
         self.g = graph  # Fast access needed for network calculations
+
+        # Cache for graph metrics to avoid recalculation
+        self._graph_metrics_cache = None
+        self._graph_version = 0  # Track graph changes for cache invalidation
 
         self.data = {
             # Basic information
@@ -173,12 +180,23 @@ class SingleWord:
         """
         self.data[name] = value
 
+    def invalidate_graph_cache(self):
+        """
+        Invalidate the cached graph metrics.
+        
+        Call this method when the graph structure changes to force
+        recalculation of metrics on next access.
+        """
+        self._graph_metrics_cache = None
+        self._graph_version += 1
+
     def get_graph_metrics(self):
         """
-        Calculate all graph-based metrics at once.
+        Calculate all graph-based metrics at once with caching.
 
         Analyzes the term's connections in the co-occurrence graph to compute
         various relationship metrics that measure its contextual importance.
+        Results are cached to avoid recalculation on subsequent calls.
 
         Returns:
             dict: Dictionary containing the calculated graph metrics:
@@ -189,6 +207,11 @@ class SingleWord:
                 - wil: Word importance left (sum of incoming edge weights)
                 - pwl: Probability weight left (wdl/wil)
         """
+        # Return cached results if available
+        if self._graph_metrics_cache is not None:
+            return self._graph_metrics_cache
+
+        # Calculate metrics if not cached
         # Out-edges metrics
         wdr = len(self.g.out_edges(self.id))
         wir = sum(d["tf"] for (_, _, d) in self.g.out_edges(self.id, data=True))
@@ -199,7 +222,13 @@ class SingleWord:
         wil = sum(d["tf"] for (_, _, d) in self.g.in_edges(self.id, data=True))
         pwl = 0 if wil == 0 else wdl / wil
 
-        return {"wdr": wdr, "wir": wir, "pwr": pwr, "wdl": wdl, "wil": wil, "pwl": pwl}
+        # Cache the results
+        self._graph_metrics_cache = {
+            "wdr": wdr, "wir": wir, "pwr": pwr, 
+            "wdl": wdl, "wil": wil, "pwl": pwl
+        }
+        
+        return self._graph_metrics_cache
 
     def update_h(self, stats, features=None):
         """
