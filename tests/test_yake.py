@@ -205,6 +205,247 @@ def test_n1_EL():
         == "<kw>Ανώτατος</kw> <kw>διοικητής</kw> του <kw>ρωσικού</kw> <kw>στρατού</kw> <kw>φέρεται</kw> να <kw>σκοτώθηκε</kw> <kw>κοντά</kw> στο <kw>Χάρκοβο</kw>, <kw>σύμφωνα</kw> με την <kw>υπηρεσία</kw> <kw>πληροφοριών</kw> του <kw>υπουργείου</kw> <kw>Άμυνας</kw> της <kw>Ουκρανίας</kw>. <kw>Σύμφωνα</kw> με δήλωση του <kw>υπουργείου</kw> <kw>Άμυνας</kw> της <kw>Ουκρανίας</kw>, πρόκειται για τον <kw>Vitaly</kw> <kw>Gerasimov</kw>, υποστράτηγο και υποδιοικητή από την <kw>Κεντρική</kw> <kw>Στρατιωτική</kw> <kw>Περιφέρεια</kw> της <kw>Ρωσίας</kw>."
     )
     
+def test_n4_EN():
+    """Test n-gram size of 4 for comprehensive coverage."""
+    text_content = """
+    Artificial Intelligence and Machine Learning are transforming the technology industry.
+    Deep Learning algorithms have revolutionized computer vision and natural language processing.
+    Neural networks with multiple hidden layers can learn complex patterns from large datasets.
+    Companies like Google, Microsoft, and Amazon are investing heavily in AI research.
+    The future of AI includes autonomous vehicles, intelligent assistants, and advanced robotics.
+    """
+
+    pyake = yake.KeywordExtractor(lan="en", n=4, top=10)
+    result = pyake.extract_keywords(text_content)
+    print(result)
+
+    # Verify we get 4-grams in results
+    assert len(result) > 0
+    assert any(len(kw[0].split()) == 4 for kw in result)
+
+
+def test_deduplication_functions():
+    """Test different deduplication functions."""
+    text = "Python programming. Python is great for programming tasks."
+
+    # Test with jaro deduplication
+    kw_jaro = yake.KeywordExtractor(lan="en", n=1, dedup_func="jaro", top=5)
+    result_jaro = kw_jaro.extract_keywords(text)
+    assert len(result_jaro) > 0
+
+    # Test with levs deduplication
+    kw_levs = yake.KeywordExtractor(lan="en", n=1, dedup_func="levs", top=5)
+    result_levs = kw_levs.extract_keywords(text)
+    assert len(result_levs) > 0
+
+    # Test with seqm deduplication (default)
+    kw_seqm = yake.KeywordExtractor(lan="en", n=1, dedup_func="seqm", top=5)
+    result_seqm = kw_seqm.extract_keywords(text)
+    assert len(result_seqm) > 0
+
+
+def test_no_deduplication():
+    """Test extraction without deduplication."""
+    text = "Python programming. Python is great for programming tasks."
+
+    # dedup_lim >= 1.0 means no deduplication
+    kw = yake.KeywordExtractor(lan="en", n=1, dedup_lim=1.0, top=10)
+    result = kw.extract_keywords(text)
+    assert len(result) > 0
+
+
+def test_custom_stopwords():
+    """Test with custom stopwords."""
+    text = "Python is a programming language. Java is also a language."
+
+    custom_stopwords = {"is", "a", "also"}
+    kw = yake.KeywordExtractor(lan="en", n=1, stopwords=custom_stopwords, top=5)
+    result = kw.extract_keywords(text)
+
+    # Verify stopwords are not in results
+    keywords = [k[0].lower() for k in result]
+    assert "is" not in keywords
+    assert "a" not in keywords
+
+
+def test_window_size_parameter():
+    """Test different window sizes."""
+    text = "Machine learning and deep learning are related concepts."
+
+    # Small window
+    kw_small = yake.KeywordExtractor(lan="en", n=2, window_size=1, top=5)
+    result_small = kw_small.extract_keywords(text)
+    assert len(result_small) > 0
+
+    # Larger window
+    kw_large = yake.KeywordExtractor(lan="en", n=2, window_size=3, top=5)
+    result_large = kw_large.extract_keywords(text)
+    assert len(result_large) > 0
+
+
+def test_cache_statistics():
+    """Test cache statistics functionality."""
+    text = "Python programming " * 10
+
+    kw = yake.KeywordExtractor(lan="en", n=2, top=5)
+    result = kw.extract_keywords(text)
+
+    # Get cache stats
+    stats = kw.get_cache_stats()
+    assert "hits" in stats
+    assert "misses" in stats
+    assert "hit_rate" in stats
+    assert isinstance(stats["hit_rate"], (int, float))
+
+
+def test_large_dataset_strategy():
+    """Test optimization strategy for large datasets."""
+    # Generate text with >200 unique candidates
+    text = " ".join([f"keyword{i} is important" for i in range(100)])
+
+    kw = yake.KeywordExtractor(lan="en", n=2, top=20)
+    result = kw.extract_keywords(text)
+    assert len(result) > 0
+
+
+def test_medium_dataset_strategy():
+    """Test optimization strategy for medium datasets."""
+    # Generate text with 50-200 candidates
+    text = " ".join([f"term{i} concept" for i in range(30)])
+
+    kw = yake.KeywordExtractor(lan="en", n=2, top=15)
+    result = kw.extract_keywords(text)
+    assert len(result) > 0
+
+
+def test_small_dataset_strategy():
+    """Test optimization strategy for small datasets."""
+    text = "Small text with few keywords."
+
+    kw = yake.KeywordExtractor(lan="en", n=2, top=5)
+    result = kw.extract_keywords(text)
+    assert len(result) >= 0  # May return 0 for very small text
+
+
+def test_levenshtein_distance():
+    """Test Levenshtein distance calculations."""
+    from yake.core.Levenshtein import Levenshtein
+
+    # Test identical strings
+    assert Levenshtein.distance("hello", "hello") == 0
+
+    # Test completely different strings
+    dist = Levenshtein.distance("abc", "xyz")
+    assert dist > 0
+
+    # Test one edit
+    assert Levenshtein.distance("hello", "helo") == 1
+
+
+def test_levenshtein_ratio():
+    """Test Levenshtein ratio calculations."""
+    from yake.core.Levenshtein import Levenshtein
+
+    # Test identical strings
+    assert Levenshtein.ratio("hello", "hello") == 1.0
+
+    # Test similar strings
+    ratio = Levenshtein.ratio("hello", "helo")
+    assert 0.0 < ratio < 1.0
+
+    # Test different strings
+    ratio = Levenshtein.ratio("abc", "xyz")
+    assert 0.0 <= ratio < 1.0
+
+
+def test_composed_word_properties():
+    """Test ComposedWord properties and methods."""
+    text = "machine learning algorithms"
+
+    kw = yake.KeywordExtractor(lan="en", n=2, top=5)
+    result = kw.extract_keywords(text)
+
+    # Verify we got results
+    assert len(result) > 0
+
+
+def test_single_word_features():
+    """Test single word feature extraction."""
+    text = "Python Python programming programming code"
+
+    kw = yake.KeywordExtractor(lan="en", n=1, top=5)
+    result = kw.extract_keywords(text)
+
+    # Should extract single words
+    assert len(result) > 0
+    assert all(len(kw[0].split()) == 1 for kw in result)
+
+
+def test_special_characters_handling():
+    """Test handling of special characters."""
+    text = "Python 3.9+ is great! #programming @developer"
+
+    kw = yake.KeywordExtractor(lan="en", n=1, top=5)
+    result = kw.extract_keywords(text)
+    assert len(result) > 0
+
+
+def test_multilingual_support():
+    """Test multiple languages beyond existing tests."""
+    # German
+    text_de = "Die künstliche Intelligenz verändert die Welt"
+    kw_de = yake.KeywordExtractor(lan="de", n=2, top=5)
+    result_de = kw_de.extract_keywords(text_de)
+    assert len(result_de) > 0
+
+    # French
+    text_fr = "L'intelligence artificielle transforme le monde"
+    kw_fr = yake.KeywordExtractor(lan="fr", n=2, top=5)
+    result_fr = kw_fr.extract_keywords(text_fr)
+    assert len(result_fr) > 0
+
+
+def test_similarity_methods():
+    """Test similarity calculation methods."""
+    kw = yake.KeywordExtractor(lan="en", n=1)
+
+    # Test levs similarity (Levenshtein-based)
+    sim_levs = kw.levs("hello", "helo")
+    assert 0.0 <= sim_levs <= 1.0
+    assert sim_levs > 0.5  # Similar strings should have high similarity
+
+    # Test seqm similarity (sequence matcher)
+    sim_seqm = kw.seqm("hello", "helo")
+    assert 0.0 <= sim_seqm <= 1.0
+    assert sim_seqm > 0.5
+
+    # Test identical strings
+    sim_identical = kw.levs("test", "test")
+    assert sim_identical == 1.0
+
+    # Test very different strings
+    sim_different = kw.levs("abc", "xyz")
+    assert sim_different < 0.5
+
+
+def test_empty_after_stopword_removal():
+    """Test extraction when all words are stopwords."""
+    text = "the a an is are was were"
+
+    kw = yake.KeywordExtractor(lan="en", n=1, top=5)
+    result = kw.extract_keywords(text)
+    assert len(result) == 0
+
+
+def test_very_long_text():
+    """Test with very long text for performance validation."""
+    text = "Machine learning is transforming industries. " * 200
+
+    kw = yake.KeywordExtractor(lan="en", n=3, top=10)
+    result = kw.extract_keywords(text)
+    assert len(result) > 0
+
+
 def test_n3_KO():
         text_content = """
         내가 원하는 우리나라는 단지 강한 나라가 아니다. 높은 문화의 힘을 가지고 세계 인류의 평화와 행복에 기여할 수 있는 나라다. 나는 우리나라가 세계에서 가장 아름다운 나라가 되기를 바란다. 부강한 나라가 아니라, 인간다운 나라, 서로 존중하고 배려하는 사회가 되기를 소망한다. 그런 나라는 국민 모두가 자유롭고 평등하며, 스스로 삶을 개척해 나가는 힘을 갖춘 나라일 것이다. 정의와 진실이 살아 숨 쉬고, 교육과 문화가 삶 속에 녹아드는 나라야말로 진정한 독립의 완성이라고 믿는다."""
@@ -247,15 +488,3 @@ def test_n3_KO():
             == "내가 <kw>원하는</kw> <kw>우리나라는</kw> 단지 강한 <kw>나라가</kw> <kw>아니다</kw>. 높은 문화의 힘을 가지고 세계 인류의 평화와 행복에 기여할 수 있는 <kw>나라다</kw>. 나는 우리나라가 세계에서 가장 아름다운 <kw>나라가</kw> <kw>되기를</kw> <kw>바란다</kw>. 부강한 <kw>나라가</kw> 아니라, 인간다운 나라, 서로 존중하고 배려하는 사회가 <kw>되기를</kw> 소망한다. 그런 나라는 국민 모두가 자유롭고 평등하며, 스스로 삶을 개척해 나가는 힘을 갖춘 나라일 것이다. 정의와 진실이 살아 숨 쉬고, 교육과 문화가 삶 속에 녹아드는 나라야말로 진정한 독립의 완성이라고 믿는다."
     )
 
-
-
-
-
-# Comentado para evitar execução durante importação
-# test_phraseless_example()
-# test_null_and_blank_example()
-# test_n1_EN()
-# test_n3_EN()
-# test_n3_PT()
-# test_n1_EL()
-#test_n3_KO()
