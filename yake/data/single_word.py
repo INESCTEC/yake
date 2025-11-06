@@ -238,18 +238,30 @@ class SingleWord:
 
     def update_h(self, stats, features=None):
         """
-        Update the word's score based on statistics.
+        Update the importance score (H) for a single word based on multiple features.
 
-        Calculates all the statistical features that determine the word's
-        relevance score, using document-level statistics for normalization.
+        This function calculates and updates various statistical features that determine
+        the word's importance as a potential keyword. It combines term relevance, frequency,
+        spread across the document, case information, and position to compute an overall
+        importance score (H). A lower H score indicates a more important term.
+
+        The features calculated include:
+        - WRel: Term relevance based on connection to other terms in the graph
+        - WFreq: Normalized term frequency relative to document statistics
+        - WSpread: Term distribution across document sentences
+        - WCase: Case feature capturing capitalization patterns (all caps, proper nouns)
+        - WPos: Position feature based on median occurrence position in the text
+
+        These features are then combined using a formula that balances their contributions
+        to produce the final H score.
 
         Args:
-            stats (dict): Document statistics including:
-                - max_tf (float): Maximum term frequency in the document
-                - avg_tf (float): Average term frequency
-                - std_tf (float): Standard deviation of term frequency
-                - number_of_sentences (int): Total number of sentences
-            features (list, optional): Specific features to calculate, or None for all
+            stats: Document statistics including:
+                - max_tf: Maximum term frequency in the document
+                - avg_tf: Average term frequency across all terms
+                - std_tf: Standard deviation of term frequency
+                - number_of_sentences: Total number of sentences in document
+            features: List of specific features to calculate or None to calculate all
         """
         max_tf = stats["max_tf"]
         avg_tf = stats["avg_tf"]
@@ -297,18 +309,17 @@ class SingleWord:
 
     def add_occur(self, tag, sent_id, pos_sent, pos_text):
         """
-        Add occurrence information for this term.
+        Add occurrence of term in text.
 
         Records where in the document this term appears, tracking sentence ID,
         position within sentence, global position in text, and updates term
         frequency counters.
 
         Args:
-            tag (str): Part-of-speech tag for this occurrence
-                ('a' for acronym, 'n' for proper noun, etc.)
-            sent_id (int): Sentence ID where the term appears
-            pos_sent (int): Position within the sentence
-            pos_text (int): Global position in the entire text
+            tag: Term tag ('a' for acronym, 'n' for proper noun, etc.)
+            sent_id: Sentence ID where the term appears
+            pos_sent: Position within the sentence
+            pos_text: Global position in the entire text
         """
         # Create empty list for this sentence if it's the first occurrence
         if sent_id not in self.occurs:

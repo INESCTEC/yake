@@ -66,17 +66,14 @@ def tokenize_sentences(text: str) -> list:
     """
     Split text into sentences and tokenize into words.
 
-    This function performs two-level tokenization: first dividing the text into
-    sentences using segtok's sentence segmenter, then tokenizing each sentence
-    into individual words. It also handles contractions and filters out empty
-    or invalid tokens.
+    Performs two-level tokenization: dividing text into sentences,
+    then tokenizing each sentence into individual words.
 
     Args:
         text: The input text to be tokenized
 
     Returns:
-        A nested list structure where each inner list contains the tokens
-        for a single sentence in the original text
+        A nested list where each inner list contains tokens for one sentence
     """
     return [
         # Inner list: tokenize each sentence into words
@@ -96,15 +93,11 @@ def tokenize_sentences(text: str) -> list:
 @lru_cache(maxsize=10000)
 def get_tag(word: str, i: int, exclude: frozenset) -> str:
     """
-    Determine the linguistic tag of a word based on its characteristics.
+    Determine the linguistic tag of a word.
 
-    This function categorizes words into different types based on their
-    orthographic features (capitalization, digits, special characters).
-    These tags are used to identify proper nouns, acronyms, numbers, and
-    unusual token patterns, which affect keyword scoring and filtering.
-    
-    Note: This function is cached with LRU cache for performance. The 'exclude'
-    parameter must be a frozenset (immutable) to be hashable for caching.
+    Categorizes words based on orthographic features (capitalization, digits,
+    special characters) to identify proper nouns, acronyms, numbers, and
+    unusual patterns.
 
     Args:
         word: The word to classify
@@ -112,7 +105,7 @@ def get_tag(word: str, i: int, exclude: frozenset) -> str:
         exclude: Frozenset of characters to consider as punctuation/special chars
 
     Returns:
-        A single character tag representing the word type:
+        A single character tag:
             - "d": Digit or numeric value
             - "u": Unusual word (mixed alphanumeric or special characters)
             - "a": Acronym (all uppercase)

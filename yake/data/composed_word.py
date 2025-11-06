@@ -146,13 +146,10 @@ class ComposedWord:
 
     def update_cand(self, cand):
         """
-        Update this candidate with data from another candidate.
-
-        Merges tag information from another candidate representing
-        the same keyword phrase.
+        Update candidate with new tags.
 
         Args:
-            cand (ComposedWord): Another instance of the same keyword to merge with
+            cand: Another instance of the same keyword to merge with
         """
         # Add all tags from the other candidate to this one's tags
         for tag in cand.tags:
@@ -160,7 +157,7 @@ class ComposedWord:
 
     def is_valid(self):
         """
-        Check if this candidate is a valid keyword phrase.
+        Check if candidate is valid.
 
         A valid keyword phrase doesn't contain unusual characters or digits,
         and doesn't start or end with stopwords.
@@ -178,22 +175,22 @@ class ComposedWord:
 
     def get_composed_feature(self, feature_name, discart_stopword=True):
         """
-               Get composed feature values for the n-gram.
+        Get composed feature values for the n-gram.
 
-        This function aggregates a specific feature across all terms in the n-gram.
-        It computes the sum, product, and ratio of the feature values, optionally
-        excluding stopwords from the calculation.
+        This function aggregates a specific feature across all terms in the n-gram using
+        three different methods:
+        - Sum: Adds all feature values together
+        - Product: Multiplies all feature values
+        - Ratio: Product / (Sum + 1), measuring feature consistency
+
+        Stopwords can be excluded from the calculation to focus on content words.
 
         Args:
             feature_name: Name of feature to get (must be an attribute of the term objects)
             discard_stopword: Whether to exclude stopwords from calculation (True by default)
 
         Returns:
-            Tuple of (sum, product, ratio) for the feature where:
-            - sum: Sum of the feature values across all relevant terms
-            - product: Product of the feature values across all relevant terms
-            - ratio: Product divided by (sum + 1), a measure of feature consistency
-
+            Tuple of (sum, product, ratio) for the feature
         """
         # Get feature values from each term, filtering stopwords if requested
         list_of_features = [
@@ -319,19 +316,23 @@ class ComposedWord:
 
     def update_h(self, features=None, is_virtual=False):
         """
-        Update the term's score based on its constituent terms.
+        Update the composed term score.
 
-        Calculates a combined relevance score for the multi-word term by
-        aggregating scores of its constituent words, with special handling for
-        stopwords to improve keyword quality.
+        Calculates the H score for a multi-word term by aggregating scores from its
+        constituent words. The method uses different strategies for handling stopwords:
 
-        This implementation includes the fix for Issue #17 (PR #96) which prevents
-        negative scores when n >= 4 by treating consecutive stopwords as single
-        groups rather than processing each stopword individually.
+        Stopword Weight Methods:
+        - "bi" (BiWeight): Uses edge probabilities between terms in the co-occurrence graph.
+          Consecutive stopwords are treated as a single group to prevent excessive
+          negative contributions (fixes Issue #17, PR #96).
+        - "h": Directly uses the H score of stopwords.
+        - "none": Ignores stopwords completely in the calculation.
+
+        A lower H score indicates a more important keyword.
 
         Args:
-            features (list, optional): Specific features to use for scoring
-            is_virtual (bool): Whether this is a virtual candidate not in text
+            features: Specific features to use for scoring (currently unused)
+            is_virtual: Whether this is a virtual candidate not in text
         """
         sum_h = 0.0
         prod_h = 1.0

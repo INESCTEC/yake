@@ -41,16 +41,16 @@ class DataCore:
         config: Optional[Dict[str, Any]] = None
     ):
         """
-        Initialize the data core with text and configuration.
+        Initialize the data core for keyword extraction.
 
         Args:
-            text: The input text to analyze for keyword extraction
-            stopword_set: A set of stopwords to filter out non-content words
+            text: Input text to process
+            stopword_set: Set of stopwords to ignore
             config: Configuration options including:
-                - windows_size (int): Size of word window for co-occurrence (default: 2)
-                - n (int): Maximum length of keyword phrases (default: 3)
-                - tags_to_discard (set): POS tags to ignore (default: {"u", "d"})
-                - exclude (set): Characters to exclude (default: string.punctuation)
+                - windows_size (int): Size of window for co-occurrence matrix (default: 2)
+                - n (int): Maximum n-gram size (default: 3)
+                - tags_to_discard (set): Tags to discard during processing (default: {"u", "d"})
+                - exclude (set): Set of characters to exclude (default: string.punctuation)
         """
         # Initialize default configuration if none provided
         if config is None:
@@ -177,7 +177,7 @@ class DataCore:
     # --- Internal utility methods ---
     def _build(self, text: str, windows_size: int, n: int) -> None:
         """
-        Build the core data structures from the input text.
+        Build the datacore features.
 
         This method processes the input text to extract terms, build the co-occurrence graph,
         and generate candidate keyphrases. It performs the following steps:
@@ -389,32 +389,38 @@ class DataCore:
 
     def get_tag(self, word, i):
         """
-        Get the part-of-speech tag for a word.
+        Get tag for a word.
+
+        Determines the type of word based on its characteristics:
+        - 'd': Digit (numeric value)
+        - 'u': Unknown (mixed alphanumeric or special characters)
+        - 'a': All caps (acronym)
+        - 'n': Proper noun (capitalized word not at sentence start)
+        - 'p': Regular word
 
         Args:
-            word (str): The word to tag
-            i (int): Position of the word in its sentence
+            word: Word to tag
+            i: Position in sentence (used to identify proper nouns)
 
         Returns:
-            str: Single character tag representing the word type
-                 ("d" for digit, "u" for unusual, "a" for acronym,
-                  "n" for proper noun, "p" for plain word)
+            Tag as string representing the word type
         """
         return get_tag(word, i, self.exclude)
 
     def build_candidate(self, candidate_string: str) -> ComposedWord:
         """
-        Build a candidate ComposedWord from a string.
+        Build a candidate from a string.
 
         This function processes a candidate string by tokenizing it, tagging each word,
         and creating a ComposedWord object from the resulting terms. It's used to
         convert external strings into the internal candidate representation.
 
         Args:
-            candidate_string: String to convert to a keyword candidate
+            candidate_string: String to build candidate from
 
         Returns:
-            A composed word object representing the candidate
+            A ComposedWord instance representing the candidate, or an invalid
+            ComposedWord if no valid terms were found
         """
 
         # Tokenize the candidate string
@@ -503,14 +509,19 @@ class DataCore:
         """
         Get or create a term object for a word.
 
-        Handles word normalization, stopword checking, and term object creation.
+        Retrieves an existing term object for a word or creates a new one.
+        The function also:
+        1. Normalizes the word (lowercase, handles plural forms)
+        2. Determines if the word is a stopword
+        3. Creates a new term object if needed and adds it to the graph
 
         Args:
-            str_word: The word to get a term object for
-            save_non_seen: Whether to save new terms to the collection
+            str_word: Word to get term for
+            save_non_seen: Whether to save new terms to the internal dictionary.
+                          If False, creates a temporary term without saving it.
 
         Returns:
-            Term object representing this word
+            SingleWord instance representing the term
         """
         # Normalize the term (convert to lowercase)
         unique_term = str_word.lower()
@@ -552,15 +563,15 @@ class DataCore:
 
     def add_cooccur(self, left_term, right_term):
         """
-        Add a co-occurrence relationship between two terms.
+        Add co-occurrence between terms.
 
         Updates the co-occurrence graph by adding or incrementing an edge between
         two terms. This information is used to calculate term relatedness and
         importance in the text.
 
         Args:
-            left_term (SingleWord): Source term in the relationship
-            right_term (SingleWord): Target term in the relationship
+            left_term: Left term in the co-occurrence relationship
+            right_term: Right term in the co-occurrence relationship
         """
         # Check if the edge already exists
         if right_term.id not in self.g[left_term.id]:
@@ -576,14 +587,14 @@ class DataCore:
 
     def add_or_update_composedword(self, cand):
         """
-        Add or update a composed word in the candidates collection.
+        Add or update a composed word.
 
         Adds a new candidate composed word (n-gram) to the candidates dictionary
         or updates an existing one by incrementing its frequency. This is used to
         track potential keyphrases in the text.
 
         Args:
-            cand (ComposedWord): ComposedWord instance to add or update in the candidates dictionary
+            cand: ComposedWord instance to add or update in the candidates dictionary
         """
         # Check if this candidate already exists
         if cand.unique_kw not in self.candidates:
