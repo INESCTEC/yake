@@ -10,7 +10,7 @@ to ranked keywords.
 import os
 import logging
 import functools
-from typing import List, Tuple, Optional, Set, Dict, Any, Callable
+from typing import List, Tuple, Optional, Set, Callable
 import jellyfish  # pylint: disable=import-error
 from yake.data import DataCore
 from .Levenshtein import Levenshtein
@@ -32,6 +32,7 @@ class KeywordExtractor:
         See initialization parameters for configurable attributes.
     """
 
+    # pylint: disable=too-many-arguments,too-many-positional-arguments
     def __init__(
         self,
         lan: str = "en",
@@ -434,7 +435,7 @@ class KeywordExtractor:
 
             return results
 
-        except Exception as e:
+        except Exception as e:  # pylint: disable=broad-exception-caught
             logger.warning(
                 "Exception during keyword extraction: %s (text preview: '%s...')",
                 str(e), text[:100] if text else ""
@@ -652,12 +653,14 @@ class KeywordExtractor:
 
         # Clear module-level caches
         try:
+            # pylint: disable=import-outside-toplevel
             from yake.data.utils import get_tag
             get_tag.cache_clear()
         except (ImportError, AttributeError):
             pass
 
         try:
+            # pylint: disable=import-outside-toplevel
             from yake.core.Levenshtein import Levenshtein as LevenshteinModule
             LevenshteinModule.ratio.cache_clear()
             LevenshteinModule.distance.cache_clear()

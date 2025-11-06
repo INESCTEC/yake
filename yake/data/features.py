@@ -11,12 +11,13 @@ Based on the modular architecture from the reference YAKE implementation.
 import logging
 import math
 from typing import Dict, Any, Tuple
-import numpy as np
+import numpy as np  # pylint: disable=import-error
 
 # Configure module logger
 logger = logging.getLogger(__name__)
 
 
+# pylint: disable=too-many-locals
 def calculate_term_features(
     term: Any,
     max_tf: float,

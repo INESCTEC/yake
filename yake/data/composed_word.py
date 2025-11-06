@@ -8,9 +8,9 @@ which phrases make good keyword candidates.
 """
 
 import logging
-from typing import List, Tuple, Set, Optional, Any
-import numpy as np
-import jellyfish
+from typing import List, Tuple, Optional, Any
+import numpy as np  # pylint: disable=import-error
+import jellyfish  # pylint: disable=import-error
 from .utils import STOPWORD_WEIGHT
 
 # Configure module logger

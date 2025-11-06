@@ -9,9 +9,9 @@ a relevance score for each word.
 
 import logging
 import math
-from typing import Dict, Set, Optional, Any
-import numpy as np
-import networkx as nx
+from typing import Any
+import numpy as np  # pylint: disable=import-error
+import networkx as nx  # pylint: disable=import-error
 
 # Configure module logger
 logger = logging.getLogger(__name__)

@@ -10,10 +10,10 @@ keyword generation.
 import logging
 import string
 from typing import Dict, List, Set, Optional, Any
-import networkx as nx
-import numpy as np
+import networkx as nx  # pylint: disable=import-error
+import numpy as np  # pylint: disable=import-error
 
-from segtok.tokenizer import web_tokenizer, split_contractions
+from segtok.tokenizer import web_tokenizer, split_contractions  # pylint: disable=import-error
 from .utils import pre_filter, tokenize_sentences, get_tag
 from .single_word import SingleWord
 from .composed_word import ComposedWord

@@ -9,8 +9,8 @@ text analysis throughout the keyword extraction pipeline.
 
 import re
 from functools import lru_cache
-from segtok.segmenter import split_multi
-from segtok.tokenizer import web_tokenizer, split_contractions
+from segtok.segmenter import split_multi  # pylint: disable=import-error
+from segtok.tokenizer import web_tokenizer, split_contractions  # pylint: disable=import-error
 
 # Pre-compiled regex patterns for better performance
 _CAPITAL_LETTER_PATTERN = re.compile(r"^(\s*([A-Z]))")
