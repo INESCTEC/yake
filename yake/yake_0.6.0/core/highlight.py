@@ -1,3 +1,4 @@
+# pylint: skip-file
 """
 Module for highlighting text based on keywords.
 

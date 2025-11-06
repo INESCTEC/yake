@@ -1,3 +1,4 @@
+# pylint: skip-file
 """
 Keyword extraction module for YAKE.
 

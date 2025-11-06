@@ -1,3 +1,4 @@
+# pylint: skip-file
 """
 Single word term representation module for YAKE keyword extraction.
 

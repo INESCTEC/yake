@@ -1,3 +1,4 @@
+# pylint: skip-file
 """Data representation module for keyword extraction!"""
 
 from .core import DataCore

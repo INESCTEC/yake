@@ -6,6 +6,7 @@ A light-weight unsupervised automatic keyword extraction method which rests on
 text statistical features extracted from single documents to select the most 
 relevant keywords of a text.
 """
+# pylint: skip-file
 
 # Import the main KeywordExtractor class
 from .core.yake import KeywordExtractor

@@ -1,3 +1,4 @@
+# pylint: skip-file
 import numpy as np
 
 class Levenshtein(object):

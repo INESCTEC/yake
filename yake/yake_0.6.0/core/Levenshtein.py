@@ -1,3 +1,4 @@
+# pylint: skip-file
 """
 Module providing Levenshtein distance and ratio calculations.
 

@@ -1,3 +1,5 @@
+
+# pylint: skip-file
 import re
 
 DEFAULT_HIGHLIGHT_PRE = "<kw>"

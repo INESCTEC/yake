@@ -1,3 +1,4 @@
+# pylint: skip-file
 from segtok.segmenter import split_multi
 from segtok.tokenizer import web_tokenizer, split_contractions
 
