@@ -1,14 +1,13 @@
 """
 Core data representation module for YAKE keyword extraction.
 
-This module contains the DataCore class which serves as the foundation for 
-processing and analyzing text documents to extract keywords. It handles text 
-preprocessing, term identification, co-occurrence analysis, and candidate 
+This module contains the DataCore class which serves as the foundation for
+processing and analyzing text documents to extract keywords. It handles text
+preprocessing, term identification, co-occurrence analysis, and candidate
 keyword generation.
 """
 
 import string
-from collections import defaultdict
 import networkx as nx
 import numpy as np
 
@@ -16,7 +15,6 @@ from segtok.tokenizer import web_tokenizer, split_contractions
 from .utils import pre_filter, tokenize_sentences, get_tag
 from .single_word import SingleWord
 from .composed_word import ComposedWord
-
 
 class DataCore:
     """
@@ -53,7 +51,7 @@ class DataCore:
         n = config.get("n", 3)
         tags_to_discard = config.get("tags_to_discard", set(["u", "d"]))
         exclude = config.get("exclude", set(string.punctuation))
-        
+
         # Convert exclude to frozenset once for efficient caching in get_tag()
         exclude = frozenset(exclude)
 
@@ -79,7 +77,9 @@ class DataCore:
                 "freq_ns": {},  # Frequency distribution of n-grams by length
             },
             # Graph for term co-occurrence analysis
-            "g": nx.DiGraph(),  # Directed graph where nodes are terms and edges represent co-occurrences
+            # Directed graph where nodes are terms and edges represent
+            # co-occurrences
+            "g": nx.DiGraph(),
         }
 
         # Initialize n-gram frequencies with zero counts for each length 1 to n
@@ -465,10 +465,12 @@ class DataCore:
         Build features for multi-word terms.
 
         Updates the features for all valid multi-word candidate terms (n-grams).
-        Only candidates that pass the validity check will have their features updated.
+        Only candidates that pass the validity check will have their features
+        updated.
 
         Args:
-            features (list, optional): List of features to build. If None, all available features will be built.
+            features (list, optional): List of features to build. If None, all
+                available features will be built.
         """
         # Update only valid candidates using single pass generator expression
         # This is more efficient than separate filter + map operations
@@ -546,7 +548,7 @@ class DataCore:
 
         # Increment the co-occurrence frequency
         self.g[left_term.id][right_term.id]["tf"] += 1.0
-        
+
         # Invalidate graph metrics cache for affected terms
         left_term.invalidate_graph_cache()
         right_term.invalidate_graph_cache()

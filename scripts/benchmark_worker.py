@@ -1,4 +1,5 @@
 # pylint: skip-file
+
 """
 Benchmark worker para versões antigas do YAKE
 Executa em processo isolado para evitar conflitos de import

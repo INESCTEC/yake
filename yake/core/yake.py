@@ -66,7 +66,7 @@ class KeywordExtractor:
         self._similarity_cache = {}
         self._cache_hits = 0
         self._cache_misses = 0
-        
+
         # Cache management for memory optimization
         self._docs_processed = 0
         self._last_text_size = 0
@@ -403,10 +403,10 @@ class KeywordExtractor:
 
         # Format results as (keyword, score) tuples - EXATAMENTE como YAKE 0.6.0
         results = [(cand.kw, h) for (h, cand) in result_set]
-        
+
         # Intelligent cache management after extraction
         self._manage_cache_lifecycle(text)
-        
+
         return results
 
     def _optimized_small_dedup(self, candidates_sorted):
@@ -500,7 +500,7 @@ class KeywordExtractor:
             # Only check against small subset of most relevant candidates
             max_checks = min(len(result_set), 20)  # Limit comparisons
 
-            for prev_score, prev_cand in result_set[-max_checks:]:  # Check recent ones first
+            for _, prev_cand in result_set[-max_checks:]:  # Check recent ones first
                 if not self._aggressive_pre_filter(cand_kw, prev_cand.unique_kw):
                     continue
 
@@ -533,54 +533,54 @@ class KeywordExtractor:
             'docs_processed': self._docs_processed,
             'cache_size': self._get_cache_usage()
         }
-    
+
     def _manage_cache_lifecycle(self, text):
         """
         Intelligently manage cache lifecycle to prevent memory leaks.
-        
+
         This method implements smart cache clearing based on:
         1. Text size (large documents)
         2. Cache saturation (>80% full)
         3. Document count (failsafe every 50 docs)
-        
+
         Args:
             text: The text that was just processed
         """
         self._docs_processed += 1
         text_size = len(text.split())
         self._last_text_size = text_size
-        
+
         # Get current cache usage
         cache_usage = self._get_cache_usage()
-        
+
         # HEURISTIC: Clear cache if any condition is met
         should_clear = (
             text_size > 2000 or                    # Large document (>2000 words)
             cache_usage > 0.8 or                   # Cache >80% full
             self._docs_processed % 50 == 0         # Failsafe: every 50 documents
         )
-        
+
         if should_clear:
             self.clear_caches()
-    
+
     def _get_cache_usage(self):
         """
         Calculate current cache usage as a ratio (0.0 to 1.0).
-        
+
         Returns:
             float: Cache usage ratio where 1.0 means completely full
         """
         try:
-            info = self._ultra_fast_similarity.cache_info()
+            info = KeywordExtractor._ultra_fast_similarity.cache_info()
             return info.currsize / info.maxsize if info.maxsize > 0 else 0.0
         except AttributeError:
             # Fallback if cache_info not available
             return 0.0
-    
+
     def clear_caches(self):
         """
         Clear all internal caches to free memory.
-        
+
         This method clears:
         - LRU cache for similarity calculations (50,000 entries max)
         - LRU cache for text tagging (10,000 entries max)
@@ -616,25 +616,25 @@ class KeywordExtractor:
             self._ultra_fast_similarity.cache_clear()
         except AttributeError:
             pass
-        
+
         # Clear module-level caches
         try:
             from yake.data.utils import get_tag
             get_tag.cache_clear()
         except (ImportError, AttributeError):
             pass
-        
+
         try:
-            from yake.core.Levenshtein import Levenshtein
-            Levenshtein.ratio.cache_clear()
-            Levenshtein.distance.cache_clear()
+            from yake.core.Levenshtein import Levenshtein as LevenshteinModule
+            LevenshteinModule.ratio.cache_clear()
+            LevenshteinModule.distance.cache_clear()
         except (ImportError, AttributeError):
             pass
-        
+
         # Clear instance cache
         if hasattr(self, '_similarity_cache'):
             self._similarity_cache.clear()
-        
+
         # Reset tracking
         self._docs_processed = 0
         self._cache_hits = 0

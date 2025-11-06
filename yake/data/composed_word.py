@@ -24,9 +24,11 @@ class ComposedWord:
     Attributes:
         See property accessors below for available attributes.
     """
-    
-    # Use __slots__ to reduce memory overhead per instance (optimized to use direct attributes)
-    __slots__ = ('_tags', '_kw', '_unique_kw', '_size', '_terms', '_tf', '_integrity', '_h', '_start_or_end_stopwords')
+
+    # Use __slots__ to reduce memory overhead per instance
+    # (optimized to use direct attributes)
+    __slots__ = ('_tags', '_kw', '_unique_kw', '_size', '_terms', '_tf',
+                 '_integrity', '_h', '_start_or_end_stopwords')
 
     def __init__(self, terms):
         """
@@ -331,7 +333,7 @@ class ComposedWord:
         # Process each term in the phrase, with special handling for consecutive stopwords
         while t < len(self.terms):
             term_base = self.terms[t]
-            
+
             # Handle non-stopwords directly
             if not term_base.stopword:
                 sum_h += term_base.h
@@ -341,22 +343,22 @@ class ComposedWord:
             else:
                 if STOPWORD_WEIGHT == "bi":
                     # BiWeight: use probabilities of adjacent term connections
-                    
+
                     # For consecutive stopwords, treat them as a single group
                     # This prevents excessive negative contributions to sum_h
                     stop_group_start = t
                     stop_group_end = t
-                    
+
                     # Find the end of consecutive stopwords
-                    while (stop_group_end < len(self.terms) - 1 and 
+                    while (stop_group_end < len(self.terms) - 1 and
                            self.terms[stop_group_end + 1].stopword):
                         stop_group_end += 1
-                    
+
                     # Calculate probability from word before group to first stopword
                     prob_t1 = 0.0
-                    if (stop_group_start > 0 and 
+                    if (stop_group_start > 0 and
                         self.terms[stop_group_start].g.has_edge(
-                            self.terms[stop_group_start - 1].id, 
+                            self.terms[stop_group_start - 1].id,
                             self.terms[stop_group_start].id
                         )):
                         prob_t1 = (
@@ -370,7 +372,7 @@ class ComposedWord:
                     prob_t2 = 0.0
                     if (stop_group_end < len(self.terms) - 1 and
                         self.terms[stop_group_end].g.has_edge(
-                            self.terms[stop_group_end].id, 
+                            self.terms[stop_group_end].id,
                             self.terms[stop_group_end + 1].id
                         )):
                         prob_t2 = (
@@ -385,10 +387,10 @@ class ComposedWord:
                     prob = prob_t1 * prob_t2
                     prod_h *= 1 + (1 - prob)
                     sum_h -= 1 - prob
-                    
+
                     # Skip to the end of the stopword group
                     t = stop_group_end
-                    
+
                 elif STOPWORD_WEIGHT == "h":
                     # HWeight: treat stopwords like normal words
                     sum_h += term_base.h

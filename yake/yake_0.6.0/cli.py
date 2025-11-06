@@ -1,3 +1,4 @@
+# pylint: skip-file
 """CLI para extração de palavras-chave utilizando YAKE!"""
 
 import sys

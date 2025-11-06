@@ -23,7 +23,7 @@ class SingleWord:
     Attributes:
         See property accessors below for available attributes.
     """
-    
+
     # Use __slots__ to reduce memory overhead per instance
     __slots__ = ('id', 'g', 'data', '_graph_metrics_cache', '_graph_version')
 
@@ -224,10 +224,10 @@ class SingleWord:
 
         # Cache the results
         self._graph_metrics_cache = {
-            "wdr": wdr, "wir": wir, "pwr": pwr, 
+            "wdr": wdr, "wir": wir, "pwr": pwr,
             "wdl": wdl, "wil": wil, "pwl": pwl
         }
-        
+
         return self._graph_metrics_cache
 
     def update_h(self, stats, features=None):
@@ -298,7 +298,8 @@ class SingleWord:
         frequency counters.
 
         Args:
-            tag (str): Part-of-speech tag for this occurrence ('a' for acronym, 'n' for proper noun, etc.)
+            tag (str): Part-of-speech tag for this occurrence
+                ('a' for acronym, 'n' for proper noun, etc.)
             sent_id (int): Sentence ID where the term appears
             pos_sent (int): Position within the sentence
             pos_text (int): Global position in the entire text

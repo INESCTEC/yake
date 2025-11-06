@@ -91,30 +91,30 @@ class Levenshtein:
                  required to transform seq1 into seq2.
         """
         len1, len2 = len(seq1), len(seq2)
-        
+
         # Handle empty strings
         if len1 == 0:
             return len2
         if len2 == 0:
             return len1
-        
+
         # Early termination: if difference in length is too large
         if abs(len1 - len2) > max(len1, len2) * 0.7:
             return max(len1, len2)
-        
+
         # Ensure seq1 is the shorter string for memory efficiency
         if len1 > len2:
             seq1, seq2 = seq2, seq1
             len1, len2 = len2, len1
-        
+
         # For very short strings, use simple recursive approach
         if len1 <= 3:
             return Levenshtein._simple_distance(seq1, seq2)
-        
+
         # Optimized algorithm with only two rows (memory efficient)
         previous_row = list(range(len2 + 1))
         current_row = [0] * (len2 + 1)
-        
+
         for i in range(1, len1 + 1):
             current_row[0] = i
             for j in range(1, len2 + 1):
@@ -125,24 +125,24 @@ class Levenshtein:
                     previous_row[j-1] + cost   # substitution
                 )
             previous_row, current_row = current_row, previous_row
-        
+
         return previous_row[len2]
-    
+
     @staticmethod
     def _simple_distance(seq1: str, seq2: str) -> int:
         """
         Simple recursive distance calculation for very short strings.
-        
+
         More efficient than the matrix approach for strings with length <= 3.
         """
         if not seq1:
             return len(seq2)
         if not seq2:
             return len(seq1)
-        
+
         if seq1[0] == seq2[0]:
             return Levenshtein._simple_distance(seq1[1:], seq2[1:])
-        
+
         return 1 + min(
             Levenshtein._simple_distance(seq1[1:], seq2),      # deletion
             Levenshtein._simple_distance(seq1, seq2[1:]),      # insertion

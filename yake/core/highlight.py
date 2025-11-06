@@ -8,8 +8,6 @@ allowing for flexible text markup based on keyword extraction results.
 
 import re
 import logging
-from dataclasses import dataclass
-from typing import List
 
 DEFAULT_HIGHLIGHT_PRE = "<kw>"
 DEFAULT_HIGHLIGHT_POST = "</kw>"

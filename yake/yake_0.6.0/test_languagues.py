@@ -1,3 +1,4 @@
+# pylint: skip-file
 """Tests for YAKE keyword extraction across different languages."""
 
 import os
