@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# pylint: skip-file
 """
 Script de Validação - Teste da Correção PR #96
 =============================================

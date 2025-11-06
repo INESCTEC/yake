@@ -1,0 +1,43 @@
+{
+  "comparisons": [
+    {
+      "size": "small",
+      "v06_time": 8.087185013573617,
+      "current_time": 7.905410003149882,
+      "improvement_percent": 2.2476919981259447,
+      "speedup": 1.0229937486292686,
+      "v06_memory": 0.1741269588470459,
+      "current_memory": 0.1682830810546875,
+      "memory_improvement": 3.3561016806660557
+    },
+    {
+      "size": "medium",
+      "v06_time": 29.6480750082992,
+      "current_time": 30.70609500282444,
+      "improvement_percent": -3.568595918045519,
+      "speedup": 0.9655436487632856,
+      "v06_memory": 0.449395751953125,
+      "current_memory": 0.4467790603637695,
+      "memory_improvement": 0.5822688750356493
+    },
+    {
+      "size": "large",
+      "v06_time": 63.97256000491325,
+      "current_time": 57.47160000319127,
+      "improvement_percent": 10.162107005288968,
+      "speedup": 1.1131160434259877,
+      "v06_memory": 0.9498357772827148,
+      "current_memory": 0.948443603515625,
+      "memory_improvement": 0.14656994402470408
+    }
+  ],
+  "averages": {
+    "v06_time": 33.90260667559536,
+    "current_time": 32.027701669721864,
+    "improvement_percent": 2.947067695123131,
+    "speedup": 1.0338844802728473,
+    "v06_memory": 0.5244528293609619,
+    "current_memory": 0.5211685816446939,
+    "memory_improvement": 1.3616468332421363
+  }
+}

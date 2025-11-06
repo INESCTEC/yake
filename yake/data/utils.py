@@ -127,9 +127,15 @@ def get_tag(word, i, exclude):
         return "d"
 
     # Count character types for classification
-    cdigit = sum(c.isdigit() for c in word)
-    calpha = sum(c.isalpha() for c in word)
-    cexclude = sum(c in exclude for c in word)
+    # Optimized: single pass through word instead of multiple
+    cdigit = calpha = cexclude = 0
+    for c in word:
+        if c.isdigit():
+            cdigit += 1
+        if c.isalpha():
+            calpha += 1
+        if c in exclude:
+            cexclude += 1
 
     # Classify unusual tokens: mixed alphanumeric, special chars, or multiple punctuation
     if (cdigit > 0 and calpha > 0) or (cdigit == 0 and calpha == 0) or cexclude > 1:

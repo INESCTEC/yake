@@ -61,7 +61,8 @@ class ComposedWord:
         self._h = 1.0
 
         # Check if the candidate starts or ends with stopwords
-        if len(self._terms) > 0:
+        # Optimized: use truthiness instead of len() > 0
+        if self._terms:
             self._start_or_end_stopwords = (
                 self._terms[0].stopword or self._terms[-1].stopword
             )
@@ -405,8 +406,10 @@ class ComposedWord:
             tf_used = self.tf
 
         # For virtual candidates, use mean frequency of constituent terms
+        # Optimized: use built-in sum/len instead of numpy for small lists
         if is_virtual:
-            tf_used = np.mean([term_obj.tf for term_obj in self.terms])
+            tfs = [term_obj.tf for term_obj in self.terms]
+            tf_used = sum(tfs) / len(tfs) if tfs else 1.0
 
         # Calculate final score (lower is better)
         self.h = prod_h / ((sum_h + 1) * tf_used)
@@ -464,8 +467,10 @@ class ComposedWord:
             tf_used = self.tf
 
         # For virtual candidates, use mean frequency of constituent terms
+        # Optimized: use built-in sum/len instead of numpy for small lists
         if is_virtual:
-            tf_used = np.mean([term_obj.tf for term_obj in self.terms])
+            tfs = [term_obj.tf for term_obj in self.terms]
+            tf_used = sum(tfs) / len(tfs) if tfs else 1.0
 
         # Calculate final score (lower is better)
         self.h = prod_h / ((sum_h + 1) * tf_used)

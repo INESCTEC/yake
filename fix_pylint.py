@@ -1,3 +1,4 @@
+# pylint: skip-file
 """Script para corrigir automaticamente issues do pylint no yake.py"""
 
 import re

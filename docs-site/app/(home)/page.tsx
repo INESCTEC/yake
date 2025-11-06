@@ -7,10 +7,10 @@ export default function HomePage() {
       <p className="text-fd-muted-foreground">
         Open{' '}
         <Link
-          href="/docs"
+          href="/docs/--home"
           className="text-fd-foreground font-semibold underline"
         >
-          /docs
+          /docs/--home
         </Link>{' '}
         and see the documentation.
       </p>

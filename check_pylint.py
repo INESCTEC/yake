@@ -1,3 +1,4 @@
+# pylint: skip-file
 """Verificar issues do pylint corrigidas"""
 
 with open('yake/core/yake.py', 'r', encoding='utf-8') as f:

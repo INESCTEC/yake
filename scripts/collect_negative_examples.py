@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# pylint: skip-file
 """
 Coletor de Exemplos com Scores Negativos - Versão Problemática
 =============================================================

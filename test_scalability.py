@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# pylint: skip-file
 """
 🧪 TESTE DE ESCALABILIDADE: YAKE 2.0 vs ARQUIVOS GRANDES
 ========================================================

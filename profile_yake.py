@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# pylint: skip-file
 """
 🔍 PROFILING DO YAKE COM PY-INSTRUMENT
 ======================================

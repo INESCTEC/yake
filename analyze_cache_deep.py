@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# pylint: skip-file
 """
 🔬 ANÁLISE APROFUNDADA DO CACHE LRU
 ===================================

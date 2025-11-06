@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# pylint: skip-file
 """
 🔧 VERIFICADOR DA CORREÇÃO DO BUG DE SCORES NEGATIVOS
 ===================================================

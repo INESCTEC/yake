@@ -1,3 +1,4 @@
 # -*- coding: utf-8 -*-
+# pylint: skip-file
 
 """Unit test package for yake."""

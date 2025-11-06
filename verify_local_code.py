@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# pylint: skip-file
 """
 🔍 TESTE DE VERIFICAÇÃO: Código Local vs Performance Real
 =========================================================

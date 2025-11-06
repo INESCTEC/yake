@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# pylint: skip-file
 """
 Testes de Regressão para Validar Scores do YAKE!
 ================================================

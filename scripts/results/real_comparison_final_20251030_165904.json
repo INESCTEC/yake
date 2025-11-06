@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "generated_at": "2025-10-30T16:59:04.073464",
+    "methodology": "Dados REAIS v2.0 + Análise de código para v0.1.0 e v0.6.0",
+    "v20_data_source": "benchmark_definitivo.py (medições reais)",
+    "v010_v06_source": "Análise manual do código-fonte com fatores conservadores",
+    "notes": {
+      "v010": "SEM cache, SEM slots, SEM regex precompiled, SEM lazy eval",
+      "v06": "Estrutura melhorada mas ainda sem as otimizações principais",
+      "methodology": "Fatores baseados em análise manual do código-fonte"
+    }
+  },
+  "by_size": {
+    "small": {
+      "v010": {
+        "avg_ms": 207.06909906211268,
+        "median_ms": 83.6353139905259,
+        "real_data": false
+      },
+      "v06": {
+        "avg_ms": 180.4459291826982,
+        "median_ms": 72.882202191744,
+        "real_data": false
+      },
+      "v20": {
+        "avg_ms": 147.9064993300805,
+        "median_ms": 59.73950999323279,
+        "real_data": true
+      },
+      "improvements": {
+        "v010_to_v06_percent": 12.85714285714286,
+        "v06_to_v20_percent": 18.032786885245898,
+        "v010_to_v20_percent": 28.57142857142857
+      }
+    },
+    "medium": {
+      "v010": {
+        "avg_ms": 201.56544092252278,
+        "median_ms": 99.96772800281178,
+        "real_data": false
+      },
+      "v06": {
+        "avg_ms": 175.64988423248417,
+        "median_ms": 87.11473440245027,
+        "real_data": false
+      },
+      "v20": {
+        "avg_ms": 143.97531494465915,
+        "median_ms": 71.40552000200842,
+        "real_data": true
+      },
+      "improvements": {
+        "v010_to_v06_percent": 12.857142857142842,
+        "v06_to_v20_percent": 18.03278688524591,
+        "v010_to_v20_percent": 28.571428571428566
+      }
+    },
+    "large": {
+      "v010": {
+        "avg_ms": 204.55457190224357,
+        "median_ms": 157.6451992544753,
+        "real_data": false
+      },
+      "v06": {
+        "avg_ms": 178.25469837195513,
+        "median_ms": 137.3765307788999,
+        "real_data": false
+      },
+      "v20": {
+        "avg_ms": 146.11040850160256,
+        "median_ms": 112.60371375319664,
+        "real_data": true
+      },
+      "improvements": {
+        "v010_to_v06_percent": 12.857142857142847,
+        "v06_to_v20_percent": 18.0327868852459,
+        "v010_to_v20_percent": 28.571428571428566
+      }
+    }
+  },
+  "summary": {
+    "v010": {
+      "avg_time_ms": 204.39637062895966,
+      "estimated": true
+    },
+    "v06": {
+      "avg_time_ms": 178.11683726237916,
+      "estimated": true
+    },
+    "v20": {
+      "avg_time_ms": 145.9974075921141,
+      "estimated": false
+    },
+    "improvements": {
+      "v010_to_v06": {
+        "percent": 12.857142857142842,
+        "speedup": 1.147540983606557
+      },
+      "v06_to_v20": {
+        "percent": 18.03278688524589,
+        "speedup": 1.2199999999999998
+      },
+      "v010_to_v20": {
+        "percent": 28.571428571428548,
+        "speedup": 1.3999999999999995
+      }
+    }
+  }
+}

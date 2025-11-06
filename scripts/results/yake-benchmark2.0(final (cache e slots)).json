@@ -1,0 +1,3957 @@
+{
+  "benchmark_type": "definitivo_robusto",
+  "version": "2.0",
+  "timestamp": "20251030_171210",
+  "results_hash": "673eeece",
+  "data": {
+    "summary": {
+      "total_tests": 30,
+      "successful_tests": 30,
+      "failed_tests": 0,
+      "configurations_tested": 5,
+      "datasets_tested": 6
+    },
+    "performance": {
+      "overall_avg_time_ms": 22.7833525025105,
+      "overall_median_time_ms": 9.143937687440484,
+      "fastest_time_ms": 1.9860265998431714,
+      "slowest_time_ms": 109.01125840009627,
+      "by_config": {
+        "standard": {
+          "count": 6,
+          "avg_time_ms": 21.368471366637703,
+          "median_time_ms": 9.289151749999291,
+          "min_time_ms": 1.9860265998431714,
+          "max_time_ms": 82.57642360013051,
+          "std_dev_ms": 30.451770594193086
+        },
+        "high_precision": {
+          "count": 6,
+          "avg_time_ms": 22.920922499982527,
+          "median_time_ms": 9.578893937373323,
+          "min_time_ms": 3.6414365000609905,
+          "max_time_ms": 85.86440850024246,
+          "std_dev_ms": 31.297881911538294
+        },
+        "high_recall": {
+          "count": 6,
+          "avg_time_ms": 23.51569481252606,
+          "median_time_ms": 8.843489562423201,
+          "min_time_ms": 2.7439263751602994,
+          "max_time_ms": 91.45292450000397,
+          "std_dev_ms": 33.871029017103616
+        },
+        "fast_extraction": {
+          "count": 6,
+          "avg_time_ms": 18.61836543337429,
+          "median_time_ms": 7.033378000051016,
+          "min_time_ms": 2.484714999991411,
+          "max_time_ms": 70.89266786685282,
+          "std_dev_ms": 26.132554087803772
+        },
+        "comprehensive": {
+          "count": 6,
+          "avg_time_ms": 27.493308400031918,
+          "median_time_ms": 10.70716550002544,
+          "min_time_ms": 3.328848399905837,
+          "max_time_ms": 109.01125840009627,
+          "std_dev_ms": 40.47307419230536
+        }
+      },
+      "by_dataset_size": {
+        "small": {
+          "count": 5,
+          "avg_time_ms": 2.836990574992342,
+          "median_time_ms": 2.7439263751602994,
+          "min_time_ms": 1.9860265998431714,
+          "max_time_ms": 3.6414365000609905,
+          "std_dev_ms": 0.660673156583965
+        },
+        "medium": {
+          "count": 15,
+          "avg_time_ms": 8.561337424996761,
+          "median_time_ms": 8.468400624792594,
+          "min_time_ms": 6.268705599965567,
+          "max_time_ms": 11.194247599996743,
+          "std_dev_ms": 1.478573041504948
+        },
+        "large": {
+          "count": 10,
+          "avg_time_ms": 54.089556082540184,
+          "median_time_ms": 47.030127633327844,
+          "min_time_ms": 17.99734813333392,
+          "max_time_ms": 109.01125840009627,
+          "std_dev_ms": 36.925738164173254
+        }
+      },
+      "by_language": {
+        "pt": {
+          "count": 25,
+          "avg_time_ms": 23.296107884689565,
+          "median_time_ms": 8.468400624792594,
+          "min_time_ms": 1.9860265998431714,
+          "max_time_ms": 109.01125840009627,
+          "std_dev_ms": 33.58369584508988
+        },
+        "en": {
+          "count": 5,
+          "avg_time_ms": 20.219575591615165,
+          "median_time_ms": 20.066019374894495,
+          "min_time_ms": 17.99734813333392,
+          "max_time_ms": 23.16758739980287,
+          "std_dev_ms": 2.2254909974283916
+        }
+      }
+    },
+    "quality": {
+      "overall_avg_coverage": 0.41944444444444445,
+      "by_config": {
+        "standard": {
+          "count": 6,
+          "avg_coverage": 0.46111111111111114,
+          "avg_keywords": 20,
+          "coverage_samples": 6,
+          "keyword_samples": 6
+        },
+        "high_precision": {
+          "count": 6,
+          "avg_coverage": 0.39166666666666666,
+          "avg_keywords": 15,
+          "coverage_samples": 6,
+          "keyword_samples": 6
+        },
+        "high_recall": {
+          "count": 6,
+          "avg_coverage": 0.43333333333333335,
+          "avg_keywords": 25,
+          "coverage_samples": 6,
+          "keyword_samples": 6
+        },
+        "fast_extraction": {
+          "count": 6,
+          "avg_coverage": 0.37777777777777777,
+          "avg_keywords": 10,
+          "coverage_samples": 6,
+          "keyword_samples": 6
+        },
+        "comprehensive": {
+          "count": 6,
+          "avg_coverage": 0.43333333333333335,
+          "avg_keywords": 30,
+          "coverage_samples": 6,
+          "keyword_samples": 6
+        }
+      },
+      "by_dataset_size": {
+        "small": {
+          "count": 5,
+          "avg_coverage": 0.75,
+          "avg_keywords": 20,
+          "coverage_samples": 5,
+          "keyword_samples": 5
+        },
+        "medium": {
+          "count": 15,
+          "avg_coverage": 0.26666666666666666,
+          "avg_keywords": 20,
+          "coverage_samples": 15,
+          "keyword_samples": 15
+        },
+        "large": {
+          "count": 10,
+          "avg_coverage": 0.48333333333333334,
+          "avg_keywords": 20,
+          "coverage_samples": 10,
+          "keyword_samples": 10
+        }
+      }
+    },
+    "detailed_results": {
+      "standard_tecnologia_curta": {
+        "status": "success",
+        "config": {
+          "name": "standard",
+          "description": "Configuração padrão balanceada",
+          "config": {
+            "n": 3,
+            "top": 20,
+            "dedup_lim": 0.7,
+            "window_size": 1
+          },
+          "iterations": 10
+        },
+        "dataset": {
+          "name": "tecnologia_curta",
+          "category": "technology",
+          "size": "small",
+          "language": "pt",
+          "text_length": 322,
+          "word_count": 31
+        },
+        "performance": {
+          "iterations": 10,
+          "avg_time_ms": 1.9860265998431714,
+          "median_time_ms": 1.9142864998684672,
+          "min_time_ms": 1.733009000417951,
+          "max_time_ms": 2.411792999737372,
+          "std_dev_ms": 0.24766669547175638,
+          "times_ms": [
+            2.2449619991675718,
+            2.411792999737372,
+            2.3212349997265846,
+            1.9027680000363034,
+            1.8545579996498418,
+            1.9326860001456225,
+            1.7820180000853725,
+            1.7514319997644634,
+            1.733009000417951,
+            1.925804999700631
+          ]
+        },
+        "quality": {
+          "keywords_count": 20,
+          "keywords_sample": [
+            [
+              "machine learning estão",
+              0.014191703101852263
+            ],
+            [
+              "learning estão revolucionando",
+              0.014191703101852263
+            ],
+            [
+              "Inteligência artificial",
+              0.024472568339564654
+            ],
+            [
+              "tecnologia moderna",
+              0.024472568339564654
+            ],
+            [
+              "artificial e machine",
+              0.03607367925275576
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 10,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 3,
+            "coverage_ratio": 0.75,
+            "found_keywords": [
+              [
+                "inteligência artificial",
+                "Inteligência artificial"
+              ],
+              [
+                "machine learning",
+                "machine learning estão"
+              ],
+              [
+                "deep learning",
+                "deep learning permitem"
+              ]
+            ],
+            "missing_keywords": [
+              "cloud computing"
+            ],
+            "interpretation": "Boa"
+          },
+          "scores": {
+            "min_score": 0.014191703101852263,
+            "max_score": 0.18659495577726268,
+            "avg_score": 0.10151580499277718,
+            "score_range": 0.1724032526754104,
+            "score_distribution": {
+              "0.0-0.1": 9,
+              "0.1-0.2": 11,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "machine learning estão",
+            "learning estão revolucionando",
+            "Inteligência artificial",
+            "tecnologia moderna",
+            "artificial e machine",
+            "estão revolucionando",
+            "revolucionando a tecnologia",
+            "machine learning",
+            "learning estão",
+            "deep learning permitem"
+          ]
+        },
+        "cache_stats": {
+          "hits": 1900,
+          "misses": 190,
+          "hit_rate": 90.9090909090909
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:03.852339"
+      },
+      "standard_ciencia_dados_medio": {
+        "status": "success",
+        "config": {
+          "name": "standard",
+          "description": "Configuração padrão balanceada",
+          "config": {
+            "n": 3,
+            "top": 20,
+            "dedup_lim": 0.7,
+            "window_size": 1
+          },
+          "iterations": 10
+        },
+        "dataset": {
+          "name": "ciencia_dados_medio",
+          "category": "data_science",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 990,
+          "word_count": 107
+        },
+        "performance": {
+          "iterations": 10,
+          "avg_time_ms": 6.867923199934012,
+          "median_time_ms": 6.585009999980684,
+          "min_time_ms": 6.312636999609822,
+          "max_time_ms": 9.783061999769416,
+          "std_dev_ms": 1.0366514981416235,
+          "times_ms": [
+            9.783061999769416,
+            6.668476999948325,
+            6.8299340000521624,
+            6.627062000006845,
+            6.3295829995695385,
+            6.542957999954524,
+            6.641787999797089,
+            6.312636999609822,
+            6.526321000819735,
+            6.417409999812662
+          ]
+        },
+        "quality": {
+          "keywords_count": 20,
+          "keywords_sample": [
+            [
+              "extrair insights valiosos",
+              0.003716400072569068
+            ],
+            [
+              "dados combina estatística",
+              0.0063226993622676145
+            ],
+            [
+              "domínio para extrair",
+              0.009964869025671352
+            ],
+            [
+              "para extrair insights",
+              0.009964869025671352
+            ],
+            [
+              "combina estatística",
+              0.020197833145654123
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 10,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 5,
+            "found_count": 1,
+            "coverage_ratio": 0.2,
+            "found_keywords": [
+              [
+                "ciência de dados",
+                "ciência de dados"
+              ]
+            ],
+            "missing_keywords": [
+              "machine learning",
+              "big data",
+              "python",
+              "visualização"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.003716400072569068,
+            "max_score": 0.08356139342567147,
+            "avg_score": 0.03680108823460671,
+            "score_range": 0.0798449933531024,
+            "score_distribution": {
+              "0.0-0.1": 20,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "extrair insights valiosos",
+            "dados combina estatística",
+            "domínio para extrair",
+            "para extrair insights",
+            "combina estatística",
+            "programação e conhecimento",
+            "conhecimento de domínio",
+            "extrair insights",
+            "insights valiosos",
+            "valiosos de grandes"
+          ]
+        },
+        "cache_stats": {
+          "hits": 1900,
+          "misses": 190,
+          "hit_rate": 90.9090909090909
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:03.941810"
+      },
+      "standard_tech_english_large": {
+        "status": "success",
+        "config": {
+          "name": "standard",
+          "description": "Configuração padrão balanceada",
+          "config": {
+            "n": 3,
+            "top": 20,
+            "dedup_lim": 0.7,
+            "window_size": 1
+          },
+          "iterations": 10
+        },
+        "dataset": {
+          "name": "tech_english_large",
+          "category": "technology",
+          "size": "large",
+          "language": "en",
+          "text_length": 3220,
+          "word_count": 320
+        },
+        "performance": {
+          "iterations": 10,
+          "avg_time_ms": 18.202151299919933,
+          "median_time_ms": 18.389377999938006,
+          "min_time_ms": 14.747872000043571,
+          "max_time_ms": 20.755270999870845,
+          "std_dev_ms": 1.5000922489007817,
+          "times_ms": [
+            20.755270999870845,
+            18.361989999903017,
+            18.447028999617032,
+            18.031256000540452,
+            19.027871999242052,
+            18.233894999866607,
+            18.416765999972995,
+            18.66179200078477,
+            17.337769999357988,
+            14.747872000043571
+          ]
+        },
+        "quality": {
+          "keywords_count": 20,
+          "keywords_sample": [
+            [
+              "Artificial intelligence",
+              0.02644378036205716
+            ],
+            [
+              "business operations",
+              0.02644378036205716
+            ],
+            [
+              "fundamentally transformed",
+              0.028765959400917893
+            ],
+            [
+              "transformed the landscape",
+              0.028765959400917893
+            ],
+            [
+              "landscape of modern",
+              0.028765959400917893
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 10,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 6,
+            "found_count": 6,
+            "coverage_ratio": 1.0,
+            "found_keywords": [
+              [
+                "artificial intelligence",
+                "Artificial intelligence"
+              ],
+              [
+                "machine learning",
+                "machine learning"
+              ],
+              [
+                "deep learning",
+                "learning"
+              ],
+              [
+                "neural networks",
+                "neural networks"
+              ],
+              [
+                "cloud computing",
+                "computing"
+              ],
+              [
+                "quantum computing",
+                "computing"
+              ]
+            ],
+            "missing_keywords": [],
+            "interpretation": "Excelente"
+          },
+          "scores": {
+            "min_score": 0.02644378036205716,
+            "max_score": 0.11561960717269966,
+            "avg_score": 0.07761921787081252,
+            "score_range": 0.0891758268106425,
+            "score_distribution": {
+              "0.0-0.1": 13,
+              "0.1-0.2": 7,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "Artificial intelligence",
+            "business operations",
+            "fundamentally transformed",
+            "transformed the landscape",
+            "landscape of modern",
+            "machine learning",
+            "machine learning models",
+            "Amazon Web Services",
+            "learning",
+            "computing"
+          ]
+        },
+        "cache_stats": {
+          "hits": 1900,
+          "misses": 190,
+          "hit_rate": 90.9090909090909
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:04.163929"
+      },
+      "standard_medicina_especializada": {
+        "status": "success",
+        "config": {
+          "name": "standard",
+          "description": "Configuração padrão balanceada",
+          "config": {
+            "n": 3,
+            "top": 20,
+            "dedup_lim": 0.7,
+            "window_size": 1
+          },
+          "iterations": 10
+        },
+        "dataset": {
+          "name": "medicina_especializada",
+          "category": "medical",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 1247,
+          "word_count": 125
+        },
+        "performance": {
+          "iterations": 10,
+          "avg_time_ms": 10.372589600046922,
+          "median_time_ms": 10.388105500169331,
+          "min_time_ms": 8.69470999987243,
+          "max_time_ms": 12.639487000342342,
+          "std_dev_ms": 1.2167924811822313,
+          "times_ms": [
+            8.69470999987243,
+            10.03519799996866,
+            11.641580999821599,
+            10.922507999566733,
+            9.020340000461147,
+            12.639487000342342,
+            10.741013000370003,
+            10.818163999829267,
+            9.544116000142822,
+            9.668779000094219
+          ]
+        },
+        "quality": {
+          "keywords_count": 20,
+          "keywords_sample": [
+            [
+              "precisão representa uma",
+              0.0049651321155615635
+            ],
+            [
+              "representa uma abordagem",
+              0.0049651321155615635
+            ],
+            [
+              "uma abordagem revolucionária",
+              0.0049651321155615635
+            ],
+            [
+              "para cada pessoa",
+              0.010997597287337091
+            ],
+            [
+              "vida para cada",
+              0.013645157039646975
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 10,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 1,
+            "coverage_ratio": 0.25,
+            "found_keywords": [
+              [
+                "medicina de precisão",
+                "medicina de precisão"
+              ]
+            ],
+            "missing_keywords": [
+              "biomarcadores",
+              "imunoterapia",
+              "telemedicina"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.0049651321155615635,
+            "max_score": 0.08956824503587525,
+            "avg_score": 0.030276540379462157,
+            "score_range": 0.0846031129203137,
+            "score_distribution": {
+              "0.0-0.1": 20,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "precisão representa uma",
+            "representa uma abordagem",
+            "uma abordagem revolucionária",
+            "para cada pessoa",
+            "vida para cada",
+            "individual em genes",
+            "ambiente e estilo",
+            "cada pessoa",
+            "medicina de precisão",
+            "precisão representa"
+          ]
+        },
+        "cache_stats": {
+          "hits": 1900,
+          "misses": 190,
+          "hit_rate": 90.9090909090909
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:04.290115"
+      },
+      "standard_economia_sustentavel": {
+        "status": "success",
+        "config": {
+          "name": "standard",
+          "description": "Configuração padrão balanceada",
+          "config": {
+            "n": 3,
+            "top": 20,
+            "dedup_lim": 0.7,
+            "window_size": 1
+          },
+          "iterations": 10
+        },
+        "dataset": {
+          "name": "economia_sustentavel",
+          "category": "economics",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 1158,
+          "word_count": 114
+        },
+        "performance": {
+          "iterations": 10,
+          "avg_time_ms": 8.205713899951661,
+          "median_time_ms": 8.190592999653745,
+          "min_time_ms": 7.00592199973471,
+          "max_time_ms": 9.588349000296148,
+          "std_dev_ms": 0.8048591984213215,
+          "times_ms": [
+            9.191914000439283,
+            9.588349000296148,
+            8.044272000006458,
+            8.154809999723511,
+            7.84674599981372,
+            8.330130000103964,
+            7.107291000465921,
+            7.00592199973471,
+            8.561328999348916,
+            8.22637599958398
+          ]
+        },
+        "quality": {
+          "keywords_count": 20,
+          "keywords_sample": [
+            [
+              "economia circular emerge",
+              0.003019467815276607
+            ],
+            [
+              "modelo linear tradicional",
+              0.003019467815276607
+            ],
+            [
+              "emerge como alternativa",
+              0.007661505714293712
+            ],
+            [
+              "como alternativa sustentável",
+              0.007661505714293712
+            ],
+            [
+              "circular emerge como",
+              0.007661505714293713
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 10,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 2,
+            "coverage_ratio": 0.5,
+            "found_keywords": [
+              [
+                "economia circular",
+                "economia circular emerge"
+              ],
+              [
+                "energias renováveis",
+                "Energias renováveis como"
+              ]
+            ],
+            "missing_keywords": [
+              "finanças sustentáveis",
+              "agricultura regenerativa"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.003019467815276607,
+            "max_score": 0.11381132093170108,
+            "avg_score": 0.038791486231216345,
+            "score_range": 0.11079185311642448,
+            "score_distribution": {
+              "0.0-0.1": 18,
+              "0.1-0.2": 2,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "economia circular emerge",
+            "modelo linear tradicional",
+            "emerge como alternativa",
+            "como alternativa sustentável",
+            "circular emerge como",
+            "produção e consumo",
+            "economia circular",
+            "circular emerge",
+            "alternativa sustentável",
+            "sustentável ao modelo"
+          ]
+        },
+        "cache_stats": {
+          "hits": 1900,
+          "misses": 190,
+          "hit_rate": 90.9090909090909
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:04.392498"
+      },
+      "standard_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "standard",
+          "description": "Configuração padrão balanceada",
+          "config": {
+            "n": 3,
+            "top": 20,
+            "dedup_lim": 0.7,
+            "window_size": 1
+          },
+          "iterations": 10
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 10,
+          "avg_time_ms": 82.57642360013051,
+          "median_time_ms": 80.56017400031124,
+          "min_time_ms": 77.63465800053382,
+          "max_time_ms": 94.96979200048372,
+          "std_dev_ms": 5.824872267330051,
+          "times_ms": [
+            77.78901700021379,
+            78.71990199964785,
+            77.63465800053382,
+            77.95562100000097,
+            79.05547700011084,
+            94.96979200048372,
+            89.05912499994884,
+            82.27508999971178,
+            82.06487100051163,
+            86.24068300014187
+          ]
+        },
+        "quality": {
+          "keywords_count": 20,
+          "keywords_sample": [
+            [
+              "para",
+              0.009554178995802144
+            ],
+            [
+              "Google Colab",
+              0.01100029534164437
+            ],
+            [
+              "Documentação",
+              0.012053323365871157
+            ],
+            [
+              "documentação técnica",
+              0.014611960868169665
+            ],
+            [
+              "projeto",
+              0.016731160625814482
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 10,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.009554178995802144,
+            "max_score": 0.040971914152641335,
+            "avg_score": 0.025505881480929575,
+            "score_range": 0.03141773515683919,
+            "score_distribution": {
+              "0.0-0.1": 20,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "para",
+            "Google Colab",
+            "Documentação",
+            "documentação técnica",
+            "projeto",
+            "qualquer biblio tecadesoftware",
+            "YAKE",
+            "representa umaspeto fundamental",
+            "para Google Colab",
+            "Google Colab para"
+          ]
+        },
+        "cache_stats": {
+          "hits": 1900,
+          "misses": 190,
+          "hit_rate": 90.9090909090909
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:05.324338"
+      },
+      "high_precision_tecnologia_curta": {
+        "status": "success",
+        "config": {
+          "name": "high_precision",
+          "description": "Alta precisão com deduplicação rigorosa",
+          "config": {
+            "n": 3,
+            "top": 15,
+            "dedup_lim": 0.8,
+            "window_size": 2
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "tecnologia_curta",
+          "category": "technology",
+          "size": "small",
+          "language": "pt",
+          "text_length": 322,
+          "word_count": 31
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 3.6414365000609905,
+          "median_time_ms": 3.5311859996909334,
+          "min_time_ms": 2.656028000274091,
+          "max_time_ms": 4.722808000224177,
+          "std_dev_ms": 0.7881689801052127,
+          "times_ms": [
+            3.213279000192415,
+            4.172939999989467,
+            3.7464689994521905,
+            4.553429999759828,
+            4.722808000224177,
+            2.7506350006660796,
+            3.3159029999296763,
+            2.656028000274091
+          ]
+        },
+        "quality": {
+          "keywords_count": 15,
+          "keywords_sample": [
+            [
+              "machine learning estão",
+              0.014191703101852263
+            ],
+            [
+              "learning estão revolucionando",
+              0.014191703101852263
+            ],
+            [
+              "Inteligência artificial",
+              0.024472568339564654
+            ],
+            [
+              "tecnologia moderna",
+              0.024472568339564654
+            ],
+            [
+              "artificial e machine",
+              0.03607367925275576
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 3,
+            "coverage_ratio": 0.75,
+            "found_keywords": [
+              [
+                "inteligência artificial",
+                "Inteligência artificial"
+              ],
+              [
+                "machine learning",
+                "machine learning estão"
+              ],
+              [
+                "deep learning",
+                "deep learning permitem"
+              ]
+            ],
+            "missing_keywords": [
+              "cloud computing"
+            ],
+            "interpretation": "Boa"
+          },
+          "scores": {
+            "min_score": 0.014191703101852263,
+            "max_score": 0.17504612293108807,
+            "avg_score": 0.0749289887527295,
+            "score_range": 0.16085441982923582,
+            "score_distribution": {
+              "0.0-0.1": 9,
+              "0.1-0.2": 6,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "machine learning estão",
+            "learning estão revolucionando",
+            "Inteligência artificial",
+            "tecnologia moderna",
+            "artificial e machine",
+            "estão revolucionando",
+            "revolucionando a tecnologia",
+            "machine learning",
+            "learning estão",
+            "deep learning permitem"
+          ]
+        },
+        "cache_stats": {
+          "hits": 840,
+          "misses": 105,
+          "hit_rate": 88.88888888888889
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:05.370929"
+      },
+      "high_precision_ciencia_dados_medio": {
+        "status": "success",
+        "config": {
+          "name": "high_precision",
+          "description": "Alta precisão com deduplicação rigorosa",
+          "config": {
+            "n": 3,
+            "top": 15,
+            "dedup_lim": 0.8,
+            "window_size": 2
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "ciencia_dados_medio",
+          "category": "data_science",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 990,
+          "word_count": 107
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 8.795882749950579,
+          "median_time_ms": 7.125266999992164,
+          "min_time_ms": 6.610628000089491,
+          "max_time_ms": 16.545753999707813,
+          "std_dev_ms": 3.63161434000743,
+          "times_ms": [
+            12.12844000019686,
+            6.610628000089491,
+            6.921950999640103,
+            7.328583000344224,
+            7.475301999875228,
+            6.6568399997777306,
+            16.545753999707813,
+            6.699563999973179
+          ]
+        },
+        "quality": {
+          "keywords_count": 15,
+          "keywords_sample": [
+            [
+              "extrair insights valiosos",
+              0.003716400072569068
+            ],
+            [
+              "dados combina estatística",
+              0.00753094804341534
+            ],
+            [
+              "domínio para extrair",
+              0.009964869025671352
+            ],
+            [
+              "para extrair insights",
+              0.009964869025671352
+            ],
+            [
+              "combina estatística",
+              0.020197833145654123
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 5,
+            "found_count": 1,
+            "coverage_ratio": 0.2,
+            "found_keywords": [
+              [
+                "ciência de dados",
+                "ciência de dados"
+              ]
+            ],
+            "missing_keywords": [
+              "machine learning",
+              "big data",
+              "python",
+              "visualização"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.003716400072569068,
+            "max_score": 0.06130892181000079,
+            "avg_score": 0.02761946201365319,
+            "score_range": 0.05759252173743172,
+            "score_distribution": {
+              "0.0-0.1": 15,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "extrair insights valiosos",
+            "dados combina estatística",
+            "domínio para extrair",
+            "para extrair insights",
+            "combina estatística",
+            "programação e conhecimento",
+            "conhecimento de domínio",
+            "extrair insights",
+            "insights valiosos",
+            "valiosos de grandes"
+          ]
+        },
+        "cache_stats": {
+          "hits": 840,
+          "misses": 105,
+          "hit_rate": 88.88888888888889
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:05.461908"
+      },
+      "high_precision_tech_english_large": {
+        "status": "success",
+        "config": {
+          "name": "high_precision",
+          "description": "Alta precisão com deduplicação rigorosa",
+          "config": {
+            "n": 3,
+            "top": 15,
+            "dedup_lim": 0.8,
+            "window_size": 2
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "tech_english_large",
+          "category": "technology",
+          "size": "large",
+          "language": "en",
+          "text_length": 3220,
+          "word_count": 320
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 20.066019374894495,
+          "median_time_ms": 20.16823599979034,
+          "min_time_ms": 17.164623999633477,
+          "max_time_ms": 22.97061599983863,
+          "std_dev_ms": 1.6802985355319264,
+          "times_ms": [
+            22.97061599983863,
+            20.077657999536314,
+            20.258814000044367,
+            19.886449999830802,
+            18.681911999919976,
+            20.79049800067878,
+            17.164623999633477,
+            20.697582999673614
+          ]
+        },
+        "quality": {
+          "keywords_count": 15,
+          "keywords_sample": [
+            [
+              "Artificial intelligence",
+              0.02644378036205716
+            ],
+            [
+              "business operations",
+              0.02644378036205716
+            ],
+            [
+              "fundamentally transformed",
+              0.028765959400917893
+            ],
+            [
+              "transformed the landscape",
+              0.028765959400917893
+            ],
+            [
+              "landscape of modern",
+              0.028765959400917893
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 6,
+            "found_count": 5,
+            "coverage_ratio": 0.8333333333333334,
+            "found_keywords": [
+              [
+                "artificial intelligence",
+                "Artificial intelligence"
+              ],
+              [
+                "machine learning",
+                "machine learning"
+              ],
+              [
+                "deep learning",
+                "learning"
+              ],
+              [
+                "cloud computing",
+                "computing"
+              ],
+              [
+                "quantum computing",
+                "computing"
+              ]
+            ],
+            "missing_keywords": [
+              "neural networks"
+            ],
+            "interpretation": "Excelente"
+          },
+          "scores": {
+            "min_score": 0.02644378036205716,
+            "max_score": 0.10161487236992772,
+            "avg_score": 0.06767261363983475,
+            "score_range": 0.07517109200787056,
+            "score_distribution": {
+              "0.0-0.1": 13,
+              "0.1-0.2": 2,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "Artificial intelligence",
+            "business operations",
+            "fundamentally transformed",
+            "transformed the landscape",
+            "landscape of modern",
+            "machine learning",
+            "machine learning models",
+            "Amazon Web Services",
+            "Google Cloud Platform",
+            "computing"
+          ]
+        },
+        "cache_stats": {
+          "hits": 840,
+          "misses": 105,
+          "hit_rate": 88.88888888888889
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:05.654367"
+      },
+      "high_precision_medicina_especializada": {
+        "status": "success",
+        "config": {
+          "name": "high_precision",
+          "description": "Alta precisão com deduplicação rigorosa",
+          "config": {
+            "n": 3,
+            "top": 15,
+            "dedup_lim": 0.8,
+            "window_size": 2
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "medicina_especializada",
+          "category": "medical",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 1247,
+          "word_count": 125
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 10.088490999919486,
+          "median_time_ms": 9.429354000076273,
+          "min_time_ms": 8.431588999883388,
+          "max_time_ms": 13.548723999520007,
+          "std_dev_ms": 1.744952518664142,
+          "times_ms": [
+            8.927488000153971,
+            13.548723999520007,
+            11.706954000146652,
+            10.350610999921628,
+            8.431588999883388,
+            8.883853999577696,
+            9.083415000532113,
+            9.775292999620433
+          ]
+        },
+        "quality": {
+          "keywords_count": 15,
+          "keywords_sample": [
+            [
+              "precisão representa uma",
+              0.0049651321155615635
+            ],
+            [
+              "representa uma abordagem",
+              0.0049651321155615635
+            ],
+            [
+              "uma abordagem revolucionária",
+              0.0049651321155615635
+            ],
+            [
+              "para cada pessoa",
+              0.010997597287337091
+            ],
+            [
+              "vida para cada",
+              0.013645157039646975
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 1,
+            "coverage_ratio": 0.25,
+            "found_keywords": [
+              [
+                "medicina de precisão",
+                "medicina de precisão"
+              ]
+            ],
+            "missing_keywords": [
+              "biomarcadores",
+              "imunoterapia",
+              "telemedicina"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.0049651321155615635,
+            "max_score": 0.028441146301367053,
+            "avg_score": 0.020541460438300227,
+            "score_range": 0.02347601418580549,
+            "score_distribution": {
+              "0.0-0.1": 15,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "precisão representa uma",
+            "representa uma abordagem",
+            "uma abordagem revolucionária",
+            "para cada pessoa",
+            "vida para cada",
+            "individual em genes",
+            "ambiente e estilo",
+            "cada pessoa",
+            "medicina de precisão",
+            "precisão representa"
+          ]
+        },
+        "cache_stats": {
+          "hits": 840,
+          "misses": 105,
+          "hit_rate": 88.88888888888889
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:05.756683"
+      },
+      "high_precision_economia_sustentavel": {
+        "status": "success",
+        "config": {
+          "name": "high_precision",
+          "description": "Alta precisão com deduplicação rigorosa",
+          "config": {
+            "n": 3,
+            "top": 15,
+            "dedup_lim": 0.8,
+            "window_size": 2
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "economia_sustentavel",
+          "category": "economics",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 1158,
+          "word_count": 114
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 9.06929687482716,
+          "median_time_ms": 8.671785500155238,
+          "min_time_ms": 7.700671999373299,
+          "max_time_ms": 12.529534999885072,
+          "std_dev_ms": 1.4989510500554548,
+          "times_ms": [
+            12.529534999885072,
+            9.119268999711494,
+            9.379735999573313,
+            8.829202000015357,
+            8.389642000111053,
+            8.09194999965257,
+            7.700671999373299,
+            8.514369000295119
+          ]
+        },
+        "quality": {
+          "keywords_count": 15,
+          "keywords_sample": [
+            [
+              "economia circular emerge",
+              0.003019467815276607
+            ],
+            [
+              "modelo linear tradicional",
+              0.003019467815276607
+            ],
+            [
+              "emerge como alternativa",
+              0.007661505714293712
+            ],
+            [
+              "como alternativa sustentável",
+              0.007661505714293712
+            ],
+            [
+              "circular emerge como",
+              0.007661505714293713
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 1,
+            "coverage_ratio": 0.25,
+            "found_keywords": [
+              [
+                "economia circular",
+                "economia circular emerge"
+              ]
+            ],
+            "missing_keywords": [
+              "energias renováveis",
+              "finanças sustentáveis",
+              "agricultura regenerativa"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.003019467815276607,
+            "max_score": 0.05089877675769338,
+            "avg_score": 0.019461056735492657,
+            "score_range": 0.04787930894241677,
+            "score_distribution": {
+              "0.0-0.1": 15,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "economia circular emerge",
+            "modelo linear tradicional",
+            "emerge como alternativa",
+            "como alternativa sustentável",
+            "circular emerge como",
+            "produção e consumo",
+            "economia circular",
+            "circular emerge",
+            "alternativa sustentável",
+            "sustentável ao modelo"
+          ]
+        },
+        "cache_stats": {
+          "hits": 840,
+          "misses": 105,
+          "hit_rate": 88.88888888888889
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:05.850349"
+      },
+      "high_precision_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "high_precision",
+          "description": "Alta precisão com deduplicação rigorosa",
+          "config": {
+            "n": 3,
+            "top": 15,
+            "dedup_lim": 0.8,
+            "window_size": 2
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 85.86440850024246,
+          "median_time_ms": 86.31043950026651,
+          "min_time_ms": 71.2635110003248,
+          "max_time_ms": 98.57106199979171,
+          "std_dev_ms": 7.92207229213204,
+          "times_ms": [
+            90.7489560004251,
+            80.97356000052969,
+            71.2635110003248,
+            89.15155100021366,
+            86.80776700020942,
+            98.57106199979171,
+            85.8131120003236,
+            83.58574900012172
+          ]
+        },
+        "quality": {
+          "keywords_count": 15,
+          "keywords_sample": [
+            [
+              "para",
+              0.009482122514547107
+            ],
+            [
+              "Google Colab",
+              0.0115026861227545
+            ],
+            [
+              "Documentação",
+              0.012797577809913417
+            ],
+            [
+              "documentação técnica",
+              0.01605441906555025
+            ],
+            [
+              "projeto",
+              0.017893534440234525
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.009482122514547107,
+            "max_score": 0.03569330287981716,
+            "avg_score": 0.02173476474363956,
+            "score_range": 0.02621118036527005,
+            "score_distribution": {
+              "0.0-0.1": 15,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "para",
+            "Google Colab",
+            "Documentação",
+            "documentação técnica",
+            "projeto",
+            "YAKE",
+            "qualquer biblio tecadesoftware",
+            "representa umaspeto fundamental",
+            "para Google Colab",
+            "Google Colab para"
+          ]
+        },
+        "cache_stats": {
+          "hits": 840,
+          "misses": 105,
+          "hit_rate": 88.88888888888889
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:06.647273"
+      },
+      "high_recall_tecnologia_curta": {
+        "status": "success",
+        "config": {
+          "name": "high_recall",
+          "description": "Alto recall com deduplicação relaxada",
+          "config": {
+            "n": 4,
+            "top": 25,
+            "dedup_lim": 0.6,
+            "window_size": 1
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "tecnologia_curta",
+          "category": "technology",
+          "size": "small",
+          "language": "pt",
+          "text_length": 322,
+          "word_count": 31
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 2.7439263751602994,
+          "median_time_ms": 2.9609524999614223,
+          "min_time_ms": 1.9473749998724088,
+          "max_time_ms": 3.3734980006556725,
+          "std_dev_ms": 0.5539594987079146,
+          "times_ms": [
+            2.3084980002749944,
+            3.0396450001717312,
+            3.2874010003069998,
+            2.9783859999952256,
+            2.0730890000777435,
+            1.9473749998724088,
+            2.943518999927619,
+            3.3734980006556725
+          ]
+        },
+        "quality": {
+          "keywords_count": 25,
+          "keywords_sample": [
+            [
+              "machine learning estão revolucionando",
+              0.0029202041061023912
+            ],
+            [
+              "Inteligência artificial e machine",
+              0.004811910514945921
+            ],
+            [
+              "revolucionando a tecnologia moderna",
+              0.004811910514945921
+            ],
+            [
+              "estão revolucionando a tecnologia",
+              0.007150812178773481
+            ],
+            [
+              "learning estão revolucionando",
+              0.014191703101852263
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 3,
+            "coverage_ratio": 0.75,
+            "found_keywords": [
+              [
+                "inteligência artificial",
+                "Inteligência artificial e machine"
+              ],
+              [
+                "machine learning",
+                "machine learning estão revolucionando"
+              ],
+              [
+                "deep learning",
+                "deep learning permitem análise"
+              ]
+            ],
+            "missing_keywords": [
+              "cloud computing"
+            ],
+            "interpretation": "Boa"
+          },
+          "scores": {
+            "min_score": 0.0029202041061023912,
+            "max_score": 0.1837703416113177,
+            "avg_score": 0.08488875719787844,
+            "score_range": 0.1808501375052153,
+            "score_distribution": {
+              "0.0-0.1": 14,
+              "0.1-0.2": 11,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "machine learning estão revolucionando",
+            "Inteligência artificial e machine",
+            "revolucionando a tecnologia moderna",
+            "estão revolucionando a tecnologia",
+            "learning estão revolucionando",
+            "artificial e machine learning",
+            "Inteligência artificial",
+            "tecnologia moderna",
+            "artificial e machine",
+            "estão revolucionando"
+          ]
+        },
+        "cache_stats": {
+          "hits": 2472,
+          "misses": 309,
+          "hit_rate": 88.88888888888889
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:06.684314"
+      },
+      "high_recall_ciencia_dados_medio": {
+        "status": "success",
+        "config": {
+          "name": "high_recall",
+          "description": "Alto recall com deduplicação relaxada",
+          "config": {
+            "n": 4,
+            "top": 25,
+            "dedup_lim": 0.6,
+            "window_size": 1
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "ciencia_dados_medio",
+          "category": "data_science",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 990,
+          "word_count": 107
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 7.54556712502108,
+          "median_time_ms": 7.3720870000215655,
+          "min_time_ms": 6.39669700012746,
+          "max_time_ms": 9.868482999991102,
+          "std_dev_ms": 1.0336544498683748,
+          "times_ms": [
+            6.39669700012746,
+            7.863534000534855,
+            9.868482999991102,
+            7.399691000500752,
+            7.35755000005156,
+            7.386623999991571,
+            6.844636999630893,
+            7.247320999340445
+          ]
+        },
+        "quality": {
+          "keywords_count": 25,
+          "keywords_sample": [
+            [
+              "domínio para extrair insights",
+              0.0016330453624578203
+            ],
+            [
+              "para extrair insights valiosos",
+              0.0016330453624578203
+            ],
+            [
+              "extrair insights valiosos",
+              0.003716400072569068
+            ],
+            [
+              "insights valiosos de grandes",
+              0.003716400072569068
+            ],
+            [
+              "valiosos de grandes volumes",
+              0.003716400072569068
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 5,
+            "found_count": 1,
+            "coverage_ratio": 0.2,
+            "found_keywords": [
+              [
+                "ciência de dados",
+                "ciência de dados combina"
+              ]
+            ],
+            "missing_keywords": [
+              "machine learning",
+              "big data",
+              "python",
+              "visualização"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.0016330453624578203,
+            "max_score": 0.07273424475797818,
+            "avg_score": 0.027310485829450223,
+            "score_range": 0.07110119939552037,
+            "score_distribution": {
+              "0.0-0.1": 25,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "domínio para extrair insights",
+            "para extrair insights valiosos",
+            "extrair insights valiosos",
+            "insights valiosos de grandes",
+            "valiosos de grandes volumes",
+            "dados combina estatística",
+            "ciência de dados combina",
+            "grandes volumes de dados",
+            "conhecimento de domínio para",
+            "domínio para extrair"
+          ]
+        },
+        "cache_stats": {
+          "hits": 2528,
+          "misses": 316,
+          "hit_rate": 88.88888888888889
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:06.766360"
+      },
+      "high_recall_tech_english_large": {
+        "status": "success",
+        "config": {
+          "name": "high_recall",
+          "description": "Alto recall com deduplicação relaxada",
+          "config": {
+            "n": 4,
+            "top": 25,
+            "dedup_lim": 0.6,
+            "window_size": 1
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "tech_english_large",
+          "category": "technology",
+          "size": "large",
+          "language": "en",
+          "text_length": 3220,
+          "word_count": 320
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 21.6647717501246,
+          "median_time_ms": 20.33973200013861,
+          "min_time_ms": 19.939140000133193,
+          "max_time_ms": 30.420880000747275,
+          "std_dev_ms": 3.572361241739483,
+          "times_ms": [
+            21.47709200016834,
+            20.659794000494003,
+            20.193049000226893,
+            20.023051999487507,
+            20.48641500005033,
+            30.420880000747275,
+            20.118751999689266,
+            19.939140000133193
+          ]
+        },
+        "quality": {
+          "keywords_count": 25,
+          "keywords_sample": [
+            [
+              "fundamentally transformed the landscape",
+              0.005052225455896268
+            ],
+            [
+              "landscape of modern technology",
+              0.018483174208917465
+            ],
+            [
+              "Artificial intelligence",
+              0.02644378036205716
+            ],
+            [
+              "business operations",
+              0.02644378036205716
+            ],
+            [
+              "fundamentally transformed",
+              0.028765959400917893
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 6,
+            "found_count": 5,
+            "coverage_ratio": 0.8333333333333334,
+            "found_keywords": [
+              [
+                "artificial intelligence",
+                "Artificial intelligence"
+              ],
+              [
+                "machine learning",
+                "machine learning"
+              ],
+              [
+                "deep learning",
+                "learning"
+              ],
+              [
+                "cloud computing",
+                "computing"
+              ],
+              [
+                "quantum computing",
+                "computing"
+              ]
+            ],
+            "missing_keywords": [
+              "neural networks"
+            ],
+            "interpretation": "Excelente"
+          },
+          "scores": {
+            "min_score": 0.005052225455896268,
+            "max_score": 0.10161487236992772,
+            "avg_score": 0.058929047951466876,
+            "score_range": 0.09656264691403145,
+            "score_distribution": {
+              "0.0-0.1": 23,
+              "0.1-0.2": 2,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "fundamentally transformed the landscape",
+            "landscape of modern technology",
+            "Artificial intelligence",
+            "business operations",
+            "fundamentally transformed",
+            "transformed the landscape",
+            "landscape of modern",
+            "Artificial intelligence and machine",
+            "technology and business operations",
+            "learning have fundamentally transformed"
+          ]
+        },
+        "cache_stats": {
+          "hits": 2400,
+          "misses": 300,
+          "hit_rate": 88.88888888888889
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:06.978190"
+      },
+      "high_recall_medicina_especializada": {
+        "status": "success",
+        "config": {
+          "name": "high_recall",
+          "description": "Alto recall com deduplicação relaxada",
+          "config": {
+            "n": 4,
+            "top": 25,
+            "dedup_lim": 0.6,
+            "window_size": 1
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "medicina_especializada",
+          "category": "medical",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 1247,
+          "word_count": 125
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 9.218578500053809,
+          "median_time_ms": 8.720648500002426,
+          "min_time_ms": 6.951702000151272,
+          "max_time_ms": 12.677912999606633,
+          "std_dev_ms": 1.805140266576778,
+          "times_ms": [
+            12.677912999606633,
+            11.10146100018028,
+            8.878132000063488,
+            8.840370999678271,
+            6.951702000151272,
+            8.293429000332253,
+            8.404694000091695,
+            8.60092600032658
+          ]
+        },
+        "quality": {
+          "keywords_count": 25,
+          "keywords_sample": [
+            [
+              "precisão representa uma abordagem",
+              0.0008805033330157045
+            ],
+            [
+              "representa uma abordagem revolucionária",
+              0.0008805033330157045
+            ],
+            [
+              "vida para cada pessoa",
+              0.0020023143790296833
+            ],
+            [
+              "variabilidade individual em genes",
+              0.004028579372816921
+            ],
+            [
+              "medicina de precisão representa",
+              0.0049651321155615635
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 1,
+            "coverage_ratio": 0.25,
+            "found_keywords": [
+              [
+                "medicina de precisão",
+                "medicina de precisão representa"
+              ]
+            ],
+            "missing_keywords": [
+              "biomarcadores",
+              "imunoterapia",
+              "telemedicina"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.0008805033330157045,
+            "max_score": 0.07160864134308835,
+            "avg_score": 0.02131134619853094,
+            "score_range": 0.07072813801007265,
+            "score_distribution": {
+              "0.0-0.1": 25,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "precisão representa uma abordagem",
+            "representa uma abordagem revolucionária",
+            "vida para cada pessoa",
+            "variabilidade individual em genes",
+            "medicina de precisão representa",
+            "precisão representa uma",
+            "representa uma abordagem",
+            "uma abordagem revolucionária",
+            "abordagem revolucionária que considera",
+            "considera a variabilidade individual"
+          ]
+        },
+        "cache_stats": {
+          "hits": 2568,
+          "misses": 321,
+          "hit_rate": 88.88888888888889
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:07.073094"
+      },
+      "high_recall_economia_sustentavel": {
+        "status": "success",
+        "config": {
+          "name": "high_recall",
+          "description": "Alto recall com deduplicação relaxada",
+          "config": {
+            "n": 4,
+            "top": 25,
+            "dedup_lim": 0.6,
+            "window_size": 1
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "economia_sustentavel",
+          "category": "economics",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 1158,
+          "word_count": 114
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 8.468400624792594,
+          "median_time_ms": 8.073310499639774,
+          "min_time_ms": 7.548294000116584,
+          "max_time_ms": 10.117306999745779,
+          "std_dev_ms": 0.9606536502773826,
+          "times_ms": [
+            9.577891999470012,
+            10.117306999745779,
+            8.880823999788845,
+            7.743641999695683,
+            7.548294000116584,
+            8.312686999488506,
+            7.7326250002442976,
+            7.833933999791043
+          ]
+        },
+        "quality": {
+          "keywords_count": 25,
+          "keywords_sample": [
+            [
+              "emerge como alternativa sustentável",
+              0.0011625342377229943
+            ],
+            [
+              "economia circular emerge como",
+              0.0011625342377229945
+            ],
+            [
+              "circular emerge como alternativa",
+              0.0011625342377229945
+            ],
+            [
+              "economia circular emerge",
+              0.003019467815276607
+            ],
+            [
+              "alternativa sustentável ao modelo",
+              0.003019467815276607
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 2,
+            "coverage_ratio": 0.5,
+            "found_keywords": [
+              [
+                "economia circular",
+                "economia circular emerge como"
+              ],
+              [
+                "energias renováveis",
+                "Energias renováveis como solar"
+              ]
+            ],
+            "missing_keywords": [
+              "finanças sustentáveis",
+              "agricultura regenerativa"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.0011625342377229943,
+            "max_score": 0.06457962066505962,
+            "avg_score": 0.02211501050043709,
+            "score_range": 0.06341708642733662,
+            "score_distribution": {
+              "0.0-0.1": 25,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "emerge como alternativa sustentável",
+            "economia circular emerge como",
+            "circular emerge como alternativa",
+            "economia circular emerge",
+            "alternativa sustentável ao modelo",
+            "sustentável ao modelo linear",
+            "modelo linear tradicional",
+            "linear tradicional de produção",
+            "emerge como alternativa",
+            "como alternativa sustentável"
+          ]
+        },
+        "cache_stats": {
+          "hits": 2400,
+          "misses": 300,
+          "hit_rate": 88.88888888888889
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:07.163846"
+      },
+      "high_recall_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "high_recall",
+          "description": "Alto recall com deduplicação relaxada",
+          "config": {
+            "n": 4,
+            "top": 25,
+            "dedup_lim": 0.6,
+            "window_size": 1
+          },
+          "iterations": 8
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 8,
+          "avg_time_ms": 91.45292450000397,
+          "median_time_ms": 91.16091400028381,
+          "min_time_ms": 86.44717700008187,
+          "max_time_ms": 98.61791500043182,
+          "std_dev_ms": 4.319806578395593,
+          "times_ms": [
+            86.48781299962138,
+            94.59176000018488,
+            94.1211999997904,
+            89.3453300004694,
+            89.03570299935382,
+            98.61791500043182,
+            86.44717700008187,
+            92.97649800009822
+          ]
+        },
+        "quality": {
+          "keywords_count": 25,
+          "keywords_sample": [
+            [
+              "representa umaspeto fundamental para",
+              0.007309956926618215
+            ],
+            [
+              "para",
+              0.009554178995802144
+            ],
+            [
+              "Google Colab",
+              0.01100029534164437
+            ],
+            [
+              "Documentação",
+              0.012053323365871157
+            ],
+            [
+              "documentação técnica",
+              0.014611960868169665
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 8,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.007309956926618215,
+            "max_score": 0.040971914152641335,
+            "avg_score": 0.02440533531193032,
+            "score_range": 0.03366195722602312,
+            "score_distribution": {
+              "0.0-0.1": 25,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "representa umaspeto fundamental para",
+            "para",
+            "Google Colab",
+            "Documentação",
+            "documentação técnica",
+            "projeto",
+            "qualquer biblio tecadesoftware",
+            "YAKE",
+            "representa umaspeto fundamental",
+            "eficaz de qualquer biblio"
+          ]
+        },
+        "cache_stats": {
+          "hits": 2440,
+          "misses": 305,
+          "hit_rate": 88.88888888888889
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:07.997227"
+      },
+      "fast_extraction_tecnologia_curta": {
+        "status": "success",
+        "config": {
+          "name": "fast_extraction",
+          "description": "Extração rápida com configuração mínima",
+          "config": {
+            "n": 2,
+            "top": 10,
+            "dedup_lim": 0.9,
+            "window_size": 1
+          },
+          "iterations": 15
+        },
+        "dataset": {
+          "name": "tecnologia_curta",
+          "category": "technology",
+          "size": "small",
+          "language": "pt",
+          "text_length": 322,
+          "word_count": 31
+        },
+        "performance": {
+          "iterations": 15,
+          "avg_time_ms": 2.484714999991411,
+          "median_time_ms": 2.322845999515266,
+          "min_time_ms": 1.8283240005985135,
+          "max_time_ms": 3.634351000073366,
+          "std_dev_ms": 0.5210089924946595,
+          "times_ms": [
+            2.6535799997873255,
+            2.759482000328717,
+            2.322845999515266,
+            3.634351000073366,
+            3.0645239994555595,
+            3.0165130001478246,
+            2.8900970000904636,
+            2.164722000088659,
+            2.1207639993008343,
+            2.055229000688996,
+            2.0425679995241808,
+            1.8283240005985135,
+            2.007024000704405,
+            2.714369999921473,
+            1.9963309996455791
+          ]
+        },
+        "quality": {
+          "keywords_count": 10,
+          "keywords_sample": [
+            [
+              "Inteligência artificial",
+              0.024472568339564654
+            ],
+            [
+              "tecnologia moderna",
+              0.024472568339564654
+            ],
+            [
+              "estão revolucionando",
+              0.03607367925275576
+            ],
+            [
+              "machine learning",
+              0.06989111550576657
+            ],
+            [
+              "learning estão",
+              0.06989111550576657
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 15,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 3,
+            "coverage_ratio": 0.75,
+            "found_keywords": [
+              [
+                "inteligência artificial",
+                "Inteligência artificial"
+              ],
+              [
+                "machine learning",
+                "machine learning"
+              ],
+              [
+                "deep learning",
+                "learning"
+              ]
+            ],
+            "missing_keywords": [
+              "cloud computing"
+            ],
+            "interpretation": "Boa"
+          },
+          "scores": {
+            "min_score": 0.024472568339564654,
+            "max_score": 0.1837703416113177,
+            "avg_score": 0.10234287337403207,
+            "score_range": 0.15929777327175304,
+            "score_distribution": {
+              "0.0-0.1": 5,
+              "0.1-0.2": 5,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "Inteligência artificial",
+            "tecnologia moderna",
+            "estão revolucionando",
+            "machine learning",
+            "learning estão",
+            "Inteligência",
+            "moderna",
+            "learning",
+            "deep learning",
+            "learning permitem"
+          ]
+        },
+        "cache_stats": {
+          "hits": 675,
+          "misses": 45,
+          "hit_rate": 93.75
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:08.051100"
+      },
+      "fast_extraction_ciencia_dados_medio": {
+        "status": "success",
+        "config": {
+          "name": "fast_extraction",
+          "description": "Extração rápida com configuração mínima",
+          "config": {
+            "n": 2,
+            "top": 10,
+            "dedup_lim": 0.9,
+            "window_size": 1
+          },
+          "iterations": 15
+        },
+        "dataset": {
+          "name": "ciencia_dados_medio",
+          "category": "data_science",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 990,
+          "word_count": 107
+        },
+        "performance": {
+          "iterations": 15,
+          "avg_time_ms": 6.268705599965567,
+          "median_time_ms": 5.8920820001731045,
+          "min_time_ms": 5.556344999604335,
+          "max_time_ms": 8.15537500056962,
+          "std_dev_ms": 0.908587768606478,
+          "times_ms": [
+            8.15537500056962,
+            7.786537000356475,
+            7.8351410002142075,
+            6.726554000124452,
+            5.910406000111834,
+            5.895130999306275,
+            5.658406999828003,
+            5.556344999604335,
+            5.5923130003066035,
+            6.152709000161849,
+            5.838217999553308,
+            5.627814999570546,
+            5.826714999784599,
+            5.8920820001731045,
+            5.576835999818286
+          ]
+        },
+        "quality": {
+          "keywords_count": 10,
+          "keywords_sample": [
+            [
+              "combina estatística",
+              0.020197833145654123
+            ],
+            [
+              "extrair insights",
+              0.023531602836651972
+            ],
+            [
+              "insights valiosos",
+              0.023531602836651972
+            ],
+            [
+              "grandes volumes",
+              0.023531602836651972
+            ],
+            [
+              "dados combina",
+              0.04608190245539019
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 15,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 5,
+            "found_count": 1,
+            "coverage_ratio": 0.2,
+            "found_keywords": [
+              [
+                "ciência de dados",
+                "dados"
+              ]
+            ],
+            "missing_keywords": [
+              "machine learning",
+              "big data",
+              "python",
+              "visualização"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.020197833145654123,
+            "max_score": 0.13057055700610237,
+            "avg_score": 0.05787393145467933,
+            "score_range": 0.11037272386044825,
+            "score_distribution": {
+              "0.0-0.1": 8,
+              "0.1-0.2": 2,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "combina estatística",
+            "extrair insights",
+            "insights valiosos",
+            "grandes volumes",
+            "dados combina",
+            "dados",
+            "domínio para",
+            "para extrair",
+            "estatística",
+            "programação"
+          ]
+        },
+        "cache_stats": {
+          "hits": 675,
+          "misses": 45,
+          "hit_rate": 93.75
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:08.161728"
+      },
+      "fast_extraction_tech_english_large": {
+        "status": "success",
+        "config": {
+          "name": "fast_extraction",
+          "description": "Extração rápida com configuração mínima",
+          "config": {
+            "n": 2,
+            "top": 10,
+            "dedup_lim": 0.9,
+            "window_size": 1
+          },
+          "iterations": 15
+        },
+        "dataset": {
+          "name": "tech_english_large",
+          "category": "technology",
+          "size": "large",
+          "language": "en",
+          "text_length": 3220,
+          "word_count": 320
+        },
+        "performance": {
+          "iterations": 15,
+          "avg_time_ms": 17.99734813333392,
+          "median_time_ms": 17.316487000243797,
+          "min_time_ms": 16.128772999763896,
+          "max_time_ms": 26.10585699949297,
+          "std_dev_ms": 2.53615442292996,
+          "times_ms": [
+            20.477804999245564,
+            18.858886000089115,
+            17.901553000228887,
+            17.766671000572387,
+            17.316487000243797,
+            16.978384999674745,
+            17.885681999359804,
+            18.270096000378544,
+            26.10585699949297,
+            16.259753000667843,
+            16.418903000158025,
+            16.299017000164895,
+            16.128772999763896,
+            16.316618000018934,
+            16.975735999949393
+          ]
+        },
+        "quality": {
+          "keywords_count": 10,
+          "keywords_sample": [
+            [
+              "Artificial intelligence",
+              0.02644378036205716
+            ],
+            [
+              "business operations",
+              0.02644378036205716
+            ],
+            [
+              "fundamentally transformed",
+              0.028765959400917893
+            ],
+            [
+              "machine learning",
+              0.046948306293060335
+            ],
+            [
+              "learning",
+              0.08659588880880005
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 15,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 6,
+            "found_count": 6,
+            "coverage_ratio": 1.0,
+            "found_keywords": [
+              [
+                "artificial intelligence",
+                "Artificial intelligence"
+              ],
+              [
+                "machine learning",
+                "machine learning"
+              ],
+              [
+                "deep learning",
+                "learning"
+              ],
+              [
+                "neural networks",
+                "neural networks"
+              ],
+              [
+                "cloud computing",
+                "computing"
+              ],
+              [
+                "quantum computing",
+                "computing"
+              ]
+            ],
+            "missing_keywords": [],
+            "interpretation": "Excelente"
+          },
+          "scores": {
+            "min_score": 0.02644378036205716,
+            "max_score": 0.11561960717269966,
+            "avg_score": 0.07293082059686078,
+            "score_range": 0.0891758268106425,
+            "score_distribution": {
+              "0.0-0.1": 7,
+              "0.1-0.2": 3,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "Artificial intelligence",
+            "business operations",
+            "fundamentally transformed",
+            "machine learning",
+            "learning",
+            "computing",
+            "modern technology",
+            "models",
+            "neural networks",
+            "Quantum"
+          ]
+        },
+        "cache_stats": {
+          "hits": 675,
+          "misses": 45,
+          "hit_rate": 93.75
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:08.459789"
+      },
+      "fast_extraction_medicina_especializada": {
+        "status": "success",
+        "config": {
+          "name": "fast_extraction",
+          "description": "Extração rápida com configuração mínima",
+          "config": {
+            "n": 2,
+            "top": 10,
+            "dedup_lim": 0.9,
+            "window_size": 1
+          },
+          "iterations": 15
+        },
+        "dataset": {
+          "name": "medicina_especializada",
+          "category": "medical",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 1247,
+          "word_count": 125
+        },
+        "performance": {
+          "iterations": 15,
+          "avg_time_ms": 7.440143533373582,
+          "median_time_ms": 7.430863000081445,
+          "min_time_ms": 6.696422999993956,
+          "max_time_ms": 8.793033000074502,
+          "std_dev_ms": 0.5609996199150598,
+          "times_ms": [
+            7.471937000445905,
+            8.793033000074502,
+            7.090774000062083,
+            7.452355000168609,
+            6.83906499943987,
+            6.868485000268265,
+            7.127025000045251,
+            6.696422999993956,
+            7.046744000035687,
+            7.826750000276661,
+            7.554361999609682,
+            7.430863000081445,
+            8.034907999899588,
+            7.283109999661974,
+            8.086319000540243
+          ]
+        },
+        "quality": {
+          "keywords_count": 10,
+          "keywords_sample": [
+            [
+              "cada pessoa",
+              0.023165243930421762
+            ],
+            [
+              "precisão representa",
+              0.028441146301367053
+            ],
+            [
+              "representa uma",
+              0.028441146301367053
+            ],
+            [
+              "uma abordagem",
+              0.028441146301367053
+            ],
+            [
+              "abordagem revolucionária",
+              0.028441146301367053
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 15,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 0,
+            "coverage_ratio": 0.0,
+            "found_keywords": [],
+            "missing_keywords": [
+              "medicina de precisão",
+              "biomarcadores",
+              "imunoterapia",
+              "telemedicina"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.023165243930421762,
+            "max_score": 0.13614674801343643,
+            "avg_score": 0.055798310698397885,
+            "score_range": 0.11298150408301466,
+            "score_distribution": {
+              "0.0-0.1": 8,
+              "0.1-0.2": 2,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "cada pessoa",
+            "precisão representa",
+            "representa uma",
+            "uma abordagem",
+            "abordagem revolucionária",
+            "variabilidade individual",
+            "vida para",
+            "para cada",
+            "para",
+            "genes"
+          ]
+        },
+        "cache_stats": {
+          "hits": 675,
+          "misses": 45,
+          "hit_rate": 93.75
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:08.591304"
+      },
+      "fast_extraction_economia_sustentavel": {
+        "status": "success",
+        "config": {
+          "name": "fast_extraction",
+          "description": "Extração rápida com configuração mínima",
+          "config": {
+            "n": 2,
+            "top": 10,
+            "dedup_lim": 0.9,
+            "window_size": 1
+          },
+          "iterations": 15
+        },
+        "dataset": {
+          "name": "economia_sustentavel",
+          "category": "economics",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 1158,
+          "word_count": 114
+        },
+        "performance": {
+          "iterations": 15,
+          "avg_time_ms": 6.62661246672845,
+          "median_time_ms": 6.3915820001057,
+          "min_time_ms": 5.582079000305384,
+          "max_time_ms": 7.948593000037363,
+          "std_dev_ms": 0.7257264692719506,
+          "times_ms": [
+            7.948593000037363,
+            5.6856920000427635,
+            6.773422000151186,
+            7.480600999770104,
+            6.307904000095732,
+            5.998288000228058,
+            5.582079000305384,
+            5.914819000281568,
+            6.155416999718,
+            7.082173000526382,
+            7.3395569997956045,
+            6.878074000269407,
+            7.502600999941933,
+            6.3915820001057,
+            6.358384999657574
+          ]
+        },
+        "quality": {
+          "keywords_count": 10,
+          "keywords_sample": [
+            [
+              "economia circular",
+              0.020535611707008218
+            ],
+            [
+              "circular emerge",
+              0.020535611707008218
+            ],
+            [
+              "alternativa sustentável",
+              0.020535611707008218
+            ],
+            [
+              "modelo linear",
+              0.020535611707008218
+            ],
+            [
+              "linear tradicional",
+              0.020535611707008218
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 15,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 1,
+            "coverage_ratio": 0.25,
+            "found_keywords": [
+              [
+                "economia circular",
+                "economia circular"
+              ]
+            ],
+            "missing_keywords": [
+              "energias renováveis",
+              "finanças sustentáveis",
+              "agricultura regenerativa"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.020535611707008218,
+            "max_score": 0.1329676225702904,
+            "avg_score": 0.05714478281877755,
+            "score_range": 0.1124320108632822,
+            "score_distribution": {
+              "0.0-0.1": 7,
+              "0.1-0.2": 3,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "economia circular",
+            "circular emerge",
+            "alternativa sustentável",
+            "modelo linear",
+            "linear tradicional",
+            "emerge como",
+            "como alternativa",
+            "como",
+            "consumo",
+            "Este paradigma"
+          ]
+        },
+        "cache_stats": {
+          "hits": 675,
+          "misses": 45,
+          "hit_rate": 93.75
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:08.714657"
+      },
+      "fast_extraction_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "fast_extraction",
+          "description": "Extração rápida com configuração mínima",
+          "config": {
+            "n": 2,
+            "top": 10,
+            "dedup_lim": 0.9,
+            "window_size": 1
+          },
+          "iterations": 15
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 15,
+          "avg_time_ms": 70.89266786685282,
+          "median_time_ms": 70.14446999983193,
+          "min_time_ms": 54.06875399967248,
+          "max_time_ms": 80.74039800067112,
+          "std_dev_ms": 7.246398104025619,
+          "times_ms": [
+            77.37414100029127,
+            61.86054299996613,
+            69.20597700081998,
+            73.97880500047904,
+            67.7768069999729,
+            68.63816100030817,
+            70.14446999983193,
+            80.74039800067112,
+            54.06875399967248,
+            65.94849600060115,
+            71.7669850000675,
+            73.10195999980351,
+            79.82777100005478,
+            68.6400490003507,
+            80.31670099990151
+          ]
+        },
+        "quality": {
+          "keywords_count": 10,
+          "keywords_sample": [
+            [
+              "para",
+              0.009554178995802144
+            ],
+            [
+              "Google Colab",
+              0.01100029534164437
+            ],
+            [
+              "Documentação",
+              0.012053323365871157
+            ],
+            [
+              "documentação técnica",
+              0.014611960868169665
+            ],
+            [
+              "projeto",
+              0.016731160625814482
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 15,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.009554178995802144,
+            "max_score": 0.034630623005341664,
+            "avg_score": 0.02071200072901801,
+            "score_range": 0.02507644400953952,
+            "score_distribution": {
+              "0.0-0.1": 10,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "para",
+            "Google Colab",
+            "Documentação",
+            "documentação técnica",
+            "projeto",
+            "YAKE",
+            "projeto YAKE",
+            "MDX",
+            "exemplos",
+            "Google"
+          ]
+        },
+        "cache_stats": {
+          "hits": 675,
+          "misses": 45,
+          "hit_rate": 93.75
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:09.863057"
+      },
+      "comprehensive_tecnologia_curta": {
+        "status": "success",
+        "config": {
+          "name": "comprehensive",
+          "description": "Análise comprehensiva com máxima cobertura",
+          "config": {
+            "n": 5,
+            "top": 30,
+            "dedup_lim": 0.5,
+            "window_size": 3
+          },
+          "iterations": 5
+        },
+        "dataset": {
+          "name": "tecnologia_curta",
+          "category": "technology",
+          "size": "small",
+          "language": "pt",
+          "text_length": 322,
+          "word_count": 31
+        },
+        "performance": {
+          "iterations": 5,
+          "avg_time_ms": 3.328848399905837,
+          "median_time_ms": 3.3396270000594086,
+          "min_time_ms": 2.717597999435384,
+          "max_time_ms": 3.9524029998574406,
+          "std_dev_ms": 0.526984316316836,
+          "times_ms": [
+            3.7344519996622694,
+            3.3396270000594086,
+            3.9524029998574406,
+            2.9001620005146833,
+            2.717597999435384
+          ]
+        },
+        "quality": {
+          "keywords_count": 30,
+          "keywords_sample": [
+            [
+              "estão revolucionando a tecnologia moderna",
+              0.0009658561322436235
+            ],
+            [
+              "Inteligência artificial e machine learning",
+              0.0019409093464168325
+            ],
+            [
+              "machine learning estão revolucionando",
+              0.0029202041061023912
+            ],
+            [
+              "learning estão revolucionando a tecnologia",
+              0.0029202041061023912
+            ],
+            [
+              "artificial e machine learning estão",
+              0.0029202041061023917
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 5,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 3,
+            "coverage_ratio": 0.75,
+            "found_keywords": [
+              [
+                "inteligência artificial",
+                "Inteligência artificial e machine learning"
+              ],
+              [
+                "machine learning",
+                "Inteligência artificial e machine learning"
+              ],
+              [
+                "deep learning",
+                "deep learning permitem análise avançada"
+              ]
+            ],
+            "missing_keywords": [
+              "cloud computing"
+            ],
+            "interpretation": "Boa"
+          },
+          "scores": {
+            "min_score": 0.0009658561322436235,
+            "max_score": 0.1761228147823515,
+            "avg_score": 0.06745538571731806,
+            "score_range": 0.17515695865010789,
+            "score_distribution": {
+              "0.0-0.1": 20,
+              "0.1-0.2": 10,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "estão revolucionando a tecnologia moderna",
+            "Inteligência artificial e machine learning",
+            "machine learning estão revolucionando",
+            "learning estão revolucionando a tecnologia",
+            "artificial e machine learning estão",
+            "Inteligência artificial e machine",
+            "revolucionando a tecnologia moderna",
+            "learning estão revolucionando",
+            "artificial e machine learning",
+            "Inteligência artificial"
+          ]
+        },
+        "cache_stats": {
+          "hits": 2270,
+          "misses": 454,
+          "hit_rate": 83.33333333333334
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:09.897852"
+      },
+      "comprehensive_ciencia_dados_medio": {
+        "status": "success",
+        "config": {
+          "name": "comprehensive",
+          "description": "Análise comprehensiva com máxima cobertura",
+          "config": {
+            "n": 5,
+            "top": 30,
+            "dedup_lim": 0.5,
+            "window_size": 3
+          },
+          "iterations": 5
+        },
+        "dataset": {
+          "name": "ciencia_dados_medio",
+          "category": "data_science",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 990,
+          "word_count": 107
+        },
+        "performance": {
+          "iterations": 5,
+          "avg_time_ms": 8.037825200335647,
+          "median_time_ms": 7.852740000089398,
+          "min_time_ms": 6.370627000251261,
+          "max_time_ms": 10.512825000660087,
+          "std_dev_ms": 1.6834420169491942,
+          "times_ms": [
+            7.852740000089398,
+            10.512825000660087,
+            8.775893000347423,
+            6.677041000330064,
+            6.370627000251261
+          ]
+        },
+        "quality": {
+          "keywords_count": 30,
+          "keywords_sample": [
+            [
+              "processo de análise",
+              0.0
+            ],
+            [
+              "processo de análise de dados",
+              0.0
+            ],
+            [
+              "domínio para extrair insights valiosos",
+              0.00026948327714545225
+            ],
+            [
+              "extrair insights valiosos de grandes",
+              0.000594993474374908
+            ],
+            [
+              "insights valiosos de grandes volumes",
+              0.000594993474374908
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 5,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 5,
+            "found_count": 1,
+            "coverage_ratio": 0.2,
+            "found_keywords": [
+              [
+                "ciência de dados",
+                "ciência de dados combina estatística"
+              ]
+            ],
+            "missing_keywords": [
+              "machine learning",
+              "big data",
+              "python",
+              "visualização"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.0,
+            "max_score": 0.06130892181000079,
+            "avg_score": 0.019668701520210018,
+            "score_range": 0.06130892181000079,
+            "score_distribution": {
+              "0.0-0.1": 30,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "processo de análise",
+            "processo de análise de dados",
+            "domínio para extrair insights valiosos",
+            "extrair insights valiosos de grandes",
+            "insights valiosos de grandes volumes",
+            "ciência de dados combina estatística",
+            "conhecimento de domínio para extrair",
+            "para extrair insights valiosos",
+            "programação e conhecimento de domínio",
+            "extrair insights valiosos"
+          ]
+        },
+        "cache_stats": {
+          "hits": 2535,
+          "misses": 507,
+          "hit_rate": 83.33333333333334
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:09.955858"
+      },
+      "comprehensive_tech_english_large": {
+        "status": "success",
+        "config": {
+          "name": "comprehensive",
+          "description": "Análise comprehensiva com máxima cobertura",
+          "config": {
+            "n": 5,
+            "top": 30,
+            "dedup_lim": 0.5,
+            "window_size": 3
+          },
+          "iterations": 5
+        },
+        "dataset": {
+          "name": "tech_english_large",
+          "category": "technology",
+          "size": "large",
+          "language": "en",
+          "text_length": 3220,
+          "word_count": 320
+        },
+        "performance": {
+          "iterations": 5,
+          "avg_time_ms": 23.16758739980287,
+          "median_time_ms": 23.38223199967615,
+          "min_time_ms": 19.140214999424643,
+          "max_time_ms": 26.284137000402552,
+          "std_dev_ms": 2.570417377413553,
+          "times_ms": [
+            26.284137000402552,
+            23.837521000132256,
+            23.193831999378745,
+            23.38223199967615,
+            19.140214999424643
+          ]
+        },
+        "quality": {
+          "keywords_count": 30,
+          "keywords_sample": [
+            [
+              "fundamentally transformed the landscape",
+              0.005052225455896268
+            ],
+            [
+              "transformed the landscape of modern",
+              0.005052225455896268
+            ],
+            [
+              "modern technology and business operations",
+              0.005676136963559672
+            ],
+            [
+              "Artificial intelligence and machine learning",
+              0.008826785498050042
+            ],
+            [
+              "machine learning have fundamentally transformed",
+              0.012817414205242583
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 5,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 6,
+            "found_count": 5,
+            "coverage_ratio": 0.8333333333333334,
+            "found_keywords": [
+              [
+                "artificial intelligence",
+                "Artificial intelligence and machine learning"
+              ],
+              [
+                "machine learning",
+                "Artificial intelligence and machine learning"
+              ],
+              [
+                "deep learning",
+                "learning"
+              ],
+              [
+                "cloud computing",
+                "computing"
+              ],
+              [
+                "quantum computing",
+                "computing"
+              ]
+            ],
+            "missing_keywords": [
+              "neural networks"
+            ],
+            "interpretation": "Excelente"
+          },
+          "scores": {
+            "min_score": 0.005052225455896268,
+            "max_score": 0.10161487236992772,
+            "avg_score": 0.054318960808762626,
+            "score_range": 0.09656264691403145,
+            "score_distribution": {
+              "0.0-0.1": 28,
+              "0.1-0.2": 2,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "fundamentally transformed the landscape",
+            "transformed the landscape of modern",
+            "modern technology and business operations",
+            "Artificial intelligence and machine learning",
+            "machine learning have fundamentally transformed",
+            "landscape of modern technology",
+            "Artificial intelligence and machine",
+            "Artificial intelligence",
+            "business operations",
+            "fundamentally transformed"
+          ]
+        },
+        "cache_stats": {
+          "hits": 2190,
+          "misses": 438,
+          "hit_rate": 83.33333333333334
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:10.111007"
+      },
+      "comprehensive_medicina_especializada": {
+        "status": "success",
+        "config": {
+          "name": "comprehensive",
+          "description": "Análise comprehensiva com máxima cobertura",
+          "config": {
+            "n": 5,
+            "top": 30,
+            "dedup_lim": 0.5,
+            "window_size": 3
+          },
+          "iterations": 5
+        },
+        "dataset": {
+          "name": "medicina_especializada",
+          "category": "medical",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 1247,
+          "word_count": 125
+        },
+        "performance": {
+          "iterations": 5,
+          "avg_time_ms": 11.194247599996743,
+          "median_time_ms": 10.877851999794075,
+          "min_time_ms": 10.183372000028612,
+          "max_time_ms": 12.836807999519806,
+          "std_dev_ms": 1.1275752841628277,
+          "times_ms": [
+            12.836807999519806,
+            11.816353000540403,
+            10.877851999794075,
+            10.183372000028612,
+            10.256853000100818
+          ]
+        },
+        "quality": {
+          "keywords_count": 30,
+          "keywords_sample": [
+            [
+              "precisão representa uma abordagem revolucionária",
+              0.00015809209968472402
+            ],
+            [
+              "medicina de precisão representa uma",
+              0.0008805033330157045
+            ],
+            [
+              "precisão representa uma abordagem",
+              0.0008805033330157045
+            ],
+            [
+              "representa uma abordagem revolucionária",
+              0.0008805033330157045
+            ],
+            [
+              "uma abordagem revolucionária que considera",
+              0.0008805033330157045
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 5,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 1,
+            "coverage_ratio": 0.25,
+            "found_keywords": [
+              [
+                "medicina de precisão",
+                "medicina de precisão representa uma"
+              ]
+            ],
+            "missing_keywords": [
+              "biomarcadores",
+              "imunoterapia",
+              "telemedicina"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.00015809209968472402,
+            "max_score": 0.06107707966375591,
+            "avg_score": 0.01638929316371639,
+            "score_range": 0.060918987564071186,
+            "score_distribution": {
+              "0.0-0.1": 30,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "precisão representa uma abordagem revolucionária",
+            "medicina de precisão representa uma",
+            "precisão representa uma abordagem",
+            "representa uma abordagem revolucionária",
+            "uma abordagem revolucionária que considera",
+            "vida para cada pessoa",
+            "estilo de vida para cada",
+            "ambiente e estilo de vida",
+            "variabilidade individual em genes",
+            "precisão representa uma"
+          ]
+        },
+        "cache_stats": {
+          "hits": 2440,
+          "misses": 488,
+          "hit_rate": 83.33333333333334
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:10.189463"
+      },
+      "comprehensive_economia_sustentavel": {
+        "status": "success",
+        "config": {
+          "name": "comprehensive",
+          "description": "Análise comprehensiva com máxima cobertura",
+          "config": {
+            "n": 5,
+            "top": 30,
+            "dedup_lim": 0.5,
+            "window_size": 3
+          },
+          "iterations": 5
+        },
+        "dataset": {
+          "name": "economia_sustentavel",
+          "category": "economics",
+          "size": "medium",
+          "language": "pt",
+          "text_length": 1158,
+          "word_count": 114
+        },
+        "performance": {
+          "iterations": 5,
+          "avg_time_ms": 10.220083400054136,
+          "median_time_ms": 10.055753999949957,
+          "min_time_ms": 9.599951999916811,
+          "max_time_ms": 10.915601000306197,
+          "std_dev_ms": 0.5154456563095832,
+          "times_ms": [
+            10.915601000306197,
+            10.550447999776225,
+            9.599951999916811,
+            9.978662000321492,
+            10.055753999949957
+          ]
+        },
+        "quality": {
+          "keywords_count": 30,
+          "keywords_sample": [
+            [
+              "economia circular emerge como alternativa",
+              0.00017759546708379692
+            ],
+            [
+              "circular emerge como alternativa sustentável",
+              0.00017759546708379692
+            ],
+            [
+              "alternativa sustentável ao modelo linear",
+              0.0004494578165155107
+            ],
+            [
+              "sustentável ao modelo linear tradicional",
+              0.0004494578165155107
+            ],
+            [
+              "modelo linear tradicional de produção",
+              0.0004494578165155107
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 5,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 4,
+            "found_count": 2,
+            "coverage_ratio": 0.5,
+            "found_keywords": [
+              [
+                "economia circular",
+                "economia circular emerge como alternativa"
+              ],
+              [
+                "energias renováveis",
+                "Energias renováveis como solar fotovoltaica"
+              ]
+            ],
+            "missing_keywords": [
+              "finanças sustentáveis",
+              "agricultura regenerativa"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.00017759546708379692,
+            "max_score": 0.05089877675769338,
+            "avg_score": 0.012528384690002213,
+            "score_range": 0.05072118129060958,
+            "score_distribution": {
+              "0.0-0.1": 30,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "economia circular emerge como alternativa",
+            "circular emerge como alternativa sustentável",
+            "alternativa sustentável ao modelo linear",
+            "sustentável ao modelo linear tradicional",
+            "modelo linear tradicional de produção",
+            "emerge como alternativa sustentável",
+            "como alternativa sustentável ao modelo",
+            "economia circular emerge como",
+            "circular emerge como alternativa",
+            "tradicional de produção e consumo"
+          ]
+        },
+        "cache_stats": {
+          "hits": 2175,
+          "misses": 435,
+          "hit_rate": 83.33333333333334
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:10.266359"
+      },
+      "comprehensive_relatorio_licenciatura_pdf": {
+        "status": "success",
+        "config": {
+          "name": "comprehensive",
+          "description": "Análise comprehensiva com máxima cobertura",
+          "config": {
+            "n": 5,
+            "top": 30,
+            "dedup_lim": 0.5,
+            "window_size": 3
+          },
+          "iterations": 5
+        },
+        "dataset": {
+          "name": "relatorio_licenciatura_pdf",
+          "category": "academic",
+          "size": "large",
+          "language": "pt",
+          "text_length": 13984,
+          "word_count": 1549
+        },
+        "performance": {
+          "iterations": 5,
+          "avg_time_ms": 109.01125840009627,
+          "median_time_ms": 104.7816159998547,
+          "min_time_ms": 97.19899900028395,
+          "max_time_ms": 132.65116899947316,
+          "std_dev_ms": 13.680875819484285,
+          "times_ms": [
+            103.88261800017062,
+            97.19899900028395,
+            104.7816159998547,
+            132.65116899947316,
+            106.54189000069891
+          ]
+        },
+        "quality": {
+          "keywords_count": 30,
+          "keywords_sample": [
+            [
+              "Teamcominformaçõessobrecontribuidores e mantenedores",
+              0.0
+            ],
+            [
+              "troubleshooting e Frequently",
+              0.0
+            ],
+            [
+              "troubleshooting e Frequently Asked",
+              0.0
+            ],
+            [
+              "troubleshooting e Frequently Asked Questions",
+              0.0
+            ],
+            [
+              "eficaz de qualquer biblio tecadesoftware",
+              0.006135835176825598
+            ]
+          ],
+          "consistency": {
+            "consistency_score": 1.0,
+            "executions_compared": 5,
+            "interpretation": "Alta"
+          },
+          "coverage": {
+            "expected_count": 15,
+            "found_count": 1,
+            "coverage_ratio": 0.06666666666666667,
+            "found_keywords": [
+              [
+                "YAKE",
+                "YAKE"
+              ]
+            ],
+            "missing_keywords": [
+              "keyword extraction",
+              "extração de palavras-chave",
+              "algoritmo",
+              "algorithm",
+              "processamento de linguagem natural",
+              "natural language processing",
+              "text mining",
+              "features",
+              "características",
+              "ranking",
+              "corpus",
+              "dataset",
+              "avaliação",
+              "evaluation"
+            ],
+            "interpretation": "Regular"
+          },
+          "scores": {
+            "min_score": 0.0,
+            "max_score": 0.03769213099955777,
+            "avg_score": 0.018921919199743124,
+            "score_range": 0.03769213099955777,
+            "score_distribution": {
+              "0.0-0.1": 30,
+              "0.1-0.2": 0,
+              "0.2-0.5": 0,
+              "0.5-1.0": 0,
+              ">1.0": 0
+            }
+          },
+          "all_keywords": [
+            "Teamcominformaçõessobrecontribuidores e mantenedores",
+            "troubleshooting e Frequently",
+            "troubleshooting e Frequently Asked",
+            "troubleshooting e Frequently Asked Questions",
+            "eficaz de qualquer biblio tecadesoftware",
+            "representa umaspeto fundamental para",
+            "acessível representa umaspeto fundamental para",
+            "para",
+            "utilização eficaz de qualquer biblio",
+            "Google Colab"
+          ]
+        },
+        "cache_stats": {
+          "hits": 2175,
+          "misses": 435,
+          "hit_rate": 83.33333333333334
+        },
+        "profiling": {},
+        "timestamp": "2025-10-30T17:12:10.949759"
+      }
+    },
+    "execution_metadata": {
+      "start_time": "2025-10-30T17:12:03.815400",
+      "end_time": null,
+      "duration": null,
+      "python_version": "3.10.12 (main, Nov  6 2024, 20:22:13) [GCC 11.4.0]",
+      "yake_version": "0.7.1",
+      "hostname": "unknown",
+      "user": "unknown"
+    },
+    "timestamp": "2025-10-30T17:12:10.951341"
+  }
+}
