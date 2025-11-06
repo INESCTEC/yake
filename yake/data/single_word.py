@@ -7,8 +7,14 @@ term frequency, position, and relationships with other terms to calculate
 a relevance score for each word.
 """
 
+import logging
 import math
+from typing import Dict, Set, Optional, Any
 import numpy as np
+import networkx as nx
+
+# Configure module logger
+logger = logging.getLogger(__name__)
 
 
 class SingleWord:
@@ -27,14 +33,14 @@ class SingleWord:
     # Use __slots__ to reduce memory overhead per instance
     __slots__ = ('id', 'g', 'data', '_graph_metrics_cache', '_graph_version')
 
-    def __init__(self, unique, idx, graph):
+    def __init__(self, unique: str, idx: int, graph: nx.DiGraph):
         """
         Initialize a SingleWord term object.
 
         Args:
-            unique (str): The unique normalized term this object represents
-            idx (int): Unique identifier for the term in the document
-            graph (networkx.DiGraph): Word co-occurrence graph from the document
+            unique: The unique normalized term this object represents
+            idx: Unique identifier for the term in the document
+            graph: Word co-occurrence graph from the document
         """
         self.id = idx  # Fast access needed as it's used in graph operations
         self.g = graph  # Fast access needed for network calculations
@@ -66,38 +72,38 @@ class SingleWord:
         }
 
     # Forward common dictionary operations to self.data
-    def __getitem__(self, key):
+    def __getitem__(self, key: str) -> Any:
         """
         Access attributes dictionary-style with obj['key'].
 
         Args:
-            key (str): The attribute key to access
+            key: The attribute key to access
 
         Returns:
-            Any: The value associated with the key
+            The value associated with the key
         """
         return self.data[key]
 
-    def __setitem__(self, key, value):
+    def __setitem__(self, key: str, value: Any) -> None:
         """
         Set attributes dictionary-style with obj['key'] = value.
 
         Args:
-            key (str): The attribute key to set
-            value (Any): The value to associate with the key
+            key: The attribute key to set
+            value: The value to associate with the key
         """
         self.data[key] = value
 
-    def get(self, key, default=None):
+    def get(self, key: str, default: Any = None) -> Any:
         """
         Get with default, mimicking dict.get().
 
         Args:
-            key (str): The attribute key to access
-            default (Any, optional): The default value if key doesn't exist
+            key: The attribute key to access
+            default: The default value if key doesn't exist
 
         Returns:
-            Any: The value associated with the key or the default value
+            The value associated with the key or the default value
         """
         return self.data.get(key, default)
 

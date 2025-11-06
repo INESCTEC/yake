@@ -7,7 +7,9 @@ preprocessing, term identification, co-occurrence analysis, and candidate
 keyword generation.
 """
 
+import logging
 import string
+from typing import Dict, List, Set, Optional, Any
 import networkx as nx
 import numpy as np
 
@@ -15,6 +17,9 @@ from segtok.tokenizer import web_tokenizer, split_contractions
 from .utils import pre_filter, tokenize_sentences, get_tag
 from .single_word import SingleWord
 from .composed_word import ComposedWord
+
+# Configure module logger
+logger = logging.getLogger(__name__)
 
 class DataCore:
     """
@@ -29,14 +34,19 @@ class DataCore:
         See property accessors below for available attributes.
     """
 
-    def __init__(self, text, stopword_set, config=None):
+    def __init__(
+        self,
+        text: str,
+        stopword_set: Set[str],
+        config: Optional[Dict[str, Any]] = None
+    ):
         """
         Initialize the data core with text and configuration.
 
         Args:
-            text (str): The input text to analyze for keyword extraction
-            stopword_set (set): A set of stopwords to filter out non-content words
-            config (dict, optional): Configuration options including:
+            text: The input text to analyze for keyword extraction
+            stopword_set: A set of stopwords to filter out non-content words
+            config: Configuration options including:
                 - windows_size (int): Size of word window for co-occurrence (default: 2)
                 - n (int): Maximum length of keyword phrases (default: 3)
                 - tags_to_discard (set): POS tags to ignore (default: {"u", "d"})
@@ -165,17 +175,22 @@ class DataCore:
         return self._state["collections"]["freq_ns"]
 
     # --- Internal utility methods ---
-    def _build(self, text, windows_size, n):
+    def _build(self, text: str, windows_size: int, n: int) -> None:
         """
         Build the core data structures from the input text.
 
-        This method handles the initial processing of text, including
-        pre-filtering, sentence segmentation, and word tokenization.
+        This method processes the input text to extract terms, build the co-occurrence graph,
+        and generate candidate keyphrases. It performs the following steps:
+        1. Pre-filters and tokenizes the text into sentences and words
+        2. Processes each word to create term objects
+        3. Builds a co-occurrence matrix based on the window size
+        4. Generates candidate keyphrases of various n-gram sizes
+        5. Updates internal data structures with the extracted information
 
         Args:
-            text (str): The input text to process
-            windows_size (int): Size of word window for co-occurrence analysis
-            n (int): Maximum n-gram length to consider for keyword candidates
+            text: Input text to process
+            windows_size: Size of window for co-occurrence matrix calculation
+            n: Maximum n-gram size to consider for candidate keyphrases
         """
         # Pre-process text for normalization
         text = pre_filter(text)
@@ -197,7 +212,13 @@ class DataCore:
         # Store the total number of processed words
         self.number_of_words = pos_text
 
-    def _process_sentence(self, sentence, sentence_id, pos_text, context):
+    def _process_sentence(
+        self,
+        sentence: List[str],
+        sentence_id: int,
+        pos_text: int,
+        context: Dict[str, Any]
+    ) -> int:
         """
         Process a single sentence from the document.
 
@@ -205,13 +226,13 @@ class DataCore:
         and processes each meaningful word.
 
         Args:
-            sentence (list): List of word tokens in the sentence
-            sentence_id (int): Unique identifier for this sentence
-            pos_text (int): Current global position in the text
-            context (dict): Processing context with configuration parameters
+            sentence: List of word tokens in the sentence
+            sentence_id: Unique identifier for this sentence
+            pos_text: Current global position in the text
+            context: Processing context with configuration parameters
 
         Returns:
-            int: Updated global position counter
+            Updated global position counter
         """
         # Initialize lists to store processed sentence components
         sentence_obj_aux = []  # Blocks of words within the sentence
@@ -381,7 +402,7 @@ class DataCore:
         """
         return get_tag(word, i, self.exclude)
 
-    def build_candidate(self, candidate_string):
+    def build_candidate(self, candidate_string: str) -> ComposedWord:
         """
         Build a candidate ComposedWord from a string.
 
@@ -390,10 +411,10 @@ class DataCore:
         convert external strings into the internal candidate representation.
 
         Args:
-            candidate_string (str): String to convert to a keyword candidate
+            candidate_string: String to convert to a keyword candidate
 
         Returns:
-            ComposedWord: A composed word object representing the candidate
+            A composed word object representing the candidate
         """
 
         # Tokenize the candidate string
@@ -424,7 +445,7 @@ class DataCore:
         # Create and return the composed word
         return ComposedWord(candidate_terms)
 
-    def build_single_terms_features(self, features=None):
+    def build_single_terms_features(self, features: Optional[List[str]] = None) -> None:
         """
         Calculates and updates statistical features for all single terms in the text.
         This includes term frequency statistics and other features specified in the
@@ -432,7 +453,7 @@ class DataCore:
         calculation.
 
         Args:
-            features (list, optional): Specific features to calculate
+            features: Specific features to calculate. If None, all available features will be built.
         """
         # Filter to valid terms (non-stopwords)
         valid_terms = [term for term in self.terms.values() if not term.stopword]
@@ -460,7 +481,7 @@ class DataCore:
         for term in self.terms.values():
             term.update_h(stats, features=features)
 
-    def build_mult_terms_features(self, features=None):
+    def build_mult_terms_features(self, features: Optional[List[str]] = None) -> None:
         """
         Build features for multi-word terms.
 
@@ -469,7 +490,7 @@ class DataCore:
         updated.
 
         Args:
-            features (list, optional): List of features to build. If None, all
+            features: List of features to build. If None, all
                 available features will be built.
         """
         # Update only valid candidates using single pass generator expression
@@ -478,18 +499,18 @@ class DataCore:
             if cand.is_valid():
                 cand.update_h(features=features)
 
-    def get_term(self, str_word, save_non_seen=True):
+    def get_term(self, str_word: str, save_non_seen: bool = True) -> SingleWord:
         """
         Get or create a term object for a word.
 
         Handles word normalization, stopword checking, and term object creation.
 
         Args:
-            str_word (str): The word to get a term object for
-            save_non_seen (bool, optional): Whether to save new terms to the collection
+            str_word: The word to get a term object for
+            save_non_seen: Whether to save new terms to the collection
 
         Returns:
-            SingleWord: Term object representing this word
+            Term object representing this word
         """
         # Normalize the term (convert to lowercase)
         unique_term = str_word.lower()

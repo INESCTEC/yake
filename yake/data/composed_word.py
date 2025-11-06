@@ -7,9 +7,16 @@ from individual terms, scoring of candidate phrases, and validation to determine
 which phrases make good keyword candidates.
 """
 
+import logging
+from typing import List, Tuple, Set, Optional, Any
 import numpy as np
 import jellyfish
 from .utils import STOPWORD_WEIGHT
+
+# Configure module logger
+logger = logging.getLogger(__name__)
+
+# pylint: disable=too-many-instance-attributes
 
 
 class ComposedWord:
@@ -30,14 +37,14 @@ class ComposedWord:
     __slots__ = ('_tags', '_kw', '_unique_kw', '_size', '_terms', '_tf',
                  '_integrity', '_h', '_start_or_end_stopwords')
 
-    def __init__(self, terms):
+    def __init__(self, terms: Optional[List[Tuple[str, str, Any]]]):
         """
         Initialize a ComposedWord object representing a multi-word term.
 
         Args:
-            terms (list): List of tuples (tag, word, term_obj) representing
-                          the individual words in this phrase. Can be None to
-                          initialize an invalid candidate.
+            terms: List of tuples (tag, word, term_obj) representing
+                   the individual words in this phrase. Can be None to
+                   initialize an invalid candidate.
         """
         # If terms is None, initialize an invalid candidate
         if terms is None:

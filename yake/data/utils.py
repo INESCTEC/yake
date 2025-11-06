@@ -22,7 +22,7 @@ _CAPITAL_LETTER_PATTERN = re.compile(r"^(\s*([A-Z]))")
 STOPWORD_WEIGHT = "bi"
 
 
-def pre_filter(text):
+def pre_filter(text: str) -> str:
     """Pre-filter text before processing.
 
     This function prepares raw text for keyword extraction by normalizing its format.
@@ -62,7 +62,7 @@ def pre_filter(text):
     return buffer
 
 
-def tokenize_sentences(text):
+def tokenize_sentences(text: str) -> list:
     """
     Split text into sentences and tokenize into words.
 
@@ -72,11 +72,11 @@ def tokenize_sentences(text):
     or invalid tokens.
 
     Args:
-        text (str): The input text to be tokenized
+        text: The input text to be tokenized
 
     Returns:
-        list: A nested list structure where each inner list contains the tokens
-              for a single sentence in the original text
+        A nested list structure where each inner list contains the tokens
+        for a single sentence in the original text
     """
     return [
         # Inner list: tokenize each sentence into words
@@ -94,7 +94,7 @@ def tokenize_sentences(text):
 
 
 @lru_cache(maxsize=10000)
-def get_tag(word, i, exclude):
+def get_tag(word: str, i: int, exclude: frozenset) -> str:
     """
     Determine the linguistic tag of a word based on its characteristics.
 
@@ -107,12 +107,12 @@ def get_tag(word, i, exclude):
     parameter must be a frozenset (immutable) to be hashable for caching.
 
     Args:
-        word (str): The word to classify
-        i (int): Position of the word within its sentence (0 = first word)
-        exclude (frozenset): Frozenset of characters to consider as punctuation/special chars
+        word: The word to classify
+        i: Position of the word within its sentence (0 = first word)
+        exclude: Frozenset of characters to consider as punctuation/special chars
 
     Returns:
-        str: A single character tag representing the word type:
+        A single character tag representing the word type:
             - "d": Digit or numeric value
             - "u": Unusual word (mixed alphanumeric or special characters)
             - "a": Acronym (all uppercase)
