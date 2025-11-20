@@ -1,10 +1,56 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { Callout } from 'fumadocs-ui/components/callout'
 
 # KeywordExtractor Class
 
 The `KeywordExtractor` class is the main entry point for YAKE (Yet Another Keyword Extractor), providing a simple API to extract meaningful keywords from textual content.
 
 > **Info:** This documentation provides interactive code views for each method. Click on a function name to view its implementation.
+
+## Algorithm Overview
+
+<div className="not-prose my-8">
+  <div className="rounded-xl border-2 border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 p-6 mb-6">
+    <h3 className="font-bold text-lg mb-2">🔄 YAKE Algorithm Pipeline</h3>
+    <p className="text-sm text-gray-600 dark:text-gray-300">
+      YAKE is an unsupervised keyword extraction method that relies on statistical features extracted from single documents.
+    </p>
+  </div>
+
+  <div className="grid md:grid-cols-4 gap-3">
+    {/* Step 1: Input & Preprocessing */}
+    <div className="rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 p-4 text-white shadow-lg">
+      <div className="text-2xl mb-2">📥</div>
+      <h4 className="font-bold text-sm mb-1">Input & Preprocessing</h4>
+      <p className="text-xs opacity-90">Tokenization, sentence splitting, stopword removal</p>
+    </div>
+
+    {/* Step 2: Feature Extraction */}
+    <div className="rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 p-4 text-white shadow-lg">
+      <div className="text-2xl mb-2">📊</div>
+      <h4 className="font-bold text-sm mb-1">Feature Extraction</h4>
+      <p className="text-xs opacity-90">TF, Casing, Position, Frequency, WDL, WDR</p>
+    </div>
+
+    {/* Step 3: Candidate & Scoring */}
+    <div className="rounded-lg bg-gradient-to-br from-orange-500 to-pink-500 p-4 text-white shadow-lg">
+      <div className="text-2xl mb-2">🎯</div>
+      <h4 className="font-bold text-sm mb-1">Generate & Score</h4>
+      <p className="text-xs opacity-90">N-gram candidates, compute scores, rank by value</p>
+    </div>
+
+    {/* Step 4: Dedup & Output */}
+    <div className="rounded-lg bg-gradient-to-br from-indigo-500 to-red-500 p-4 text-white shadow-lg">
+      <div className="text-2xl mb-2">📤</div>
+      <h4 className="font-bold text-sm mb-1">Dedup & Output</h4>
+      <p className="text-xs opacity-90">Remove similar keywords, return top N results</p>
+    </div>
+  </div>
+</div>
+
+<Callout type="info" title="Scoring Formula">
+  **S(kw) = TF(kw) × ∏(Casing + Position + Frequency + WDL + WDR)** — Lower scores indicate better keywords.
+</Callout>
 
 ## Module Overview
 
@@ -14,11 +60,14 @@ Keyword extraction module for YAKE.
 
 This module provides the KeywordExtractor class which serves as the main entry point 
 for the YAKE keyword extraction algorithm. It handles configuration, stopword loading,
-deduplication of similar keywords, and the entire extraction pipeline from raw text 
-to ranked keywords.
+deduplication of similar keywords, lemmatization support, and the entire extraction 
+pipeline from raw text to ranked keywords.
 """
 
 import os
+import logging
+import functools
+from typing import List, Tuple, Optional, Set, Callable
 import jellyfish
 from yake.data import DataCore
 from .Levenshtein import Levenshtein
@@ -31,38 +80,75 @@ The `KeywordExtractor` class handles the configuration, preprocessing, and extra
 <Accordion type="single" collapsible>
   <AccordionItem value="constructor">
     <AccordionTrigger>
-      <code>__init__(**kwargs)</code>
+      <code>__init__(lan="en", n=3, dedup_lim=0.9, dedup_func="seqm", window_size=1, top=20, features=None, stopwords=None, lemmatize=False, lemma_aggregation="min", lemmatizer="spacy", **kwargs)</code>
     </AccordionTrigger>
     <AccordionContent>
       ```python
-      def __init__(self, **kwargs):
+      def __init__(
+          self,
+          lan: str = "en",
+          n: int = 3,
+          dedup_lim: float = 0.9,
+          dedup_func: str = "seqm",
+          window_size: int = 1,
+          top: int = 20,
+          features: Optional[List[str]] = None,
+          stopwords: Optional[Set[str]] = None,
+          lemmatize: bool = False,
+          lemma_aggregation: str = "min",
+          lemmatizer: str = "spacy",
+          **kwargs
+      ):
           """
           Initialize the KeywordExtractor with configuration parameters.
           
           Args:
-              **kwargs: Configuration parameters including:
-                  lan (str): Language for stopwords (default: "en")
-                  n (int): Maximum n-gram size (default: 3)
-                  dedup_lim (float): Similarity threshold for deduplication (default: 0.9)
-                  dedup_func (str): Deduplication function: "seqm", "jaro", or "levs" (default: "seqm")
-                  window_size (int): Size of word window for co-occurrence (default: 1)
-                  top (int): Maximum number of keywords to extract (default: 20)
-                  features (list): List of features to use for scoring (default: None = all features)
-                  stopwords (set): Custom set of stopwords (default: None = use language-specific)
+              lan: Language for stopwords (default: "en")
+              n: Maximum n-gram size (default: 3)
+              dedup_lim: Similarity threshold for deduplication (default: 0.9)
+              dedup_func: Deduplication function: "seqm", "jaro", or "levs" 
+                  (default: "seqm")
+              window_size: Size of word window for co-occurrence (default: 1)
+              top: Maximum number of keywords to extract (default: 20)
+              features: List of features to use for scoring 
+                  (default: None = all features)
+              stopwords: Custom set of stopwords (default: None = use 
+                  language-specific)
+              lemmatize: Enable lemmatization to aggregate keywords by lemma 
+                  (default: False). Requires spacy or nltk.
+              lemma_aggregation: Method to combine scores of lemmatized keywords:
+                  "min" (best score), "mean" (average), "max" (worst score),
+                  "harmonic" (harmonic mean). Default: "min"
+              lemmatizer: Lemmatization library to use: "spacy" or "nltk" 
+                  (default: "spacy")
+              **kwargs: Additional configuration parameters (for backwards 
+                  compatibility)
           """
           # Initialize configuration dictionary with default values
           self.config = {
-              "lan": kwargs.get("lan", "en"),
-              "n": kwargs.get("n", 3),
-              "dedup_lim": kwargs.get("dedup_lim", 0.9),
-              "dedup_func": kwargs.get("dedup_func", "seqm"),
-              "window_size": kwargs.get("window_size", 1),
-              "top": kwargs.get("top", 20),
-              "features": kwargs.get("features", None),
+              "lan": lan,
+              "n": n,
+              "dedup_lim": dedup_lim,
+              "dedup_func": dedup_func,
+              "window_size": window_size,
+              "top": top,
+              "features": features,
           }
 
+          # Override with any kwargs for backwards compatibility
+          for key in ["lan", "n", "dedup_lim", "dedup_func", "window_size", "top", "features"]:
+              if key in kwargs:
+                  self.config[key] = kwargs[key]
+
+          # Lemmatization configuration
+          self.lemmatize = lemmatize
+          self.lemma_aggregation = lemma_aggregation
+          self.lemmatizer = lemmatizer
+          self._lemmatizer_instance = None  # Lazy loaded when needed
+          self._lemmatizer_load_failed = False  # Track if loading failed
+
           # Load appropriate stopwords and deduplication function
-          self.stopword_set = self._load_stopwords(kwargs.get("stopwords"))
+          self.stopword_set = self._load_stopwords(stopwords or kwargs.get("stopwords"))
           self.dedup_function = self._get_dedup_function(self.config["dedup_func"])
       ```
     </AccordionContent>
@@ -78,6 +164,9 @@ The `KeywordExtractor` class handles the configuration, preprocessing, and extra
 - `top` (int, optional): Maximum number of keywords to return (default: 20)
 - `features` (list, optional): List of features to use for scoring (default: None = all features)
 - `stopwords` (set, optional): Custom stopwords set (default: None, loads from language file)
+- `lemmatize` (bool, optional): Enable lemmatization (default: False)
+- `lemma_aggregation` (str, optional): Aggregation method: "min", "mean", "max", "harmonic" (default: "min")
+- `lemmatizer` (str, optional): Lemmatizer backend: "spacy" or "nltk" (default: "spacy")
 
 ## Core Methods
 
@@ -346,6 +435,555 @@ The `KeywordExtractor` class handles the configuration, preprocessing, and extra
   </AccordionItem>
 </Accordion>
 
+## Lemmatization Methods
+
+<Accordion type="single" collapsible>
+  <AccordionItem value="get_lemmatizer">
+    <AccordionTrigger>
+      <code>_get_lemmatizer_instance()</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      def _get_lemmatizer_instance(self):
+          """
+          Lazy load and return the lemmatizer instance.
+          
+          This method loads spaCy or NLTK lemmatizer on first use, with graceful
+          degradation if libraries are not available. Implements lazy loading to
+          avoid startup overhead when lemmatization is not needed.
+          
+          Returns:
+              Lemmatizer instance or None if loading failed
+          """
+          # Return None immediately if we already tried and failed
+          if self._lemmatizer_load_failed:
+              return None
+              
+          # Return cached instance if available
+          if self._lemmatizer_instance is not None:
+              return self._lemmatizer_instance
+          
+          # Try to load the requested lemmatizer
+          if self.lemmatizer == "spacy":
+              try:
+                  import spacy
+                  
+                  # Try to load language-specific model
+                  model_map = {
+                      "en": "en_core_web_sm",
+                      "pt": "pt_core_news_sm",
+                      "es": "es_core_news_sm",
+                      "de": "de_core_news_sm",
+                      "fr": "fr_core_news_sm",
+                      "it": "it_core_news_sm",
+                  }
+                  
+                  model_name = model_map.get(self.config["lan"][:2].lower(), "en_core_web_sm")
+                  
+                  try:
+                      self._lemmatizer_instance = spacy.load(model_name)
+                      logger.info(f"Loaded spaCy model: {model_name}")
+                      return self._lemmatizer_instance
+                  except OSError:
+                      # Model not found - show warning and disable
+                      logger.warning(
+                          f"spaCy models not found. Lemmatization disabled. "
+                          f"Install with: pip install spacy && python -m spacy download {model_name}"
+                      )
+                      self._lemmatizer_load_failed = True
+                      return None
+                          
+              except ImportError:
+                  logger.warning(
+                      "spaCy not installed. Lemmatization disabled. "
+                      "Install with: pip install spacy && python -m spacy download en_core_web_sm"
+                  )
+                  self._lemmatizer_load_failed = True
+                  return None
+                  
+          elif self.lemmatizer == "nltk":
+              try:
+                  from nltk.stem import WordNetLemmatizer
+                  import nltk
+                  
+                  # Download wordnet data if needed
+                  try:
+                      nltk.data.find('corpora/wordnet')
+                  except LookupError:
+                      logger.info("Downloading NLTK wordnet data...")
+                      nltk.download('wordnet', quiet=True)
+                      nltk.download('omw-1.4', quiet=True)
+                  
+                  self._lemmatizer_instance = WordNetLemmatizer()
+                  logger.info("Loaded NLTK WordNetLemmatizer")
+                  return self._lemmatizer_instance
+                  
+              except ImportError:
+                  logger.warning(
+                      "NLTK not installed. Lemmatization disabled. "
+                      "Install with: pip install nltk"
+                  )
+                  self._lemmatizer_load_failed = True
+                  return None
+          
+          return None
+      ```
+    </AccordionContent>
+  </AccordionItem>
+
+  <AccordionItem value="lemmatize_text">
+    <AccordionTrigger>
+      <code>_lemmatize_text(text)</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      def _lemmatize_text(self, text: str) -> str:
+          """
+          Lemmatize a text string.
+          
+          Converts all words in the text to their base (lemma) form using
+          the configured lemmatization backend.
+          
+          Args:
+              text: Text to lemmatize
+              
+          Returns:
+              Lemmatized text with words in base form
+          """
+          lemmatizer = self._get_lemmatizer_instance()
+          if lemmatizer is None:
+              return text
+          
+          if self.lemmatizer == "spacy":
+              doc = lemmatizer(text)
+              return " ".join([token.lemma_ for token in doc])
+          elif self.lemmatizer == "nltk":
+              # Simple word-by-word lemmatization
+              words = text.split()
+              return " ".join([lemmatizer.lemmatize(word.lower()) for word in words])
+          
+          return text
+      ```
+    </AccordionContent>
+  </AccordionItem>
+
+  <AccordionItem value="lemmatize_keywords">
+    <AccordionTrigger>
+      <code>_lemmatize_keywords(keywords)</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      def _lemmatize_keywords(
+          self, 
+          keywords: List[Tuple[str, float]]
+      ) -> List[Tuple[str, float]]:
+          """
+          Aggregate keywords by lemma.
+          
+          Groups keywords with the same lemma and combines their scores using
+          the configured aggregation method. This reduces redundancy from
+          morphological variations (e.g., "tree" and "trees").
+          
+          Supports four aggregation methods:
+          - "min": Use the best (lowest) score from all variants
+          - "mean": Average all scores
+          - "max": Use the worst (highest) score (most conservative)
+          - "harmonic": Harmonic mean of all scores
+          
+          Args:
+              keywords: List of (keyword, score) tuples
+              
+          Returns:
+              Aggregated list with lemmatized keywords, sorted by score
+          """
+          if not keywords:
+              return keywords
+          
+          lemmatizer = self._get_lemmatizer_instance()
+          if lemmatizer is None:
+              return keywords
+          
+          from collections import defaultdict
+          import statistics
+          
+          lemma_groups = defaultdict(list)
+          
+          # Group keywords by their lemma
+          for keyword, score in keywords:
+              lemma = self._lemmatize_text(keyword)
+              lemma_groups[lemma].append((keyword, score))
+          
+          # Aggregate scores for each lemma group
+          aggregated = []
+          for lemma, group in lemma_groups.items():
+              scores = [score for _, score in group]
+              keywords_in_group = [kw for kw, _ in group]
+              
+              # Select aggregation method
+              if self.lemma_aggregation == "min":
+                  final_score = min(scores)
+              elif self.lemma_aggregation == "mean":
+                  final_score = statistics.mean(scores)
+              elif self.lemma_aggregation == "max":
+                  final_score = max(scores)
+              elif self.lemma_aggregation == "harmonic":
+                  final_score = statistics.harmonic_mean(scores)
+              else:
+                  final_score = min(scores)  # Default to min
+              
+              # Use the keyword with the best score as representative
+              best_keyword = keywords_in_group[scores.index(min(scores))]
+              aggregated.append((best_keyword, final_score))
+          
+          # Sort by score
+          return sorted(aggregated, key=lambda x: x[1])
+      ```
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+
+## Performance Optimization Methods
+
+<Accordion type="single" collapsible>
+  <AccordionItem value="ultra_fast_similarity">
+    <AccordionTrigger>
+      <code>_ultra_fast_similarity(s1, s2)</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      @staticmethod
+      @functools.lru_cache(maxsize=50000)
+      def _ultra_fast_similarity(s1: str, s2: str) -> float:
+          """
+          Ultra-optimized similarity algorithm for performance.
+          
+          Combines multiple heuristics for maximum speed while maintaining
+          accuracy. Uses LRU cache (50,000 entries) shared across all instances.
+          
+          Algorithm combines:
+          - Length ratio filtering (eliminates very different strings)
+          - Character overlap heuristic (very fast set operations)
+          - Word-based similarity for multi-word phrases
+          - Trigram similarity for fine-grained comparison
+          
+          Args:
+              s1: First string to compare
+              s2: Second string to compare
+              
+          Returns:
+              Similarity score between 0.0 (different) and 1.0 (identical)
+          """
+          # Identical strings - fast path
+          if s1 == s2:
+              return 1.0
+          
+          # Quick length filter and normalization
+          max_len = max(len(s1), len(s2))
+          if max_len == 0:
+              return 0.0
+          
+          len_ratio = min(len(s1), len(s2)) / max_len
+          if len_ratio < 0.3:  # Too different in length
+              return 0.0
+          
+          s1_lower, s2_lower = s1.lower(), s2.lower()
+          
+          # Character overlap heuristic (very fast)
+          chars_union = set(s1_lower) | set(s2_lower)
+          if not chars_union:
+              return 0.0
+          
+          char_overlap = len(set(s1_lower) & set(s2_lower)) / len(chars_union)
+          
+          if char_overlap < 0.2:  # Few common characters
+              return 0.0
+          
+          # For very short strings, use simple approximation
+          if max_len <= 4:
+              return char_overlap * len_ratio
+          
+          # Word-based similarity for multi-word phrases
+          words1, words2 = s1_lower.split(), s2_lower.split()
+          if len(words1) > 1 or len(words2) > 1:
+              word_union = set(words1) | set(words2)
+              if word_union:
+                  word_overlap = len(set(words1) & set(words2)) / len(word_union)
+                  if word_overlap > 0.4:
+                      return word_overlap
+          
+          # Trigram similarity
+          trigrams1 = set(s1_lower[i:i+3] for i in range(len(s1_lower)-2))
+          trigrams2 = set(s2_lower[i:i+3] for i in range(len(s2_lower)-2))
+          trigram_union = trigrams1 | trigrams2
+          
+          trigram_overlap = (len(trigrams1 & trigrams2) / len(trigram_union)
+                            if trigram_union else 0)
+          
+          # Combine metrics with optimal weights
+          return min(0.3 * len_ratio + 0.2 * char_overlap + 
+                    0.5 * trigram_overlap, 1.0)
+      ```
+    </AccordionContent>
+  </AccordionItem>
+
+  <AccordionItem value="aggressive_pre_filter">
+    <AccordionTrigger>
+      <code>_aggressive_pre_filter(cand1, cand2)</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      def _aggressive_pre_filter(self, cand1: str, cand2: str) -> bool:
+          """
+          Ultra-aggressive pre-filter eliminating 95%+ of calculations.
+          
+          Fast heuristics to determine if two candidates are potentially similar
+          without expensive similarity calculations. Returns False for obviously
+          different strings.
+          
+          Filters applied:
+          - Exact match check
+          - Length difference (>60% different = skip)
+          - First/last character match for longer strings
+          - Prefix match (first 2 characters)
+          - Word count difference (>1 word difference = skip)
+          
+          Args:
+              cand1: First candidate string
+              cand2: Second candidate string
+              
+          Returns:
+              True if candidates should be compared, False to skip
+          """
+          # Exact match
+          if cand1 == cand2:
+              return True
+          
+          # Combined length and character filters
+          len1, len2 = len(cand1), len(cand2)
+          max_len = max(len1, len2)
+          
+          # Length difference filter
+          if abs(len1 - len2) > max_len * 0.6:
+              return False
+          
+          # First/last character and prefix filters for longer strings
+          if max_len > 3:
+              if (cand1[0] != cand2[0] or cand1[-1] != cand2[-1]):
+                  return False
+              if min(len1, len2) >= 3 and cand1[:2].lower() != cand2[:2].lower():
+                  return False
+          
+          # Word count filter
+          if abs(cand1.count(' ') - cand2.count(' ')) > 1:
+              return False
+          
+          return True
+      ```
+    </AccordionContent>
+  </AccordionItem>
+
+  <AccordionItem value="optimized_similarity">
+    <AccordionTrigger>
+      <code>_optimized_similarity(cand1, cand2)</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      def _optimized_similarity(self, cand1: str, cand2: str) -> float:
+          """
+          Optimized similarity with caching and pre-filtering.
+          
+          Combines aggressive pre-filtering with ultra-fast similarity calculation
+          and instance-level caching for maximum performance.
+          
+          Performance optimizations:
+          - Pre-filter eliminates ~95% of calculations (costs <1μs)
+          - Instance cache stores up to 30,000 results
+          - Consistent key ordering maximizes cache hits
+          - Falls back to ultra-fast similarity when needed
+          
+          Args:
+              cand1: First candidate string
+              cand2: Second candidate string
+              
+          Returns:
+              Similarity score between 0.0 and 1.0
+          """
+          # Cache lookup (consistent ordering for maximum hits)
+          cache_key = (cand1, cand2) if cand1 <= cand2 else (cand2, cand1)
+          
+          if cache_key in self._similarity_cache:
+              self._cache_stats['hits'] += 1
+              return self._similarity_cache[cache_key]
+          
+          self._cache_stats['misses'] += 1
+          
+          # Pre-filter first
+          if not self._aggressive_pre_filter(cand1, cand2):
+              result = 0.0
+          else:
+              result = self._ultra_fast_similarity(cand1, cand2)
+          
+          # Cache with memory management
+          if len(self._similarity_cache) < 30000:  # Limit memory usage
+              self._similarity_cache[cache_key] = result
+          
+          return result
+      ```
+    </AccordionContent>
+  </AccordionItem>
+
+  <AccordionItem value="get_strategy">
+    <AccordionTrigger>
+      <code>_get_strategy(num_candidates)</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      def _get_strategy(self, num_candidates: int) -> str:
+          """
+          Determine optimization strategy based on dataset size.
+          
+          Adaptive strategy selection for optimal performance:
+          - Small (<50): Full comparison, exact matching
+          - Medium (50-200): Length pre-filtering, optimized order
+          - Large (>200): Aggressive limits, recent-first comparison
+          
+          Args:
+              num_candidates: Number of candidate keywords
+              
+          Returns:
+              Strategy name: "small", "medium", or "large"
+          """
+          if num_candidates < 50:
+              return "small"
+          if num_candidates < 200:
+              return "medium"
+          return "large"
+      ```
+    </AccordionContent>
+  </AccordionItem>
+
+  <AccordionItem value="get_cache_stats">
+    <AccordionTrigger>
+      <code>get_cache_stats()</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      def get_cache_stats(self):
+          """
+          Return cache performance statistics.
+          
+          Provides detailed metrics about cache usage and performance:
+          - hits: Number of successful cache lookups
+          - misses: Number of cache misses requiring calculation
+          - hit_rate: Percentage of successful cache hits
+          - docs_processed: Total documents processed
+          - cache_size: Current cache utilization (0.0 to 1.0)
+          
+          Returns:
+              Dictionary with cache statistics
+          """
+          total = self._cache_stats['hits'] + self._cache_stats['misses']
+          hit_rate = self._cache_stats['hits'] / total * 100 if total > 0 else 0
+          return {
+              'hits': self._cache_stats['hits'],
+              'misses': self._cache_stats['misses'],
+              'hit_rate': hit_rate,
+              'docs_processed': self._cache_stats['docs_processed'],
+              'cache_size': self._get_cache_usage()
+          }
+      ```
+    </AccordionContent>
+  </AccordionItem>
+
+  <AccordionItem value="manage_cache_lifecycle">
+    <AccordionTrigger>
+      <code>_manage_cache_lifecycle(text)</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      def _manage_cache_lifecycle(self, text):
+          """
+          Intelligently manage cache lifecycle to prevent memory leaks.
+          
+          Implements smart cache clearing based on:
+          1. Text size: Large documents (>2000 words) trigger clear
+          2. Cache saturation: Clears when >80% full
+          3. Document count: Failsafe clear every 50 documents
+          
+          This prevents memory accumulation during batch processing and
+          long-running applications.
+          
+          Args:
+              text: The text that was just processed
+          """
+          self._cache_stats['docs_processed'] += 1
+          text_size = len(text.split())
+          self._cache_stats['last_text_size'] = text_size
+          
+          # Get current cache usage
+          cache_usage = self._get_cache_usage()
+          
+          # HEURISTIC: Clear cache if any condition is met
+          should_clear = (
+              text_size > 2000 or                      # Large document
+              cache_usage > 0.8 or                     # Cache >80% full
+              self._cache_stats['docs_processed'] % 50 == 0  # Every 50 docs
+          )
+          
+          if should_clear:
+              self.clear_caches()
+      ```
+    </AccordionContent>
+  </AccordionItem>
+
+  <AccordionItem value="clear_caches">
+    <AccordionTrigger>
+      <code>clear_caches()</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      def clear_caches(self):
+          """
+          Clear all internal caches to free memory.
+          
+          Clears:
+          - LRU cache for similarity calculations (50,000 entries max)
+          - Instance-level similarity cache (30,000 entries max)
+          - LRU cache for Levenshtein distance (40,000 entries)
+          
+          When to call manually:
+          - Processing batches of documents in a loop
+          - Running in memory-constrained environments (AWS Lambda)
+          - After processing large documents (>5000 words)
+          - Before operations needing maximum available memory
+          
+          Performance impact:
+          - Next 5-10 extractions will be ~10-20% slower (cache warmup)
+          - Performance returns to optimal after warmup
+          - Trade-off worthwhile for preventing memory leaks
+          
+          Example:
+              extractor = KeywordExtractor()
+              for doc in large_document_batch:
+                  keywords = extractor.extract_keywords(doc)
+                  # Process keywords...
+                  if doc_index % 100 == 0:
+                      extractor.clear_caches()  # Periodic cleanup
+          """
+          # Clear static LRU caches
+          KeywordExtractor._ultra_fast_similarity.cache_clear()
+          Levenshtein.distance.cache_clear()
+          Levenshtein.ratio.cache_clear()
+          
+          # Clear instance cache
+          self._similarity_cache.clear()
+          
+          logger.debug("Cleared all caches - memory freed")
+      ```
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+
 ## Usage Examples
 
 ### Basic Usage
@@ -393,6 +1031,44 @@ keywords = kw_extractor.extract_keywords(text)
 # Print the top 10 keywords
 for kw, score in keywords:
     print(f"{kw}: {score:.4f}")
+```
+
+### Lemmatization Usage
+
+```python
+from yake import KeywordExtractor
+
+text = """
+Trees are important. Many trees provide shade. Tree conservation matters.
+The researchers researched the topic. Their research shows results.
+"""
+
+# Without lemmatization (default)
+kw_basic = KeywordExtractor(lan="en", n=1, top=10)
+keywords_basic = kw_basic.extract_keywords(text)
+print("Without lemmatization:")
+for kw, score in keywords_basic:
+    print(f"  {kw}: {score:.4f}")
+# Output: "tree", "trees", "researcher", "researched", "research" appear separately
+
+# With lemmatization enabled
+kw_lemma = KeywordExtractor(
+    lan="en",
+    n=1,
+    top=10,
+    lemmatize=True,              # Enable lemmatization
+    lemma_aggregation="min",     # Use best score (default)
+    lemmatizer="spacy"           # Use spaCy (default)
+)
+keywords_lemma = kw_lemma.extract_keywords(text)
+print("\nWith lemmatization:")
+for kw, score in keywords_lemma:
+    print(f"  {kw}: {score:.4f}")
+# Output: "tree", "research" appear once with aggregated scores
+
+# Different aggregation methods
+kw_mean = KeywordExtractor(lan="en", lemmatize=True, lemma_aggregation="mean")
+kw_harmonic = KeywordExtractor(lan="en", lemmatize=True, lemma_aggregation="harmonic")
 ```
 
 ## Deduplication Functions

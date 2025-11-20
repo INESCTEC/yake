@@ -1,0 +1,326 @@
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+
+# Features Module
+
+The `features` module contains pure functions for calculating statistical features used to score and rank keyword candidates in YAKE.
+
+> **Info:** This module was introduced in YAKE 2.0 to separate feature calculations from data structures, improving testability and maintainability.
+
+## Module Overview
+
+```python
+"""
+Feature calculation module for YAKE keyword extraction.
+
+This module contains pure functions for calculating statistical features
+used to score and rank keyword candidates. Separating feature calculations
+from data structures improves testability and maintainability.
+
+Based on the modular architecture from the reference YAKE implementation.
+"""
+
+import logging
+import math
+from typing import Dict, Any, Tuple
+import numpy as np
+
+# Configure module logger
+logger = logging.getLogger(__name__)
+```
+
+This module provides stateless functions that calculate various statistical features for both single-word terms and multi-word expressions (n-grams).
+
+## Main Functions
+
+<Accordion type="single" collapsible>
+  <AccordionItem value="calculate_term_features">
+    <AccordionTrigger>
+      <code>calculate_term_features(term, max_tf, avg_tf, std_tf, number_of_sentences)</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      def calculate_term_features(
+          term: Any,
+          max_tf: float,
+          avg_tf: float,
+          std_tf: float,
+          number_of_sentences: int
+      ) -> Dict[str, float]:
+          """
+          Calculate all statistical features for a single term.
+          
+          This function computes various statistical features that determine
+          a term's importance as a potential keyword. Features include term
+          relevance, frequency, spread, case information, and position.
+          
+          The features calculated are:
+          - WRel: Term relevance based on graph connectivity (co-occurrence)
+          - WFreq: Normalized term frequency
+          - WSpread: Distribution across sentences
+          - WCase: Capitalization pattern (prefers proper nouns)
+          - WPos: Position bias (earlier terms preferred)
+          - H: Overall importance score (lower is better)
+          
+          Args:
+              term: SingleWord object containing term information
+              max_tf: Maximum term frequency in the document
+              avg_tf: Average term frequency across all terms
+              std_tf: Standard deviation of term frequency
+              number_of_sentences: Total number of sentences in document
+              
+          Returns:
+              Dictionary with calculated features:
+              - w_rel: Term relevance score
+              - w_freq: Normalized frequency score
+              - w_spread: Sentence spread score
+              - w_case: Case sensitivity score
+              - w_pos: Position score
+              - pl: Left context weight
+              - pr: Right context weight
+              - h: Final importance score (H-score)
+          """
+          # Get graph metrics (cached in SingleWord)
+          metrics = term.graph_metrics
+          
+          # Calculate WRel (term relevance based on graph connectivity)
+          pwl = metrics['pwl']
+          pwr = metrics['pwr']
+          pl = metrics['wdl'] / max_tf if max_tf > 0 else 0
+          pr = metrics['wdr'] / max_tf if max_tf > 0 else 0
+          
+          w_rel = (0.5 + (pwl * (term.tf / max_tf))) + (0.5 + (pwr * (term.tf / max_tf)))
+          
+          # Calculate WFreq (normalized term frequency)
+          w_freq = term.tf / (avg_tf + std_tf) if (avg_tf + std_tf) > 0 else 0
+          
+          # Calculate WSpread (term spread across sentences)
+          w_spread = len(term.sentence_ids) / number_of_sentences
+          
+          # Calculate WCase (capitalization pattern)
+          w_case = max(term.tf_a, term.tf_n) / (1.0 + math.log(term.tf))
+          
+          # Calculate WPos (position feature using median)
+          positions = list(term.occurs.keys())
+          w_pos = math.log(math.log(3.0 + np.median(positions)))
+          
+          # Calculate H (overall importance score)
+          h_score = (w_pos * w_rel) / (
+              w_case + (w_freq / w_rel) + (w_spread / w_rel)
+          )
+          
+          return {
+              'w_rel': w_rel,
+              'w_freq': w_freq,
+              'w_spread': w_spread,
+              'w_case': w_case,
+              'w_pos': w_pos,
+              'pl': pl,
+              'pr': pr,
+              'h': h_score
+          }
+      ```
+    </AccordionContent>
+  </AccordionItem>
+
+  <AccordionItem value="calculate_composed_features">
+    <AccordionTrigger>
+      <code>calculate_composed_features(composed_word, stopword_weight='bi')</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      def calculate_composed_features(
+          composed_word: Any,
+          stopword_weight: str = 'bi'
+      ) -> Dict[str, float]:
+          """
+          Calculate features for multi-word expressions (n-grams).
+          
+          Combines features from individual terms to score the entire phrase,
+          with special handling for stopwords based on the weighting method.
+          
+          The features are aggregated from constituent terms using different
+          combination methods:
+          - TF: Product of term frequencies
+          - PL/PR: Multiplication with ratio adjustment
+          - H: Combined score using product and ratios
+          
+          Args:
+              composed_word: ComposedWord object containing the n-gram
+              stopword_weight: Method for handling stopwords:
+                  - 'bi': Bi-gram specific weighting (default)
+                  - 'h': Use H-score for weighting
+                  - 'none': No special stopword handling
+                  
+          Returns:
+              Dictionary with aggregated features for the multi-word expression
+          """
+          # Get features from constituent terms
+          sum_tf, prod_tf, ratio_tf = composed_word.get_composed_feature(
+              'tf', 
+              discart_stopword=(stopword_weight != 'none')
+          )
+          
+          sum_pl, prod_pl, ratio_pl = composed_word.get_composed_feature(
+              'pl',
+              discart_stopword=True
+          )
+          
+          sum_pr, prod_pr, ratio_pr = composed_word.get_composed_feature(
+              'pr',
+              discart_stopword=True
+          )
+          
+          # Calculate combined H-score
+          sum_h, prod_h, ratio_h = composed_word.get_composed_feature(
+              'h',
+              discart_stopword=True
+          )
+          
+          # Combine features based on n-gram size
+          if len(composed_word.terms) == 1:
+              # Single word - use its H-score directly
+              h_score = composed_word.terms[0].h
+          else:
+              # Multi-word - combine using product and ratios
+              h_score = prod_h / (sum_tf * (1.0 + sum_pl) * (1.0 + sum_pr))
+          
+          return {
+              'tf': prod_tf,
+              'pl': prod_pl * ratio_pl,
+              'pr': prod_pr * ratio_pr,
+              'h': h_score,
+              'integrity': composed_word.integrity
+          }
+      ```
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+
+## Helper Functions
+
+<Accordion type="single" collapsible>
+  <AccordionItem value="normalize_features">
+    <AccordionTrigger>
+      <code>normalize_features(features, max_vals)</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      def normalize_features(
+          features: Dict[str, float],
+          max_vals: Dict[str, float]
+      ) -> Dict[str, float]:
+          """
+          Normalize feature values to [0, 1] range.
+          
+          Divides each feature by its maximum observed value in the corpus
+          to create normalized, comparable scores.
+          
+          Args:
+              features: Dictionary of raw feature values
+              max_vals: Dictionary of maximum values for each feature
+              
+          Returns:
+              Dictionary of normalized feature values
+          """
+          normalized = {}
+          for key, value in features.items():
+              max_val = max_vals.get(key, 1.0)
+              if max_val > 0:
+                  normalized[key] = value / max_val
+              else:
+                  normalized[key] = 0.0
+          return normalized
+      ```
+    </AccordionContent>
+  </AccordionItem>
+
+  <AccordionItem value="safe_divide">
+    <AccordionTrigger>
+      <code>safe_divide(numerator, denominator, default=0.0)</code>
+    </AccordionTrigger>
+    <AccordionContent>
+      ```python
+      def safe_divide(
+          numerator: float,
+          denominator: float,
+          default: float = 0.0
+      ) -> float:
+          """
+          Safely divide two numbers, handling division by zero.
+          
+          Args:
+              numerator: Value to divide
+              denominator: Value to divide by
+              default: Value to return if denominator is zero (default: 0.0)
+              
+          Returns:
+              Result of division, or default if denominator is zero
+          """
+          if denominator == 0:
+              return default
+          return numerator / denominator
+      ```
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+
+## Feature Descriptions
+
+### Single-Term Features
+
+- **WRel (Term Relevance)**: Measures term importance based on co-occurrence patterns with other terms
+- **WFreq (Frequency)**: Normalized term frequency relative to corpus statistics
+- **WSpread (Spread)**: Distribution of term across document sentences
+- **WCase (Case)**: Capitalization patterns (favors proper nouns and acronyms)
+- **WPos (Position)**: Positional bias favoring terms appearing earlier in document
+- **H-Score**: Combined importance score (lower values indicate more important keywords)
+
+### Multi-Word Features
+
+- **TF (Term Frequency)**: Product of constituent term frequencies
+- **PL/PR (Context)**: Left and right context weights
+- **Integrity**: Cohesion measure for multi-word expressions
+- **H-Score**: Aggregated importance combining all constituent features
+
+## Usage Example
+
+```python
+from yake.data.features import calculate_term_features, calculate_composed_features
+from yake.data import DataCore
+
+# Build data representation
+text = "Natural language processing is important for AI applications."
+dc = DataCore(text=text, stopword_set={"is", "for"}, config={"windows_size": 1, "n": 3})
+dc.build_single_terms_features()
+dc.build_mult_terms_features()
+
+# Features are automatically calculated and stored in term objects
+for term in dc.terms.values():
+    print(f"{term.word}: H={term.h:.4f}, WRel={term.w_rel:.4f}")
+
+for candidate in dc.candidates.values():
+    if candidate.is_valid():
+        print(f"{candidate.kw}: H={candidate.h:.4f}")
+```
+
+## Integration with YAKE
+
+This module is used internally by:
+- `SingleWord.update_h()`: Calculates features for single terms
+- `ComposedWord.update_h()`: Calculates features for n-grams
+- `DataCore.build_single_terms_features()`: Batch feature calculation
+- `DataCore.build_mult_terms_features()`: N-gram feature aggregation
+
+## Performance Considerations
+
+- Features are calculated once and cached in term objects
+- Pure functions enable easy testing and optimization
+- Numpy is used for efficient median calculations
+- Feature calculation is the most computationally intensive part of YAKE
+
+## Dependencies
+
+- `logging`: For debug and error messages
+- `math`: For logarithmic calculations
+- `numpy`: For efficient statistical operations
+- `typing`: For type hints

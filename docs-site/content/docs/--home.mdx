@@ -2,42 +2,170 @@
 title: Yet Another Keyword Extractor (YAKE!)
 icon: GitCompareArrows
 ---
-> **Info:** Unsupervised Approach for Automatic Keyword Extraction using Text Features.
----
-YAKE! is a light-weight unsupervised automatic keyword extraction method which rests on text statistical features extracted from single documents to select the most important keywords of a text. Our system does not need to be trained on a particular set of documents, neither it depends on dictionaries, external-corpus, size of the text, language or domain.
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<div className="not-prose mb-8 flex flex-col gap-4">
+  <div className="rounded-lg border-2 border-blue-200 dark:border-blue-800 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 p-6">
+    <div className="flex items-start gap-4">
+      <div className="rounded-lg bg-blue-500 p-2">
+        <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+      <div>
+        <h3 className="font-bold text-lg mb-2">Unsupervised Automatic Keyword Extraction</h3>
+        <p className="text-sm text-gray-600 dark:text-gray-300">
+          YAKE! is a light-weight unsupervised automatic keyword extraction method which rests on text statistical features extracted from single documents to select the most important keywords of a text.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div className="grid md:grid-cols-3 gap-4">
+    <div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4 bg-white dark:bg-gray-800">
+      <div className="text-2xl mb-2">🚀</div>
+      <h4 className="font-semibold mb-1">No Training Required</h4>
+      <p className="text-sm text-gray-600 dark:text-gray-400">Works without corpus or dictionaries</p>
+    </div>
+    <div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4 bg-white dark:bg-gray-800">
+      <div className="text-2xl mb-2">🌍</div>
+      <h4 className="font-semibold mb-1">Multilingual</h4>
+      <p className="text-sm text-gray-600 dark:text-gray-400">Supports 25+ languages out-of-the-box</p>
+    </div>
+    <div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4 bg-white dark:bg-gray-800">
+      <div className="text-2xl mb-2">📄</div>
+      <h4 className="font-semibold mb-1">Single Document</h4>
+      <p className="text-sm text-gray-600 dark:text-gray-400">No corpus comparison needed</p>
+    </div>
+  </div>
+</div>
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tiagolv/yakerf/blob/gh-pages/1YAKE.ipynb)
+
 ---
-## Background
 
-Extracting keywords from texts has become a challenge for individuals and organizations as the information grows in complexity and size. The need to automate this task so that texts can be processed in a timely and adequate manner has led to the emergence of automatic keyword extraction tools. Despite the advances, there is a clear lack of multilingual online tools to automatically extract keywords from single documents. Yake! is a novel feature-based system for multi-lingual keyword extraction, which supports texts of different sizes, domain or languages. Unlike other approaches, Yake! does not rely on dictionaries nor thesauri, neither is trained against any corpora. Instead, it follows an unsupervised approach which builds upon features extracted from the text, making it thus applicable to documents written in different languages without the need for further knowledge. This can be beneficial for a large number of tasks and a plethora of situations where the access to training corpora is either limited or restricted.
+## 📚 Background
 
-## Main Features
+Extracting keywords from texts has become a challenge for individuals and organizations as the information grows in complexity and size. The need to automate this task so that texts can be processed in a timely and adequate manner has led to the emergence of automatic keyword extraction tools. 
 
-- Unsupervised approach
-- Corpus-Independent
-- Domain and Language Independent
-- Single-Document
+Despite the advances, there is a clear lack of multilingual online tools to automatically extract keywords from single documents. 
 
-## References
+<Callout type="info" title="YAKE! Innovation">
+  YAKE! is a novel feature-based system for multi-lingual keyword extraction, which supports texts of different sizes, domain or languages. Unlike other approaches, YAKE! does not rely on dictionaries nor thesauri, neither is trained against any corpora.
+</Callout>
 
-If you use "YAKE" in a work that leads to a scientific publication, we would appreciate it if you would kindly cite it in your manuscript.
+Instead, it follows an **unsupervised approach** which builds upon features extracted from the text, making it thus applicable to documents written in different languages without the need for further knowledge. This can be beneficial for a large number of tasks and a plethora of situations where the access to training corpora is either limited or restricted.
 
-- Campos, R., Mangaravite, V., Pasquali, A., Jatowt, A., Jorge, A., Nunes, C. and Jatowt, A. (2020). YAKE! Keyword Extraction from Single Documents using Multiple Local Features. In Information Sciences Journal. Elsevier, Vol 509, pp 257-289. [pdf](https://doi.org/10.1016/j.ins.2019.09.013)
+---
 
-- Campos R., Mangaravite V., Pasquali A., Jorge A.M., Nunes C., and Jatowt A. (2018). A Text Feature Based Automatic Keyword Extraction Method for Single Documents. In: Pasi G., Piwowarski B., Azzopardi L., Hanbury A. (eds). Advances in Information Retrieval. ECIR 2018 (Grenoble, France. March 26 – 29). Lecture Notes in Computer Science, vol 10772, pp. 684 - 691. [pdf](https://link.springer.com/chapter/10.1007/978-3-319-76941-7_63) (ECIR'18 Best Short Paper)
+## ✨ Main Features
 
-- Campos R., Mangaravite V., Pasquali A., Jorge A.M., Nunes C., and Jatowt A. (2018). YAKE! Collection-independent Automatic Keyword Extractor. In: Pasi G., Piwowarski B., Azzopardi L., Hanbury A. (eds). Advances in Information Retrieval. ECIR 2018 (Grenoble, France. March 26 – 29). Lecture Notes in Computer Science, vol 10772, pp. 806 - 810. [pdf](https://link.springer.com/chapter/10.1007/978-3-319-76941-7_80)
+<div className="not-prose grid md:grid-cols-2 gap-4 my-6">
+  <div className="rounded-lg border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-950/30 p-4">
+    <h4 className="font-bold text-blue-700 dark:text-blue-300 mb-2">🎯 Unsupervised Approach</h4>
+    <p className="text-sm text-gray-700 dark:text-gray-300">
+      No need for training data or labeled corpora. Works immediately on any text.
+    </p>
+  </div>
+  
+  <div className="rounded-lg border-l-4 border-green-500 bg-green-50 dark:bg-green-950/30 p-4">
+    <h4 className="font-bold text-green-700 dark:text-green-300 mb-2">📊 Corpus-Independent</h4>
+    <p className="text-sm text-gray-700 dark:text-gray-300">
+      Analyzes each document independently without requiring external reference corpora.
+    </p>
+  </div>
+  
+  <div className="rounded-lg border-l-4 border-purple-500 bg-purple-50 dark:bg-purple-950/30 p-4">
+    <h4 className="font-bold text-purple-700 dark:text-purple-300 mb-2">🌐 Domain and Language Independent</h4>
+    <p className="text-sm text-gray-700 dark:text-gray-300">
+      Works across different domains and languages without configuration changes.
+    </p>
+  </div>
+  
+  <div className="rounded-lg border-l-4 border-orange-500 bg-orange-50 dark:bg-orange-950/30 p-4">
+    <h4 className="font-bold text-orange-700 dark:text-orange-300 mb-2">📄 Single-Document Processing</h4>
+    <p className="text-sm text-gray-700 dark:text-gray-300">
+      Extracts keywords from individual documents with high accuracy.
+    </p>
+  </div>
+</div>
 
-## License
+---
 
-Copyright (C) 2018, INESC TEC [license](https://github.com/LIAAD/yake/blob/master/LICENSE).
+## 📖 References
 
-## Contributing
+<Callout type="warn" title="Citation Request">
+  If you use YAKE! in a work that leads to a scientific publication, we would appreciate it if you would kindly cite it in your manuscript.
+</Callout>
 
-When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change. Read more about becoming a contributor in [our GitHub repo](https://github.com/LIAAD/yake/blob/master/CONTRIBUTING.rst).
+### 📄 Main Publications
 
-### Thank you to the contributors of YAKE!
+<div className="space-y-4 my-6">
+  <div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4 bg-gray-50 dark:bg-gray-800/50">
+    <h4 className="font-semibold mb-2">Information Sciences Journal (2020)</h4>
+    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+      Campos, R., Mangaravite, V., Pasquali, A., Jatowt, A., Jorge, A., Nunes, C. and Jatowt, A. (2020). 
+      <strong> YAKE! Keyword Extraction from Single Documents using Multiple Local Features.</strong> 
+      Information Sciences Journal. Elsevier, Vol 509, pp 257-289.
+    </p>
+    <a href="https://doi.org/10.1016/j.ins.2019.09.013" className="text-blue-500 hover:text-blue-600 text-sm font-medium">
+      📥 Download PDF
+    </a>
+  </div>
+
+  <div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4 bg-gray-50 dark:bg-gray-800/50">
+    <h4 className="font-semibold mb-2">ECIR 2018 - Best Short Paper 🏆</h4>
+    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+      Campos R., Mangaravite V., Pasquali A., Jorge A.M., Nunes C., and Jatowt A. (2018). 
+      <strong> A Text Feature Based Automatic Keyword Extraction Method for Single Documents.</strong> 
+      In: Pasi G., Piwowarski B., Azzopardi L., Hanbury A. (eds). Advances in Information Retrieval. 
+      ECIR 2018 (Grenoble, France. March 26 – 29). Lecture Notes in Computer Science, vol 10772, pp. 684 - 691.
+    </p>
+    <a href="https://link.springer.com/chapter/10.1007/978-3-319-76941-7_63" className="text-blue-500 hover:text-blue-600 text-sm font-medium">
+      📥 Download PDF
+    </a>
+  </div>
+
+  <div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4 bg-gray-50 dark:bg-gray-800/50">
+    <h4 className="font-semibold mb-2">ECIR 2018 - Demo Paper</h4>
+    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+      Campos R., Mangaravite V., Pasquali A., Jorge A.M., Nunes C., and Jatowt A. (2018). 
+      <strong> YAKE! Collection-independent Automatic Keyword Extractor.</strong> 
+      In: Pasi G., Piwowarski B., Azzopardi L., Hanbury A. (eds). Advances in Information Retrieval. 
+      ECIR 2018 (Grenoble, France. March 26 – 29). Lecture Notes in Computer Science, vol 10772, pp. 806 - 810.
+    </p>
+    <a href="https://link.springer.com/chapter/10.1007/978-3-319-76941-7_80" className="text-blue-500 hover:text-blue-600 text-sm font-medium">
+      📥 Download PDF
+    </a>
+  </div>
+</div>
+
+---
+
+## 📜 License
+
+<div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4 bg-white dark:bg-gray-800 my-6">
+  <p className="text-sm mb-2">
+    Copyright (C) 2018, INESC TEC 
+  </p>
+  <a href="https://github.com/LIAAD/yake/blob/master/LICENSE" className="text-blue-500 hover:text-blue-600 font-medium text-sm">
+    View License →
+  </a>
+</div>
+
+---
+
+## 🤝 Contributing
+
+<Callout type="info" title="We Welcome Contributors!">
+  When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
+</Callout>
+
+Read more about becoming a contributor in [our GitHub repo](https://github.com/LIAAD/yake/blob/master/CONTRIBUTING.rst).
+
+### 👥 Thank you to the contributors of YAKE!
 
 <div className="flex flex-wrap gap-2 mt-4">
   <a href="https://github.com/arianpasquali">

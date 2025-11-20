@@ -1,24 +1,20 @@
 {
-  "home": {
+  "--home": {
     "title": "Home"
   },
-  "getting-started": {
+  "-getting-started": {
     "title": "Getting Started"
   },
-  "related-projects": {
+  "-related-projects": {
     "title": "Related Projects"
   },
   "about": {
     "title": "About"
   },
-  "--": {
-    "title": "Documentation",
+  "---": {
     "type": "separator"
   },
-  "core": {
-    "title": "Core"
-  },
-  "data": {
-    "title": "Data"
+  "Documentation": {
+    "title": "API Reference"
   }
 }

@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master 
+      - core-seperation
 
 jobs:
   build-and-deploy:

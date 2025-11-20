@@ -3,27 +3,235 @@ title: Related Projects
 icon: GitCompareArrows
 ---
 
-List of relevant projects using YAKE:
+import { Callout } from 'fumadocs-ui/components/callout';
 
-- [SparkNLP](https://github.com/JohnSnowLabs/spark-nlp) by [John Snow Labs](https://www.johnsnowlabs.com/). 
-Open source framework with full Python, Scala, and Java Support. Check [their documentation](https://nlp.johnsnowlabs.com/docs/en/annotators#yakekeywordextraction), [demo](https://demo.johnsnowlabs.com/public/KEYPHRASE_EXTRACTION/) and [google colab](https://colab.research.google.com/github/JohnSnowLabs/spark-nlp-workshop/blob/master/tutorials/streamlit_notebooks/KEYPHRASE_EXTRACTION.ipynb). A video on how to use spark nlp with yake can also be found [here](https://events.johnsnowlabs.com/john-snow-labs-nlu-become-a-data-science-superhero-with-one-line-of-python-code): 
+<div className="not-prose mb-8">
+  <div className="rounded-xl border-2 border-purple-200 dark:border-purple-800 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30 p-6">
+    <div className="flex items-start gap-4">
+      <div className="rounded-lg bg-purple-500 p-2">
+        <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+        </svg>
+      </div>
+      <div>
+        <h3 className="font-bold text-lg mb-2">🌐 Projects Using YAKE!</h3>
+        <p className="text-sm text-gray-600 dark:text-gray-300">
+          Discover how YAKE! is being used across different platforms, libraries, and applications worldwide.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
-- [pke](https://github.com/boudinfl/pke) - Python Keyphrase Extraction module.
-Ii is an open source python-based keyphrase extraction toolkit. It provides an end-to-end keyphrase extraction pipeline in which each component can be easily modified or extended to develop new models. Credits to Florian Boudin.
- 
-- [Textacy](https://github.com/chartbeat-labs/textacy) - NLP, before and after spaCy.
-Python library for performing a variety of natural language processing (NLP) tasks, built on the high-performance spaCy library. among other features it supports keyword extration using YAKE.
+<div className="not-prose space-y-6 my-8">
+  {/* SparkNLP */}
+  <div className="group rounded-xl border-2 border-blue-200 dark:border-blue-800 bg-white dark:bg-gray-800 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div className="flex items-start justify-between gap-4 mb-4">
+      <div className="flex items-center gap-3">
+        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg">
+          ⚡
+        </div>
+        <div>
+          <h3 className="text-xl font-bold mb-1">SparkNLP</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">by John Snow Labs</p>
+        </div>
+      </div>
+      <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-semibold">
+        NLP Framework
+      </span>
+    </div>
+    <p className="text-gray-600 dark:text-gray-300 mb-4">
+      Open source framework with full Python, Scala, and Java Support.
+    </p>
+    <div className="flex flex-wrap gap-2">
+      <a href="https://github.com/JohnSnowLabs/spark-nlp" target="_blank" className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://nlp.johnsnowlabs.com/docs/en/annotators#yakekeywordextraction" target="_blank" className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+        📝 Documentation
+      </a>
+      <a href="https://demo.johnsnowlabs.com/public/KEYPHRASE_EXTRACTION/" target="_blank" className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+        🎭 Demo
+      </a>
+      <a href="https://colab.research.google.com/github/JohnSnowLabs/spark-nlp-workshop/blob/master/tutorials/streamlit_notebooks/KEYPHRASE_EXTRACTION.ipynb" target="_blank" className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+        📊 Colab
+      </a>
+    </div>
+  </div>
 
-- [General Index](https://archive.org/details/GeneralIndex) by Archive.org. 
-A catalogue of 19 billions of YAKE keywords extracted from 107 million papers. An article about the General Index project can also be found in [Nature](https://www.nature.com/articles/d41586-021-02895-8).
+  {/* PKE */}
+  <div className="group rounded-xl border-2 border-purple-200 dark:border-purple-800 bg-white dark:bg-gray-800 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div className="flex items-start justify-between gap-4 mb-4">
+      <div className="flex items-center gap-3">
+        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
+          🔑
+        </div>
+        <div>
+          <h3 className="text-xl font-bold mb-1">PKE</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Python Keyphrase Extraction</p>
+        </div>
+      </div>
+      <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-xs font-semibold">
+        Python Library
+      </span>
+    </div>
+    <p className="text-gray-600 dark:text-gray-300 mb-4">
+      Open source python-based keyphrase extraction toolkit providing an end-to-end pipeline where each component can be easily modified or extended.
+    </p>
+    <div className="flex flex-wrap gap-2">
+      <a href="https://github.com/boudinfl/pke" target="_blank" className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
 
-- [Annif](https://github.com/NatLibFi/Annif) is a tool for automated subject indexing and classification.
-Multi-algorithm automated subject indexing tool for libraries, archives and museums. This repository is used for developing a production version of the system, based on ideas from the initial prototype. Official [website](http://annif.org/).
+  {/* Textacy */}
+  <div className="group rounded-xl border-2 border-green-200 dark:border-green-800 bg-white dark:bg-gray-800 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div className="flex items-start justify-between gap-4 mb-4">
+      <div className="flex items-center gap-3">
+        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white font-bold text-lg">
+          📝
+        </div>
+        <div>
+          <h3 className="text-xl font-bold mb-1">Textacy</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">NLP, before and after spaCy</p>
+        </div>
+      </div>
+      <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-xs font-semibold">
+        Python Library
+      </span>
+    </div>
+    <p className="text-gray-600 dark:text-gray-300 mb-4">
+      Python library for performing a variety of natural language processing (NLP) tasks, built on the high-performance spaCy library.
+    </p>
+    <div className="flex flex-wrap gap-2">
+      <a href="https://github.com/chartbeat-labs/textacy" target="_blank" className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
 
-- [Portulan Clarin](https://portulanclarin.net/workbench/liaad-yake/) - Provides Sservices and data for researchers, innovators, students and language professionals
-Research Infrastructure for the Science and Technology of Language, belonging to the Portuguese National Roadmap of  Research Infrastructures of Strategic Relevance, and part of the international research infrastructure CLARIN ERIC. It includes a demo of YAKE! among many other language technologies. Official [website](https://portulanclarin.net/).
+  {/* General Index */}
+  <div className="group rounded-xl border-2 border-orange-200 dark:border-orange-800 bg-white dark:bg-gray-800 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div className="flex items-start justify-between gap-4 mb-4">
+      <div className="flex items-center gap-3">
+        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold text-lg">
+          📚
+        </div>
+        <div>
+          <h3 className="text-xl font-bold mb-1">General Index</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">by Archive.org</p>
+        </div>
+      </div>
+      <span className="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full text-xs font-semibold">
+        19B Keywords
+      </span>
+    </div>
+    <p className="text-gray-600 dark:text-gray-300 mb-4">
+      A catalogue of 19 billions of YAKE keywords extracted from 107 million papers.
+    </p>
+    <div className="flex flex-wrap gap-2">
+      <a href="https://archive.org/details/GeneralIndex" target="_blank" className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+        💾 Archive.org
+      </a>
+      <a href="https://www.nature.com/articles/d41586-021-02895-8" target="_blank" className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+        📰 Nature Article
+      </a>
+    </div>
+  </div>
 
-- [Tell me stories](https://contamehistorias.pt/arquivopt) is a research project that allows users to automatically build news narratives based on news preserved by the [Portuguese Web Archive](https://arquivo.pt).
+  {/* Annif */}
+  <div className="group rounded-xl border-2 border-indigo-200 dark:border-indigo-800 bg-white dark:bg-gray-800 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div className="flex items-start justify-between gap-4 mb-4">
+      <div className="flex items-center gap-3">
+        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
+          🏷️
+        </div>
+        <div>
+          <h3 className="text-xl font-bold mb-1">Annif</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Automated Subject Indexing</p>
+        </div>
+      </div>
+      <span className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-full text-xs font-semibold">
+        Tool
+      </span>
+    </div>
+    <p className="text-gray-600 dark:text-gray-300 mb-4">
+      Multi-algorithm automated subject indexing tool for libraries, archives and museums.
+    </p>
+    <div className="flex flex-wrap gap-2">
+      <a href="https://github.com/NatLibFi/Annif" target="_blank" className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="http://annif.org/" target="_blank" className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+        🌐 Website
+      </a>
+    </div>
+  </div>
+
+  {/* Portulan Clarin */}
+  <div className="group rounded-xl border-2 border-pink-200 dark:border-pink-800 bg-white dark:bg-gray-800 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div className="flex items-start justify-between gap-4 mb-4">
+      <div className="flex items-center gap-3">
+        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center text-white font-bold text-lg">
+          🇵🇹
+        </div>
+        <div>
+          <h3 className="text-xl font-bold mb-1">Portulan Clarin</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Language Technology Services</p>
+        </div>
+      </div>
+      <span className="px-3 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded-full text-xs font-semibold">
+        Platform
+      </span>
+    </div>
+    <p className="text-gray-600 dark:text-gray-300 mb-4">
+      Research Infrastructure for the Science and Technology of Language, part of the international research infrastructure CLARIN ERIC.
+    </p>
+    <div className="flex flex-wrap gap-2">
+      <a href="https://portulanclarin.net/workbench/liaad-yake/" target="_blank" className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+        🎭 Demo
+      </a>
+      <a href="https://portulanclarin.net/" target="_blank" className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+        🌐 Website
+      </a>
+    </div>
+  </div>
+
+  {/* Tell me stories */}
+  <div className="group rounded-xl border-2 border-cyan-200 dark:border-cyan-800 bg-white dark:bg-gray-800 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div className="flex items-start justify-between gap-4 mb-4">
+      <div className="flex items-center gap-3">
+        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center text-white font-bold text-lg">
+          📰
+        </div>
+        <div>
+          <h3 className="text-xl font-bold mb-1">Tell me stories</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Conta-me Histórias</p>
+        </div>
+      </div>
+      <span className="px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full text-xs font-semibold">
+        Research Project
+      </span>
+    </div>
+    <p className="text-gray-600 dark:text-gray-300 mb-4">
+      Research project that allows users to automatically build news narratives based on news preserved by the Portuguese Web Archive.
+    </p>
+    <div className="flex flex-wrap gap-2">
+      <a href="https://contamehistorias.pt/arquivopt" target="_blank" className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+        🌐 Visit
+      </a>
+    </div>
+  </div>
+</div>
+
+<Callout type="tip" title="Using YAKE?">
+  If you're using YAKE! in your project and would like to be listed here, please open an issue or pull request on our GitHub repository!
+</Callout>
 
 ---
 <div className="mt-12">

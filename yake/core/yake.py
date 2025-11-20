@@ -43,6 +43,9 @@ class KeywordExtractor:
         top: int = 20,
         features: Optional[List[str]] = None,
         stopwords: Optional[Set[str]] = None,
+        lemmatize: bool = False,
+        lemma_aggregation: str = "min",
+        lemmatizer: str = "spacy",
         **kwargs
     ):
         """
@@ -60,6 +63,13 @@ class KeywordExtractor:
                 (default: None = all features)
             stopwords: Custom set of stopwords (default: None = use
                 language-specific)
+            lemmatize: Enable lemmatization to aggregate keywords by lemma
+                (default: False). Requires spacy or nltk.
+            lemma_aggregation: Method to combine scores of lemmatized keywords:
+                "min" (best score), "mean" (average), "max" (worst score),
+                "harmonic" (harmonic mean). Default: "min"
+            lemmatizer: Lemmatization library to use: "spacy" or "nltk"
+                (default: "spacy")
             **kwargs: Additional configuration parameters (for backwards
                 compatibility)
         """
@@ -78,6 +88,13 @@ class KeywordExtractor:
         for key in ["lan", "n", "dedup_lim", "dedup_func", "window_size", "top", "features"]:
             if key in kwargs:
                 self.config[key] = kwargs[key]
+
+        # Lemmatization configuration
+        self.lemmatize = lemmatize
+        self.lemma_aggregation = lemma_aggregation
+        self.lemmatizer = lemmatizer
+        self._lemmatizer_instance = None  # Lazy loaded when needed
+        self._lemmatizer_load_failed = False  # Track if loading failed to avoid repeated warnings
 
         # Load appropriate stopwords and deduplication function
         self.stopword_set = self._load_stopwords(stopwords or kwargs.get("stopwords"))
@@ -332,6 +349,198 @@ class KeywordExtractor:
 
         return result
 
+    def _get_lemmatizer_instance(self):
+        """
+        Lazy load lemmatizer instance.
+
+        Returns the lemmatizer instance, loading it on first use to avoid
+        unnecessary overhead when lemmatization is disabled.
+
+        Returns:
+            Lemmatizer instance (spacy.Language or nltk lemmatizer)
+        """
+        # If already loaded successfully, return it
+        if self._lemmatizer_instance is not None:
+            return self._lemmatizer_instance
+        
+        # If we already tried and failed, don't try again
+        if self._lemmatizer_load_failed:
+            return None
+
+        if self.lemmatizer == "spacy":
+            try:
+                import spacy  # pylint: disable=import-outside-toplevel
+                
+                # Map language codes to spacy models
+                model_map = {
+                    "en": "en_core_web_sm",
+                    "pt": "pt_core_news_sm",
+                    "es": "es_core_news_sm",
+                    "de": "de_core_news_sm",
+                    "fr": "fr_core_news_sm",
+                    "it": "it_core_news_sm",
+                }
+                
+                model_name = model_map.get(self.config["lan"][:2], "en_core_web_sm")
+                
+                try:
+                    self._lemmatizer_instance = spacy.load(model_name)
+                    logger.info(f"Loaded spaCy model: {model_name}")
+                    return self._lemmatizer_instance
+                except OSError:
+                    # Try English model as fallback
+                    if model_name != "en_core_web_sm":
+                        try:
+                            self._lemmatizer_instance = spacy.load("en_core_web_sm")
+                            logger.info("Falling back to en_core_web_sm")
+                            return self._lemmatizer_instance
+                        except OSError:
+                            pass
+                    
+                    # All loading attempts failed - show warning once
+                    logger.warning(
+                        "spaCy models not found. Lemmatization disabled. "
+                        "Install with: pip install spacy && python -m spacy download en_core_web_sm"
+                    )
+                    self._lemmatizer_load_failed = True
+                    return None
+                        
+            except ImportError:
+                logger.warning(
+                    "spaCy not installed. Lemmatization disabled. "
+                    "Install with: pip install spacy && python -m spacy download en_core_web_sm"
+                )
+                self._lemmatizer_load_failed = True
+                return None
+                
+        elif self.lemmatizer == "nltk":
+            try:
+                from nltk.stem import WordNetLemmatizer  # pylint: disable=import-outside-toplevel
+                import nltk  # pylint: disable=import-outside-toplevel
+                
+                # Download wordnet data if needed
+                try:
+                    nltk.data.find('corpora/wordnet')
+                except LookupError:
+                    logger.info("Downloading NLTK wordnet data...")
+                    nltk.download('wordnet', quiet=True)
+                    nltk.download('omw-1.4', quiet=True)
+                
+                self._lemmatizer_instance = WordNetLemmatizer()
+                logger.info("Loaded NLTK WordNetLemmatizer")
+                return self._lemmatizer_instance
+                
+            except ImportError:
+                logger.warning(
+                    "NLTK not installed. Lemmatization disabled. "
+                    "Install with: pip install nltk"
+                )
+                self._lemmatizer_load_failed = True
+                return None
+        else:
+            logger.warning(f"Unknown lemmatizer: {self.lemmatizer}. Lemmatization disabled.")
+            self._lemmatizer_load_failed = True
+            return None
+
+    def _lemmatize_text(self, text: str) -> str:
+        """
+        Lemmatize a text string.
+
+        Args:
+            text: Text to lemmatize
+
+        Returns:
+            Lemmatized text
+        """
+        lemmatizer = self._get_lemmatizer_instance()
+        if lemmatizer is None:
+            return text
+
+        if self.lemmatizer == "spacy":
+            doc = lemmatizer(text)
+            return " ".join([token.lemma_ for token in doc])
+        elif self.lemmatizer == "nltk":
+            # Simple word-by-word lemmatization
+            words = text.split()
+            return " ".join([lemmatizer.lemmatize(word.lower()) for word in words])
+        
+        return text
+
+    def _lemmatize_keywords(
+        self, 
+        keywords: List[Tuple[str, float]]
+    ) -> List[Tuple[str, float]]:
+        """
+        Aggregate keywords by lemma.
+
+        Groups keywords with the same lemma and combines their scores using
+        the configured aggregation method. This reduces redundancy from
+        morphological variations (e.g., "tree" and "trees").
+
+        Args:
+            keywords: List of (keyword, score) tuples
+
+        Returns:
+            Aggregated list with lemmatized keywords, sorted by score
+        """
+        if not keywords:
+            return keywords
+
+        lemmatizer = self._get_lemmatizer_instance()
+        if lemmatizer is None:
+            # Lemmatizer not available - return original keywords without warning
+            # (warning was already shown on first load attempt)
+            return keywords
+
+        from collections import defaultdict  # pylint: disable=import-outside-toplevel
+        import statistics  # pylint: disable=import-outside-toplevel
+
+        lemma_groups = defaultdict(list)
+
+        # Group keywords by their lemma
+        for kw, score in keywords:
+            lemma = self._lemmatize_text(kw)
+            # Store original keyword and score
+            lemma_groups[lemma].append((kw, score))
+
+        # Aggregate scores using the configured method
+        result = []
+        for lemma, group in lemma_groups.items():
+            if self.lemma_aggregation == "min":
+                # Use the keyword with the best (lowest) score
+                best_kw, best_score = min(group, key=lambda x: x[1])
+                result.append((best_kw, best_score))
+                
+            elif self.lemma_aggregation == "mean":
+                # Use average score, keep first keyword form
+                avg_score = statistics.mean(score for _, score in group)
+                result.append((group[0][0], avg_score))
+                
+            elif self.lemma_aggregation == "max":
+                # Use the worst (highest) score - most conservative
+                worst_kw, worst_score = max(group, key=lambda x: x[1])
+                result.append((worst_kw, worst_score))
+                
+            elif self.lemma_aggregation == "harmonic":
+                # Harmonic mean - good for combining scores
+                scores = [score for _, score in group]
+                # Handle case where all scores might be 0
+                if all(s > 0 for s in scores):
+                    harmonic = statistics.harmonic_mean(scores)
+                else:
+                    harmonic = statistics.mean(scores)
+                result.append((group[0][0], harmonic))
+            else:
+                logger.warning(
+                    f"Unknown aggregation method: {self.lemma_aggregation}. "
+                    "Using 'min'"
+                )
+                best_kw, best_score = min(group, key=lambda x: x[1])
+                result.append((best_kw, best_score))
+
+        # Sort by score (lower is better)
+        return sorted(result, key=lambda x: x[1])
+
     def _get_strategy(self, num_candidates: int) -> str:
         """Determine optimization strategy based on dataset size."""
         if num_candidates < 50:
@@ -429,6 +638,14 @@ class KeywordExtractor:
 
             # Format results as (keyword, score) tuples - EXATAMENTE como YAKE 0.6.0
             results = [(cand.kw, h) for (h, cand) in result_set]
+
+            # Apply lemmatization if enabled
+            if self.lemmatize:
+                logger.debug(
+                    "Applying lemmatization with aggregation method: %s", 
+                    self.lemma_aggregation
+                )
+                results = self._lemmatize_keywords(results)
 
             # Intelligent cache management after extraction
             self._manage_cache_lifecycle(text)

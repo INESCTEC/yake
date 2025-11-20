@@ -50,6 +50,10 @@ benchmark = [
     "memory-profiler>=0.60.0",
     "matplotlib>=3.5.0",
 ]
+lemmatization = [
+    "spacy>=3.0.0",
+    "nltk>=3.8.0",
+]
 
 [project.urls]
 Documentation = "https://tiagolv.github.io/yakerf/docs/--home"

@@ -1,40 +1,339 @@
 ---
 title: Getting Started
-icon: GitCompareArrows
+icon: Rocket
 ---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<div className="not-prose mb-8">
+  <div className="rounded-xl border-2 border-green-200 dark:border-green-800 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30 p-6">
+    <div className="flex items-center gap-3 mb-3">
+      <div className="rounded-lg bg-green-500 p-2">
+        <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h2 className="text-xl font-bold">Quick Start Guide</h2>
+    </div>
+    <p className="text-sm text-gray-600 dark:text-gray-300">
+      Get YAKE! up and running in less than 5 minutes. Follow these simple steps to start extracting keywords from your texts.
+    </p>
+  </div>
+</div>
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tiagolv/yakerf/blob/gh-pages/1YAKE.ipynb)
-## Installing YAKE!
 
-Installing Yake using pip:
-
-``` bash
-pip install git+https://github.com/LIAAD/yake
-```
 ---
-## Usage (Command line)
 
-How to use it on your using the command line:
+## 📦 Installing YAKE!
 
-``` bash
-Usage: yake [OPTIONS]
+<Callout type="info" title="Installation">
+  YAKE! requires Python 3.7+ and can be installed directly from GitHub.
+</Callout>
 
-Options:
-	-ti, --text_input TEXT          Input text, SURROUNDED by single quotes(\')
-	-i, --input_file TEXT           Input file
-	-l, --language TEXT             Language
-	-n, --ngram-size INTEGER        Max size of the ngram.
-	-df, --dedup-func [leve|jaro|seqm]
-									Deduplication function.
-	-dl, --dedup-lim FLOAT          Deduplication limiar.
-	-ws, --window-size INTEGER      Window size.
-	-t, --top INTEGER               Number of keyphrases to extract
-	-v, --verbose			Gets detailed information (such as the score)
-	--help                          Show this message and exit.
+<Tabs items={['pip', 'conda']}>
+  <Tab value="pip">
+    ```bash
+    pip install git+https://github.com/LIAAD/yake
+    ```
+  </Tab>
+  <Tab value="conda">
+    ```bash
+    # First install pip if needed
+    conda install pip
+    
+    # Then install YAKE
+    pip install git+https://github.com/LIAAD/yake
+    ```
+  </Tab>
+</Tabs>
+
+<div className="not-prose mt-4">
+  <div className="rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/30 p-4">
+    <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2">💡 Optional Dependencies</h4>
+    <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
+      For lemmatization support (optional but recommended):
+    </p>
+    <div className="bg-gray-900 dark:bg-gray-950 text-gray-100 p-3 rounded text-sm">
+      <code>pip install spacy && python -m spacy download en_core_web_sm</code>
+    </div>
+  </div>
+</div>
+
+---
+
+## 🚀 Usage (Command Line)
+
+### Basic Command Structure
+
+```bash
+yake [OPTIONS]
 ```
 
-### Keyword Deduplication Methods
+### Available Options
+
+<div className="not-prose my-6">
+  <div className="overflow-x-auto">
+    <table className="w-full text-sm">
+      <thead className="bg-gray-100 dark:bg-gray-800">
+        <tr>
+          <th className="px-4 py-3 text-left font-semibold">Option</th>
+          <th className="px-4 py-3 text-left font-semibold">Type</th>
+          <th className="px-4 py-3 text-left font-semibold">Description</th>
+        </tr>
+      </thead>
+      <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+        <tr className="bg-white dark:bg-gray-900">
+          <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">-ti, --text_input</td>
+          <td className="px-4 py-3 text-gray-600 dark:text-gray-400">TEXT</td>
+          <td className="px-4 py-3">Input text (must be surrounded by single quotes)</td>
+        </tr>
+        <tr className="bg-gray-50 dark:bg-gray-800/50">
+          <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">-i, --input_file</td>
+          <td className="px-4 py-3 text-gray-600 dark:text-gray-400">TEXT</td>
+          <td className="px-4 py-3">Path to input file</td>
+        </tr>
+        <tr className="bg-white dark:bg-gray-900">
+          <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">-l, --language</td>
+          <td className="px-4 py-3 text-gray-600 dark:text-gray-400">TEXT</td>
+          <td className="px-4 py-3">Language code (e.g., 'en', 'pt', 'es')</td>
+        </tr>
+        <tr className="bg-gray-50 dark:bg-gray-800/50">
+          <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">-n, --ngram-size</td>
+          <td className="px-4 py-3 text-gray-600 dark:text-gray-400">INTEGER</td>
+          <td className="px-4 py-3">Maximum n-gram size (default: 3)</td>
+        </tr>
+        <tr className="bg-white dark:bg-gray-900">
+          <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">-t, --top</td>
+          <td className="px-4 py-3 text-gray-600 dark:text-gray-400">INTEGER</td>
+          <td className="px-4 py-3">Number of keywords to extract (default: 20)</td>
+        </tr>
+        <tr className="bg-gray-50 dark:bg-gray-800/50">
+          <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">-df, --dedup-func</td>
+          <td className="px-4 py-3 text-gray-600 dark:text-gray-400">CHOICE</td>
+          <td className="px-4 py-3">Deduplication method: levs, jaro, or seqm</td>
+        </tr>
+        <tr className="bg-white dark:bg-gray-900">
+          <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">-dl, --dedup-lim</td>
+          <td className="px-4 py-3 text-gray-600 dark:text-gray-400">FLOAT</td>
+          <td className="px-4 py-3">Deduplication threshold (0.0-1.0)</td>
+        </tr>
+        <tr className="bg-gray-50 dark:bg-gray-800/50">
+          <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">--lemmatize</td>
+          <td className="px-4 py-3 text-gray-600 dark:text-gray-400">FLAG</td>
+          <td className="px-4 py-3">Enable lemmatization (default: False)</td>
+        </tr>
+        <tr className="bg-white dark:bg-gray-900">
+          <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">--lemmatizer</td>
+          <td className="px-4 py-3 text-gray-600 dark:text-gray-400">CHOICE</td>
+          <td className="px-4 py-3">Backend: spacy or nltk (default: spacy)</td>
+        </tr>
+        <tr className="bg-gray-50 dark:bg-gray-800/50">
+          <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">-v, --verbose</td>
+          <td className="px-4 py-3 text-gray-600 dark:text-gray-400">FLAG</td>
+          <td className="px-4 py-3">Show detailed scores</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### 💡 Example Commands
+
+<Tabs items={['Basic', 'From File', 'Advanced', 'Lemmatization']}>
+  <Tab value="Basic">
+    ```bash
+    # Extract top 10 keywords from text
+    yake -ti 'Your text goes here. YAKE will extract the most important keywords.' -t 10 -v
+    ```
+  </Tab>
+  
+  <Tab value="From File">
+    ```bash
+    # Extract keywords from a file
+    yake -i document.txt -l en -t 20 -v
+    ```
+  </Tab>
+  
+  <Tab value="Advanced">
+    ```bash
+    # Advanced usage with custom parameters
+    yake -i article.txt -l en -n 3 -df levs -dl 0.8 -ws 2 -t 15 -v
+    ```
+  </Tab>
+  
+  <Tab value="Lemmatization">
+    ```bash
+    # With lemmatization enabled
+    yake -ti 'Running runs runner' --lemmatize --lemmatizer spacy -t 10 -v
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## 🔄 Keyword Deduplication Methods
+
+<Callout type="info" title="Why Deduplication?">
+  YAKE may extract similar keywords (e.g., "machine learning" and "machine learning algorithm"). Deduplication merges similar keywords to avoid redundancy.
+</Callout>
 
 YAKE uses three methods to compute string similarity during keyword deduplication:
+
+<div className="not-prose grid md:grid-cols-3 gap-6 my-8">
+  <div className="group rounded-xl border-2 border-blue-200 dark:border-blue-800 bg-white dark:bg-gray-800 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div className="flex items-center gap-3 mb-4">
+      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg">
+        L
+      </div>
+      <h3 className="text-lg font-bold">Levenshtein</h3>
+    </div>
+    <div className="mb-3">
+      <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-semibold">
+        levs
+      </span>
+    </div>
+    <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+      Measures edit distance between strings — operations needed to transform one string into another.
+    </p>
+    <div className="space-y-2 text-sm">
+      <div className="flex items-start gap-2">
+        <span className="text-green-500 mt-1">✓</span>
+        <span className="text-gray-600 dark:text-gray-400">Very accurate for small changes</span>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-yellow-500 mt-1">⚡</span>
+        <span className="text-gray-600 dark:text-gray-400">Medium speed</span>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-blue-500 mt-1">💡</span>
+        <span className="text-gray-600 dark:text-gray-400">Best for typos</span>
+      </div>
+    </div>
+    <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+      <p className="text-xs font-mono text-gray-500 dark:text-gray-400">
+        1 - distance / max_len
+      </p>
+    </div>
+  </div>
+
+  <div className="group rounded-xl border-2 border-purple-200 dark:border-purple-800 bg-white dark:bg-gray-800 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div className="flex items-center gap-3 mb-4">
+      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
+        J
+      </div>
+      <h3 className="text-lg font-bold">Jaro</h3>
+    </div>
+    <div className="mb-3">
+      <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-xs font-semibold">
+        jaro
+      </span>
+    </div>
+    <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+      Measures similarity based on matching characters and their relative positions.
+    </p>
+    <div className="space-y-2 text-sm">
+      <div className="flex items-start gap-2">
+        <span className="text-green-500 mt-1">✓</span>
+        <span className="text-gray-600 dark:text-gray-400">Tolerant of transpositions</span>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-green-500 mt-1">⚡</span>
+        <span className="text-gray-600 dark:text-gray-400">Fast performance</span>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-purple-500 mt-1">💡</span>
+        <span className="text-gray-600 dark:text-gray-400">Best for names</span>
+      </div>
+    </div>
+    <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+      <p className="text-xs font-mono text-gray-500 dark:text-gray-400">
+        jellyfish.jaro_similarity()
+      </p>
+    </div>
+  </div>
+
+  <div className="group rounded-xl border-2 border-green-200 dark:border-green-800 bg-white dark:bg-gray-800 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div className="flex items-center gap-3 mb-4">
+      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white font-bold text-lg">
+        S
+      </div>
+      <h3 className="text-lg font-bold">SequenceMatcher</h3>
+    </div>
+    <div className="mb-3">
+      <span className="inline-block px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-xs font-semibold">
+        seqm
+      </span>
+    </div>
+    <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+      Uses Python's built-in difflib to find matching blocks in strings.
+    </p>
+    <div className="space-y-2 text-sm">
+      <div className="flex items-start gap-2">
+        <span className="text-green-500 mt-1">✓</span>
+        <span className="text-gray-600 dark:text-gray-400">Good for shared blocks</span>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-green-500 mt-1">⚡</span>
+        <span className="text-gray-600 dark:text-gray-400">Fast performance</span>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-green-500 mt-1">💡</span>
+        <span className="text-gray-600 dark:text-gray-400">Best for longer texts</span>
+      </div>
+    </div>
+    <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+      <p className="text-xs font-mono text-gray-500 dark:text-gray-400">
+        2 * matches / total_len
+      </p>
+    </div>
+  </div>
+</div>
+
+### 📊 Comparison Table
+
+<div className="not-prose my-6">
+  <div className="overflow-x-auto">
+    <table className="w-full text-sm">
+      <thead className="bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+        <tr>
+          <th className="px-4 py-3 text-left font-semibold rounded-tl-lg">Method</th>
+          <th className="px-4 py-3 text-left font-semibold">Based on</th>
+          <th className="px-4 py-3 text-left font-semibold">Best for</th>
+          <th className="px-4 py-3 text-left font-semibold rounded-tr-lg">Performance</th>
+        </tr>
+      </thead>
+      <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+        <tr className="bg-blue-50 dark:bg-blue-950/30">
+          <td className="px-4 py-3 font-mono font-bold text-blue-600 dark:text-blue-400">levs</td>
+          <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Edit operations</td>
+          <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Typos and small changes</td>
+          <td className="px-4 py-3"><span className="px-2 py-1 bg-yellow-200 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded text-xs font-medium">Medium</span></td>
+        </tr>
+        <tr className="bg-purple-50 dark:bg-purple-950/30">
+          <td className="px-4 py-3 font-mono font-bold text-purple-600 dark:text-purple-400">jaro</td>
+          <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Matching positions</td>
+          <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Names with swaps</td>
+          <td className="px-4 py-3"><span className="px-2 py-1 bg-green-200 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded text-xs font-medium">Fast</span></td>
+        </tr>
+        <tr className="bg-green-50 dark:bg-green-950/30">
+          <td className="px-4 py-3 font-mono font-bold text-green-600 dark:text-green-400">seqm</td>
+          <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Matching blocks</td>
+          <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Longer strings</td>
+          <td className="px-4 py-3"><span className="px-2 py-1 bg-green-200 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded text-xs font-medium">Fast</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<Callout type="tip" title="💡 Recommendation">
+  For most use cases, **`levs` (Levenshtein)** provides the best balance between accuracy and performance. Use `jaro` for proper names or short strings, and `seqm` for longer texts with shared subsequences.
+</Callout>
+
+---
 
 #### 1. `levs` — Levenshtein Similarity
 
@@ -85,6 +384,77 @@ where `M` is the number of matching characters, and `T` is the total number of c
 | "apple" vs "a pple" | 0.8 | 0.93 | 0.9 |
 
 **Recommendation:** For general use with a good balance of speed and accuracy, `seqm` is a solid default (and it is YAKE's default). For stricter lexical similarity, choose `levs`. For names or when letter swaps are common, go with `jaro`.
+
+## Lemmatization
+
+YAKE supports lemmatization to aggregate keywords with the same lemma, reducing redundancy from morphological variations like "tree"/"trees" or "run"/"running"/"runner".
+
+When lemmatization is enabled, YAKE combines morphological variations and aggregates their scores using one of four methods:
+
+### 1. `min` — Best Score (Default)
+
+* **What it is:** Selects the keyword with the lowest (best) score from all morphological variations
+* **Formula:** `final_score = min(score_tree, score_trees)`
+* **Best for:** Most cases — selects the most relevant form
+* **Performance:** Fast
+
+### 2. `mean` — Average Score
+
+* **What it is:** Averages scores across all morphological variations
+* **Formula:** `final_score = sum(scores) / len(scores)`
+* **Best for:** When all forms are equally important
+* **Performance:** Fast
+
+### 3. `max` — Worst Score
+
+* **What it is:** Uses the highest (worst) score — most conservative approach
+* **Formula:** `final_score = max(score_tree, score_trees)`
+* **Best for:** Conservative filtering to ensure only high-quality keywords
+* **Performance:** Fast
+
+### 4. `harmonic` — Harmonic Mean
+
+* **What it is:** Calculates the harmonic mean of all scores
+* **Formula:** `final_score = n / sum(1/score for score in scores)`
+* **Best for:** Balanced approach between min and mean
+* **Performance:** Fast
+
+### Comparison Table
+
+| Method | Based on | Best for | Example: "tree" (0.05) + "trees" (0.08) |
+|--------|----------|----------|----------------------------------------|
+| `min` | Lowest score | General use - best variant | 0.05 |
+| `mean` | Average | All forms equally important | 0.065 |
+| `max` | Highest score | Conservative filtering | 0.08 |
+| `harmonic` | Harmonic mean | Balanced combination | ~0.061 |
+
+### Practical Example
+
+```python
+import yake
+
+text = "Trees are important. Many trees provide shade. Tree conservation matters."
+
+# With lemmatization
+kw_extractor = yake.KeywordExtractor(
+    lan="en",
+    n=1,
+    lemmatize=True,  # Enable lemmatization
+    lemma_aggregation="min"  # Use best score (default)
+)
+
+keywords = kw_extractor.extract_keywords(text)
+# Results combine "tree", "trees" into a single entry
+```
+
+**Installation:** Requires spaCy or NLTK:
+```bash
+pip install yake[lemmatization]
+python -m spacy download en_core_web_sm
+```
+
+**Recommendation:** Use `min` (default) for general cases as it selects the most relevant form. Use `mean` or `harmonic` when you want to consider all variations equally.
+
 ## Usage (Python)
 
 How to use it using Python:
