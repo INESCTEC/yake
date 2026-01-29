@@ -7,7 +7,7 @@ name = "yake"
 version = "0.7.0"
 description = "Keyword extraction Python package"
 readme = "README.md"
-requires-python = ">=3.10" 
+requires-python = ">=3.12" 
 license = {text = "LGPLv3"}
 authors = [
     {name = "Arian Pasquali", email = "arianpasquali@gmail.com"},
@@ -26,12 +26,8 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Programming Language :: Python :: 3",
-    # Remove Python 3.5, 3.6, 3.7 classifiers
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",

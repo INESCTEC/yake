@@ -14,7 +14,7 @@ jobs:
         - name: Set up Python
           uses: actions/setup-python@v4
           with:
-            python-version: '3.13'
+            python-version: '3.12'
         - name: Install uv
           run: pip install uv
         - name: Create virtual environment
@@ -25,12 +25,12 @@ jobs:
             uv pip install pytest pytest-cov
         - name: Download spaCy and NLTK models
           run: |
-            source .venv/bin/activate
-            python -m spacy download en_core_web_sm
-            python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"
+            uv pip install spacy
+            uv run python -m spacy download en_core_web_sm
+            uv run python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"
         - name: test
           run: uv run pytest -vv --cov=yake tests/
-        - name: Performance benchmark (with JIT)
+        - name: Performance benchmark
           run: |
-            echo "Testing Python 3.13 JIT performance..."
-            PYTHON_JIT=1 python scripts/test_python313_features.py
+            echo "Testing performance..."
+            uv run python scripts/test_python313_features.py

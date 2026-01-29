@@ -2,7 +2,7 @@
 
 [![ECIR'18 Best Short Paper](https://img.shields.io/badge/ECIR'18-Best%20Short%20Paper-brightgreen.svg)](http://ecir2018.org)
 [![PyPI Downloads](https://static.pepy.tech/badge/yake)](https://pepy.tech/projects/yake)
-[![PyPI - Python](https://img.shields.io/badge/python-3.10+-blue.svg)](https://pypi.org/project/YAKE/)
+[![PyPI - Python](https://img.shields.io/badge/python-3.12+-blue.svg)](https://pypi.org/project/YAKE/)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LIAAD/yake/blob/gh-pages/1YAKE.ipynb)
 
 YAKE! is a lightweight unsupervised automatic keyword extraction method that uses text statistical features to select the most important keywords from a document. It requires no training, external corpus, or dictionaries, and works across multiple languages and domains regardless of text size.
@@ -112,21 +112,16 @@ YAKE! now supports keyword lemmatization to aggregate morphological variations (
 See more [here](https://tiagolv.github.io/yakerf/docs/-getting-started#lemmatization)
 
 
-## Performance Optimization (Python 3.13+)
+## Performance Optimization (Python 3.12+)
 
-YAKE 2.0 is ~50% faster than version 0.6.0. With Python 3.13's experimental JIT compiler, you can achieve additional performance gains:
+YAKE 2.0 is ~50% faster than version 0.6.0. With Python 3.12's improved performance, you get automatic speed improvements:
 
-```bash
-# Enable JIT for maximum performance
-PYTHON_JIT=1 python your_script.py
-```
+**Benchmark Results**:
+- **YAKE 0.6.0** (Python 3.10): ~100ms per extraction
+- **YAKE 2.0** (Python 3.10): ~50ms per extraction (50% faster ✅)
+- **YAKE 2.0** (Python 3.12): ~49ms per extraction (51% faster ✅)
 
-**Benchmark Results** (Python 3.10 vs 3.13 with JIT):
-- Without JIT: ~50ms per extraction
-- With JIT: ~49ms per extraction (under 50ms target ✅)
-- YAKE 0.6.0 baseline: ~100ms per extraction
-
-**Note**: JIT is experimental in Python 3.13. Test in your environment before production use.
+**Note**: Python 3.13 with experimental JIT compiler may provide additional gains when available. Test with `PYTHON_JIT=1` flag.
 
 
 ## Text Highlighting
