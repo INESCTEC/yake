@@ -86,8 +86,8 @@ import yake
     help="Verbose output",
 )
 @click.pass_context
-def keywords(
-    ctx,
+def keywords(  # pylint: disable=too-many-arguments,too-many-positional-arguments,unused-argument
+    ctx,  # noqa: ARG001
     text_input,
     input_file,
     language,
@@ -139,3 +139,4 @@ def keywords(
         except FileNotFoundError:
             print(f"File '{input_file}' not found.")
             sys.exit(1)
+

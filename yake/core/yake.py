@@ -19,7 +19,7 @@ from .Levenshtein import Levenshtein
 logger = logging.getLogger(__name__)
 
 
-class KeywordExtractor:
+class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
     """
     Main entry point for YAKE keyword extraction.
 
@@ -186,7 +186,7 @@ class KeywordExtractor:
         Returns:
             Similarity score between 0.0 (different) and 1.0 (identical)
         """
-        return jellyfish.jaro(cand1, cand2)
+        return jellyfish.jaro_similarity(cand1, cand2)
 
     def levs(self, cand1: str, cand2: str) -> float:
         """
@@ -349,7 +349,7 @@ class KeywordExtractor:
 
         return result
 
-    def _get_lemmatizer_instance(self):
+    def _get_lemmatizer_instance(self):  # pylint: disable=too-many-return-statements
         """
         Lazy load lemmatizer instance.
 
@@ -362,7 +362,7 @@ class KeywordExtractor:
         # If already loaded successfully, return it
         if self._lemmatizer_instance is not None:
             return self._lemmatizer_instance
-        
+
         # If we already tried and failed, don't try again
         if self._lemmatizer_load_failed:
             return None
@@ -370,7 +370,7 @@ class KeywordExtractor:
         if self.lemmatizer == "spacy":
             try:
                 import spacy  # pylint: disable=import-outside-toplevel
-                
+
                 # Map language codes to spacy models
                 model_map = {
                     "en": "en_core_web_sm",
@@ -380,12 +380,12 @@ class KeywordExtractor:
                     "fr": "fr_core_news_sm",
                     "it": "it_core_news_sm",
                 }
-                
+
                 model_name = model_map.get(self.config["lan"][:2], "en_core_web_sm")
-                
+
                 try:
                     self._lemmatizer_instance = spacy.load(model_name)
-                    logger.info(f"Loaded spaCy model: {model_name}")
+                    logger.info("Loaded spaCy model: %s", model_name)
                     return self._lemmatizer_instance
                 except OSError:
                     # Try English model as fallback
@@ -396,28 +396,30 @@ class KeywordExtractor:
                             return self._lemmatizer_instance
                         except OSError:
                             pass
-                    
+
                     # All loading attempts failed - show warning once
                     logger.warning(
                         "spaCy models not found. Lemmatization disabled. "
-                        "Install with: uv pip install yake[lemmatization] && python -m spacy download en_core_web_sm"
+                        "Install with: uv pip install yake[lemmatization] && "
+                        "python -m spacy download en_core_web_sm"
                     )
                     self._lemmatizer_load_failed = True
                     return None
-                        
+
             except ImportError:
                 logger.warning(
                     "spaCy not installed. Lemmatization disabled. "
-                    "Install with: uv pip install yake[lemmatization] && python -m spacy download en_core_web_sm"
+                    "Install with: uv pip install yake[lemmatization] && "
+                    "python -m spacy download en_core_web_sm"
                 )
                 self._lemmatizer_load_failed = True
                 return None
-                
-        elif self.lemmatizer == "nltk":
+
+        if self.lemmatizer == "nltk":
             try:
                 from nltk.stem import WordNetLemmatizer  # pylint: disable=import-outside-toplevel
                 import nltk  # pylint: disable=import-outside-toplevel
-                
+
                 # Download wordnet data if needed
                 try:
                     nltk.data.find('corpora/wordnet')
@@ -425,11 +427,11 @@ class KeywordExtractor:
                     logger.info("Downloading NLTK wordnet data...")
                     nltk.download('wordnet', quiet=True)
                     nltk.download('omw-1.4', quiet=True)
-                
+
                 self._lemmatizer_instance = WordNetLemmatizer()
                 logger.info("Loaded NLTK WordNetLemmatizer")
                 return self._lemmatizer_instance
-                
+
             except ImportError:
                 logger.warning(
                     "NLTK not installed. Lemmatization disabled. "
@@ -437,10 +439,13 @@ class KeywordExtractor:
                 )
                 self._lemmatizer_load_failed = True
                 return None
-        else:
-            logger.warning(f"Unknown lemmatizer: {self.lemmatizer}. Lemmatization disabled.")
-            self._lemmatizer_load_failed = True
-            return None
+
+        logger.warning(
+            "Unknown lemmatizer: %s. Lemmatization disabled.",
+            self.lemmatizer
+        )
+        self._lemmatizer_load_failed = True
+        return None
 
     def _lemmatize_text(self, text: str) -> str:
         """
@@ -459,15 +464,16 @@ class KeywordExtractor:
         if self.lemmatizer == "spacy":
             doc = lemmatizer(text)
             return " ".join([token.lemma_ for token in doc])
-        elif self.lemmatizer == "nltk":
+
+        if self.lemmatizer == "nltk":
             # Simple word-by-word lemmatization
             words = text.split()
             return " ".join([lemmatizer.lemmatize(word.lower()) for word in words])
-        
+
         return text
 
-    def _lemmatize_keywords(
-        self, 
+    def _lemmatize_keywords(  # pylint: disable=too-many-locals
+        self,
         keywords: List[Tuple[str, float]]
     ) -> List[Tuple[str, float]]:
         """
@@ -510,17 +516,17 @@ class KeywordExtractor:
                 # Use the keyword with the best (lowest) score
                 best_kw, best_score = min(group, key=lambda x: x[1])
                 result.append((best_kw, best_score))
-                
+
             elif self.lemma_aggregation == "mean":
                 # Use average score, keep first keyword form
                 avg_score = statistics.mean(score for _, score in group)
                 result.append((group[0][0], avg_score))
-                
+
             elif self.lemma_aggregation == "max":
                 # Use the worst (highest) score - most conservative
                 worst_kw, worst_score = max(group, key=lambda x: x[1])
                 result.append((worst_kw, worst_score))
-                
+
             elif self.lemma_aggregation == "harmonic":
                 # Harmonic mean - good for combining scores
                 scores = [score for _, score in group]
@@ -532,8 +538,8 @@ class KeywordExtractor:
                 result.append((group[0][0], harmonic))
             else:
                 logger.warning(
-                    f"Unknown aggregation method: {self.lemma_aggregation}. "
-                    "Using 'min'"
+                    "Unknown aggregation method: %s. Using 'min'",
+                    self.lemma_aggregation
                 )
                 best_kw, best_score = min(group, key=lambda x: x[1])
                 result.append((best_kw, best_score))

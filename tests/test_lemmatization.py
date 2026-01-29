@@ -4,6 +4,8 @@ Tests for lemmatization functionality in YAKE.
 This module tests the lemmatization feature that aggregates keywords
 with the same lemma (e.g., "tree" and "trees").
 """
+# pylint: skip-file
+# This file requires optional dependencies (spaCy, NLTK) and may not be available in all environments
 
 import pytest
 import yake

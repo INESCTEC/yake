@@ -353,8 +353,7 @@ class ComposedWord:
             else:
                 if STOPWORD_WEIGHT == "bi":
                     # BiWeight: use probabilities of adjacent term connections
-                    
-                    
+
                     prob_t1 = 0.0
                     if t > 0 and term_base.g.has_edge(self.terms[t - 1].id, term_base.id):
                         prob_t1 = (
