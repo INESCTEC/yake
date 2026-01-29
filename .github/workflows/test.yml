@@ -25,9 +25,8 @@ jobs:
             uv pip install pytest pytest-cov
         - name: Download spaCy and NLTK models
           run: |
-            uv pip install spacy
             uv run python -m spacy download en_core_web_sm
-            uv run python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"
+            uv run python -c "import nltk; nltk.download('wordnet', quiet=True); nltk.download('omw-1.4', quiet=True)"
         - name: test
           run: uv run pytest -vv --cov=yake tests/
         - name: Performance benchmark
