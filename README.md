@@ -105,9 +105,10 @@ custom_kw_extractor = yake.KeywordExtractor(lan="pt")
 keywords = custom_kw_extractor.extract_keywords(text)
 ```
 
-## Lemmatization (NEW! v0.6.0+)
+## Lemmatization (v0.6.0+)
 
-YAKE! now supports keyword lemmatization to aggregate morphological variations (e.g., "tree" and "trees"): see more [here](https://tiagolv.github.io/yakerf/docs/-getting-started#lemmatization)
+YAKE! now supports keyword lemmatization to aggregate morphological variations (e.g., "tree" and "trees")
+See more [here](https://tiagolv.github.io/yakerf/docs/-getting-started#lemmatization)
 
 
 ## Text Highlighting
