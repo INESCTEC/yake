@@ -18,7 +18,7 @@ dependencies = [
     "tabulate",
     "segtok",
     "networkx",
-    "numpy>=1.23.5", # This version requires Python >=3.8
+    "numpy>=1.24.0,<2.0.0",
     "click>=6.0",
     "jellyfish",
 ]
@@ -52,7 +52,7 @@ benchmark = [
     "matplotlib>=3.5.0",
 ]
 lemmatization = [
-    "spacy>=3.0.0",
+    "spacy>=3.7.0,<3.8.0",
     "nltk>=3.8.0",
 ]
 
