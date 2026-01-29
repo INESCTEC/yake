@@ -328,7 +328,7 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
 
     def _optimized_similarity(self, cand1: str, cand2: str) -> float:
         """Optimized similarity with caching and pre-filtering."""
-        # Cache lookup (consistent ordering for maximum hits)
+        # Cache lookup FIRST (consistent ordering for maximum hits)
         cache_key = (cand1, cand2) if cand1 <= cand2 else (cand2, cand1)
 
         if cache_key in self._similarity_cache:
@@ -337,14 +337,14 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
 
         self._cache_stats['misses'] += 1
 
-        # Pre-filter first
+        # Pre-filter for quick rejection (after cache miss)
         if not self._aggressive_pre_filter(cand1, cand2):
             result = 0.0
         else:
             result = self._ultra_fast_similarity(cand1, cand2)
 
-        # Cache with memory management
-        if len(self._similarity_cache) < 30000:  # Limit memory usage
+        # Cache ALL results including zeros (prevents recalculation)
+        if len(self._similarity_cache) < 30000:
             self._similarity_cache[cache_key] = result
 
         return result
