@@ -22,10 +22,11 @@ jobs:
         - name: Install dependencies
           run: |
             uv pip install -e ".[dev,lemmatization]"
-            uv pip install pytest pytest-cov
+            uv pip install pytest pytest-cov pytest-benchmark
         - name: Download spaCy and NLTK models
           run: |
-            uv pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
+            uv pip install --force-reinstall --no-cache-dir "numpy<2.0.0"
+            uv pip install --force-reinstall --no-cache-dir https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
             uv run python -c "import nltk; nltk.download('wordnet', quiet=True); nltk.download('omw-1.4', quiet=True)"
         - name: test
           run: uv run pytest -vv --cov=yake tests/
