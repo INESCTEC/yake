@@ -1,6 +1,9 @@
 # YAKE! (Yet Another Keyword Extractor)
 
-[![ECIR'18 Best Short Paper](https://img.shields.io/badge/ECIR'18-Best%20Short%20Paper-brightgreen.svg)](http://ecir2018.org) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tiagolv/yakerf/blob/gh-pages/1YAKE.ipynb)
+[![ECIR'18 Best Short Paper](https://img.shields.io/badge/ECIR'18-Best%20Short%20Paper-brightgreen.svg)](http://ecir2018.org)
+[![PyPI Downloads](https://static.pepy.tech/badge/yake)](https://pepy.tech/projects/yake)
+[![PyPI - Python](https://img.shields.io/badge/python-3.10+-blue.svg)](https://pypi.org/project/YAKE/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LIAAD/yake/blob/gh-pages/1YAKE.ipynb)
 
 YAKE! is a lightweight unsupervised automatic keyword extraction method that uses text statistical features to select the most important keywords from a document. It requires no training, external corpus, or dictionaries, and works across multiple languages and domains regardless of text size.
 
@@ -23,23 +26,6 @@ or
 uv pip install yake
 ```
 
-### Optional: Lemmatization Support
-
-To use lemmatization features (aggregate keyword variations like "tree/trees"), install the optional dependencies:
-
-```bash
-uv pip install yake[lemmatization]
-```
-
-Then download the required language models:
-
-```bash
-# For spaCy (recommended)
-python -m spacy download en_core_web_sm
-
-# For NLTK (alternative)
-python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"
-```
 
 ## Basic Usage
 
@@ -145,7 +131,7 @@ custom_th = TextHighlighter(
 ## Where to Find YAKE!
 
 - 🌐 Online demo: [http://yake.inesctec.pt](http://yake.inesctec.pt)
-- 🔌 Documentation site: [https://tiagolv.github.io/yakerf/docs](https://tiagolv.github.io/yakerf/docs/--home)
+- 🔌 Documentation site: [https://liaad.github.io/yake/docs/--home](https://liaad.github.io/yake/)
 - 📦 Python package: [https://github.com/INESCTEC/yake](https://github.com/INESCTEC/yake)
 - 💻 Pypi: [https://pypi.org/project/yake/](https://pypi.org/project/yake/)
 
