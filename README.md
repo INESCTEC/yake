@@ -121,48 +121,8 @@ keywords = custom_kw_extractor.extract_keywords(text)
 
 ## Lemmatization (NEW! v0.6.0+)
 
-YAKE! now supports keyword lemmatization to aggregate morphological variations (e.g., "tree" and "trees"):
+YAKE! now supports keyword lemmatization to aggregate morphological variations (e.g., "tree" and "trees"): see more [here](https://tiagolv.github.io/yakerf/docs/-getting-started#lemmatization)
 
-```python
-import yake
-
-text = "Trees are important. Many trees provide shade. Tree conservation matters."
-
-# Enable lemmatization with different aggregation methods
-kw_extractor = yake.KeywordExtractor(
-    lan="en",
-    n=1,
-    lemmatize=True,              # Enable lemmatization
-    lemma_aggregation="min",     # Aggregation: "min", "mean", "max", "harmonic"
-    lemmatizer="spacy"           # Backend: "spacy" or "nltk"
-)
-
-keywords = kw_extractor.extract_keywords(text)
-
-# Results will combine "tree", "trees" into a single entry with aggregated score
-for kw, score in keywords:
-    print(f"{kw} ({score})")
-```
-
-**Aggregation Methods:**
-- `"min"` (default): Uses the best (lowest) score from all variations
-- `"mean"`: Averages scores across variations
-- `"max"`: Uses the worst (highest) score (most conservative)
-- `"harmonic"`: Harmonic mean of scores (balanced approach)
-
-**Requirements:**
-Install optional lemmatization dependencies:
-```bash
-# For spaCy (recommended)
-pip install yake[lemmatization]
-python -m spacy download en_core_web_sm
-
-# Or for NLTK
-pip install nltk
-python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"
-```
-
-**Supported Languages:** English, Portuguese, Spanish, German, French, Italian (requires corresponding spaCy models)
 
 ## Text Highlighting
 

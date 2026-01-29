@@ -21,9 +21,15 @@ class ComposedWord:
     Attributes:
         See property accessors below for available attributes.
     """
+    
+    # Use __slots__ to reduce memory overhead per instance
+    __slots__ = ('_tags', '_kw', '_unique_kw', '_size', '_terms', '_tf',
+                 '_integrity', '_h', '_start_or_end_stopwords')
 ```
 
 The `ComposedWord` class stores and aggregates information about multi-word keyword candidates, calculating combined scores from the properties of their constituent terms. It tracks statistics like term frequency, integrity, and provides methods to validate whether a phrase is likely to be a good keyword.
+
+> **Performance Note:** This class uses `__slots__` for memory optimization, reducing overhead per instance by storing attributes directly instead of using a dictionary.
 
 ## Constructor
 
@@ -34,50 +40,46 @@ The `ComposedWord` class stores and aggregates information about multi-word keyw
     </AccordionTrigger>
     <AccordionContent>
       ```python
-      def __init__(self, terms):
+      def __init__(self, terms: Optional[List[Tuple[str, str, Any]]]):
           """
           Initialize a ComposedWord object representing a multi-word term.
           
           Args:
-              terms (list): List of tuples (tag, word, term_obj) representing
-                          the individual words in this phrase. Can be None to
-                          initialize an invalid candidate.
+              terms: List of tuples (tag, word, term_obj) representing
+                     the individual words in this phrase. Can be None to
+                     initialize an invalid candidate.
           """
           # If terms is None, initialize an invalid candidate
           if terms is None:
-              self.data = {
-                  "start_or_end_stopwords": True,
-                  "tags": set(),
-                  "h": 0.0,
-                  "tf": 0.0,
-                  "kw": "",
-                  "unique_kw": "",
-                  "size": 0,
-                  "terms": [],
-                  "integrity": 0.0,
-              }
+              self._start_or_end_stopwords = True
+              self._tags = set()
+              self._h = 0.0
+              self._tf = 0.0
+              self._kw = ""
+              self._unique_kw = ""
+              self._size = 0
+              self._terms = []
+              self._integrity = 0.0
               return
 
-          # Basic initialization from terms
-          self.data = {}
-
           # Calculate derived properties
-          self.data["tags"] = set(["".join([w[0] for w in terms])])
-          self.data["kw"] = " ".join([w[1] for w in terms])
-          self.data["unique_kw"] = self.data["kw"].lower()
-          self.data["size"] = len(terms)
-          self.data["terms"] = [w[2] for w in terms if w[2] is not None]
-          self.data["tf"] = 0.0
-          self.data["integrity"] = 1.0
-          self.data["h"] = 1.0
+          self._tags = set(["".join([w[0] for w in terms])])
+          self._kw = " ".join([w[1] for w in terms])
+          self._unique_kw = self._kw.lower()
+          self._size = len(terms)
+          self._terms = [w[2] for w in terms if w[2] is not None]
+          self._tf = 0.0
+          self._integrity = 1.0
+          self._h = 1.0
 
           # Check if the candidate starts or ends with stopwords
-          if len(self.data["terms"]) > 0:
-              self.data["start_or_end_stopwords"] = (
-                  self.data["terms"][0].stopword or self.data["terms"][-1].stopword
+          # Optimized: use truthiness instead of len() > 0
+          if self._terms:
+              self._start_or_end_stopwords = (
+                  self._terms[0].stopword or self._terms[-1].stopword
               )
           else:
-              self.data["start_or_end_stopwords"] = True
+              self._start_or_end_stopwords = True
       ```
     </AccordionContent>
   </AccordionItem>
@@ -101,6 +103,20 @@ composed_word = ComposedWord(terms)
 invalid_composed = ComposedWord(None)
 ```
 
+## Properties
+
+The class provides property accessors for backward compatibility:
+
+- `tags` - Get the set of part-of-speech tag sequences for this phrase
+- `kw` - Get the original form of the keyword phrase
+- `unique_kw` - Get the normalized (lowercase) form of the keyword phrase
+- `size` - Get the number of words in this phrase
+- `terms` - Get the list of SingleWord objects for each constituent term
+- `tf` - Get/set the term frequency (number of occurrences) in the document
+- `integrity` - Get the integrity score indicating phrase coherence
+- `h` - Get/set the final relevance score of this phrase (lower is better)
+- `start_or_end_stopwords` - Get whether this phrase starts or ends with stopwords
+
 ## Core Methods
 
 <Accordion type="single" collapsible>
@@ -112,21 +128,34 @@ invalid_composed = ComposedWord(None)
       ```python
       def update_h(self, features=None, is_virtual=False):
           """
-          Update the term's score based on its constituent terms.
+          Update the composed term score.
           
-          Calculates a combined relevance score for the multi-word term by
-          aggregating scores of its constituent words, with special handling for
-          stopwords to improve keyword quality.
+          Calculates the H score for a multi-word term by aggregating scores from its
+          constituent words. The method uses different strategies for handling stopwords:
+          
+          Stopword Weight Methods:
+          - "bi" (BiWeight): Uses edge probabilities between terms in the co-occurrence graph.
+          - "h": Directly uses the H score of stopwords.
+          - "none": Ignores stopwords completely in the calculation.
+          
+          A lower H score indicates a more important keyword.
+          
+          Note: This implementation maintains the original YAKE algorithm behavior for
+          backward compatibility, which may produce negative scores in some edge cases
+          with consecutive stopwords.
           
           Args:
-              features (list, optional): Specific features to use for scoring
-              is_virtual (bool): Whether this is a virtual candidate not in text
+              features: Specific features to use for scoring (currently unused)
+              is_virtual: Whether this is a virtual candidate not in text
           """
           sum_h = 0.0
           prod_h = 1.0
+          t = 0
 
-          # Process each term in the phrase
-          for t, term_base in enumerate(self.terms):
+          # Process each term in the phrase, with special handling for consecutive stopwords
+          while t < len(self.terms):
+              term_base = self.terms[t]
+
               # Handle non-stopwords directly
               if not term_base.stopword:
                   sum_h += term_base.h
@@ -136,30 +165,27 @@ invalid_composed = ComposedWord(None)
               else:
                   if STOPWORD_WEIGHT == "bi":
                       # BiWeight: use probabilities of adjacent term connections
+                      
                       prob_t1 = 0.0
-                      # Check connection with previous term
-                      if t > 0 and term_base.g.has_edge(
-                          self.terms[t - 1].id, self.terms[t].id
-                      ):
+                      if t > 0 and term_base.g.has_edge(self.terms[t - 1].id, term_base.id):
                           prob_t1 = (
-                              term_base.g[self.terms[t - 1].id][self.terms[t].id]["tf"]
+                              term_base.g[self.terms[t - 1].id][term_base.id]["tf"]
                               / self.terms[t - 1].tf
                           )
 
                       prob_t2 = 0.0
-                      # Check connection with next term
                       if t < len(self.terms) - 1 and term_base.g.has_edge(
-                          self.terms[t].id, self.terms[t + 1].id
+                          term_base.id, self.terms[t + 1].id
                       ):
                           prob_t2 = (
-                              term_base.g[self.terms[t].id][self.terms[t + 1].id]["tf"]
+                              term_base.g[term_base.id][self.terms[t + 1].id]["tf"]
                               / self.terms[t + 1].tf
                           )
 
-                      # Calculate combined probability and update scores
                       prob = prob_t1 * prob_t2
                       prod_h *= 1 + (1 - prob)
                       sum_h -= 1 - prob
+
                   elif STOPWORD_WEIGHT == "h":
                       # HWeight: treat stopwords like normal words
                       sum_h += term_base.h
@@ -168,14 +194,19 @@ invalid_composed = ComposedWord(None)
                       # None: ignore stopwords entirely
                       pass
 
+              # Move to next term
+              t += 1
+
           # Determine term frequency to use in scoring
           tf_used = 1.0
           if features is None or "KPF" in features:
               tf_used = self.tf
 
           # For virtual candidates, use mean frequency of constituent terms
+          # Optimized: use built-in sum/len instead of numpy for small lists
           if is_virtual:
-              tf_used = np.mean([term_obj.tf for term_obj in self.terms])
+              tfs = [term_obj.tf for term_obj in self.terms]
+              tf_used = sum(tfs) / len(tfs) if tfs else 1.0
 
           # Calculate final score (lower is better)
           self.h = prod_h / ((sum_h + 1) * tf_used)
@@ -210,21 +241,18 @@ invalid_composed = ComposedWord(None)
     </AccordionContent>
   </AccordionItem>
 
-  <AccordionItem value="uptade_cand">
+  <AccordionItem value="update_cand">
     <AccordionTrigger>
-      <code>uptade_cand(cand)</code>
+      <code>update_cand(cand)</code>
     </AccordionTrigger>
     <AccordionContent>
       ```python
-      def uptade_cand(self, cand):
+      def update_cand(self, cand):
           """
-          Update this candidate with data from another candidate.
-          
-          Merges tag information from another candidate representing
-          the same keyword phrase.
+          Update candidate with new tags.
           
           Args:
-              cand (ComposedWord): Another instance of the same keyword to merge with
+              cand: Another instance of the same keyword to merge with
           """
           # Add all tags from the other candidate to this one's tags
           for tag in cand.tags:
@@ -450,8 +478,10 @@ invalid_composed = ComposedWord(None)
               tf_used = self.tf
 
           # For virtual candidates, use mean frequency of constituent terms
+          # Optimized: use built-in sum/len instead of numpy for small lists
           if is_virtual:
-              tf_used = np.mean([term_obj.tf for term_obj in self.terms])
+              tfs = [term_obj.tf for term_obj in self.terms]
+              tf_used = sum(tfs) / len(tfs) if tfs else 1.0
 
           # Calculate final score (lower is better)
           self.h = prod_h / ((sum_h + 1) * tf_used)

@@ -20,9 +20,12 @@ a relevance score for each word.
 
 import math
 import numpy as np
+import networkx as nx
 ```
 
 The `SingleWord` class stores and calculates statistical features for individual terms, including frequency, position, spread, and relationship metrics. These features are used to calculate a relevance score that indicates the word's importance in the document.
+
+> **Performance Note:** This class uses `__slots__` for memory optimization with fast access to `id` and `g` attributes while storing most data in a dictionary for flexibility.
 
 ## Constructor
 
@@ -33,17 +36,21 @@ The `SingleWord` class stores and calculates statistical features for individual
     </AccordionTrigger>
     <AccordionContent>
       ```python
-      def __init__(self, unique, idx, graph):
+      def __init__(self, unique: str, idx: int, graph: nx.DiGraph):
           """
           Initialize a SingleWord term object.
           
           Args:
-              unique (str): The unique normalized term this object represents
-              idx (int): Unique identifier for the term in the document
-              graph (networkx.DiGraph): Word co-occurrence graph from the document
+              unique: The unique normalized term this object represents
+              idx: Unique identifier for the term in the document
+              graph: Word co-occurrence graph from the document
           """
           self.id = idx  # Fast access needed as it's used in graph operations
           self.g = graph  # Fast access needed for network calculations
+
+          # Cache for graph metrics to avoid recalculation
+          self._graph_metrics_cache = None
+          self._graph_version = 0  # Track graph changes for cache invalidation
 
           self.data = {
               # Basic information
