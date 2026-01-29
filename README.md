@@ -186,7 +186,7 @@ custom_th = TextHighlighter(
 
 - 🌐 Online demo: [http://yake.inesctec.pt](http://yake.inesctec.pt)
 - 🔌 Documentation site: [https://tiagolv.github.io/yakerf/docs](https://tiagolv.github.io/yakerf/docs/--home)
-- 📦 Python package: [https://github.com/LIAAD/yake_demo](https://github.com/LIAAD/yake_demo)
+- 📦 Python package: [https://github.com/INESCTEC/yake](https://github.com/INESCTEC/yake)
 - 💻 Pypi: [https://pypi.org/project/yake/](https://pypi.org/project/yake/)
 
 ## Citation
