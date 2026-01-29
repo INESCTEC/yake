@@ -659,10 +659,19 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
             return results
 
         except Exception as e:  # pylint: disable=broad-exception-caught
-            logger.warning(
-                "Exception during keyword extraction: %s (text preview: '%s...')",
-                str(e), text[:100] if text else ""
+            # Python 3.11+ enhanced error messages with exception notes
+            error_msg = (
+                f"Exception during keyword extraction: {str(e)} "
+                f"(text preview: '{text[:100] if text else ''}...')"
             )
+            logger.warning(error_msg)
+            
+            # Add contextual note for better debugging (Python 3.11+)
+            if hasattr(e, 'add_note'):
+                e.add_note(f"YAKE config: lan={self.config['lan']}, n={self.config['n']}, "
+                          f"dedup_lim={self.config['dedup_lim']}")
+                e.add_note(f"Text length: {len(text) if text else 0} characters")
+
             return []
 
     def _optimized_small_dedup(self, candidates_sorted):

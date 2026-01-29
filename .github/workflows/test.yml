@@ -14,7 +14,7 @@ jobs:
         - name: Set up Python
           uses: actions/setup-python@v4
           with:
-            python-version: '3.10'
+            python-version: '3.13'
         - name: Install uv
           run: pip install uv
         - name: Create virtual environment
@@ -30,3 +30,7 @@ jobs:
             python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"
         - name: test
           run: uv run pytest -vv --cov=yake tests/
+        - name: Performance benchmark (with JIT)
+          run: |
+            echo "Testing Python 3.13 JIT performance..."
+            PYTHON_JIT=1 python scripts/test_python313_features.py
