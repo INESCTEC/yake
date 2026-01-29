@@ -139,4 +139,3 @@ def keywords(  # pylint: disable=too-many-arguments,too-many-positional-argument
         except FileNotFoundError:
             print(f"File '{input_file}' not found.")
             sys.exit(1)
-

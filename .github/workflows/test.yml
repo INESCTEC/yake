@@ -23,9 +23,10 @@ jobs:
           run: |
             uv pip install -e ".[dev,lemmatization]"
             uv pip install pytest pytest-cov
-        - name: Download spaCy models
+        - name: Download spaCy and NLTK models
           run: |
-            uv run python -m spacy download en_core_web_sm
-            uv run python -m nltk.downloader wordnet omw-1.4
+            source .venv/bin/activate
+            python -m spacy download en_core_web_sm
+            python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"
         - name: test
           run: uv run pytest -vv --cov=yake tests/
