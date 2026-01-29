@@ -323,12 +323,14 @@ class ComposedWord:
 
         Stopword Weight Methods:
         - "bi" (BiWeight): Uses edge probabilities between terms in the co-occurrence graph.
-          Consecutive stopwords are treated as a single group to prevent excessive
-          negative contributions (fixes Issue #17, PR #96).
         - "h": Directly uses the H score of stopwords.
         - "none": Ignores stopwords completely in the calculation.
 
         A lower H score indicates a more important keyword.
+
+        Note: This implementation maintains the original YAKE algorithm behavior for
+        backward compatibility, which may produce negative scores in some edge cases
+        with consecutive stopwords.
 
         Args:
             features: Specific features to use for scoring (currently unused)
@@ -351,53 +353,27 @@ class ComposedWord:
             else:
                 if STOPWORD_WEIGHT == "bi":
                     # BiWeight: use probabilities of adjacent term connections
-
-                    # For consecutive stopwords, treat them as a single group
-                    # This prevents excessive negative contributions to sum_h
-                    stop_group_start = t
-                    stop_group_end = t
-
-                    # Find the end of consecutive stopwords
-                    while (stop_group_end < len(self.terms) - 1 and
-                           self.terms[stop_group_end + 1].stopword):
-                        stop_group_end += 1
-
-                    # Calculate probability from word before group to first stopword
+                    
+                    
                     prob_t1 = 0.0
-                    if (stop_group_start > 0 and
-                        self.terms[stop_group_start].g.has_edge(
-                            self.terms[stop_group_start - 1].id,
-                            self.terms[stop_group_start].id
-                        )):
+                    if t > 0 and term_base.g.has_edge(self.terms[t - 1].id, term_base.id):
                         prob_t1 = (
-                            self.terms[stop_group_start].g[
-                                self.terms[stop_group_start - 1].id
-                            ][self.terms[stop_group_start].id]["tf"]
-                            / self.terms[stop_group_start - 1].tf
+                            term_base.g[self.terms[t - 1].id][term_base.id]["tf"]
+                            / self.terms[t - 1].tf
                         )
 
-                    # Calculate probability from last stopword to next word
                     prob_t2 = 0.0
-                    if (stop_group_end < len(self.terms) - 1 and
-                        self.terms[stop_group_end].g.has_edge(
-                            self.terms[stop_group_end].id,
-                            self.terms[stop_group_end + 1].id
-                        )):
+                    if t < len(self.terms) - 1 and term_base.g.has_edge(
+                        term_base.id, self.terms[t + 1].id
+                    ):
                         prob_t2 = (
-                            self.terms[stop_group_end].g[
-                                self.terms[stop_group_end].id
-                            ][self.terms[stop_group_end + 1].id]["tf"]
-                            / self.terms[stop_group_end + 1].tf
+                            term_base.g[term_base.id][self.terms[t + 1].id]["tf"]
+                            / self.terms[t + 1].tf
                         )
 
-                    # Calculate combined probability and update scores
-                    # Apply the penalty only ONCE per group, not per stopword
                     prob = prob_t1 * prob_t2
                     prod_h *= 1 + (1 - prob)
                     sum_h -= 1 - prob
-
-                    # Skip to the end of the stopword group
-                    t = stop_group_end
 
                 elif STOPWORD_WEIGHT == "h":
                     # HWeight: treat stopwords like normal words

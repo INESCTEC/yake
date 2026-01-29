@@ -33,10 +33,15 @@ import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
   YAKE! requires Python 3.7+ and can be installed directly from GitHub.
 </Callout>
 
-<Tabs items={['pip', 'conda']}>
+<Tabs items={['uv', 'pip', 'conda']}>
+  <Tab value="uv">
+    ```bash
+    uv pip install git+https://github.com/INESCTEC/yake
+    ```
+  </Tab>
   <Tab value="pip">
     ```bash
-    pip install git+https://github.com/LIAAD/yake
+    pip install git+https://github.com/INESCTEC/yake
     ```
   </Tab>
   <Tab value="conda">
@@ -45,19 +50,26 @@ import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
     conda install pip
     
     # Then install YAKE
-    pip install git+https://github.com/LIAAD/yake
+    pip install git+https://github.com/INESCTEC/yake
     ```
   </Tab>
 </Tabs>
 
 <div className="not-prose mt-4">
   <div className="rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/30 p-4">
-    <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2">💡 Optional Dependencies</h4>
+    <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2">💡 Optional: Lemmatization Support</h4>
     <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
-      For lemmatization support (optional but recommended):
+      To use lemmatization features (aggregate keyword variations like "tree/trees"), install the optional dependencies:
     </p>
-    <div className="bg-gray-900 dark:bg-gray-950 text-gray-100 p-3 rounded text-sm">
-      <code>pip install spacy && python -m spacy download en_core_web_sm</code>
+    <div className="bg-gray-900 dark:bg-gray-950 text-gray-100 p-3 rounded text-sm mb-3">
+      <code>uv pip install yake[lemmatization]</code>
+    </div>
+    <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">Then download the required language models:</p>
+    <div className="bg-gray-900 dark:bg-gray-950 text-gray-100 p-3 rounded text-sm space-y-1">
+      <div><code># For spaCy (recommended)</code></div>
+      <div><code>python -m spacy download en_core_web_sm</code></div>
+      <div className="pt-2"><code># For NLTK (alternative)</code></div>
+      <div><code>python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"</code></div>
     </div>
   </div>
 </div>
@@ -113,7 +125,7 @@ yake [OPTIONS]
         <tr className="bg-gray-50 dark:bg-gray-800/50">
           <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">-df, --dedup-func</td>
           <td className="px-4 py-3 text-gray-600 dark:text-gray-400">CHOICE</td>
-          <td className="px-4 py-3">Deduplication method: levs, jaro, or seqm</td>
+          <td className="px-4 py-3">Deduplication method: leve, jaro, or seqm</td>
         </tr>
         <tr className="bg-white dark:bg-gray-900">
           <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">-dl, --dedup-lim</td>
@@ -126,6 +138,11 @@ yake [OPTIONS]
           <td className="px-4 py-3">Enable lemmatization (default: False)</td>
         </tr>
         <tr className="bg-white dark:bg-gray-900">
+          <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">--lemma-aggregation</td>
+          <td className="px-4 py-3 text-gray-600 dark:text-gray-400">CHOICE</td>
+          <td className="px-4 py-3">Aggregation method: min, mean, max, or harmonic (default: min)</td>
+        </tr>
+        <tr className="bg-gray-50 dark:bg-gray-800/50">
           <td className="px-4 py-3 font-mono text-blue-600 dark:text-blue-400">--lemmatizer</td>
           <td className="px-4 py-3 text-gray-600 dark:text-gray-400">CHOICE</td>
           <td className="px-4 py-3">Backend: spacy or nltk (default: spacy)</td>
@@ -160,14 +177,20 @@ yake [OPTIONS]
   <Tab value="Advanced">
     ```bash
     # Advanced usage with custom parameters
-    yake -i article.txt -l en -n 3 -df levs -dl 0.8 -ws 2 -t 15 -v
+    yake -i article.txt -l en -n 3 -df leve -dl 0.8 -ws 2 -t 15 -v
     ```
   </Tab>
   
   <Tab value="Lemmatization">
     ```bash
-    # With lemmatization enabled
+    # With lemmatization enabled (default aggregation: min)
     yake -ti 'Running runs runner' --lemmatize --lemmatizer spacy -t 10 -v
+    
+    # With custom aggregation method
+    yake -ti 'Trees grow. The tree is tall.' --lemmatize --lemma-aggregation mean -t 10 -v
+    
+    # Compare different aggregation methods
+    yake -i text.txt --lemmatize --lemma-aggregation harmonic -t 15 -v
     ```
   </Tab>
 </Tabs>
@@ -192,7 +215,7 @@ YAKE uses three methods to compute string similarity during keyword deduplicatio
     </div>
     <div className="mb-3">
       <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-semibold">
-        levs
+        leve
       </span>
     </div>
     <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
@@ -307,7 +330,7 @@ YAKE uses three methods to compute string similarity during keyword deduplicatio
       </thead>
       <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
         <tr className="bg-blue-50 dark:bg-blue-950/30">
-          <td className="px-4 py-3 font-mono font-bold text-blue-600 dark:text-blue-400">levs</td>
+          <td className="px-4 py-3 font-mono font-bold text-blue-600 dark:text-blue-400">leve</td>
           <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Edit operations</td>
           <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Typos and small changes</td>
           <td className="px-4 py-3"><span className="px-2 py-1 bg-yellow-200 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded text-xs font-medium">Medium</span></td>
@@ -330,12 +353,12 @@ YAKE uses three methods to compute string similarity during keyword deduplicatio
 </div>
 
 <Callout type="tip" title="💡 Recommendation">
-  For most use cases, **`levs` (Levenshtein)** provides the best balance between accuracy and performance. Use `jaro` for proper names or short strings, and `seqm` for longer texts with shared subsequences.
+  For most use cases, **`leve` (Levenshtein)** provides the best balance between accuracy and performance. Use `jaro` for proper names or short strings, and `seqm` for longer texts with shared subsequences.
 </Callout>
 
 ---
 
-#### 1. `levs` — Levenshtein Similarity
+#### 1. `leve` — Levenshtein Similarity
 
 * **What it is:** Measures the edit distance between two strings — how many operations (insertions, deletions, substitutions) are needed to turn one string into another.
 * **Formula used:**
@@ -371,19 +394,19 @@ where `M` is the number of matching characters, and `T` is the total number of c
 
 | Method | Based on | Best for | Performance |
 |--------|----------|----------|-------------|
-| `levs` | Edit operations | Typos and small changes | Medium |
+| `leve` | Edit operations | Typos and small changes | Medium |
 | `jaro` | Matching positions | Names and short strings with swaps | Fast |
 | `seqm` | Common subsequences | General phrase similarity | Fast |
 
 #### Practical Examples
 
-| Compared Strings | `levs` | `jaro` | `seqm` |
+| Compared Strings | `leve` | `jaro` | `seqm` |
 |------------------|--------|--------|--------|
 | "casa" vs "caso" | 0.75 | 0.83 | 0.75 |
 | "machine" vs "mecine" | 0.71 | 0.88 | 0.82 |
 | "apple" vs "a pple" | 0.8 | 0.93 | 0.9 |
 
-**Recommendation:** For general use with a good balance of speed and accuracy, `seqm` is a solid default (and it is YAKE's default). For stricter lexical similarity, choose `levs`. For names or when letter swaps are common, go with `jaro`.
+**Recommendation:** For general use with a good balance of speed and accuracy, `seqm` is a solid default (and it is YAKE's default). For stricter lexical similarity, choose `leve`. For names or when letter swaps are common, go with `jaro`.
 
 ## Lemmatization
 
@@ -547,6 +570,6 @@ The lower the score, the more relevant the keyword is.
     <a href="#top" className="no-underline text-sm font-medium">Back to top</a>
   </p>
   <p className="text-sm text-gray-500">
-    Copyright &copy;2018-{new Date().getFullYear()} INESC TEC. Distributed by an <a href="https://github.com/LIAAD/yake/tree/master/LICENSE">INESCTEC license.</a>
+    Copyright &copy;2018-{new Date().getFullYear()} INESC TEC. Distributed by an <a href="https://github.com/INESCTEC/yake/tree/master/LICENSE">INESCTEC license.</a>
   </p>
 </div>

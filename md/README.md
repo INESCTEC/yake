@@ -14,31 +14,13 @@ YAKE! is a lightweight unsupervised automatic keyword extraction method that use
 ## Quick Installation
 
 ```bash
-uv pip install git+https://github.com/INESCTEC/yake
+pip install git+https://github.com/LIAAD/yake
 ```
 
 or
 
 ```bash
-uv pip install yake
-```
-
-### Optional: Lemmatization Support
-
-To use lemmatization features (aggregate keyword variations like "tree/trees"), install the optional dependencies:
-
-```bash
-uv pip install yake[lemmatization]
-```
-
-Then download the required language models:
-
-```bash
-# For spaCy (recommended)
-python -m spacy download en_core_web_sm
-
-# For NLTK (alternative)
-python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"
+pip install yake
 ```
 
 ## Basic Usage

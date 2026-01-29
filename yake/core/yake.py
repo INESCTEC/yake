@@ -400,7 +400,7 @@ class KeywordExtractor:
                     # All loading attempts failed - show warning once
                     logger.warning(
                         "spaCy models not found. Lemmatization disabled. "
-                        "Install with: pip install spacy && python -m spacy download en_core_web_sm"
+                        "Install with: uv pip install yake[lemmatization] && python -m spacy download en_core_web_sm"
                     )
                     self._lemmatizer_load_failed = True
                     return None
@@ -408,7 +408,7 @@ class KeywordExtractor:
             except ImportError:
                 logger.warning(
                     "spaCy not installed. Lemmatization disabled. "
-                    "Install with: pip install spacy && python -m spacy download en_core_web_sm"
+                    "Install with: uv pip install yake[lemmatization] && python -m spacy download en_core_web_sm"
                 )
                 self._lemmatizer_load_failed = True
                 return None
@@ -433,7 +433,7 @@ class KeywordExtractor:
             except ImportError:
                 logger.warning(
                     "NLTK not installed. Lemmatization disabled. "
-                    "Install with: pip install nltk"
+                    "Install with: uv pip install yake[lemmatization]"
                 )
                 self._lemmatizer_load_failed = True
                 return None

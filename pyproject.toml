@@ -57,10 +57,10 @@ lemmatization = [
 
 [project.urls]
 Documentation = "https://tiagolv.github.io/yakerf/docs/--home"
-Source = "https://github.com/LIAAD/yake"
+Source = "https://github.com/INESCTEC/yake"
 
 [project.scripts]
-yake = "yake.cli:keywords"  
+yake = "yake.cli:keywords"
 
 [tool.hatch.build.targets.wheel]
 packages = ["yake", "StopwordsList"]  # Explicitly include these packages
