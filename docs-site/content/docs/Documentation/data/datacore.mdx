@@ -57,11 +57,14 @@ The `DataCore` class processes text documents to identify potential keywords bas
         tags_to_discard = config.get("tags_to_discard", set(["u", "d"]))
         exclude = config.get("exclude", set(string.punctuation))
 
+        # Convert exclude to frozenset once for efficient caching in get_tag()
+        exclude = frozenset(exclude)
+
         # Initialize the state dictionary containing all component data structures
         self._state = {
             # Configuration settings
             "config": {
-                "exclude": exclude,                # Punctuation and other characters to exclude
+                "exclude": exclude,                # Punctuation and other characters to exclude (as frozenset)
                 "tags_to_discard": tags_to_discard,  # POS tags to ignore during analysis
                 "stopword_set": stopword_set       # Set of stopwords for filtering
             },
@@ -82,7 +85,9 @@ The `DataCore` class processes text documents to identify potential keywords bas
             },
 
             # Graph for term co-occurrence analysis
-            "g": nx.DiGraph()  # Directed graph where nodes are terms and edges represent co-occurrences
+            # Directed graph where nodes are terms and edges represent
+            # co-occurrences
+            "g": nx.DiGraph(),
         }
 
         # Initialize n-gram frequencies with zero counts for each length 1 to n

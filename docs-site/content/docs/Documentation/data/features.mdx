@@ -4,7 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 The `features` module contains pure functions for calculating statistical features used to score and rank keyword candidates in YAKE.
 
-> **Info:** This module was introduced in YAKE 2.0 to separate feature calculations from data structures, improving testability and maintainability.
+> **Info:** This documentation provides interactive code views for each method. Click on a function name to view its implementation.
 
 ## Module Overview
 
@@ -80,7 +80,10 @@ This module provides stateless functions that calculate various statistical feat
               - h: Final importance score (H-score)
           """
           # Get graph metrics (cached in SingleWord)
-          metrics = term.graph_metrics
+          if hasattr(term, "get_graph_metrics"):
+              metrics = term.get_graph_metrics()
+          else:
+              metrics = term.graph_metrics
           
           # Calculate WRel (term relevance based on graph connectivity)
           pwl = metrics['pwl']

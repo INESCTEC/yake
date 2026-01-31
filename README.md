@@ -133,7 +133,7 @@ custom_th = TextHighlighter(
 ## Where to Find YAKE!
 
 - 🌐 Online demo: [http://yake.inesctec.pt](http://yake.inesctec.pt)
-- 🔌 Documentation site: [https://liaad.github.io/yake/docs/--home](https://liaad.github.io/yake/)
+- 🔌 Documentation site: [https://inesctec.github.io/yake/docs/--home](https://liaad.github.io/yake/)
 - 📦 Python package: [https://github.com/INESCTEC/yake](https://github.com/INESCTEC/yake)
 - 💻 Pypi: [https://pypi.org/project/yake/](https://pypi.org/project/yake/)
 

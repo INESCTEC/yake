@@ -19,47 +19,10 @@ allowing for flexible text markup based on keyword extraction results.
 
 import re
 import logging
-from dataclasses import dataclass
-from typing import List
 
 DEFAULT_HIGHLIGHT_PRE = "<kw>"
 DEFAULT_HIGHLIGHT_POST = "</kw>"
 ```
-
-## Data class
-
-### NgramData
-
-<Accordion type="single" collapsible>
-  <AccordionItem value="ngram_data">
-    <AccordionTrigger>
-      <code>NgramData</code>
-    </AccordionTrigger>
-    <AccordionContent>
-      ```python
-      @dataclass
-      class NgramData:
-          """
-          Data structure to hold n-gram processing results.
-          
-          This class stores the results of n-gram identification for highlighting,
-          including the list of words and how they are split within keywords.
-          
-          Attributes:
-              word_list: List of words that form the n-gram
-              split_kw_list: List of lists containing the split keywords
-          """
-
-          word_list: List[str]
-          split_kw_list: List[List[str]]
-      ```
-    </AccordionContent>
-  </AccordionItem>
-</Accordion>
-
-A data class to store n-gram processing results containing:
-- `word_list`: List of extracted words that form the n-gram
-- `split_kw_list`: List of lists containing the split keywords for processing
 
 ## Constructor
 
@@ -362,7 +325,7 @@ A data class to store n-gram processing results containing:
               relevant_words_array: Keywords to highlight
 
           Returns:
-              NgramData containing keyword list and split n-gram word list
+              Tuple containing (keyword list, split n-gram word list)
           """
           temporary_list = []
           temporary_list_two = []
@@ -721,5 +684,3 @@ print(custom_highlighted)
 The `TextHighlighter` module relies on:
 - `re`: For regular expression operations in text processing
 - `logging`: For error handling and reporting
-- `dataclasses`: For defining the `NgramData` dataclass
-- `typing`: For type annotations
