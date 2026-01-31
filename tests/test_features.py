@@ -38,12 +38,14 @@ class TestCalculateTermFeatures:
         term.tf_n = 3.0  # Non-capitalized occurrences
         term.sentence_ids = {1, 2, 3}  # Appears in 3 sentences
         term.occurs = {0: None, 5: None, 10: None}  # Positions
-        term.graph_metrics = {
+        graph_metrics = {
             'pwl': 0.5,
             'pwr': 0.5,
             'wdl': 10.0,
             'wdr': 10.0
         }
+        term.get_graph_metrics = Mock(return_value=graph_metrics)
+        term.graph_metrics = graph_metrics
         
         # Document statistics
         max_tf = 10.0
@@ -79,12 +81,14 @@ class TestCalculateTermFeatures:
         term.tf_n = 3.0
         term.sentence_ids = {1}
         term.occurs = {0: None}
-        term.graph_metrics = {
+        graph_metrics = {
             'pwl': 0.3,
             'pwr': 0.7,
             'wdl': 5.0,
             'wdr': 5.0
         }
+        term.get_graph_metrics = Mock(return_value=graph_metrics)
+        term.graph_metrics = graph_metrics
         
         features = calculate_term_features(term, 10.0, 3.0, 2.0, 5)
         
@@ -100,9 +104,11 @@ class TestCalculateTermFeatures:
         term.tf_n = 4.0
         term.sentence_ids = {1}
         term.occurs = {0: None}
-        term.graph_metrics = {
+        graph_metrics = {
             'pwl': 0.5, 'pwr': 0.5, 'wdl': 5.0, 'wdr': 5.0
         }
+        term.get_graph_metrics = Mock(return_value=graph_metrics)
+        term.graph_metrics = graph_metrics
         
         avg_tf = 3.0
         std_tf = 2.0
@@ -120,9 +126,11 @@ class TestCalculateTermFeatures:
         term.tf_n = 3.0
         term.sentence_ids = {1, 2, 3, 4}  # 4 out of 10 sentences
         term.occurs = {0: None}
-        term.graph_metrics = {
+        graph_metrics = {
             'pwl': 0.5, 'pwr': 0.5, 'wdl': 5.0, 'wdr': 5.0
         }
+        term.get_graph_metrics = Mock(return_value=graph_metrics)
+        term.graph_metrics = graph_metrics
         
         features = calculate_term_features(term, 10.0, 3.0, 2.0, 10)
         
@@ -138,9 +146,11 @@ class TestCalculateTermFeatures:
         term.tf_n = 3.0
         term.sentence_ids = {1}
         term.occurs = {0: None}
-        term.graph_metrics = {
+        graph_metrics = {
             'pwl': 0.5, 'pwr': 0.5, 'wdl': 5.0, 'wdr': 5.0
         }
+        term.get_graph_metrics = Mock(return_value=graph_metrics)
+        term.graph_metrics = graph_metrics
         
         features = calculate_term_features(term, 10.0, 3.0, 2.0, 5)
         
@@ -156,9 +166,11 @@ class TestCalculateTermFeatures:
         term.tf_n = 3.0
         term.sentence_ids = {1}
         term.occurs = {10: None, 20: None, 30: None, 40: None, 50: None}
-        term.graph_metrics = {
+        graph_metrics = {
             'pwl': 0.5, 'pwr': 0.5, 'wdl': 5.0, 'wdr': 5.0
         }
+        term.get_graph_metrics = Mock(return_value=graph_metrics)
+        term.graph_metrics = graph_metrics
         
         features = calculate_term_features(term, 10.0, 3.0, 2.0, 5)
         
@@ -176,9 +188,11 @@ class TestCalculateTermFeatures:
         term.tf_n = 0.0
         term.sentence_ids = {1}
         term.occurs = {0: None}
-        term.graph_metrics = {
+        graph_metrics = {
             'pwl': 0.5, 'pwr': 0.5, 'wdl': 0.0, 'wdr': 0.0
         }
+        term.get_graph_metrics = Mock(return_value=graph_metrics)
+        term.graph_metrics = graph_metrics
         
         # When max_tf is 0, term.tf should also be 0, avoiding division
         # But if it happens, the code should handle it gracefully
@@ -203,9 +217,11 @@ class TestCalculateTermFeatures:
         term.tf_n = 0.0
         term.sentence_ids = {1}
         term.occurs = {5: None}  # Single position
-        term.graph_metrics = {
+        graph_metrics = {
             'pwl': 0.5, 'pwr': 0.5, 'wdl': 1.0, 'wdr': 1.0
         }
+        term.get_graph_metrics = Mock(return_value=graph_metrics)
+        term.graph_metrics = graph_metrics
         
         features = calculate_term_features(term, 10.0, 3.0, 2.0, 5)
         
@@ -468,12 +484,14 @@ class TestFeatureIntegration:
         term.tf_n = 2.0
         term.sentence_ids = {1, 2}
         term.occurs = {10: None, 20: None, 30: None}
-        term.graph_metrics = {
+        graph_metrics = {
             'pwl': 0.6,
             'pwr': 0.4,
             'wdl': 8.0,
             'wdr': 7.0
         }
+        term.get_graph_metrics = Mock(return_value=graph_metrics)
+        term.graph_metrics = graph_metrics
         
         features = calculate_term_features(term, 10.0, 4.0, 2.0, 5)
         
@@ -488,9 +506,11 @@ class TestFeatureIntegration:
         high_tf_term.tf_n = 5.0
         high_tf_term.sentence_ids = {1, 2, 3, 4, 5}
         high_tf_term.occurs = {i: None for i in range(20)}
-        high_tf_term.graph_metrics = {
+        graph_metrics = {
             'pwl': 0.8, 'pwr': 0.8, 'wdl': 15.0, 'wdr': 15.0
         }
+        high_tf_term.get_graph_metrics = Mock(return_value=graph_metrics)
+        high_tf_term.graph_metrics = graph_metrics
         
         features = calculate_term_features(high_tf_term, 20.0, 5.0, 3.0, 5)
         
