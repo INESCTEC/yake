@@ -271,7 +271,6 @@ class ComposedWord:
                     ) / max(len(gold_key), len(self.unique_kw))
                     max_gold_ = (gold_key, dist)
                 features_cand.append(max_gold_[1])
-                features_cand.append(max_gold_[1])
 
         # Add basic candidate properties
         columns.append("kw")
@@ -282,7 +281,6 @@ class ComposedWord:
         features_cand.append(self.tf)
         columns.append("size")
         features_cand.append(self.size)
-        columns.append("is_virtual")
         columns.append("is_virtual")
         features_cand.append(int(params.get("is_virtual", False)))
 

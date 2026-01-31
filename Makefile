@@ -7,7 +7,7 @@ install-dev:
 	uv pip install -e ".[dev]"
 
 test:
-	uv run pytest -vv --cov=yake test_*.py
+	uv run pytest -vv --cov=yake tests/ test_*.py
 
 format:
 	uv run black .

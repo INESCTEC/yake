@@ -1,5 +1,5 @@
 # 🧪 How to run the tests
-This project uses pytes to run it´s tests.
+This project uses pytest to run its tests.
 
 ### 📋 Pre-requirements
 If not already installed install pytest:

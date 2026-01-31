@@ -43,7 +43,10 @@ def calculate_term_features(
         Calculated features including WRel, WFreq, WSpread, WCase, WPos, H
     """
     # Get graph metrics (cached in SingleWord)
-    metrics = term.graph_metrics
+    if hasattr(term, "get_graph_metrics"):
+        metrics = term.get_graph_metrics()
+    else:
+        metrics = term.graph_metrics
 
     # Calculate WRel (term relevance based on graph connectivity)
     pwl = metrics['pwl']
