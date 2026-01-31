@@ -11,8 +11,8 @@ requires-python = ">=3.10"
 license = {text = "LGPLv3"}
 authors = [
     {name = "Arian Pasquali", email = "arianpasquali@gmail.com"},
-    {name = "Ricadro Campos", email = "ricardo.campos@ubi.pt"},
-    {name = "Tiago Vaente", email = "tiago.leando.valente@ubi.com"},
+    {name = "Ricardo Campos", email = "ricardo.campos@ubi.pt"},
+    {name = "Tiago Valente", email = "tiago.leandro.valente@ubi.com"},
 ]
 dependencies = [
     "tabulate",
