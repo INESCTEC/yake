@@ -14,7 +14,7 @@ env:
 
 jobs:
   unit-test:
-    uses: LIAAD/yake/.github/workflows/test.yml
+    uses: INESCTEC/yake/.github/workflows/test.yml
 
   details:
     runs-on: ubuntu-latest

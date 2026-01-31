@@ -20,4 +20,4 @@ jobs:
         pip install pylint>=3.3.0
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py')
+        pylint $(git ls-files '*.py') --fail-under=9.0

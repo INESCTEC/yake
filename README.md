@@ -3,7 +3,7 @@
 [![ECIR'18 Best Short Paper](https://img.shields.io/badge/ECIR'18-Best%20Short%20Paper-brightgreen.svg)](http://ecir2018.org)
 [![PyPI Downloads](https://static.pepy.tech/badge/yake)](https://pepy.tech/projects/yake)
 [![PyPI - Python](https://img.shields.io/badge/python-3.12+-blue.svg)](https://pypi.org/project/YAKE/)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LIAAD/yake/blob/gh-pages/1YAKE.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/INESCTEC/yake/blob/gh-pages/1YAKE.ipynb)
 
 YAKE! is a lightweight unsupervised automatic keyword extraction method that uses text statistical features to select the most important keywords from a document. It requires no training, external corpus, or dictionaries, and works across multiple languages and domains regardless of text size.
 
@@ -50,7 +50,7 @@ Options:
 	  --help                          Show this message and exit.
 ```
 
-Don't know which Deduplication function to use, see more [here](https://tiagolv.github.io/yakerf/docs/-getting-started#keyword-deduplication-methods)
+Don't know which Deduplication function to use, see more [here](https://inesctec.github.io/yake/docs/-getting-started#keyword-deduplication-methods)
 
 #### Usage (Python)
 
@@ -109,7 +109,7 @@ keywords = custom_kw_extractor.extract_keywords(text)
 
 YAKE! now supports keyword lemmatization to aggregate morphological variations (e.g., "tree" and "trees")
 
-See more [here](https://tiagolv.github.io/yakerf/docs/-getting-started#lemmatization)
+See more [here](https://inesctec.github.io/yake/docs/-getting-started#lemmatization)
 
 
 ## Performance Optimization (Python 3.12+)

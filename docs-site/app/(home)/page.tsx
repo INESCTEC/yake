@@ -143,7 +143,7 @@ export default function HomePage() {
               <div>
                 <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">Install via pip:</div>
                 <pre className="bg-gray-900 dark:bg-gray-950 text-gray-100 p-4 rounded-lg overflow-x-auto">
-                  <code>pip install git+https://github.com/LIAAD/yake</code>
+                  <code>pip install git+https://github.com/INESCTEC/yake</code>
                 </pre>
               </div>
               
@@ -170,7 +170,7 @@ for kw, score in keywords:
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6">
             <Link
-              href="https://github.com/LIAAD/yake"
+              href="https://github.com/INESCTEC/yake"
               target="_blank"
               className="group flex items-center gap-4 p-6 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-200 hover:shadow-lg"
             >
@@ -183,7 +183,7 @@ for kw, score in keywords:
             </Link>
 
             <Link
-              href="https://colab.research.google.com/github/tiagolv/yakerf/blob/gh-pages/1YAKE.ipynb"
+              href="https://colab.research.google.com/github/INESCTEC/yake/blob/gh-pages/1YAKE.ipynb"
               target="_blank"
               className="group flex items-center gap-4 p-6 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-orange-500 dark:hover:border-orange-500 transition-all duration-200 hover:shadow-lg"
             >

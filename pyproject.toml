@@ -57,7 +57,7 @@ lemmatization = [
 ]
 
 [project.urls]
-Documentation = "https://tiagolv.github.io/yakerf/docs/--home"
+Documentation = "https://inesctec.github.io/yake/docs/--home"
 Source = "https://github.com/INESCTEC/yake"
 
 [project.scripts]
