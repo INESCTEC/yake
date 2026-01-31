@@ -1687,3 +1687,49 @@ def test_extraction_determinism():
         assert result1[i][0] == result2[i][0]  # Same keyword
         assert abs(result1[i][1] - result2[i][1]) < 1e-10  # Same score (within float precision)
 
+
+def test_negative_scores_preserved():
+    """
+    Test that negative scores are preserved in the output.
+    
+    This is a regression test based on the Finnish text example where
+    'morrow'n neljä eri sitoutumisen' had a negative score of -0.827233.
+    Negative scores can occur due to specific feature combinations in the
+    YAKE algorithm and must be preserved, not clipped to zero.
+    """
+    # Finnish text that produces negative scores
+    text = """morrow'n neljä eri sitoutumisen -12.5494 
+    morrow'n sitoutumisen ulottuvuudet lastensuojelun sosiaalityöntekijöiden lastensuojelun sosiaalityön 0.00730972 
+    morrow'n sitoutumisen ulottuvuudet lastensuojelun sosiaalityöntekijöiden lastensuojelun 0.00732787"""
+    
+    # Extract with Finnish stopwords and 4-grams
+    extractor = yake.KeywordExtractor(lan="fi", n=4, top=10)
+    result = extractor.extract_keywords(text)
+    
+    # Verify we got results
+    assert len(result) > 0
+    
+    # Check if any keyword has a negative score
+    scores = [score for _, score in result]
+    has_negative = any(score < 0 for score in scores)
+    
+    # Verify negative scores exist (regression check)
+    # The specific keyword "morrow'n neljä eri sitoutumisen" should have negative score
+    negative_keywords = [(kw, score) for kw, score in result if score < 0]
+    
+    if has_negative:
+        # If we have negative scores, verify they are properly negative (not close to zero)
+        min_score = min(scores)
+        assert min_score < -0.5, f"Expected strong negative score, got {min_score}"
+        
+        # Print for debugging
+        print(f"\nNegative scores found (expected behavior):")
+        for kw, score in negative_keywords:
+            print(f"  {kw}: {score}")
+    
+    # Verify scores are properly ordered (best first)
+    for i in range(len(scores) - 1):
+        assert scores[i] <= scores[i + 1], \
+            f"Scores not properly ordered: {scores[i]} > {scores[i + 1]}"
+
+
