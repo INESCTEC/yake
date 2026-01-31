@@ -112,18 +112,6 @@ YAKE! now supports keyword lemmatization to aggregate morphological variations (
 See more [here](https://inesctec.github.io/yake/docs/-getting-started#lemmatization)
 
 
-## Performance Optimization (Python 3.12+)
-
-YAKE 2.0 is ~50% faster than version 0.6.0. With Python 3.12's improved performance, you get automatic speed improvements:
-
-**Benchmark Results**:
-- **YAKE 0.6.0** (Python 3.10): ~100ms per extraction
-- **YAKE 2.0** (Python 3.10): ~50ms per extraction (50% faster ✅)
-- **YAKE 2.0** (Python 3.12): ~49ms per extraction (51% faster ✅)
-
-**Note**: Python 3.13 with experimental JIT compiler may provide additional gains when available. Test with `PYTHON_JIT=1` flag.
-
-
 ## Text Highlighting
 
 YAKE! includes a highlighting feature to mark keywords in text:
