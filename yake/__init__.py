@@ -28,7 +28,7 @@ from .data.utils import pre_filter
 
 # Version information
 __version__ = "0.7.1"
-__author__ = "LIAAD"
+__author__ = "INESCTEC"
 
 # Default maximum n-gram size
 MAX_NGRAM_SIZE = 3

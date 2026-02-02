@@ -61,7 +61,7 @@ class TextHighlighter:
             The text with highlighted keywords.
         """
         n_text = ""
-        # Optimized: use truthiness instead of len() > 0
+        
         if keywords:
             kw_list = keywords
             if isinstance(keywords[0], tuple):
@@ -291,7 +291,7 @@ class TextHighlighter:
 
         splited_one = n_gram_word_list[0].split()
 
-        # Optimized: use enumerate with len() instead of range(len())
+        
         for idx in range(len(splited_one)):
             if position + idx < len(text_tokens):
                 self._update_kw_list(
