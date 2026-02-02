@@ -1,7 +1,7 @@
 name: Test
 on:
   push:
-    branches: [ "core-seperation" ]
+    branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
   workflow_dispatch:
