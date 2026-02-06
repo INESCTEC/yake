@@ -539,7 +539,7 @@ class TestFeatureIntegration:
         high_tf_term.tf_a = 15.0
         high_tf_term.tf_n = 5.0
         high_tf_term.sentence_ids = {1, 2, 3, 4, 5}
-        high_tf_term.occurs = {i: None for i in range(20)}
+        high_tf_term.occurs = dict.fromkeys(range(20))
         graph_metrics = {
             "pwl": 0.8,
             "pwr": 0.8,

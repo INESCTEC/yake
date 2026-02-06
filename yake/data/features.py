@@ -111,32 +111,32 @@ def calculate_composed_features(
             # Non-stopwords: directly contribute their H scores
             sum_h += term.h
             prod_h *= term.h
-        else:
-            # Stopwords: weight by connection probability
-            if stopword_weight == "bi":
-                prob_t1 = prob_t2 = 0.0
+        # Stopwords: weight by connection probability
+        elif stopword_weight == "bi":
+            prob_t1 = prob_t2 = 0.0
 
-                # Probability from previous term to current stopword
-                if t > 0 and term.g.has_edge(composed_word.terms[t - 1].id, term.id):
-                    edge_data = term.g[composed_word.terms[t - 1].id][term.id]
-                    prob_t1 = edge_data["tf"] / composed_word.terms[t - 1].tf
+            # Probability from previous term to current stopword
+            if t > 0 and term.g.has_edge(composed_word.terms[t - 1].id, term.id):
+                edge_data = term.g[composed_word.terms[t - 1].id][term.id]
+                prob_t1 = edge_data["tf"] / composed_word.terms[t - 1].tf
 
-                # Probability from current stopword to next term
-                if t < len(composed_word.terms) - 1 and term.g.has_edge(
-                    term.id, composed_word.terms[t + 1].id
-                ):
-                    edge_data = term.g[term.id][composed_word.terms[t + 1].id]
-                    prob_t2 = edge_data["tf"] / composed_word.terms[t + 1].tf
+            # Probability from current stopword to next term
+            if t < len(composed_word.terms) - 1 and term.g.has_edge(
+                term.id,
+                composed_word.terms[t + 1].id,
+            ):
+                edge_data = term.g[term.id][composed_word.terms[t + 1].id]
+                prob_t2 = edge_data["tf"] / composed_word.terms[t + 1].tf
 
-                # Combined probability affects the score
-                prob = prob_t1 * prob_t2
-                prod_h *= 1 + (1 - prob)
-                sum_h -= 1 - prob
+            # Combined probability affects the score
+            prob = prob_t1 * prob_t2
+            prod_h *= 1 + (1 - prob)
+            sum_h -= 1 - prob
 
-            elif stopword_weight == "h":
-                # Alternative: include stopword's H value
-                sum_h += term.h
-                prod_h *= term.h
+        elif stopword_weight == "h":
+            # Alternative: include stopword's H value
+            sum_h += term.h
+            prod_h *= term.h
             # If 'none', stopwords are ignored (no contribution)
 
     # Use term frequency

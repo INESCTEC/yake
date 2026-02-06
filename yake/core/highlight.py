@@ -163,12 +163,11 @@ class TextHighlighter:
         Returns:
             Tuple containing n-gram word list and split n-gram keyword list
         """
-
-        ngram_data = self._find_more_relevant_helper(
-            position, text_tokens, relevant_words_array
+        return self._find_more_relevant_helper(
+            position,
+            text_tokens,
+            relevant_words_array,
         )
-
-        return ngram_data
 
     def _find_more_relevant_helper(self, position, text_tokens, relevant_words_array):
         """
@@ -390,7 +389,7 @@ class TextHighlighter:
             return position + 1, text_tokens[position]
 
         index_of_more_relevant = splited_n_gram_kw_list[0].index(
-            min_score_word.split()[0]
+            min_score_word.split()[0],
         )
         temporal_kw = " ".join(splited_n_gram_kw_list[0][:index_of_more_relevant])
 

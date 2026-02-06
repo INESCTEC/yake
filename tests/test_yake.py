@@ -320,7 +320,7 @@ def test_cache_statistics():
     text = "Python programming " * 10
 
     kw = yake.KeywordExtractor(lan="en", n=2, top=5)
-    result = kw.extract_keywords(text)
+    kw.extract_keywords(text)
 
     # Get cache stats
     stats = kw.get_cache_stats()
@@ -526,7 +526,7 @@ def test_composed_word_invalid_candidate():
     cw = ComposedWord(None)
 
     # Verify invalid candidate properties
-    assert cw.start_or_end_stopwords == True
+    assert cw.start_or_end_stopwords
     assert cw.h == 0.0
     assert cw.tf == 0.0
     assert cw.kw == ""
@@ -1155,7 +1155,7 @@ def test_clear_caches():
     extractor.extract_keywords(text + " More content.")
 
     # Get initial stats
-    stats_before = extractor.get_cache_stats()
+    extractor.get_cache_stats()
 
     # Clear all caches
     extractor.clear_caches()
@@ -1622,7 +1622,7 @@ def test_jaro_similarity_with_unicode():
     try:
         sim2 = extractor.jaro("café", "cafe")
         assert 0 <= sim2 <= 1.0
-    except:
+    except Exception:  # pylint: disable=broad-exception-caught
         pass  # Skip if unicode not supported
 
 
