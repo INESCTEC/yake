@@ -10,7 +10,8 @@ Based on the modular architecture from the reference YAKE implementation.
 
 import logging
 import math
-from typing import Dict, Any, Tuple
+from typing import Any
+
 import numpy as np  # pylint: disable=import-error
 
 # Configure module logger
@@ -24,7 +25,7 @@ def calculate_term_features(
     avg_tf: float,
     std_tf: float,
     number_of_sentences: int,
-) -> Dict[str, float]:
+) -> dict[str, float]:
     """
     Calculate all statistical features for a single term.
 
@@ -87,7 +88,7 @@ def calculate_term_features(
 def calculate_composed_features(
     composed_word: Any,
     stopword_weight: str = "bi",
-) -> Dict[str, float]:
+) -> dict[str, float]:
     """
     Calculate features for multi-word expressions (n-grams).
 
@@ -151,7 +152,7 @@ def get_feature_aggregation(
     composed_word: Any,
     feature_name: str,
     exclude_stopwords: bool = True,
-) -> Tuple[float, float, float]:
+) -> tuple[float, float, float]:
     """
     Aggregate a specific feature across all terms in a composed word.
 

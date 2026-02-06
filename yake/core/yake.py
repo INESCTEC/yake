@@ -7,12 +7,15 @@ deduplication of similar keywords, and the entire extraction pipeline from raw t
 to ranked keywords.
 """
 
-import os
-import logging
 import functools
-from typing import List, Tuple, Optional, Set, Callable
+import logging
+import os
+from collections.abc import Callable
+
 import jellyfish  # pylint: disable=import-error
+
 from yake.data import DataCore
+
 from .Levenshtein import Levenshtein
 
 # Configure module logger
@@ -41,8 +44,8 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         dedup_func: str = "seqm",
         window_size: int = 1,
         top: int = 20,
-        features: Optional[List[str]] = None,
-        stopwords: Optional[Set[str]] = None,
+        features: list[str] | None = None,
+        stopwords: set[str] | None = None,
         lemmatize: bool = False,
         lemma_aggregation: str = "min",
         lemmatizer: str = "spacy",
@@ -121,7 +124,7 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
             "last_text_size": 0,
         }
 
-    def _load_stopwords(self, stopwords: Optional[Set[str]]) -> Set[str]:
+    def _load_stopwords(self, stopwords: set[str] | None) -> set[str]:
         """
         Load stopwords from file or use provided set.
 
@@ -426,8 +429,8 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
 
         if self.lemmatizer == "nltk":
             try:
-                from nltk.stem import WordNetLemmatizer  # pylint: disable=import-outside-toplevel
                 import nltk  # pylint: disable=import-outside-toplevel
+                from nltk.stem import WordNetLemmatizer  # pylint: disable=import-outside-toplevel
 
                 # Download wordnet data if needed
                 try:
@@ -481,8 +484,8 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
 
     def _lemmatize_keywords(  # pylint: disable=too-many-locals
         self,
-        keywords: List[Tuple[str, float]],
-    ) -> List[Tuple[str, float]]:
+        keywords: list[tuple[str, float]],
+    ) -> list[tuple[str, float]]:
         """
         Aggregate keywords by lemma.
 
@@ -505,8 +508,8 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
             # (warning was already shown on first load attempt)
             return keywords
 
-        from collections import defaultdict  # pylint: disable=import-outside-toplevel
         import statistics  # pylint: disable=import-outside-toplevel
+        from collections import defaultdict  # pylint: disable=import-outside-toplevel
 
         lemma_groups = defaultdict(list)
 
@@ -562,7 +565,7 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
             return "medium"
         return "large"
 
-    def extract_keywords(self, text: Optional[str]) -> List[Tuple[str, float]]:
+    def extract_keywords(self, text: str | None) -> list[tuple[str, float]]:
         """
         Extract keywords from the given text using adaptive optimizations.
 

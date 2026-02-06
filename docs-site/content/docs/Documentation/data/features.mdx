@@ -21,7 +21,7 @@ Based on the modular architecture from the reference YAKE implementation.
 
 import logging
 import math
-from typing import Dict, Any, Tuple
+from typing import Any
 import numpy as np
 
 # Configure module logger
@@ -45,7 +45,7 @@ This module provides stateless functions that calculate various statistical feat
           avg_tf: float,
           std_tf: float,
           number_of_sentences: int
-      ) -> Dict[str, float]:
+      ) -> dict[str, float]:
           """
           Calculate all statistical features for a single term.
           
@@ -134,7 +134,7 @@ This module provides stateless functions that calculate various statistical feat
       def calculate_composed_features(
           composed_word: Any,
           stopword_weight: str = 'bi'
-      ) -> Dict[str, float]:
+      ) -> dict[str, float]:
           """
           Calculate features for multi-word expressions (n-grams).
           
@@ -209,9 +209,9 @@ This module provides stateless functions that calculate various statistical feat
     <AccordionContent>
       ```python
       def normalize_features(
-          features: Dict[str, float],
-          max_vals: Dict[str, float]
-      ) -> Dict[str, float]:
+          features: dict[str, float],
+          max_vals: dict[str, float]
+      ) -> dict[str, float]:
           """
           Normalize feature values to [0, 1] range.
           

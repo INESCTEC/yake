@@ -6,8 +6,8 @@ It handles both single word (one-gram) and multi-word (n-gram) keyword highlight
 allowing for flexible text markup based on keyword extraction results.
 """
 
-import re
 import logging
+import re
 
 DEFAULT_HIGHLIGHT_PRE = "<kw>"
 DEFAULT_HIGHLIGHT_POST = "</kw>"

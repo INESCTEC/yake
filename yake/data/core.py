@@ -9,14 +9,15 @@ keyword generation.
 
 import logging
 import string
-from typing import Dict, List, Set, Optional, Any
+from typing import Any
+
 import networkx as nx  # pylint: disable=import-error
 import numpy as np  # pylint: disable=import-error
+from segtok.tokenizer import split_contractions, web_tokenizer  # pylint: disable=import-error
 
-from segtok.tokenizer import web_tokenizer, split_contractions  # pylint: disable=import-error
-from .utils import pre_filter, tokenize_sentences, get_tag
-from .single_word import SingleWord
 from .composed_word import ComposedWord
+from .single_word import SingleWord
+from .utils import get_tag, pre_filter, tokenize_sentences
 
 # Configure module logger
 logger = logging.getLogger(__name__)
@@ -38,8 +39,8 @@ class DataCore:
     def __init__(
         self,
         text: str,
-        stopword_set: Set[str],
-        config: Optional[Dict[str, Any]] = None,
+        stopword_set: set[str],
+        config: dict[str, Any] | None = None,
     ):
         """
         Initialize the data core for keyword extraction.
@@ -215,10 +216,10 @@ class DataCore:
 
     def _process_sentence(
         self,
-        sentence: List[str],
+        sentence: list[str],
         sentence_id: int,
         pos_text: int,
-        context: Dict[str, Any],
+        context: dict[str, Any],
     ) -> int:
         """
         Process a single sentence from the document.
@@ -449,7 +450,7 @@ class DataCore:
         # Create and return the composed word
         return ComposedWord(candidate_terms)
 
-    def build_single_terms_features(self, features: Optional[List[str]] = None) -> None:
+    def build_single_terms_features(self, features: list[str] | None = None) -> None:
         """
         Calculates and updates statistical features for all single terms in the text.
         This includes term frequency statistics and other features specified in the
@@ -484,7 +485,7 @@ class DataCore:
         for term in self.terms.values():
             term.update_h(stats, features=features)
 
-    def build_mult_terms_features(self, features: Optional[List[str]] = None) -> None:
+    def build_mult_terms_features(self, features: list[str] | None = None) -> None:
         """
         Build features for multi-word terms.
 

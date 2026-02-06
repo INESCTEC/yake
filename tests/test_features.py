@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 # pylint: skip-file
 
 """
@@ -9,20 +8,20 @@ Tests cover all feature calculation functions including term features,
 composed features, and feature aggregation methods.
 """
 
-import sys
 import os
+import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 import math
-import pytest
-import numpy as np
-from unittest.mock import Mock, MagicMock
+from unittest.mock import Mock
+
 import networkx as nx
+import numpy as np
 
 from yake.data.features import (
-    calculate_term_features,
     calculate_composed_features,
+    calculate_term_features,
     get_feature_aggregation,
 )
 

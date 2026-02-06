@@ -8,9 +8,11 @@ which phrases make good keyword candidates.
 """
 
 import logging
-from typing import List, Tuple, Optional, Any
-import numpy as np  # pylint: disable=import-error
+from typing import Any
+
 import jellyfish  # pylint: disable=import-error
+import numpy as np  # pylint: disable=import-error
+
 from .utils import STOPWORD_WEIGHT
 
 # Configure module logger
@@ -46,7 +48,7 @@ class ComposedWord:
         "_start_or_end_stopwords",
     )
 
-    def __init__(self, terms: Optional[List[Tuple[str, str, Any]]]):
+    def __init__(self, terms: list[tuple[str, str, Any]] | None):
         """
         Initialize a ComposedWord object representing a multi-word term.
 
