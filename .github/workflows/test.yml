@@ -24,7 +24,7 @@ jobs:
             uv pip install -e ".[dev,lemmatization,benchmark]"
         - name: Download spaCy and NLTK models
           run: |
-            uv pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
+            uv pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
             uv run python -c "import nltk; nltk.download('wordnet', quiet=True); nltk.download('omw-1.4', quiet=True)"
         - name: test
           run: uv run pytest -vv --cov=yake tests/
