@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
-          node-version: '18'  
+          node-version: "lts/*"
 
       - name: Install dependencies
         run: |
@@ -29,10 +29,10 @@ jobs:
 
       - name: Create .nojekyll file
         run: |
-          touch docs-site/out/.nojekyll  
+          touch docs-site/out/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: docs-site/out  
+          folder: docs-site/out
           branch: gh-pages

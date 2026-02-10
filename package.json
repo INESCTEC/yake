@@ -1,0 +1,26 @@
+{
+  "name": "yake",
+  "version": "7.1.0",
+  "description": "",
+  "homepage": "https://github.com/INESCTEC/yake#readme",
+  "bugs": {
+    "url": "https://github.com/INESCTEC/yake/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INESCTEC/yake.git"
+  },
+  "license": "LGPL-3.0-only",
+  "author": "",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "dependencies": {
+    "@types/mdx": "^2.0.13",
+    "fumadocs-mdx": "^14.2.7"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}

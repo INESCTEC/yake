@@ -4,21 +4,27 @@ on:
   workflow_dispatch:
 
 jobs:
-    build:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v4
-        - name: Set up Python
-          uses: actions/setup-python@v4
-          with:
-            python-version: '3.10'
-        - name: Install uv
-          run: pip install uv
-        - name: Create virtual environment
-          run: uv venv
-        - name: Install dependencies
-          run: |
-            uv pip install -e ".[dev]"
-            uv pip install black
-        - name: format
-          run: uv run black --check .
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.10"
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Create virtual environment
+        run: uv venv
+
+      - name: Install dependencies
+        run: |
+          uv pip install -e ".[dev]"
+          uv pip install black
+
+      - name: format
+        run: uv run black --check .

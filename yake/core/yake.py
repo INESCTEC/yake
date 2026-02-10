@@ -7,12 +7,15 @@ deduplication of similar keywords, and the entire extraction pipeline from raw t
 to ranked keywords.
 """
 
-import os
-import logging
 import functools
-from typing import List, Tuple, Optional, Set, Callable
+import logging
+import os
+from collections.abc import Callable
+
 import jellyfish  # pylint: disable=import-error
+
 from yake.data import DataCore
+
 from .Levenshtein import Levenshtein
 
 # Configure module logger
@@ -41,12 +44,12 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         dedup_func: str = "seqm",
         window_size: int = 1,
         top: int = 20,
-        features: Optional[List[str]] = None,
-        stopwords: Optional[Set[str]] = None,
+        features: list[str] | None = None,
+        stopwords: set[str] | None = None,
         lemmatize: bool = False,
         lemma_aggregation: str = "min",
         lemmatizer: str = "spacy",
-        **kwargs
+        **kwargs,
     ):
         """
         Initialize the KeywordExtractor with configuration parameters.
@@ -85,7 +88,15 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         }
 
         # Override with any kwargs for backwards compatibility
-        for key in ["lan", "n", "dedup_lim", "dedup_func", "window_size", "top", "features"]:
+        for key in [
+            "lan",
+            "n",
+            "dedup_lim",
+            "dedup_func",
+            "window_size",
+            "top",
+            "features",
+        ]:
             if key in kwargs:
                 self.config[key] = kwargs[key]
 
@@ -94,7 +105,9 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         self.lemma_aggregation = lemma_aggregation
         self.lemmatizer = lemmatizer
         self._lemmatizer_instance = None  # Lazy loaded when needed
-        self._lemmatizer_load_failed = False  # Track if loading failed to avoid repeated warnings
+        self._lemmatizer_load_failed = (
+            False  # Track if loading failed to avoid repeated warnings
+        )
 
         # Load appropriate stopwords and deduplication function
         self.stopword_set = self._load_stopwords(stopwords or kwargs.get("stopwords"))
@@ -105,13 +118,13 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
 
         # Cache management stats (combined to reduce instance attributes)
         self._cache_stats = {
-            'hits': 0,
-            'misses': 0,
-            'docs_processed': 0,
-            'last_text_size': 0
+            "hits": 0,
+            "misses": 0,
+            "docs_processed": 0,
+            "last_text_size": 0,
         }
 
-    def _load_stopwords(self, stopwords: Optional[Set[str]]) -> Set[str]:
+    def _load_stopwords(self, stopwords: set[str] | None) -> set[str]:
         """
         Load stopwords from file or use provided set.
 
@@ -132,7 +145,8 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         # Determine the path to the appropriate stopword list
         dir_path = os.path.dirname(os.path.realpath(__file__))
         local_path = os.path.join(
-            "StopwordsList", f"stopwords_{self.config['lan'][:2].lower()}.txt"
+            "StopwordsList",
+            f"stopwords_{self.config['lan'][:2].lower()}.txt",
         )
 
         # Fall back to language-agnostic list if specific language not available
@@ -262,8 +276,7 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         if not chars_union:
             return 0.0
 
-        char_overlap = (len(set(s1_lower) & set(s2_lower)) /
-                       len(chars_union))
+        char_overlap = len(set(s1_lower) & set(s2_lower)) / len(chars_union)
 
         if char_overlap < 0.2:  # Few common characters
             return 0.0
@@ -277,22 +290,21 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         if len(words1) > 1 or len(words2) > 1:
             word_union = set(words1) | set(words2)
             if word_union:
-                word_overlap = (len(set(words1) & set(words2)) /
-                              len(word_union))
+                word_overlap = len(set(words1) & set(words2)) / len(word_union)
                 if word_overlap > 0.4:
                     return word_overlap
 
         # Trigram similarity
-        trigrams1 = set(s1_lower[i:i+3] for i in range(len(s1_lower)-2))
-        trigrams2 = set(s2_lower[i:i+3] for i in range(len(s2_lower)-2))
+        trigrams1 = set(s1_lower[i : i + 3] for i in range(len(s1_lower) - 2))
+        trigrams2 = set(s2_lower[i : i + 3] for i in range(len(s2_lower) - 2))
         trigram_union = trigrams1 | trigrams2
 
-        trigram_overlap = (len(trigrams1 & trigrams2) / len(trigram_union)
-                          if trigram_union else 0)
+        trigram_overlap = (
+            len(trigrams1 & trigrams2) / len(trigram_union) if trigram_union else 0
+        )
 
         # Combine metrics with optimal weights
-        return min(0.3 * len_ratio + 0.2 * char_overlap +
-                  0.5 * trigram_overlap, 1.0)
+        return min(0.3 * len_ratio + 0.2 * char_overlap + 0.5 * trigram_overlap, 1.0)
 
     def _aggressive_pre_filter(self, cand1: str, cand2: str) -> bool:
         """
@@ -315,13 +327,13 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
 
         # First/last character and prefix filters for longer strings
         if max_len > 3:
-            if (cand1[0] != cand2[0] or cand1[-1] != cand2[-1]):
+            if cand1[0] != cand2[0] or cand1[-1] != cand2[-1]:
                 return False
             if min(len1, len2) >= 3 and cand1[:2].lower() != cand2[:2].lower():
                 return False
 
         # Word count filter
-        if abs(cand1.count(' ') - cand2.count(' ')) > 1:
+        if abs(cand1.count(" ") - cand2.count(" ")) > 1:
             return False
 
         return True
@@ -332,10 +344,10 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         cache_key = (cand1, cand2) if cand1 <= cand2 else (cand2, cand1)
 
         if cache_key in self._similarity_cache:
-            self._cache_stats['hits'] += 1
+            self._cache_stats["hits"] += 1
             return self._similarity_cache[cache_key]
 
-        self._cache_stats['misses'] += 1
+        self._cache_stats["misses"] += 1
 
         # Pre-filter for quick rejection (after cache miss)
         if not self._aggressive_pre_filter(cand1, cand2):
@@ -417,16 +429,16 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
 
         if self.lemmatizer == "nltk":
             try:
-                from nltk.stem import WordNetLemmatizer  # pylint: disable=import-outside-toplevel
                 import nltk  # pylint: disable=import-outside-toplevel
+                from nltk.stem import WordNetLemmatizer  # pylint: disable=import-outside-toplevel
 
                 # Download wordnet data if needed
                 try:
-                    nltk.data.find('corpora/wordnet')
+                    nltk.data.find("corpora/wordnet")
                 except LookupError:
                     logger.info("Downloading NLTK wordnet data...")
-                    nltk.download('wordnet', quiet=True)
-                    nltk.download('omw-1.4', quiet=True)
+                    nltk.download("wordnet", quiet=True)
+                    nltk.download("omw-1.4", quiet=True)
 
                 self._lemmatizer_instance = WordNetLemmatizer()
                 logger.info("Loaded NLTK WordNetLemmatizer")
@@ -434,15 +446,13 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
 
             except ImportError:
                 logger.warning(
-                    "NLTK not installed. Lemmatization disabled. "
-                    "Install with: uv pip install yake[lemmatization]"
+                    "NLTK not installed. Lemmatization disabled. Install with: uv pip install yake[lemmatization]"
                 )
                 self._lemmatizer_load_failed = True
                 return None
 
         logger.warning(
-            "Unknown lemmatizer: %s. Lemmatization disabled.",
-            self.lemmatizer
+            "Unknown lemmatizer: %s. Lemmatization disabled.", self.lemmatizer
         )
         self._lemmatizer_load_failed = True
         return None
@@ -474,8 +484,8 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
 
     def _lemmatize_keywords(  # pylint: disable=too-many-locals
         self,
-        keywords: List[Tuple[str, float]]
-    ) -> List[Tuple[str, float]]:
+        keywords: list[tuple[str, float]],
+    ) -> list[tuple[str, float]]:
         """
         Aggregate keywords by lemma.
 
@@ -498,8 +508,8 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
             # (warning was already shown on first load attempt)
             return keywords
 
-        from collections import defaultdict  # pylint: disable=import-outside-toplevel
         import statistics  # pylint: disable=import-outside-toplevel
+        from collections import defaultdict  # pylint: disable=import-outside-toplevel
 
         lemma_groups = defaultdict(list)
 
@@ -539,7 +549,7 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
             else:
                 logger.warning(
                     "Unknown aggregation method: %s. Using 'min'",
-                    self.lemma_aggregation
+                    self.lemma_aggregation,
                 )
                 best_kw, best_score = min(group, key=lambda x: x[1])
                 result.append((best_kw, best_score))
@@ -555,7 +565,7 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
             return "medium"
         return "large"
 
-    def extract_keywords(self, text: Optional[str]) -> List[Tuple[str, float]]:
+    def extract_keywords(self, text: str | None) -> list[tuple[str, float]]:
         """
         Extract keywords from the given text using adaptive optimizations.
 
@@ -611,7 +621,7 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
             # Get valid candidates
             candidates_sorted = sorted(
                 [cc for cc in dc.candidates.values() if cc.is_valid()],
-                key=lambda c: c.h
+                key=lambda c: c.h,
             )
 
             # No deduplication case
@@ -648,8 +658,8 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
             # Apply lemmatization if enabled
             if self.lemmatize:
                 logger.debug(
-                    "Applying lemmatization with aggregation method: %s", 
-                    self.lemma_aggregation
+                    "Applying lemmatization with aggregation method: %s",
+                    self.lemma_aggregation,
                 )
                 results = self._lemmatize_keywords(results)
 
@@ -660,16 +670,14 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
 
         except Exception as e:  # pylint: disable=broad-exception-caught
             # Python 3.11+ enhanced error messages with exception notes
-            error_msg = (
-                f"Exception during keyword extraction: {str(e)} "
-                f"(text preview: '{text[:100] if text else ''}...')"
-            )
+            error_msg = f"Exception during keyword extraction: {str(e)} (text preview: '{text[:100] if text else ''}...')"
             logger.warning(error_msg)
-            
+
             # Add contextual note for better debugging (Python 3.11+)
-            if hasattr(e, 'add_note'):
-                e.add_note(f"YAKE config: lan={self.config['lan']}, n={self.config['n']}, "
-                          f"dedup_lim={self.config['dedup_lim']}")
+            if hasattr(e, "add_note"):
+                e.add_note(
+                    f"YAKE config: lan={self.config['lan']}, n={self.config['n']}, dedup_lim={self.config['dedup_lim']}"
+                )
                 e.add_note(f"Text length: {len(text) if text else 0} characters")
 
             return []
@@ -691,7 +699,10 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
             # Check against existing results (pre-filter first)
             for _, prev_cand in result_set:
                 if self._aggressive_pre_filter(cand_kw, prev_cand.unique_kw):
-                    similarity = self._optimized_similarity(cand_kw, prev_cand.unique_kw)
+                    similarity = self._optimized_similarity(
+                        cand_kw,
+                        prev_cand.unique_kw,
+                    )
                     if similarity > self.config["dedup_lim"]:
                         should_add = False
                         break
@@ -727,7 +738,10 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
                     continue
 
                 if self._aggressive_pre_filter(cand_kw, prev_cand.unique_kw):
-                    similarity = self._optimized_similarity(cand_kw, prev_cand.unique_kw)
+                    similarity = self._optimized_similarity(
+                        cand_kw,
+                        prev_cand.unique_kw,
+                    )
                     if similarity > self.config["dedup_lim"]:
                         should_add = False
                         break
@@ -748,7 +762,10 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         seen_exact = set()
 
         processed = 0
-        max_processing = min(len(candidates_sorted), self.config["top"] * 10)  # Limit processing
+        max_processing = min(
+            len(candidates_sorted),
+            self.config["top"] * 10,
+        )  # Limit processing
 
         for cand in candidates_sorted:
             if processed >= max_processing:
@@ -789,14 +806,14 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
 
     def get_cache_stats(self):
         """Return cache performance statistics."""
-        total = self._cache_stats['hits'] + self._cache_stats['misses']
-        hit_rate = self._cache_stats['hits'] / total * 100 if total > 0 else 0
+        total = self._cache_stats["hits"] + self._cache_stats["misses"]
+        hit_rate = self._cache_stats["hits"] / total * 100 if total > 0 else 0
         return {
-            'hits': self._cache_stats['hits'],
-            'misses': self._cache_stats['misses'],
-            'hit_rate': hit_rate,
-            'docs_processed': self._cache_stats['docs_processed'],
-            'cache_size': self._get_cache_usage()
+            "hits": self._cache_stats["hits"],
+            "misses": self._cache_stats["misses"],
+            "hit_rate": hit_rate,
+            "docs_processed": self._cache_stats["docs_processed"],
+            "cache_size": self._get_cache_usage(),
         }
 
     def _manage_cache_lifecycle(self, text):
@@ -811,18 +828,18 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         Args:
             text: The text that was just processed
         """
-        self._cache_stats['docs_processed'] += 1
+        self._cache_stats["docs_processed"] += 1
         text_size = len(text.split())
-        self._cache_stats['last_text_size'] = text_size
+        self._cache_stats["last_text_size"] = text_size
 
         # Get current cache usage
         cache_usage = self._get_cache_usage()
 
         # HEURISTIC: Clear cache if any condition is met
         should_clear = (
-            text_size > 2000 or                    # Large document (>2000 words)
-            cache_usage > 0.8 or                   # Cache >80% full
-            self._cache_stats['docs_processed'] % 50 == 0  # Failsafe: every 50 docs
+            text_size > 2000  # Large document (>2000 words)
+            or cache_usage > 0.8  # Cache >80% full
+            or self._cache_stats["docs_processed"] % 50 == 0  # Failsafe: every 50 docs
         )
 
         if should_clear:
@@ -852,18 +869,18 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         - LRU cache for text tagging (10,000 entries max)
         - LRU cache for Levenshtein distance (40,000 entries max)
         - Instance-level similarity cache
-        
+
         When to call manually:
         - Processing batches of documents in a loop
         - Running in memory-constrained environments (e.g., AWS Lambda)
         - After processing large documents (>5000 words)
         - Before critical operations that need maximum available memory
-        
+
         Performance impact:
         - Next 5-10 extractions will be ~10-20% slower while caches warm up
         - After warm-up, performance returns to optimized levels
         - Trade-off is worthwhile for preventing memory leaks in production
-        
+
         Example usage:
             >>> extractor = KeywordExtractor(lan="en")
             >>> for doc in large_document_batch:
@@ -871,7 +888,7 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
             ...     process_keywords(keywords)
             ...     if doc.size > 10000:  # Manual clear for huge docs
             ...         extractor.clear_caches()
-        
+
         Note:
             This is called automatically by the intelligent cache manager
             based on heuristics (text size, cache saturation, document count).
@@ -887,6 +904,7 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         try:
             # pylint: disable=import-outside-toplevel
             from yake.data.utils import get_tag
+
             get_tag.cache_clear()
         except (ImportError, AttributeError):
             pass
@@ -894,16 +912,17 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         try:
             # pylint: disable=import-outside-toplevel
             from yake.core.Levenshtein import Levenshtein as LevenshteinModule
+
             LevenshteinModule.ratio.cache_clear()
             LevenshteinModule.distance.cache_clear()
         except (ImportError, AttributeError):
             pass
 
         # Clear instance cache
-        if hasattr(self, '_similarity_cache'):
+        if hasattr(self, "_similarity_cache"):
             self._similarity_cache.clear()
 
         # Reset tracking
-        self._cache_stats['docs_processed'] = 0
-        self._cache_stats['hits'] = 0
-        self._cache_stats['misses'] = 0
+        self._cache_stats["docs_processed"] = 0
+        self._cache_stats["hits"] = 0
+        self._cache_stats["misses"] = 0

@@ -1,9 +1,9 @@
 """
 Module providing optimized Levenshtein distance and ratio calculations.
 
-This module implements an optimized version of the Levenshtein (edit distance) 
-algorithm for measuring the difference between two strings. It provides both 
-a raw distance calculation and a normalized similarity ratio, which are useful 
+This module implements an optimized version of the Levenshtein (edit distance)
+algorithm for measuring the difference between two strings. It provides both
+a raw distance calculation and a normalized similarity ratio, which are useful
 for comparing text strings and identifying potential matches with slight variations.
 
 Optimizations include:
@@ -117,11 +117,11 @@ class Levenshtein:
         for i in range(1, len1 + 1):
             current_row[0] = i
             for j in range(1, len2 + 1):
-                cost = 0 if seq1[i-1] == seq2[j-1] else 1
+                cost = 0 if seq1[i - 1] == seq2[j - 1] else 1
                 current_row[j] = min(
-                    current_row[j-1] + 1,      # insertion
-                    previous_row[j] + 1,       # deletion
-                    previous_row[j-1] + cost   # substitution
+                    current_row[j - 1] + 1,  # insertion
+                    previous_row[j] + 1,  # deletion
+                    previous_row[j - 1] + cost,  # substitution
                 )
             previous_row, current_row = current_row, previous_row
 
@@ -142,8 +142,11 @@ class Levenshtein:
         if seq1[0] == seq2[0]:
             return Levenshtein._simple_distance(seq1[1:], seq2[1:])
 
-        return 1 + min(
-            Levenshtein._simple_distance(seq1[1:], seq2),      # deletion
-            Levenshtein._simple_distance(seq1, seq2[1:]),      # insertion
-            Levenshtein._simple_distance(seq1[1:], seq2[1:])   # substitution
+        return (
+            1
+            + min(
+                Levenshtein._simple_distance(seq1[1:], seq2),  # deletion
+                Levenshtein._simple_distance(seq1, seq2[1:]),  # insertion
+                Levenshtein._simple_distance(seq1[1:], seq2[1:]),  # substitution
+            )
         )

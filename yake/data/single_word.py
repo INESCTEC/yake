@@ -10,8 +10,9 @@ a relevance score for each word.
 import logging
 import math
 from typing import Any
-import numpy as np  # pylint: disable=import-error
+
 import networkx as nx  # pylint: disable=import-error
+import numpy as np  # pylint: disable=import-error
 
 # Configure module logger
 logger = logging.getLogger(__name__)
@@ -31,7 +32,7 @@ class SingleWord:
     """
 
     # Use __slots__ to reduce memory overhead per instance
-    __slots__ = ('id', 'g', 'data', '_graph_metrics_cache', '_graph_version')
+    __slots__ = ("id", "g", "data", "_graph_metrics_cache", "_graph_version")
 
     def __init__(self, unique: str, idx: int, graph: nx.DiGraph):
         """
@@ -189,7 +190,7 @@ class SingleWord:
     def invalidate_graph_cache(self):
         """
         Invalidate the cached graph metrics.
-        
+
         Call this method when the graph structure changes to force
         recalculation of metrics on next access.
         """
@@ -230,8 +231,12 @@ class SingleWord:
 
         # Cache the results
         self._graph_metrics_cache = {
-            "wdr": wdr, "wir": wir, "pwr": pwr,
-            "wdl": wdl, "wil": wil, "pwl": pwl
+            "wdr": wdr,
+            "wir": wir,
+            "pwr": pwr,
+            "wdl": wdl,
+            "wil": wil,
+            "pwl": pwl,
         }
 
         return self._graph_metrics_cache

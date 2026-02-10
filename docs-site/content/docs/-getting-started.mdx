@@ -17,9 +17,9 @@ import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
       </div>
       <h2 className="text-xl font-bold">Quick Start Guide</h2>
     </div>
-    <p className="text-sm text-gray-600 dark:text-gray-300">
+    <div className="text-sm text-gray-600 dark:text-gray-300">
       Get YAKE! up and running in less than 5 minutes. Follow these simple steps to start extracting keywords from your texts.
-    </p>
+    </div>
   </div>
 </div>
 
@@ -58,13 +58,13 @@ import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 <div className="not-prose mt-4">
   <div className="rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/30 p-4">
     <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2">💡 Optional: Lemmatization Support</h4>
-    <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
+    <div className="text-sm text-gray-700 dark:text-gray-300 mb-3">
       To use lemmatization features (aggregate keyword variations like "tree/trees"), install the optional dependencies:
-    </p>
+    </div>
     <div className="bg-gray-900 dark:bg-gray-950 text-gray-100 p-3 rounded text-sm mb-3">
       <code>uv pip install yake[lemmatization]</code>
     </div>
-    <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">Then download the required language models:</p>
+    <div className="text-xs text-gray-600 dark:text-gray-400 mb-2">Then download the required language models:</div>
     <div className="bg-gray-900 dark:bg-gray-950 text-gray-100 p-3 rounded text-sm space-y-1">
       <div><code># For spaCy (recommended)</code></div>
       <div><code>python -m spacy download en_core_web_sm</code></div>
@@ -218,9 +218,9 @@ YAKE uses three methods to compute string similarity during keyword deduplicatio
         leve
       </span>
     </div>
-    <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+    <div className="text-sm text-gray-600 dark:text-gray-300 mb-4">
       Measures edit distance between strings — operations needed to transform one string into another.
-    </p>
+    </div>
     <div className="space-y-2 text-sm">
       <div className="flex items-start gap-2">
         <span className="text-green-500 mt-1">✓</span>
@@ -236,9 +236,9 @@ YAKE uses three methods to compute string similarity during keyword deduplicatio
       </div>
     </div>
     <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-      <p className="text-xs font-mono text-gray-500 dark:text-gray-400">
+      <div className="text-xs font-mono text-gray-500 dark:text-gray-400">
         1 - distance / max_len
-      </p>
+      </div>
     </div>
   </div>
 
@@ -254,9 +254,9 @@ YAKE uses three methods to compute string similarity during keyword deduplicatio
         jaro
       </span>
     </div>
-    <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+    <div className="text-sm text-gray-600 dark:text-gray-300 mb-4">
       Measures similarity based on matching characters and their relative positions.
-    </p>
+    </div>
     <div className="space-y-2 text-sm">
       <div className="flex items-start gap-2">
         <span className="text-green-500 mt-1">✓</span>
@@ -272,9 +272,9 @@ YAKE uses three methods to compute string similarity during keyword deduplicatio
       </div>
     </div>
     <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-      <p className="text-xs font-mono text-gray-500 dark:text-gray-400">
+      <div className="text-xs font-mono text-gray-500 dark:text-gray-400">
         jellyfish.jaro_similarity()
-      </p>
+      </div>
     </div>
   </div>
 
@@ -290,9 +290,9 @@ YAKE uses three methods to compute string similarity during keyword deduplicatio
         seqm
       </span>
     </div>
-    <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+    <div className="text-sm text-gray-600 dark:text-gray-300 mb-4">
       Uses Python's built-in difflib to find matching blocks in strings.
-    </p>
+    </div>
     <div className="space-y-2 text-sm">
       <div className="flex items-start gap-2">
         <span className="text-green-500 mt-1">✓</span>
@@ -308,9 +308,9 @@ YAKE uses three methods to compute string similarity during keyword deduplicatio
       </div>
     </div>
     <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-      <p className="text-xs font-mono text-gray-500 dark:text-gray-400">
+      <div className="text-xs font-mono text-gray-500 dark:text-gray-400">
         2 * matches / total_len
-      </p>
+      </div>
     </div>
   </div>
 </div>
@@ -569,7 +569,7 @@ The lower the score, the more relevant the keyword is.
   <p>
     <a href="#top" className="no-underline text-sm font-medium">Back to top</a>
   </p>
-  <p className="text-sm text-gray-500">
+  <div className="text-sm text-gray-500">
     Copyright &copy;2018-{new Date().getFullYear()} INESC TEC. Distributed by an <a href="https://github.com/INESCTEC/yake/tree/master/LICENSE">INESCTEC license.</a>
-  </p>
+  </div>
 </div>

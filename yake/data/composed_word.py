@@ -8,9 +8,11 @@ which phrases make good keyword candidates.
 """
 
 import logging
-from typing import List, Tuple, Optional, Any
-import numpy as np  # pylint: disable=import-error
+from typing import Any
+
 import jellyfish  # pylint: disable=import-error
+import numpy as np  # pylint: disable=import-error
+
 from .utils import STOPWORD_WEIGHT
 
 # Configure module logger
@@ -34,10 +36,19 @@ class ComposedWord:
 
     # Use __slots__ to reduce memory overhead per instance
     # (optimized to use direct attributes)
-    __slots__ = ('_tags', '_kw', '_unique_kw', '_size', '_terms', '_tf',
-                 '_integrity', '_h', '_start_or_end_stopwords')
+    __slots__ = (
+        "_tags",
+        "_kw",
+        "_unique_kw",
+        "_size",
+        "_terms",
+        "_tf",
+        "_integrity",
+        "_h",
+        "_start_or_end_stopwords",
+    )
 
-    def __init__(self, terms: Optional[List[Tuple[str, str, Any]]]):
+    def __init__(self, terms: list[tuple[str, str, Any]] | None):
         """
         Initialize a ComposedWord object representing a multi-word term.
 
@@ -227,7 +238,8 @@ class ComposedWord:
         """
         # Get feature configuration from parameters
         features = params.get(
-            "features", ["wfreq", "wrel", "tf", "wcase", "wpos", "wspread"]
+            "features",
+            ["wfreq", "wrel", "tf", "wcase", "wpos", "wspread"],
         )
         _stopword = params.get("_stopword", [True, False])
 
@@ -288,7 +300,8 @@ class ComposedWord:
             for discart_stopword in _stopword:
                 # Calculate aggregate feature metrics
                 (f_sum, f_prod, f_sum_prod) = self.get_composed_feature(
-                    feature_name, discart_stopword=discart_stopword
+                    feature_name,
+                    discart_stopword=discart_stopword,
                 )
 
                 # Add sum feature
@@ -347,37 +360,40 @@ class ComposedWord:
                 prod_h *= term_base.h
 
             # Handle stopwords according to configured weight method
-            else:
-                if STOPWORD_WEIGHT == "bi":
-                    # BiWeight: use probabilities of adjacent term connections
+            elif STOPWORD_WEIGHT == "bi":
+                # BiWeight: use probabilities of adjacent term connections
 
-                    prob_t1 = 0.0
-                    if t > 0 and term_base.g.has_edge(self.terms[t - 1].id, term_base.id):
-                        prob_t1 = (
-                            term_base.g[self.terms[t - 1].id][term_base.id]["tf"]
-                            / self.terms[t - 1].tf
-                        )
+                prob_t1 = 0.0
+                if t > 0 and term_base.g.has_edge(
+                    self.terms[t - 1].id,
+                    term_base.id,
+                ):
+                    prob_t1 = (
+                        term_base.g[self.terms[t - 1].id][term_base.id]["tf"]
+                        / self.terms[t - 1].tf
+                    )
 
-                    prob_t2 = 0.0
-                    if t < len(self.terms) - 1 and term_base.g.has_edge(
-                        term_base.id, self.terms[t + 1].id
-                    ):
-                        prob_t2 = (
-                            term_base.g[term_base.id][self.terms[t + 1].id]["tf"]
-                            / self.terms[t + 1].tf
-                        )
+                prob_t2 = 0.0
+                if t < len(self.terms) - 1 and term_base.g.has_edge(
+                    term_base.id,
+                    self.terms[t + 1].id,
+                ):
+                    prob_t2 = (
+                        term_base.g[term_base.id][self.terms[t + 1].id]["tf"]
+                        / self.terms[t + 1].tf
+                    )
 
-                    prob = prob_t1 * prob_t2
-                    prod_h *= 1 + (1 - prob)
-                    sum_h -= 1 - prob
+                prob = prob_t1 * prob_t2
+                prod_h *= 1 + (1 - prob)
+                sum_h -= 1 - prob
 
-                elif STOPWORD_WEIGHT == "h":
-                    # HWeight: treat stopwords like normal words
-                    sum_h += term_base.h
-                    prod_h *= term_base.h
-                elif STOPWORD_WEIGHT == "none":
-                    # None: ignore stopwords entirely
-                    pass
+            elif STOPWORD_WEIGHT == "h":
+                # HWeight: treat stopwords like normal words
+                sum_h += term_base.h
+                prod_h *= term_base.h
+            elif STOPWORD_WEIGHT == "none":
+                # None: ignore stopwords entirely
+                pass
 
             # Move to next term
             t += 1

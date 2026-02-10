@@ -10,7 +10,8 @@ Based on the modular architecture from the reference YAKE implementation.
 
 import logging
 import math
-from typing import Dict, Any, Tuple
+from typing import Any
+
 import numpy as np  # pylint: disable=import-error
 
 # Configure module logger
@@ -23,8 +24,8 @@ def calculate_term_features(
     max_tf: float,
     avg_tf: float,
     std_tf: float,
-    number_of_sentences: int
-) -> Dict[str, float]:
+    number_of_sentences: int,
+) -> dict[str, float]:
     """
     Calculate all statistical features for a single term.
 
@@ -49,10 +50,10 @@ def calculate_term_features(
         metrics = term.graph_metrics
 
     # Calculate WRel (term relevance based on graph connectivity)
-    pwl = metrics['pwl']
-    pwr = metrics['pwr']
-    pl = metrics['wdl'] / max_tf if max_tf > 0 else 0
-    pr = metrics['wdr'] / max_tf if max_tf > 0 else 0
+    pwl = metrics["pwl"]
+    pwr = metrics["pwr"]
+    pl = metrics["wdl"] / max_tf if max_tf > 0 else 0
+    pr = metrics["wdr"] / max_tf if max_tf > 0 else 0
 
     w_rel = (0.5 + (pwl * (term.tf / max_tf))) + (0.5 + (pwr * (term.tf / max_tf)))
 
@@ -70,26 +71,24 @@ def calculate_term_features(
     w_pos = math.log(math.log(3.0 + np.median(positions)))
 
     # Calculate H (overall importance score)
-    h_score = (w_pos * w_rel) / (
-        w_case + (w_freq / w_rel) + (w_spread / w_rel)
-    )
+    h_score = (w_pos * w_rel) / (w_case + (w_freq / w_rel) + (w_spread / w_rel))
 
     return {
-        'w_rel': w_rel,
-        'w_freq': w_freq,
-        'w_spread': w_spread,
-        'w_case': w_case,
-        'w_pos': w_pos,
-        'pl': pl,
-        'pr': pr,
-        'h': h_score
+        "w_rel": w_rel,
+        "w_freq": w_freq,
+        "w_spread": w_spread,
+        "w_case": w_case,
+        "w_pos": w_pos,
+        "pl": pl,
+        "pr": pr,
+        "h": h_score,
     }
 
 
 def calculate_composed_features(
     composed_word: Any,
-    stopword_weight: str = 'bi'
-) -> Dict[str, float]:
+    stopword_weight: str = "bi",
+) -> dict[str, float]:
     """
     Calculate features for multi-word expressions (n-grams).
 
@@ -112,32 +111,32 @@ def calculate_composed_features(
             # Non-stopwords: directly contribute their H scores
             sum_h += term.h
             prod_h *= term.h
-        else:
-            # Stopwords: weight by connection probability
-            if stopword_weight == 'bi':
-                prob_t1 = prob_t2 = 0.0
+        # Stopwords: weight by connection probability
+        elif stopword_weight == "bi":
+            prob_t1 = prob_t2 = 0.0
 
-                # Probability from previous term to current stopword
-                if t > 0 and term.g.has_edge(composed_word.terms[t-1].id, term.id):
-                    edge_data = term.g[composed_word.terms[t-1].id][term.id]
-                    prob_t1 = edge_data['tf'] / composed_word.terms[t-1].tf
+            # Probability from previous term to current stopword
+            if t > 0 and term.g.has_edge(composed_word.terms[t - 1].id, term.id):
+                edge_data = term.g[composed_word.terms[t - 1].id][term.id]
+                prob_t1 = edge_data["tf"] / composed_word.terms[t - 1].tf
 
-                # Probability from current stopword to next term
-                if t < len(composed_word.terms) - 1 and term.g.has_edge(
-                    term.id, composed_word.terms[t+1].id
-                ):
-                    edge_data = term.g[term.id][composed_word.terms[t+1].id]
-                    prob_t2 = edge_data['tf'] / composed_word.terms[t+1].tf
+            # Probability from current stopword to next term
+            if t < len(composed_word.terms) - 1 and term.g.has_edge(
+                term.id,
+                composed_word.terms[t + 1].id,
+            ):
+                edge_data = term.g[term.id][composed_word.terms[t + 1].id]
+                prob_t2 = edge_data["tf"] / composed_word.terms[t + 1].tf
 
-                # Combined probability affects the score
-                prob = prob_t1 * prob_t2
-                prod_h *= 1 + (1 - prob)
-                sum_h -= 1 - prob
+            # Combined probability affects the score
+            prob = prob_t1 * prob_t2
+            prod_h *= 1 + (1 - prob)
+            sum_h -= 1 - prob
 
-            elif stopword_weight == 'h':
-                # Alternative: include stopword's H value
-                sum_h += term.h
-                prod_h *= term.h
+        elif stopword_weight == "h":
+            # Alternative: include stopword's H value
+            sum_h += term.h
+            prod_h *= term.h
             # If 'none', stopwords are ignored (no contribution)
 
     # Use term frequency
@@ -146,19 +145,14 @@ def calculate_composed_features(
     # Calculate final H score
     h_score = prod_h / ((sum_h + 1) * tf_used) if tf_used > 0 else 0
 
-    return {
-        'prod_h': prod_h,
-        'sum_h': sum_h,
-        'tf_used': tf_used,
-        'h': h_score
-    }
+    return {"prod_h": prod_h, "sum_h": sum_h, "tf_used": tf_used, "h": h_score}
 
 
 def get_feature_aggregation(
     composed_word: Any,
     feature_name: str,
-    exclude_stopwords: bool = True
-) -> Tuple[float, float, float]:
+    exclude_stopwords: bool = True,
+) -> tuple[float, float, float]:
     """
     Aggregate a specific feature across all terms in a composed word.
 

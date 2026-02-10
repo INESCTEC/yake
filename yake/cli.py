@@ -1,8 +1,10 @@
 """CLI para extração de palavras-chave utilizando YAKE!"""
 
 import sys
+
 import click
 from tabulate import tabulate
+
 import yake
 
 

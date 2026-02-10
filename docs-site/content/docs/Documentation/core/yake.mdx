@@ -1,7 +1,9 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { Callout } from 'fumadocs-ui/components/callout'
+---
+title: 'KeywordExtractor'
+---
 
-# KeywordExtractor Class
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { Callout } from 'fumadocs-ui/components/callout';
 
 The `KeywordExtractor` class is the main entry point for YAKE (Yet Another Keyword Extractor), providing a simple API to extract meaningful keywords from textual content.
 
@@ -67,7 +69,6 @@ pipeline from raw text to ranked keywords.
 import os
 import logging
 import functools
-from typing import List, Tuple, Optional, Set, Callable
 import jellyfish
 from yake.data import DataCore
 from .Levenshtein import Levenshtein
@@ -92,8 +93,8 @@ The `KeywordExtractor` class handles the configuration, preprocessing, and extra
           dedup_func: str = "seqm",
           window_size: int = 1,
           top: int = 20,
-          features: Optional[List[str]] = None,
-          stopwords: Optional[Set[str]] = None,
+          features: list[str] | None = None,
+          stopwords: set[str] | None = None,
           lemmatize: bool = False,
           lemma_aggregation: str = "min",
           lemmatizer: str = "spacy",
@@ -205,7 +206,7 @@ The `KeywordExtractor` class handles the configuration, preprocessing, and extra
 
           Returns:
               List of (keyword, score) tuples sorted by score (lower is better)
-          
+
           """
           # Handle empty input
           if not text:
@@ -575,8 +576,8 @@ The `KeywordExtractor` class handles the configuration, preprocessing, and extra
       ```python
       def _lemmatize_keywords(
           self, 
-          keywords: List[Tuple[str, float]]
-      ) -> List[Tuple[str, float]]:
+          keywords: list[tuple[str, float]]
+      ) -> list[tuple[str, float]]:
           """
           Aggregate keywords by lemma.
           
