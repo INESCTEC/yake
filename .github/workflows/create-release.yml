@@ -54,16 +54,17 @@ jobs:
 
       - name: Generate Release Notes
         id: release_notes
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_USER: ${{ github.event.pull_request.merged_by.login }}
         run: |
           # Get commits since last tag
           echo "Generating commit list since $LATEST_TAG"
           COMMITS=$(git log --pretty=format:"- %s (%h)" ${{ env.LATEST_TAG }}..HEAD)
           
-          # Extract PR details
-          PR_TITLE="${{ github.event.pull_request.title }}"
-          PR_NUMBER="${{ github.event.pull_request.number }}"
-          PR_BODY="${{ github.event.pull_request.body }}"
-          PR_USER="${{ github.event.pull_request.merged_by.login }}"
+          # PR details arrive through the environment, never through the script text.
           
           # Save release notes to environment variable
           echo "RELEASE_NOTES<<EOF" >> $GITHUB_ENV
