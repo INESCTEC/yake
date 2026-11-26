@@ -62,7 +62,8 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
             features: List of features to use for scoring
                 (default: None = all features)
             stopwords: Custom set of stopwords (default: None = use
-                language-specific)
+                language-specific). An empty set disables the stopword list;
+                other candidate filters, such as minimum word length, still apply.
             lemmatize: Enable lemmatization to aggregate keywords by lemma
                 (default: False). Requires spacy or nltk.
             lemma_aggregation: Method to combine scores of lemmatized keywords:
@@ -97,7 +98,7 @@ class KeywordExtractor:  # pylint: disable=too-many-instance-attributes
         self._lemmatizer_load_failed = False  # Track if loading failed to avoid repeated warnings
 
         # Load appropriate stopwords and deduplication function
-        self.stopword_set = self._load_stopwords(stopwords or kwargs.get("stopwords"))
+        self.stopword_set = self._load_stopwords(stopwords)
         self.dedup_function = self._get_dedup_function(self.config["dedup_func"])
 
         # Initialize optimization components
